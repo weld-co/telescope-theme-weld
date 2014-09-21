@@ -1,0 +1,10 @@
+.user-avatar img, 
+img.user-avatar {
+  height: 55px;
+  width: 55px;
+  @include border-radius(50%);
+  background: url('/packages/telescope-theme-weld/img/weld_avatar.png') no-repeat center;
+  background-size: cover;
+  float: left;
+  margin: 0 1rem 0 0;
+}

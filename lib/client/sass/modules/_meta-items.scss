@@ -1,0 +1,68 @@
+.upvote-link:after,
+  .upvote:after,
+  .edit-link:before,
+  .comment-reply:before,
+  .comment-permalink:before,
+  .downvote:before,
+  .downvote:after {
+    content: '•';
+    color: $grey !important;
+    cursor: default;
+    padding: 0 5px;
+    pointer-events: none;
+  }
+
+  .upvote-link.voted,
+  .upvote-link.upvoted,
+  .upvote.voted,
+  .upvote.upvoted  {
+    cursor: default;
+    pointer-events: none;
+  }
+
+  .voted .up-icon,
+  .voted .points,
+  .upvoted .up-icon,
+  .upvoted .points {
+    color: $primary-color;
+    fill: $primary-color;
+  }
+
+  .not-voted .up-icon,
+  .not-upvoted .up-icon,
+  .not-voted .points,
+  .not-upvoted .points {
+    color: $grey;
+    fill: $grey;
+  }
+
+  .comments-link {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 1.25rem;
+
+    &:hover {
+      .comments-icon > path {
+        fill: $primary-color;
+      }
+    }
+  }
+
+  .comments-icon {
+    vertical-align: middle;
+    margin-right: 0.35rem;
+  }
+
+  .post-meta-item,
+  .comment-meta {
+    color: $grey;
+    
+    a, a:link, a:visited {
+      color: $grey;
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }

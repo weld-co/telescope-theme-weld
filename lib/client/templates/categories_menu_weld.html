@@ -1,0 +1,12 @@
+<!-- overwritten to remove dropdown -->
+<template name="categoriesMenuWeld">
+  {{#if hasCategories}}
+    <div class="categories-menu header-submodule">
+      <ul role="menu" aria-labelledby="dLabel">
+        {{# each categories}}
+          <li><a class="dropdown-sub-level" href="{{categoryLink}}">{{name}}</a></li>
+        {{/each}}
+      </ul>
+    </div>
+  {{/if}}
+</template>

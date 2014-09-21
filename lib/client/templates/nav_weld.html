@@ -1,0 +1,30 @@
+<!-- removed site logo logic and replaced with custom elements -->
+<template name="navWeld">
+  <header class="header">
+
+    <a href="#menu" class="mobile-menu-button"></a>
+
+    <a href="/" class="weld-logo" alt="{{site_title}}">
+      <div class="tagline">A freelance community of independent creators.</div>
+    </a>
+
+    {{#if isLoggedIn}}
+      {{#if canPost}}
+        <a id="submit" class="submit mobile-header-link" href="/submit">{{i18n "Post"}}</a>
+      {{/if}}
+    {{else}}
+      <a class="sign-in mobile-header-link" href="/sign-in">{{i18n "Sign In"}}</a>
+    {{/if}}
+    
+    {{#if hasSecondaryNav}}
+      <ul class="header-module {{dropdownClass}}">
+        {{#each secondaryNav}}
+          <li class="header-submodule">
+            {{> UI.dynamic template=getTemplate}}
+          </li>
+        {{/each}}
+      </ul>
+    {{/if}}
+
+  </header>
+</template>

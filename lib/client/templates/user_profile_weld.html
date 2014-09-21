@@ -1,0 +1,115 @@
+<!-- reordered and removed things. mainly downvotes. made some stuff only visible to users -->
+<template name="userProfileWeld">
+	{{#with user}}
+
+		<div class="user-profile">
+
+			<div class="profile-header">
+			{{#if profile.site}}
+				<a href="{{profile.site}}" target="_blank">
+					<img class="user-avatar" src="{{avatarUrl}}"/>
+				</a>
+			{{/if}}
+			</div>
+
+			<ul class="profile-links">
+
+				<li class="username">{{profile.name}}</li>
+
+				{{#if getTwitterName}}
+				<li class="twitter-link"><a href="http://twitter.com/{{getTwitterName}}">{{getTwitterName}}</a></li>
+				{{/if}}
+
+				{{#if profile.site}}
+					<li class="site-link"><a href="{{profile.site}}">{{profile.site}}</a></li>
+				{{/if}}
+
+				{{#if isLoggedIn}}
+					<li class="email-link"><a href="mailto:{{userEmail}}">{{userEmail}}</a></li>
+				{{/if}}
+			</ul>
+
+			<p class="profile-bio">{{profile.bio}}</p>
+
+			<div class="user-actions">
+				{{#if canEditProfile}}
+				<a href="/users/{{slug}}/edit">{{i18n "Edit Profile"}}</a>
+				{{/if}}
+				{{#if canInvite}}
+				{{#if inviteCount}}
+				<a class="invite-link" href="#">{{i18n "Invite"}} ({{inviteCount}} {{i18n "left"}})</a>
+				{{else}}
+				<a class="disabled" href="#">{{i18n "Invite (none left)"}}</a>
+				{{/if}}
+				{{/if}}
+			</div>
+
+		</div> <!-- .user-profile -->
+		
+		{{#if isAdmin}}
+		<div class="user-data">
+			<div class="user-id">
+				{{i18n "ID"}}: {{_id}}
+			</div>
+			<div class="date-joined">
+				{{i18n "Joined"}}:
+				{{createdAtFormatted}}
+			</div>
+		</div> <!-- .user-data -->
+		{{/if}}
+
+     {{#if isLoggedIn}}
+			<div class="user-profile-posts">
+				<h2>{{i18n "Posts"}}</h2>
+				<table>
+				<thead>
+					<tr>
+						<td>Post</td>
+						<td>Created At</td>
+					</tr>
+				</thead>
+				{{#each posts}}
+					<tr>
+						<td><a href="/posts/{{_id}}/">{{title}}</a></td>
+						<td>{{formatDate createdAt "MM/DD/YYYY, HH:mm"}}</td>
+					</tr>
+				{{/each}}
+				{{#if hasMorePosts}}
+					<tr>
+						<td colspan="2">
+	    				<a class="posts-more more-button" href="#"><span>{{i18n "Load more"}}</span></a>
+						</td>
+					</tr>
+				{{/if}}
+				</table>
+			</div> <!-- .user-profile-posts -->
+
+			<div class="user-profile-comments">
+				<h2>{{i18n "Comments"}}</h2>
+				<table>
+				<thead>
+					<tr>
+						<td>Post</td>
+						<td>Comment</td>
+						<td>Commented At</td>
+					</tr>
+				</thead>
+				{{#each comments}}
+					<tr>
+						<td><a href="/posts/{{postId}}/">{{postTitle}}</a></td>
+						<td>{{{htmlBody}}}</td>
+						<td>{{formatDate createdAt "MM/DD/YYYY, HH:mm"}}</td>
+					</tr>
+				{{/each}}
+				{{#if hasMoreComments}}
+					<tr>
+						<td colspan="2">
+	    				<a class="comments-more more-button" href="#"><span>{{i18n "Load more"}}</span></a>
+						</td>
+					</tr>
+				{{/if}}
+				</table>
+			</div> <!-- .user-profile-comments -->
+		{{/if}}
+	{{/with}}
+</template>

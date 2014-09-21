@@ -1,0 +1,44 @@
+$grid-unit: 4rem;
+$grid-margin: 1rem;
+$grid-padding: 1rem;
+$break-small: 30em;
+
+$small-break: 40em;
+$medium-break: 50em;
+$large-break: 70em;
+
+@mixin small() {
+  @media screen and (max-width: $small-break) { 
+    @content;
+  }
+}
+
+@mixin small-medium() {
+  @media screen and (max-width: $medium-break) {
+    @content;
+  }
+}
+
+@mixin medium() {
+  @media screen and (min-width: $small-break) and (max-width: $medium-break) {
+    @content;
+  }
+}
+
+@mixin medium-large() {
+  @media screen and (min-width: $small-break) {
+    @content;
+  }
+}
+
+@mixin large() {
+  @media screen and (min-width: $medium-break) {
+    @content;
+  }
+}
+
+@mixin x-large() {
+  @media screen and (min-width: $large-break) {
+    @content;
+  }
+}

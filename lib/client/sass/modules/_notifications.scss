@@ -1,0 +1,51 @@
+.notifications-menu {
+  text-align: left;
+  font-weight: normal;
+
+  .dropdown-menu {
+    left: auto;
+    min-width: 300px;
+    right: 0;
+    top: 1rem;
+    @include transform-origin( right, top );
+
+    ul {
+      font-weight: normal;
+      padding: 1rem;
+    }
+
+    a.mark-as-read {
+      font-weight: bold;
+      color: $primary-color;
+    }
+
+    menu {
+      padding-bottom: 1rem;
+    }
+  }
+
+  .notification-item {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+
+  .notification-timestamp {
+    color: $grey;
+    font-size: 0.75rem;
+    display: block;
+
+    &:last-child {
+      margin-bottom: 1rem;
+    }
+  }
+
+  .notification-html {
+    font-weight: bold;
+
+    .action-link {
+      display: block;
+      font-weight: normal;
+      font-size: 0.875rem;
+    }
+  }
+}

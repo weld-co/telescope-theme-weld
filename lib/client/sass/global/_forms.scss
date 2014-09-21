@@ -1,0 +1,235 @@
+$input-height: 2.5rem;
+
+form, .accounts-dialog {
+  &.form-block {
+    background: $lightest-grey;
+    border-radius: 0;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+  }
+
+  > div {
+    @include cf;
+  }
+
+  .control-group, .form-group {
+    @include cf;
+    margin-bottom: $grid-padding;
+
+    > label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 0.5rem;
+      color: $dark-grey;
+      font-weight: 400;
+    }
+
+    .controls {
+      position: relative;
+
+    .inline-link {
+        line-height: $input-height;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        background: $lightest-grey;
+        color: $dark-grey;
+        padding: 0 1rem;
+
+        &.loading {
+          background: url(/img/loading.gif) no-repeat center;
+          height: $input-height;
+          width: $input-height + 1rem;
+          @include hide-text2;
+        }
+      }
+
+      label {
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+
+      label.inline {
+        display: inline-block;
+        margin-bottom: 0;
+      }
+    }
+
+    &.inline {
+      .controls {
+        margin-left: 0px;
+        width: 80%;
+        float: left;
+      }
+
+      .submit {
+        float:right;
+      }
+    }
+  }
+
+  .form-actions,
+  .form-group {
+    @include cf;
+    
+    a {
+      float:left;
+      display:block;
+    }
+    .button, .btn{
+      float: right;
+    }
+
+    &.top-right {
+      margin-right: 1rem;
+      line-height: 2.5rem;
+      font-size: 0.875rem;
+      a {
+        display: inline;
+        float: none;
+        margin-right: 1rem;
+      }
+
+      input[type="submit"].text-button {
+        background: none;
+        padding: 0;
+        margin: 0;
+        color: $primary-color;
+        display: inline;
+        text-align: left;
+        width: auto;
+        font-weight: bold;
+      }
+    }
+  }
+
+  input[type="text"],
+  input[type="password"],
+  input[type="number"],
+  input[type="email"],
+  textarea,
+  .login-form input,
+  input.form-control {
+    @include appearance (none);
+    display: block;
+    padding: 0.5rem;
+    width: 100%;
+    font-size: 14px;
+    background: white;
+    height: $input-height;
+    border: 1px solid $middle-grey;
+    border-radius: 0;
+    @include single-transition (border-color, 500ms);
+
+    &:focus {
+      outline: none;
+      border-color: $primary-color;
+      @include box-shadow (0px 0px 5px 0px rgba($primary-color,0.3));
+    }
+
+    &[type="number"] {
+      width: 30%;
+    }
+  }
+
+  input[disabled='disabled']{
+    background: $lightest-grey;
+    color: $text;
+    cursor: not-allowed;
+  }
+
+  textarea {
+    min-height: 120px;
+    line-height: 1.4;
+    font-size: 12px;
+    resize: vertical;
+  }
+
+  .note {
+    padding: 5px 0;
+    color: $light-text;
+    font-size: 80%;
+  }
+}
+
+#editor iframe {
+  border: 1px solid $middle-grey;
+}
+
+input[type="submit"],
+button, 
+.button, 
+.btn {
+  @include appearance (none);
+  background: $primary-color;
+  color: white;
+  text-align: center;
+  display: block;
+  width: 100%;
+  padding: 1rem 2rem;
+  line-height: 1;
+  border: none;
+  border-radius: 0;
+  font-size:  1rem;
+  cursor: pointer;
+  margin: 1rem 0;
+  font-weight: normal;
+
+  &.disabled {
+    background: $lightest-grey;
+    border: none;
+  }
+
+  &:link, &:hover, &:active, &:visited {
+    color: white;
+  }
+
+  &.inline {
+    display: inline-block;
+  }
+}
+
+.styled-select {
+  border: 1px solid $middle-grey;
+  width: 100%;
+  height: $input-height;
+  padding: 0 1rem;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+input[type="search"] {
+  font-size: 14px;
+}
+
+.twitter-signup {
+  margin-bottom:20px;
+  padding-bottom:20px;
+  border-bottom:1px solid $lighter-grey;
+
+  .twitter-button {
+    background:#00aced;
+  }
+}
+.category-slug {
+  font-size:12px;
+  float:left;
+  width:80%;
+  display:block;
+}
+
+.ui-autocomplete {
+  background: white;
+  width: 200px!important;
+  padding:10px;
+  font-size:14px;
+  @include box-shadow(0 1px 1px black(0.15));
+}
+
+.help-block {
+  color: $light-text;
+  margin-bottom:$grid-padding;
+}

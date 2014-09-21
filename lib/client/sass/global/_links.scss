@@ -1,0 +1,22 @@
+a {
+  text-decoration: none;
+  @include transition (color 200ms ease);
+
+  &, &:link, &:visited, &:active {
+    color: inherit;
+  }
+
+  &:hover{
+    color: $primary-color;
+  }
+}
+
+.more-button {
+  background: $lightest-grey;
+  padding: 1rem 2rem;
+  width: 100%;
+  text-align: center;
+  color: $primary-color !important;
+  font-weight: bold;
+  display: block;
+}

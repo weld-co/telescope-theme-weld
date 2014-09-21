@@ -1,0 +1,28 @@
+.sidebar {
+  float: left;
+  width: 25%;
+  color: $grey;
+  
+  a {
+    color: $grey;
+    &:hover {
+      color: $dark-grey;
+    }
+  }
+
+  li:last-child {
+    margin-bottom: 0;
+  }
+
+  @include small {
+    display: none;
+  }
+
+  .submit:before {
+    content: '—';
+    display: block;
+    margin-bottom: 0.75rem;
+    color: $grey !important;
+    cursor: default;
+  }
+}

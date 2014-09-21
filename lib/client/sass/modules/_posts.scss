@@ -1,0 +1,101 @@
+.posts-wrapper {
+  width: 75%;
+  float: right;
+  @include small {
+    width: 100%;
+  }
+}
+
+.posts.list > .post {
+  @include animation ( slide-left cubic-bezier(0.5, 0, 0.25, 1.5), fade-in ease-in );
+  &:nth-child(1) { @include animation-duration(300ms); }
+  &:nth-child(2) { @include animation-duration(400ms); }
+  &:nth-child(3) { @include animation-duration(500ms); }
+  &:nth-child(4) { @include animation-duration(600ms); }
+  &:nth-child(5) { @include animation-duration(700ms); }
+  &:nth-child(6) { @include animation-duration(800ms); }
+  &:nth-child(7) { @include animation-duration(900ms); }
+  &:nth-child(8) { @include animation-duration(1000ms); }
+  &:nth-child(9) { @include animation-duration(1100ms); }
+
+  @include small {
+    .inner {
+      padding: 0 1rem;
+    }
+
+    &:first-child {
+      border-top: none;
+    }
+  }
+
+  &.sticky {
+    background: $lightest-grey;
+    
+    &:after {
+      content: 'Featured Post';
+      color: white;
+      font-size: 12px;
+      display: block;
+      text-align: center;
+      position: absolute;
+      bottom: 0;
+      padding: 0 1rem;
+      right: 0;
+      background: $primary-color;
+      height: 1.5rem;
+      line-height: 1.5rem;
+    }
+
+    .inner {
+      padding: 0 1rem 1rem;
+    }
+  }
+}
+
+.post {
+  background: #ffffff;
+  border-top: 1px solid $light-grey;
+  padding: 1.25rem 0;
+  position: relative;
+  -webkit-will-change: -webkit-transform, -webkit-filter;
+  will-change: transform, filter;
+  
+  .post-heading {
+    display: block;
+    font-size: 1.4rem;
+    color: $dark-grey;
+    margin-bottom: 0.6rem;
+    font-weight: 700;
+    line-height: 1;
+    width: 85%;
+
+    @include small {
+      letter-spacing: normal;
+      line-height: 1.2;
+      font-size: 1.15rem;
+      
+    }
+  }
+
+  .post-title {
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .post-domain {
+    font-size: 1rem;
+    color: $grey;
+    font-weight: normal;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}
+
+.single-post .post {
+  border-top: none;
+}
+
+.post-body {
+  margin-bottom: 2rem;
+}

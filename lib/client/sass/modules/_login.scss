@@ -1,0 +1,34 @@
+.template-entrySignIn {
+  max-width: 25rem;
+  padding: 0 1rem;
+}
+
+
+.entry {
+  margin-top: 0;
+  padding: 0;
+}
+
+.entry,
+.entry-twitter,
+.entry-facebook {
+  text-align: center;
+  width: 100%;
+}
+
+.entry-social {
+  button {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 0;
+    font-size: 16px;
+    margin-bottom: 1rem;
+  }
+
+  i {
+    display: none;
+
+  }
+}
+

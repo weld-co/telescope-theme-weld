@@ -1,0 +1,122 @@
+$header-height: 4.375rem;
+$mobile-header-height: $header-height - 1rem;
+
+$nav: 10000;
+$overlay: $nav + 10000;
+$above-nav: $nav + 100;
+$below-nav: $nav - 100;
+$base: 5000;
+$background: $base - 1000;
+
+*, 
+*:before,
+*:after {
+  @include box-sizing ( border-box );
+  line-height: 1.2;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+
+.mobile-only {
+  @include medium-large {
+    display: none !important;
+  }
+}
+
+.desktop-only {
+  @include small {
+    display: none !important;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+.subdued {
+  opacity: 0.5;
+}
+
+.block {
+  display: block;
+}
+
+.pull-right {
+  float: right;
+}
+
+.pull-left {
+  float: left;
+}
+
+.top-right { // parent needs relative positioning
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: auto;
+}
+
+.overlay {
+  position:fixed;
+  top:0;
+  left:0;
+  height:100%;
+  width:100%;
+  z-index: $overlay;
+}
+
+#spinner {
+  margin: 100px 0;
+}
+
+.debug {
+  display:none;
+}
+
+.footer {
+  text-align:center;
+  padding:10px 0 70px 0;
+  color:black(0.4);
+  font-size:14px;
+  &.absolute{
+    position:absolute;
+  }
+}
+
+#login-buttons .loading {
+  display:none;
+}
+
+#loading, 
+.loading-page {
+  height: 300px;
+}
+
+.notifications-toggle {
+  background: white;
+  margin-bottom: $grid-margin;
+  padding: $grid-padding;
+}
+
+.search-date-header {
+  background: $lightest-grey;
+  th {
+    @include cf;
+  }
+
+  .search-date {
+    display: block;
+    float: left;
+    font-weight: bold;
+  }
+
+  .search-count{
+    font-size: 13px;
+    display: block;
+    float: right;
+  }
+}

@@ -1,0 +1,38 @@
+.comment-new {
+  margin-bottom: 3rem;
+}
+
+.comment-content {
+  .user-avatar {
+    margin-right: 1rem;
+  }
+}
+
+.comment-body {
+  padding-top: 1rem;
+  margin-top: 1rem;
+  border-top: 1px solid $light-grey;
+}
+
+.comment-text p {
+  line-height: 1.5;
+}
+
+.comment-children {
+  .comment.module {
+    border-left: 5px solid $lightest-grey;
+  }
+  .comment-body {
+    padding-left: 1rem;
+  }
+}
+
+.comment-meta {
+  color: $grey;
+  margin: 1rem 0;
+}
+
+.comment-username {
+  font-size: bold;
+  margin-top: 0.5rem;
+}

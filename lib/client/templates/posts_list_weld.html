@@ -1,0 +1,20 @@
+<!-- added sidebar. could be it's own template if needed -->
+<template name="posts_list_weld">
+    {{#if hasPrimaryNav}}
+      <ul class="sidebar {{dropdownClass}}">
+        {{#each primaryNav}}
+          <li>
+            {{> UI.dynamic template=getTemplate}}
+          </li>
+        {{/each}}
+      </ul>
+    {{/if}}
+    <div class="posts-wrapper">
+    	<div class="posts list">
+    		{{#each posts}}
+    			{{> UI.dynamic template=post_item}}
+    		{{/each}}
+      </div>
+  </div>
+  {{> UI.dynamic template=postsLoadMore}}
+</template>

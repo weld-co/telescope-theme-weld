@@ -1,0 +1,21 @@
+<template name="mobile_nav_weld">
+  <div class="mobile-nav">
+  
+    <div class="search {{searchQueryEmpty}}">
+      <input type="search" id="search" class="search-input-field" value="{{searchQuery}}">
+    </div>
+
+    <ul class="mobile-menu">
+      {{#each primaryNav}}
+        <li>
+          {{> UI.dynamic template=getTemplate}}
+        </li>
+      {{/each}}
+      {{#each secondaryNav}}
+        <li>
+          {{> UI.dynamic template=getTemplate}}
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+</template>

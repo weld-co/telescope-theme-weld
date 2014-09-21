@@ -1,0 +1,30 @@
+table {
+  width: 100%;
+  tr {
+    border-bottom: 1px solid $light-grey;
+  }    
+  td, th {
+      padding: 1rem 0;
+    } 
+
+  thead {
+    tr {
+      td, th {
+        font-weight: bold;
+        background: $lightest-grey;
+
+        &:first-child {
+          padding-left: 1rem;
+        }
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      td {
+        
+      }     
+    }
+  }
+}

@@ -1,0 +1,29 @@
+@include small {
+  .template-posts_list_weld {
+    margin-top: 0;
+  }
+}
+
+.template-userProfileWeld,
+.template-user_edit_weld,
+.template-post_submit_weld,
+.template-post_page,
+.template-post_edit,
+.template-comment_reply,
+.template-comment_edit {
+  max-width: 40rem;
+  padding: 0 1rem;
+}
+
+.template-entryForgotPassword,
+.template-settings,
+.template-categories,
+.template-toolbox {
+  max-width: 30rem;
+  padding: 0 1rem;
+}
+
+.template-users {
+  width: 100%;
+}
+

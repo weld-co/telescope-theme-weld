@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAEA,IAAK;EACH,WAAW,EAAE,QAAQ;EACrB,UAAU,ECAA,OAAO",
+"sources": ["main.scss","partials/colors.scss"],
+"names": [],
+"file": "main.css"
+}

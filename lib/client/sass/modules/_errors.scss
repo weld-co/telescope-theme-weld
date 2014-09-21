@@ -1,0 +1,16 @@
+.error{
+  color: white;
+  background: $primary-color;
+  min-height: 70px;
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  vertical-align: middle;
+  line-height: $header-height;
+  z-index: $overlay;
+  @include animation ( fade-in-out 3s ease-out);
+}
