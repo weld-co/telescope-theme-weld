@@ -5,11 +5,9 @@
 		<div class="user-profile">
 
 			<div class="profile-header">
-			{{#if profile.site}}
-				<a href="{{profile.site}}" target="_blank">
+				<a href="{{#if profile.site}}{{profile.site}}{{/if}}" target="_blank">
 					<img class="user-avatar" src="{{avatarUrl}}"/>
 				</a>
-			{{/if}}
 			</div>
 
 			<ul class="profile-links">

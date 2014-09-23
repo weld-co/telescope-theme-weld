@@ -1,21 +1,19 @@
 <template name="mobile_nav_weld">
   <div class="mobile-nav">
-  
-    <div class="search {{searchQueryEmpty}}">
-      <input type="search" id="search" class="search-input-field" value="{{searchQuery}}">
-    </div>
 
     <ul class="mobile-menu">
+      {{#if hasNotifications}}
+        <li><a href="#">{{> notificationsMenuWeld}}</a></li>
+      {{/if}}
       {{#each primaryNav}}
         <li>
           {{> UI.dynamic template=getTemplate}}
         </li>
       {{/each}}
-      {{#each secondaryNav}}
-        <li>
-          {{> UI.dynamic template=getTemplate}}
-        </li>
-      {{/each}}
+      {{#if isLoggedIn}}
+        <li><a href="{{profileUrl}}">{{i18n "Profile"}}</a></li>
+        <li><a href="/sign-out">{{i18n "Sign Out"}}</a></li>
+      {{/if}}
     </ul>
   </div>
 </template>

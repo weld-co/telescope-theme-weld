@@ -4,9 +4,8 @@
     left: 0;
     line-height: $mobile-header-height;
     position: absolute;
-    width: $mobile-header-height + 1rem;
+    width: 4rem;
     height: $mobile-header-height;
-    z-index: $above-nav;
     cursor: pointer;
     background: url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2221%22%20height%3D%2217%22%20viewBox%3D%220%200%2021%2017%22%3E%3Cg%20fill%3D%22%23fff%22%3E%3Cpath%20d%3D%22M0%200h21v2h-21zM0%205h18v2h-18zM0%2010h20v2h-20zM0%2015h15v2h-15z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E') no-repeat center;
   }
@@ -14,78 +13,82 @@
 
 .mobile-nav {
   position: fixed;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  width: 75%;
-  height: auto;
-  padding: 2rem;
-  top: 0;
-  bottom: 0;
-  background: linear-gradient(to bottom, #333333, black);
-  visibility: hidden;
-  opacity: 0;
-  z-index: $below-nav;
-  @include translateX ( -100% );
-  @include transition ( transform 400ms cubic-bezier(0.5, 0, 0.25, 1.25), opacity 400ms ease, visibility 400ms ease );
+  overflow: hidden;
+  padding: 1.5rem;
+  padding-bottom: 0;
+  height: 100%;
+  width: 100%;
 }
 
 .outer-wrapper {
   @include transition ( transform 400ms cubic-bezier(0.5, 0, 0.25, 1.25));
 }
 
+.mobile-menu { 
+  @include translateX ( -100% );
+  @include transition ( transform 400ms cubic-bezier(0.5, 0, 0.25, 1.25), opacity 400ms ease, visibility 400ms ease );
+  visibility: hidden;
+  opacity: 0;
+  max-width: 100%;
+  max-height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
 .mobile-nav-open {
   overflow: hidden;
 
-  .mobile-nav { 
-    @include translateX ( 0 );
-    visibility: visible;
-    opacity: 1;
-  }
-
   .outer-wrapper {
-    @include translateX ( 75% );
+    @include translateX (80%);
     overflow: hidden;
-
-    .inner-wrapper {
-      overflow: hidden;
-    }
+    box-shadow: 0 0 200px 50px rgba(0,0,0,0.5);
   }
 
   .mobile-menu {
+    @include translateX ( 0 );
+    opacity: 1;
+    visibility: visible;
+
     li {
       @include animation ( slide-right cubic-bezier(0.5, 0, 0.25, 1.5), fade-in ease-in );
-      &:nth-child(1) { @include animation-duration(600ms); }
-      &:nth-child(2) { @include animation-duration(700ms); }
-      &:nth-child(3) { @include animation-duration(800ms); }
-      &:nth-child(4) { @include animation-duration(900ms); }
-      &:nth-child(5) { @include animation-duration(1000ms); }
-      &:nth-child(6) { @include animation-duration(1100ms); }
-      &:nth-child(7) { @include animation-duration(1200ms); }
+      &:nth-child(1) { @include animation-duration(400ms); }
+      &:nth-child(2) { @include animation-duration(500ms); }
+      &:nth-child(3) { @include animation-duration(600ms); }
+      &:nth-child(4) { @include animation-duration(700ms); }
+      &:nth-child(5) { @include animation-duration(800ms); }
+      &:nth-child(6) { @include animation-duration(900ms); }
+      &:nth-child(7) { @include animation-duration(1000ms); }
     }
   }
 }
 
 .mobile-menu {
+
+  &::-webkit-scrollbar { 
+    width: 0px;
+    height: 0px;
+    background: transparent;
+  }
+
   .header-module, .header-submodule{
     display: block;
     margin-right: 0px;
   }
 
-  .sign-in,
-  .submit {
-    display: none;
-  }
-
-  a {
+  > li {
     display: block;
     height: auto;
     line-height: inherit;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 100;
-    line-height: 1.5;
+    color: $grey;
+    max-width: 200px;
     
-    &, &:link, &:visited {
-      color: $grey;
+    a {
+      &, &:link, &:visited {
+        color: $grey;
+      }
     }
   }
 
@@ -95,8 +98,8 @@
       &:after {
         display: inline-block;
         position: relative;
-        top: -1px;
-        margin-left: 4px;
+        top: -3px;
+        margin-left: 6px;
         content: "▼";
         font-size: 8px;
       }
@@ -116,47 +119,7 @@
     }
   }
 
-  .settings-button {
-    color: white;
-      &:before {
-      content: 'Settings';
-      color: white;
-      vertical-align: middle;
-    }
-  }
-
-  .notifications-button {
+  .notifications-link {
     padding: 0;
-  }
-
-  a.submit {
-    margin: 10px 0;
-    background: $primary-color;
-    padding: 1rem;
-    width: 100%;
-    text-align: center;
-    color: white;
-  }
-}
-
-.mobile-nav .search {
-  padding: 0;
-  padding-bottom: 1rem;
-  width: 100%;
-
-  .search-input-field {
-    width: 100%;
-  }
-
-  &:last-child {
-    display: none;
-  }
-}
-
-.mobile-submit {
-  padding: 10px 0;
-  border-bottom: 1px white(0.2) solid;
-  .button {
-    max-width: none;
   }
 }

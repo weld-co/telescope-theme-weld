@@ -1,16 +1,21 @@
-.error{
-  color: white;
+.error {
   background: $primary-color;
-  min-height: 70px;
+  color: white;
+  height: $header-height;
+  left: 0;
+  line-height: $header-height;
+  opacity: 0;
   position: fixed;
-  width: 100%;
+  position: fixed;
   text-align: center;
   top: 0;
-  left: 0;
-  opacity: 0;
-  visibility: hidden;
   vertical-align: middle;
-  line-height: $header-height;
-  z-index: $overlay;
+  visibility: hidden;
+  width: 100%;
+  z-index: 100;
   @include animation ( fade-in-out 3s ease-out);
+  @include small {
+    height: $mobile-header-height;
+    line-height: $mobile-header-height;
+  }
 }

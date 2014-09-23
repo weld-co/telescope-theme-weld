@@ -28,14 +28,12 @@ form, .accounts-dialog {
       position: relative;
 
     .inline-link {
-        line-height: $input-height;
-        display: block;
-        position: absolute;
-        right: 0;
-        top: 0;
-        background: $lightest-grey;
-        color: $dark-grey;
-        padding: 0 1rem;
+        line-height: 2rem;
+        color: $grey;
+        float: right;
+        &:hover {
+          color: $primary-color;
+        }
 
         &.loading {
           background: url(/img/loading.gif) no-repeat center;

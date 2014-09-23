@@ -83,3 +83,24 @@
     }
   }
 }
+
+.user-profile-comments {
+
+  td {
+    vertical-align: top;
+
+    &:nth-child(1) {
+      width: 25%;
+      font-weight: 600;
+    }
+
+    &:nth-child(2) {
+      width: 50%;
+    }
+    
+    &:nth-child(3) {
+      width: 25%;
+      color: $grey;
+    }
+  }
+}

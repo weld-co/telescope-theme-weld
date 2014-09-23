@@ -1,12 +1,12 @@
-<!-- reorganized and added custom notifcation state -->
+<!-- added .notification-link class -->
 <template name="notificationsMenuWeld">
   {{#if isLoggedIn}}
-  <a class="view dropdown-top-level" href="/">
-    <div class="notifications-menu notifications-button dropdown {{#if hasNotifications}}has-notifications{{/if}}">{{notification_count_weld}}
+    <div class="dropdown notifications-menu header-submodule">
+      <a class="view dropdown-top-level notifications-link {{#if hasNotifications}}has-notifications{{/if}}" href="/">{{notification_count_weld}}</a>
       <div class="dropdown-menu">
         <ul role="menu" aria-labelledby="dLabel">
           {{#if hasNotifications}}
-            <li><a href="#" class="mark-as-read">{{i18n "Mark All As Read"}}</a></li>
+            <li><a href="#" class="mark-as-read">{{i18n "Mark All As Read"}}</a></li>  
             {{#each notifications}}
               {{> UI.dynamic template=notificationItem}}
             {{/each}}
@@ -16,6 +16,5 @@
         </ul>
       </div>
     </div>
-  </a> <!-- .view .dropdown-top-level -->
   {{/if}}
 </template>

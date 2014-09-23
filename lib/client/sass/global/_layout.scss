@@ -1,31 +1,20 @@
-html,
-body, 
-.outer-wrapper {
+html {
   height: 100%;
-}
-
-
-html,
-body, 
-.outer-wrapper,
-.inner-wrapper,
-.conent-wrapper {
-  background: $bg-color;
+  overflow-x: hidden;
 }
 
 body {
   font-size: .875rem;
-
-  @include small {
-    overflow-x: hidden;
-  }
+  height: 100%;
+  background: linear-gradient(to bottom, #333333, black) no-repeat;
 }
 
 .outer-wrapper {
+  background: white;
+  min-height: 100%;
 }
 
 .inner-wrapper {
-  z-index: $base;
   width: 85%;
   margin: 5% auto;
   @include small {
@@ -39,9 +28,9 @@ body {
 .content-wrapper {
   padding: 0 1rem;
   position: relative;
+  background: white;
   @include animation ( slide-left 300ms cubic-bezier(0.5, 0, 0.25, 1.5), fade-in 300ms ease-in );
   @include small {
     padding: 0;
-    overflow-x: hidden;
   }
 }

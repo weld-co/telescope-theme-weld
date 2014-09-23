@@ -1,5 +1,8 @@
 #iron-router-progress {
-  background-color: $dark-grey !important;
+  background-color: $primary-color !important;
   box-shadow: none !important;
-  height: 1px !important;
+  height: 2px !important;
+  @include small {
+    background-color: $dark-grey !important;
+  }
 }

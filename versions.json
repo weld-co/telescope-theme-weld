@@ -165,6 +165,10 @@
       "0.1.0"
     ],
     [
+      "telescope-notifications",
+      "0.1.0"
+    ],
+    [
       "telescope-search",
       "0.0.0"
     ],
@@ -190,6 +194,6 @@
     ]
   ],
   "pluginDependencies": [],
-  "toolVersion": "meteor-tool@1.0.31",
+  "toolVersion": "meteor-tool@1.0.30",
   "format": "1.0"
 }
