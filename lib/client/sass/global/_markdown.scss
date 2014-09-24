@@ -1,11 +1,5 @@
 .markdown {
 
-  &:after {
-    content: attr(data-username);
-    margin-left: 0.25rem;
-    color: $grey;
-  }
-
   ul, ol, p, pre, blockquote {
     margin-bottom: 1em;
     line-height: 1.5;
@@ -40,6 +34,7 @@
       color:$red;
     }
   }
+  
   p {
     &:last-child {
       display: inline;
@@ -70,6 +65,11 @@
 
   h5 { 
     font-size:14px;
+  }
+
+  img {
+    max-width: 100%;
+    margin-bottom: 1rem;
   }
 
   code {

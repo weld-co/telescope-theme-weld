@@ -22,11 +22,13 @@
 
   .profile-links {
     margin: 2rem 0;
-    font-size: 1rem;
+    font-size: 16px;
+    color: $grey;
    
     .username {
-      font-size: 2.5rem;
-      font-weight: 100;
+      font-size: 32px;
+      font-weight: 400;
+      color: $dark-grey;
     }
 
     li:not(.username) {
@@ -45,7 +47,7 @@
   }
 
   .profile-bio {
-    font-size: 1.35rem;
+    font-size: 21px;
     line-height: 1.5;
   }
 
@@ -102,5 +104,9 @@
       width: 25%;
       color: $grey;
     }
+  }
+
+  @include small {
+    display: none;
   }
 }

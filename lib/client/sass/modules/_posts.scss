@@ -17,6 +17,11 @@
   &:nth-child(7) { @include animation-duration(900ms); }
   &:nth-child(8) { @include animation-duration(1000ms); }
   &:nth-child(9) { @include animation-duration(1100ms); }
+  &:nth-child(10) { @include animation-duration(1200ms); }
+
+  // @for $i from 1 through 10 {
+  //   &:nth-child(#{$i}) { @include animation-duration(300ms * $i * 0.3); }
+  // }
 
   @include small {
     .inner {
@@ -47,7 +52,7 @@
     }
 
     .inner {
-      padding: 0 1rem 1rem;
+      padding: 0 1rem;
     }
   }
 }
@@ -62,16 +67,15 @@
   
   .post-heading {
     display: block;
-    font-size: 1.2rem;
+    font-size: 18px;
     color: $dark-grey;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     font-weight: 600;
-    line-height: 1;
-    width: 85%;
+    line-height: 1.2;
   }
 
   .post-domain {
-    font-size: 1rem;
+    font-size: 16px;
     color: $grey;
     font-weight: normal;
 
@@ -84,9 +88,22 @@
 .single-post .post {
   border-top: none;
   padding-top: 0;
+  padding-bottom: 2rem;
 
   .post-heading {
-    font-size: 1.5rem;
+    font-size: 24px;
+    margin: 2rem 0;
+    @include small {
+      font-size: 18px;
+    }
+  }
+
+  .post-info {
+    .post-meta {
+      background: $lightest-grey;
+      padding: 0.5rem;
+      padding-left: 1rem;
+    }
   }
 
   .comments-link {
@@ -96,4 +113,12 @@
 
 .post-body {
   margin-bottom: 2rem;
+  font-size: 16px;
+  @include small {
+    font-size: 14px;
+  }
+}
+
+.posts-wrapper .more-button {
+  margin-top: 2rem;
 }

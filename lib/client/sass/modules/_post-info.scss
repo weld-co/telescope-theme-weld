@@ -1,0 +1,41 @@
+.post-meta,
+.comment-meta {
+  color: $grey;
+  font-size: 12px;
+  @include small {
+    font-size: 14px;
+  }
+  
+  a, a:link, a:visited {
+    color: $grey;
+
+    &:hover {
+      color: $primary-color;
+      border-color: $primary-color;
+    }
+  }
+}
+
+.post-meta-item {
+  line-height: 1.3;
+}
+
+.upvote-link:after,
+.points:after,
+.post-time:before, 
+.edit-link:before,
+.comment-permalink:before {
+  content: '・';
+  color: $grey !important;
+  cursor: default;
+  padding: 0 5px;
+  pointer-events: none;
+}
+
+.upvote-link:before {
+  content: '▴';
+  color: $grey !important;
+  cursor: default;
+  padding-right: 5px;
+  pointer-events: none;
+}

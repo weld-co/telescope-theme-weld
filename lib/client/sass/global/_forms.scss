@@ -24,16 +24,13 @@ form, .accounts-dialog {
       font-weight: 400;
     }
 
+    .inline-link {
+      line-height: 2rem;
+      color: $grey;
+      float: right;
+
     .controls {
       position: relative;
-
-    .inline-link {
-        line-height: 2rem;
-        color: $grey;
-        float: right;
-        &:hover {
-          color: $primary-color;
-        }
 
         &.loading {
           background: url(/img/loading.gif) no-repeat center;
@@ -89,18 +86,20 @@ form, .accounts-dialog {
         margin-right: 1rem;
       }
 
-      input[type="submit"].text-button {
-        background: none;
-        padding: 0;
-        margin: 0;
-        color: $primary-color;
-        display: inline;
-        text-align: left;
-        width: auto;
-        font-weight: bold;
-      }
+
     }
   }
+
+input[type="submit"].text-button {
+  background: none;
+  padding: 0;
+  margin: 0;
+  color: $primary-color;
+  display: inline;
+  text-align: left;
+  width: auto;
+  font-weight: bold;
+}
 
   input[type="text"],
   input[type="password"],
@@ -113,7 +112,7 @@ form, .accounts-dialog {
     display: block;
     padding: 0.5rem;
     width: 100%;
-    font-size: 14px;
+    font-size: 0.875rem;
     background: white;
     height: $input-height;
     border: 1px solid $middle-grey;
@@ -166,7 +165,6 @@ button,
   display: block;
   width: 100%;
   padding: 1rem 2rem;
-  line-height: 1;
   border: none;
   border-radius: 0;
   font-size:  1rem;

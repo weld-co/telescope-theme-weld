@@ -34,6 +34,19 @@ $mobile-header-height: $header-height - 1rem;
   opacity: 0.5;
 }
 
+.darker {
+  color: $dark-grey;
+}
+
+.underline {
+  border-bottom: 1px solid $grey;
+  display: inline-block;
+  height: 14px;
+  @include small {
+    height: 16px;
+  }
+}
+
 .block {
   display: block;
 }
@@ -51,6 +64,9 @@ $mobile-header-height: $header-height - 1rem;
   top: 0;
   right: 0;
   width: auto;
+  @include small {
+    margin-right: 0;
+  }
 }
 
 .overlay {
@@ -71,9 +87,9 @@ $mobile-header-height: $header-height - 1rem;
 
 .footer {
   text-align:center;
-  padding:10px 0 70px 0;
-  color:black(0.4);
-  font-size:14px;
+  padding: 10px 0 70px 0;
+  color: black(0.4);
+  font-size: 14px;
   &.absolute{
     position:absolute;
   }
@@ -107,7 +123,7 @@ $mobile-header-height: $header-height - 1rem;
   }
 
   .search-count{
-    font-size: 13px;
+    font-size: 12px;
     display: block;
     float: right;
   }

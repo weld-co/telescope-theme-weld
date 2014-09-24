@@ -21,6 +21,14 @@
       "2.0.0"
     ],
     [
+      "blaze-tools",
+      "1.0.0"
+    ],
+    [
+      "boilerplate-generator",
+      "1.0.0"
+    ],
+    [
       "callback-hook",
       "1.0.0"
     ],
@@ -54,6 +62,10 @@
     ],
     [
       "handlebars",
+      "1.0.0"
+    ],
+    [
+      "html-tools",
       "1.0.0"
     ],
     [
@@ -105,6 +117,10 @@
       "1.2.0"
     ],
     [
+      "minifiers",
+      "1.1.0"
+    ],
+    [
       "minimongo",
       "1.0.3"
     ],
@@ -149,6 +165,18 @@
       "1.0.0"
     ],
     [
+      "routepolicy",
+      "1.0.1"
+    ],
+    [
+      "spacebars",
+      "1.0.1"
+    ],
+    [
+      "spacebars-compiler",
+      "1.0.2"
+    ],
+    [
       "telescope-base",
       "0.0.0"
     ],
@@ -191,9 +219,17 @@
     [
       "underscore",
       "1.0.0"
+    ],
+    [
+      "webapp",
+      "1.1.1"
+    ],
+    [
+      "webapp-hashing",
+      "1.0.0"
     ]
   ],
   "pluginDependencies": [],
-  "toolVersion": "meteor-tool@1.0.30",
+  "toolVersion": "meteor-tool@1.0.31",
   "format": "1.0"
 }

@@ -3,8 +3,10 @@
 }
 
 .comment-content {
-  .user-avatar {
-    margin-right: 1rem;
+  img.user-avatar,
+  .user-avatar img {
+    vertical-align: middle;
+    margin-right: 0.2rem;
   }
 }
 
@@ -39,4 +41,15 @@
 
 .selected-comment {
   margin-bottom: 2rem;
+}
+
+.authorname {
+  display: block;
+  margin-bottom: 1rem;
+  &:after {
+    content: attr(data-username);
+    color: $grey;
+    vertical-align: middle;
+    font-size: 12px;
+  }
 }

@@ -6,40 +6,39 @@
         <div class="comment-deleted">This comment has been deleted.</div>
       {{else}}
         <div class="comment-content">
-          <a href="{{profileUrl}}">
+          <a class="authorname" href="{{profileUrl}}" data-username="— {{authorName}}, {{ago}}">
             <img class="user-avatar" src="{{user_avatar}}" />
           </a> 
           <div class="comment-main">
-            <div class="comment-text markdown" data-username="— {{authorName}}">{{{htmlBody}}}
-            </div>
+            <div class="comment-text markdown">{{{htmlBody}}}</div>
 
-            <div class="comment-meta">
-              <div class="comment-actions {{#if upvoted}}upvoted{{else}}not-upvoted{{/if}} {{#if downvoted}}downvoted{{else}}not-downvoted{{/if}}">
-                <a class="upvote upvote-link" href="#">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><path class="up-icon" fill="#B4B4B4" d="M10 6h-3v4h-4v-4h-3l5-6 5 6z"/></svg>
-                  <span class="points">{{baseScore}}</span>
-                </a>
-                <span class="post-time">{{ago}}</span>
-                {{#if getSetting "nestedComments" true}}
-                <a href="/comments/{{_id}}" class="comment-reply goto-comment">{{i18n "Reply"}}</a>
-                {{/if}}
-                <a href="/comments/{{_id}}" class="comment-permalink icon-link goto-comment">{{i18n "Link"}}</a>
-                {{#if can_edit}}
-                <a class="edit-link" href="/comments/{{_id}}/edit">{{i18n "Edit"}}</a>
-                {{/if}}
-              </div> <!-- comment-actions -->
-            </div> <!-- comment-meta -->
-          </div>
+          <div class="comment-meta">
+            <div class="comment-actions">
+              {{#if upvoted}}
+              {{else}}
+              <span class="upvote-link"><span class="underline"><a href="#">{{i18n "Upvote"}}</a></span></span>
+              {{/if}}
+              <span class="points">{{baseScore}} <span class="unit">{{pointsUnitDisplayText}}</span></span>
+              {{#if getSetting "nestedComments" true}}
+              <a href="/comments/{{_id}}" class="comment-reply goto-comment">{{i18n "Reply"}}</a>
+              {{/if}}
+              <a href="/comments/{{_id}}" class="comment-permalink icon-link goto-comment">{{i18n "Link"}}</a>
+              {{#if can_edit}}
+              <a class="edit-link" href="/comments/{{_id}}/edit">{{i18n "Edit"}}</a>
+              {{/if}}
+            </div> <!-- comment-actions -->
+          </div> <!-- comment-meta -->
         </div>
-      {{/if}}
-      {{#if showChildComments}}
-        <ul class="comment-children comment-list">
-        {{#each child_comments}}
-          {{#with this}}
-            {{> UI.dynamic template=comment_item}}
-          {{/with}}
-        {{/each}}
-        </ul>
+      </div>
+    {{/if}}
+    {{#if showChildComments}}
+      <ul class="comment-children comment-list">
+      {{#each child_comments}}
+        {{#with this}}
+          {{> UI.dynamic template=comment_item}}
+        {{/with}}
+      {{/each}}
+      </ul>
       {{/if}}
     </div>
   </li>
