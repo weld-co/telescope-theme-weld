@@ -1078,15 +1078,6 @@ input[type="search"].search-input-field:focus {
   pointer-events: none;
 }
 
-/* line 35, ../sass/modules/_post-info.scss */
-.upvote-link:before {
-  content: '▴';
-  color: #aaaaaa !important;
-  cursor: default;
-  padding-right: 5px;
-  pointer-events: none;
-}
-
 /* line 1, ../sass/modules/_avatars.scss */
 .user-avatar img,
 img.user-avatar {

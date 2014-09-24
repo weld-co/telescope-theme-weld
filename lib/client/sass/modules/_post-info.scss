@@ -31,11 +31,3 @@
   padding: 0 5px;
   pointer-events: none;
 }
-
-.upvote-link:before {
-  content: '▴';
-  color: $grey !important;
-  cursor: default;
-  padding-right: 5px;
-  pointer-events: none;
-}
