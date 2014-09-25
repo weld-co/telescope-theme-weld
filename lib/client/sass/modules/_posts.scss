@@ -4,6 +4,28 @@
   @include small {
     width: 100%;
   }
+
+  .submit,
+  .sign-in {
+    display: block;
+    height: 3rem;
+    text-align: center;
+    background: $lightest-grey;
+    color: $dark-grey;
+    width: 100%;
+    line-height: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    @include small {
+      margin-top: 1rem;
+    }
+
+    &:hover {
+      background: $primary-color;
+      color: white;
+      transition: none;
+    }
+  }
 }
 
 .posts.list > .post {
@@ -43,7 +65,7 @@
       display: block;
       text-align: center;
       position: absolute;
-      bottom: 0;
+      top: 0;
       padding: 0 1rem;
       right: 0;
       background: $primary-color;
@@ -52,7 +74,8 @@
     }
 
     .inner {
-      padding: 0 1rem;
+      padding: 0 1.25rem;
+      width: 80%;
     }
   }
 }
@@ -64,7 +87,7 @@
   position: relative;
   -webkit-will-change: -webkit-transform, -webkit-filter;
   will-change: transform, filter;
-  
+
   .post-heading {
     display: block;
     font-size: 18px;
@@ -72,6 +95,9 @@
     margin-bottom: 0.5rem;
     font-weight: 600;
     line-height: 1.2;
+    @include small {
+      font-size: 16px;
+    }
   }
 
   .post-domain {

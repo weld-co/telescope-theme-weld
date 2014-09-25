@@ -30,25 +30,12 @@
       }
     }
   }
-
-  .mobile-header-link {
-    font-weight: 600;
-    color: white;
-    position: absolute;
-    right: 0;
-    top: 0;
-    text-align: center;
-    width: 4rem;
-    line-height: $mobile-header-height;
-    @include medium-large {
-      display: none;
-    }
-  }
 }
 
 .header-module {
   position: absolute;
   right: 0;
+  top: 0;
   line-height: $header-height;
   margin-right: 1.25rem;
 }
@@ -100,13 +87,11 @@
       color: white;
       line-height: $header-height;
       margin-left: 20px;
-      @include translateX (40px);
-      @include transition ( transform 250ms ease-in-out, opacity 250ms ease );
+      @include transition ( opacity 250ms ease );
       opacity: 0;
     }
 
     &:hover:before {
-      @include translateX ( 0 );
       opacity: 1;
     }
 
@@ -153,9 +138,4 @@
     height: 100%;
     width: 100%;
   }
-}
-
-.sign-in {
-  display: inline-block;
-  margin: 0;
 }

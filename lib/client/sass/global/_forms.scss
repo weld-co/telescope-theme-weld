@@ -25,9 +25,12 @@ form, .accounts-dialog {
     }
 
     .inline-link {
-      line-height: 2rem;
+      margin-top: .5rem;
       color: $grey;
       float: right;
+      font-size: 12px;
+      line-height: 1.6;
+      text-align: right;
 
     .controls {
       position: relative;
@@ -48,6 +51,7 @@ form, .accounts-dialog {
       label.inline {
         display: inline-block;
         margin-bottom: 0;
+        margin-right: 10px;
       }
     }
 

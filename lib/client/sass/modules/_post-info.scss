@@ -2,16 +2,15 @@
 .comment-meta {
   color: $grey;
   font-size: 12px;
-  @include small {
-    font-size: 14px;
-  }
   
   a, a:link, a:visited {
     color: $grey;
+    text-decoration: underline;
 
     &:hover {
       color: $primary-color;
       border-color: $primary-color;
+      text-decoration: none;
     }
   }
 }
@@ -26,8 +25,5 @@
 .edit-link:before,
 .comment-permalink:before {
   content: '・';
-  color: $grey !important;
-  cursor: default;
   padding: 0 5px;
-  pointer-events: none;
 }

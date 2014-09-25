@@ -8,28 +8,27 @@
         <div class="comment-content">
           <a class="authorname" href="{{profileUrl}}" data-username="— {{authorName}}, {{ago}}">
             <img class="user-avatar" src="{{user_avatar}}" />
-          </a> 
+          </a>
           <div class="comment-main">
             <div class="comment-text markdown">{{{htmlBody}}}</div>
-
-          <div class="comment-meta">
-            <div class="comment-actions">
-              {{#if upvoted}}
-              {{else}}
-              <span class="upvote-link"><span class="underline"><a href="#">{{i18n "Upvote"}}</a></span></span>
-              {{/if}}
-              <span class="points">{{baseScore}} <span class="unit">{{pointsUnitDisplayText}}</span></span>
-              {{#if getSetting "nestedComments" true}}
-              <a href="/comments/{{_id}}" class="comment-reply goto-comment">{{i18n "Reply"}}</a>
-              {{/if}}
-              <a href="/comments/{{_id}}" class="comment-permalink icon-link goto-comment">{{i18n "Link"}}</a>
-              {{#if can_edit}}
-              <a class="edit-link" href="/comments/{{_id}}/edit">{{i18n "Edit"}}</a>
-              {{/if}}
-            </div> <!-- comment-actions -->
-          </div> <!-- comment-meta -->
+            <div class="comment-meta">
+              <div class="comment-actions {{#if upvoted}}upvoted{{else}}not-upvoted{{/if}} {{#if downvoted}}downvoted{{else}}not-downvoted{{/if}}">
+                {{#if upvoted}}
+                {{else}}
+                <span class="upvote-link"><a class="upvote" href="#">{{i18n "Upvote"}}</a></span>
+                {{/if}}
+                <span class="points">{{baseScore}} <span class="unit">{{pointsUnitDisplayText}}</span></span>
+                {{#if getSetting "nestedComments" true}}
+                <a href="/comments/{{_id}}" class="comment-reply goto-comment">{{i18n "Reply"}}</a>
+                {{/if}}
+                <span class="comment-permalink"><a href="/comments/{{_id}}" class="goto-comment">{{i18n "Link"}}</a></span>
+                {{#if can_edit}}
+                <span class="edit-link"><a href="/comments/{{_id}}/edit">{{i18n "Edit"}}</a></span>
+                {{/if}}
+              </div> <!-- comment-actions -->
+            </div> <!-- comment-meta -->
+          </div>
         </div>
-      </div>
     {{/if}}
     {{#if showChildComments}}
       <ul class="comment-children comment-list">

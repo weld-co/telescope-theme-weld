@@ -3,6 +3,6 @@ img.user-avatar {
   height: 1.5rem;
   width: 1.5rem;
   @include border-radius(50%);
-  background: url('/packages/telescope-theme-weld/img/weld_avatar.png') no-repeat center;
-  background-size: cover;
+  background: $lightest-grey url('/packages/telescope-theme-weld/img/weld_logo.png') no-repeat center;
+  background-size: 13px;
 }

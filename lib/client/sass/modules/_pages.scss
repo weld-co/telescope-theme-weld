@@ -1,7 +1,20 @@
-@include small {
-  .template-posts_list_weld {
+.template-posts_list_weld {
+  .content-wrapper > div {
+    @include animation (none);
+  }
+  @include small {
     margin-top: 0;
   }
+}
+
+.content-wrapper > div {
+  @include animation ( slide-up cubic-bezier(0.5, 0, 0.25, 1.5), fade-in ease-in );
+  &:nth-child(1) { @include animation-duration ( 300ms); }
+  &:nth-child(2) { @include animation-duration ( 400ms); }
+  &:nth-child(3) { @include animation-duration ( 500ms); }
+  &:nth-child(4) { @include animation-duration ( 600ms); }
+  &:nth-child(5) { @include animation-duration ( 700ms); }
+  &:nth-child(6) { @include animation-duration ( 800ms); }
 }
 
 .template-userProfileWeld,
@@ -27,4 +40,3 @@
 .template-users {
   width: 100%;
 }
-

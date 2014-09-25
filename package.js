@@ -11,7 +11,10 @@ Package.on_use(function (api) {
     'telescope-tags',
     'telescope-search',
     'telescope-notifications',
-    'telescope-newsletter',
+    'telescope-newsletter'
+  ], ['client']);
+
+  api.use([
     'telescope-lib', 
     'telescope-base',
     'iron:router'
@@ -42,6 +45,7 @@ Package.on_use(function (api) {
     'lib/client/templates/user_menu_weld.html',
     'lib/client/templates/user_profile_weld.html',
     'lib/client/templates/views_menu_weld.html',
+    'lib/client/templates/members_page.html',
 
     'lib/client/js/weld.js',
     'lib/client/js/base_weld.js',
@@ -53,8 +57,12 @@ Package.on_use(function (api) {
     'lib/client/js/post_domain_weld.js',
     'lib/client/js/sidebar_weld.js',
     'lib/client/js/progress_bar.js',
+    'lib/client/js/members.js',
+    'lib/client/js/members_page.js'
 
+  ], ['client']);
 
+  api.add_files([
     'img/apple-touch-120.png',
     'img/apple-touch-152.png',
     'img/apple-touch-76.png',
@@ -62,8 +70,8 @@ Package.on_use(function (api) {
     'img/favicon.png',
     'img/startup.png',
     'img/startup@2x.png',
-    'img/weld_avatar.png',
-  ], ['client']);
+    'img/weld_logo.png'
+], ['client', 'server']);
 
   api.export([
     'viewNav',

@@ -2,7 +2,7 @@
   @include small {
     display: block;
     left: 0;
-    line-height: $mobile-header-height;
+    line-height: $mobile-header-height; 
     position: absolute;
     width: 4rem;
     height: $mobile-header-height;
@@ -117,9 +117,5 @@
     li:first-child {
       margin-top: 1rem;
     }
-  }
-
-  .notifications-link {
-    padding: 0;
   }
 }

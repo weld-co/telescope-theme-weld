@@ -1,5 +1,6 @@
 html, body, input, button { 
-  font-family: "Avenir Next", Helvetica, Arial, sans-serif; 
+  font-family: "Avenir Next", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: subpixel-antialiased;
   @include small {
     font-weight: 500;
   }
@@ -21,9 +22,30 @@ li { margin: 0 0 1rem 0; }
 
 code { 
   font-family: Monaco;
-  font-size: 12px;
+  font-size: 10px;
   color: $dark-grey;
   background: $lightest-grey;
   padding: 3px 6px;
   border-radius: 2px;
+  white-space: nowrap;
+}
+
+.link-select {
+  @include appearance (none);
+  background: $lightest-grey !important;
+  border-radius: 2px !important;
+  border: none !important;
+  color: $dark-grey !important;
+  display: inline-block !important;
+  font-family: Monaco;
+  font-size: 10px !important;
+  height: auto !important;
+  padding: 3px 6px !important;
+  white-space: nowrap;
+  width: 190px !important;
+  
+  &:focus {
+    outline: none !important;
+    box-shadow: none !important;
+  }
 }

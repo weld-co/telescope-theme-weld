@@ -1,0 +1,9 @@
+<template name="membersPage">
+    <h2>Members</h2>
+    <p>All the members of WELD.</p>
+
+      {{#each users}}
+        <span><img src="{{avatarUrl}}"></span>
+      {{/each}}
+
+</template>

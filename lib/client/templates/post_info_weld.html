@@ -4,12 +4,12 @@
 
     {{#if upvoted}}
     {{else}}
-    <span class="upvote-link"><span class="underline"><a href="#">{{i18n "Upvote"}}</a></span></span>
+    <span class="upvote-link"><a href="#">{{i18n "Upvote"}}</a></span>
     {{/if}}
     <span class="points">{{baseScore}} <span class="unit">{{pointsUnitDisplayText}}</span></span>
-    <a class="comments-link" href="/posts/{{_id}}"><span class="underline"><span class="count">{{commentsCount}}</span><span class="action"> {{i18n 'Comments'}}</span></span></a>
+    <span class="comments-link"><a href="/posts/{{_id}}">{{commentsCount}} {{i18n 'Comments'}}</a></span>
     {{#if can_edit}}
-    <a href="/posts/{{_id}}/edit" class="edit-link goto-edit">Edit</a>
+    <span class="edit-link"><a href="/posts/{{_id}}/edit" class="goto-edit">Edit</a></span>
     {{/if}}
     <span class="post-time">{{ago}}</span> from <a class="post-author" href="{{profileUrl}}">{{authorName}}</a>
 
