@@ -1,19 +1,20 @@
 <!-- overwritten to move nav and mobile_nav outside of outer-wrapper -->
 <template name="layoutWeld">
-{{#each heroModules}}
-  {{> UI.dynamic template=getTemplate}}
-{{/each}}
 {{> UI.dynamic template=mobile_nav}}
   <div class="outer-wrapper {{currentPage}}">
     {{> UI.dynamic template=nav}}
     <div class="inner-wrapper template-{{pageName}}">
       <div class="content-wrapper">
+        {{#each heroModules}}
+          {{> UI.dynamic template=getTemplate}}
+        {{/each}}
         {{> UI.dynamic template=error}}
         {{> yield}}
-        {{> UI.dynamic template=footer}}
+        
       </div>
       <div class="overlay hidden"></div>
     </div>
     {{{extraCode}}}
   </div>
+  {{> UI.dynamic template=footer}}
 </template>

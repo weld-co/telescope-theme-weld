@@ -6,11 +6,11 @@
         <div class="comment-deleted">This comment has been deleted.</div>
       {{else}}
         <div class="comment-content">
-          <a class="authorname" href="{{profileUrl}}" data-username="— {{authorName}}, {{ago}}">
-            <img class="user-avatar" src="{{user_avatar}}" />
-          </a>
           <div class="comment-main">
             <div class="comment-text markdown">{{{htmlBody}}}</div>
+            <a class="authorname" href="{{profileUrl}}" data-username="— {{authorName}}, {{ago}}">
+              <img class="user-avatar" src="{{user_avatar}}" />
+            </a>
             <div class="comment-meta">
               <div class="comment-actions {{#if upvoted}}upvoted{{else}}not-upvoted{{/if}} {{#if downvoted}}downvoted{{else}}not-downvoted{{/if}}">
                 {{#if upvoted}}

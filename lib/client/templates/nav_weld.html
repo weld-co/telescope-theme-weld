@@ -8,9 +8,13 @@
       <div class="tagline">A community of independent creators.</div>
     </a>
 
+    {{#if isLoggedIn}}
     <div class="mobile-search mobile-only">
       {{> searchWeld}}
     </div>
+    {{else}}
+      <a class="sign-in mobile-header-link" href="/sign-in">{{i18n "Sign In"}}</a>
+    {{/if}}
     
     {{#if hasSecondaryNav}}
       <ul class="header-module desktop-only {{dropdownClass}}">

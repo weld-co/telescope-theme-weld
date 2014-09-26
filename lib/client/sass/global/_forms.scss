@@ -12,7 +12,7 @@ form, .accounts-dialog {
     @include cf;
   }
 
-  .control-group, .form-group {
+  .control-group, .form-group, .at-input {
     @include cf;
     margin-bottom: $grid-padding;
 
@@ -119,6 +119,7 @@ input[type="submit"].text-button {
     font-size: 0.875rem;
     background: white;
     height: $input-height;
+    line-height: $input-height;
     border: 1px solid $middle-grey;
     border-radius: 0;
     @include single-transition (border-color, 500ms);
@@ -132,6 +133,10 @@ input[type="submit"].text-button {
     &[type="number"] {
       width: 30%;
     }
+  }
+
+  input[type="number"] {
+    line-height: 1;
   }
 
   input[disabled='disabled']{
@@ -232,4 +237,25 @@ input[type="search"] {
 .help-block {
   color: $light-text;
   margin-bottom:$grid-padding;
+}
+
+.link-select {
+  @include appearance (none);
+  background: $lightest-grey !important;
+  border-radius: 2px !important;
+  border: none !important;
+  color: $dark-grey !important;
+  display: inline-block !important;
+  font-family: Monaco;
+  font-size: 10px !important;
+  height: auto !important;
+  line-height: 1 !important;
+  padding: 3px 6px !important;
+  white-space: nowrap;
+  width: 190px !important;
+  
+  &:focus {
+    outline: none !important;
+    box-shadow: none !important;
+  }
 }

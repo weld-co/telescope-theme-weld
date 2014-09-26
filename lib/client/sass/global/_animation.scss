@@ -2,46 +2,46 @@
   Animations
 ====================================================*/
 
-@-webkit-keyframes fade-in {
+@include keyframes (fade-in) {
   from { opacity: 0; }
   to { opacity: 1; }}
 
-@-webkit-keyframes fade-in-out {
+@include keyframes (fade-in-out) {
   0%, 100% { opacity: 0; visibility: hidden; }
   20%, 80% { opacity: 1; visibility: visible; }}
 
-@-webkit-keyframes fade-in-up {
-  from { opacity: 0; -webkit-transform: translateY(1.25rem); }
-  to { opacity: 1; -webkit-transform: translateY(0); }}
+@include keyframes (fade-in-up) {
+  from { opacity: 0; @include translateY(1.25rem); }
+  to { opacity: 1; @include translateY(0); }}
 
-@-webkit-keyframes fade-in-down {
-  from { opacity: 0; -webkit-transform: translateY(-2rem); }
-  to { opacity: 1; -webkit-transform: translateY(0); }}
+@include keyframes (fade-in-down) {
+  from { opacity: 0; @include translateY(-2rem); }
+  to { opacity: 1; @include translateY(0); }}
 
-@-webkit-keyframes slide-up {
-  from { -webkit-transform: translateY(5rem); }
-  to { -webkit-transform: translateY(0); }}
+@include keyframes (slide-up) {
+  from { @include translateY(5rem); }
+  to { @include translateY(0); }}
 
-  @-webkit-keyframes slide-down {
-  from { -webkit-transform: translateY(-5rem); }
-  to { -webkit-transform: translateY(0); }}
+@include keyframes (slide-down) {
+  from { @include translateY(-5rem); }
+  to { @include translateY(0); }}
 
-@-webkit-keyframes slide-right {
-  from { -webkit-transform: translateX(-5rem); }
-  to { -webkit-transform: translateX(0); }}
+@include keyframes (slide-right) {
+  from { @include translateX(-5rem); }
+  to { @include translateX(0); }}
 
-@-webkit-keyframes slide-left {
-  from { -webkit-transform: translateX(5rem); }
-  to { -webkit-transform: translateX(0); }}
+@include keyframes (slide-left) {
+  from { @include translateX(5rem); }
+  to { @include translateX(0); }}
 
-@-webkit-keyframes slide-far-left {
-  from { -webkit-transform: translateX(15rem); }
-  to { -webkit-transform: translateX(0); }}
+@include keyframes (slide-far-left) {
+  from { @include translateX(15rem); } 
+  to { @include translateX(0); }}
 
-@-webkit-keyframes scale-up {
-  from { -webkit-transform: scale(0.75); }
-  to { -webkit-transform: scale(1); }}
+@include keyframes (scale-up) {
+  from { @include scale(0.75); }
+  to { @include scale(1); }}
 
-@-webkit-keyframes blur {
-  from { -webkit-filter: blur(1px); }
-  to { -webkit-filter: brightness(3px); }}
+@include keyframes (background-fade) {
+  from { background: white; }
+  to { background: linear-gradient(to bottom, #333333, black) no-repeat; }}

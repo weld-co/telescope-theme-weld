@@ -18,15 +18,7 @@
     ],
     [
       "blaze",
-      "2.0.0"
-    ],
-    [
-      "blaze-tools",
-      "1.0.0"
-    ],
-    [
-      "boilerplate-generator",
-      "1.0.0"
+      "2.0.1"
     ],
     [
       "callback-hook",
@@ -34,7 +26,7 @@
     ],
     [
       "check",
-      "1.0.0"
+      "1.0.1"
     ],
     [
       "cmather:handlebars-server",
@@ -42,15 +34,15 @@
     ],
     [
       "ddp",
-      "1.0.8"
+      "1.0.9"
     ],
     [
       "deps",
-      "1.0.3"
+      "1.0.4"
     ],
     [
       "ejson",
-      "1.0.2"
+      "1.0.3"
     ],
     [
       "follower-livedata",
@@ -65,12 +57,12 @@
       "1.0.0"
     ],
     [
-      "html-tools",
-      "1.0.0"
-    ],
-    [
       "htmljs",
       "1.0.1"
+    ],
+    [
+      "http",
+      "1.0.6"
     ],
     [
       "id-map",
@@ -106,7 +98,7 @@
     ],
     [
       "meteor",
-      "1.1.0"
+      "1.1.1"
     ],
     [
       "meteorhacks:async",
@@ -117,16 +109,12 @@
       "1.2.0"
     ],
     [
-      "minifiers",
-      "1.1.0"
-    ],
-    [
       "minimongo",
       "1.0.3"
     ],
     [
       "mongo",
-      "1.0.5"
+      "1.0.6"
     ],
     [
       "mrt:cookies",
@@ -154,31 +142,23 @@
     ],
     [
       "reactive-dict",
-      "1.0.2"
+      "1.0.3"
     ],
     [
       "reactive-var",
-      "1.0.1"
+      "1.0.2"
     ],
     [
       "retry",
       "1.0.0"
     ],
     [
-      "routepolicy",
-      "1.0.1"
-    ],
-    [
-      "spacebars",
-      "1.0.1"
-    ],
-    [
-      "spacebars-compiler",
-      "1.0.2"
-    ],
-    [
       "telescope-base",
       "0.0.0"
+    ],
+    [
+      "telescope-email",
+      "0.2.9"
     ],
     [
       "telescope-i18n",
@@ -186,6 +166,10 @@
     ],
     [
       "telescope-lib",
+      "0.2.9"
+    ],
+    [
+      "telescope-module-embedly",
       "0.2.9"
     ],
     [
@@ -206,7 +190,7 @@
     ],
     [
       "templating",
-      "1.0.6"
+      "1.0.7"
     ],
     [
       "tracker",
@@ -214,22 +198,18 @@
     ],
     [
       "ui",
-      "1.0.2"
+      "1.0.3"
     ],
     [
       "underscore",
       "1.0.0"
     ],
     [
-      "webapp",
-      "1.1.1"
-    ],
-    [
-      "webapp-hashing",
+      "url",
       "1.0.0"
     ]
   ],
   "pluginDependencies": [],
-  "toolVersion": "meteor-tool@1.0.31",
+  "toolVersion": "meteor-tool@1.0.32",
   "format": "1.0"
 }

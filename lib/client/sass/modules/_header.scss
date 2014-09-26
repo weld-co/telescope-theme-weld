@@ -30,6 +30,20 @@
       }
     }
   }
+
+  .mobile-header-link {
+    font-weight: 600;
+    color: white;
+    position: absolute;
+    right: 0;
+    top: 0;
+    text-align: center;
+    width: 5rem;
+    line-height: $mobile-header-height;
+    @include medium-large {
+      display: none;
+    }
+  }
 }
 
 .header-module {
@@ -42,11 +56,14 @@
 
 .header-submodule {
   display: inline-block;
-  margin: 0 20px 0 0;
+  
+  > * {
+    margin: 0 20px 0 0;
 
-  &:last-child,
-  &:only-child {
-    margin-right: 0;
+    &:last-child,
+    &:only-child {
+      margin-right: 0;
+    }
   }
 }
 

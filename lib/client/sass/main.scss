@@ -22,6 +22,7 @@
 // Module Styles (header, posts, etc.)
 
 @import "modules/progress-bar";
+@import "modules/accounts";
 @import "modules/search";
 @import "modules/post-info";
 @import "modules/avatars";
@@ -39,4 +40,6 @@
 @import "modules/sidebar";
 @import "modules/comments";
 @import "modules/newsletter";
-@import "modules/spinner";
+@import "modules/non-member";
+@import "modules/thumbnails";
+@import "modules/footer";

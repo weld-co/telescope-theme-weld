@@ -29,9 +29,9 @@
   }
 }
 
-.comment-meta {
-  color: $grey;
+.comment-meta { //also in post_info.scss
   margin: 1rem 0;
+  text-align: right;
 }
 
 .comment-username {
@@ -45,7 +45,7 @@
 
 .authorname {
   display: block;
-  margin-bottom: 1rem;
+  margin-top: 1rem;
   &:after {
     content: attr(data-username);
     color: $grey;

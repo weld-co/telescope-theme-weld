@@ -85,16 +85,6 @@ $mobile-header-height: $header-height - 1rem;
   display:none;
 }
 
-.footer {
-  text-align:center;
-  padding: 10px 0 70px 0;
-  color: black(0.4);
-  font-size: 14px;
-  &.absolute{
-    position:absolute;
-  }
-}
-
 #login-buttons .loading {
   display:none;
 }
