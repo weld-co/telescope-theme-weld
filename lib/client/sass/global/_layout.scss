@@ -7,7 +7,7 @@ body {
   font-size: 14px;
   height: 100%;
   background: linear-gradient(to bottom, #333333, black) no-repeat;
-  @include animation (background-fade 2s ease);
+  @include animation (background-fade 6s ease);
 }
 
 .outer-wrapper {

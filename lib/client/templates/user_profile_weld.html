@@ -6,7 +6,7 @@
 
 			<div class="profile-header">
 				<a href="{{#if profile.site}}{{profile.site}}{{/if}}" target="_blank">
-					<img class="user-avatar" src="{{avatarUrl}}"/>
+					{{>avatar user=this}}
 				</a>
 			</div>
 

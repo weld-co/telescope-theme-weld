@@ -25,7 +25,6 @@ Package.on_use(function (api) {
     'lib/client/templates/layout_weld.html',
     'lib/client/templates/mobile_nav_weld.html',
     'lib/client/templates/nav_weld.html',
-    'lib/client/templates/newsletter_banner_weld.html',
     'lib/client/templates/notifications_menu_weld.html',
     'lib/client/templates/post_domain_weld.html',
     'lib/client/templates/post_info_weld.html',

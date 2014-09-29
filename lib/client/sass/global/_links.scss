@@ -20,4 +20,7 @@ a {
   font-weight: bold;
   display: block;
   clear: both;
+  @include small {
+    background: none;
+  }
 }

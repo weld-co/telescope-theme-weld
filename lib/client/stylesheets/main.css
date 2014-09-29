@@ -648,9 +648,9 @@ body {
   font-size: 14px;
   height: 100%;
   background: linear-gradient(to bottom, #333333, #000000) no-repeat;
-  -moz-animation: background-fade 2s ease;
-  -webkit-animation: background-fade 2s ease;
-  animation: background-fade 2s ease;
+  -moz-animation: background-fade 6s ease;
+  -webkit-animation: background-fade 6s ease;
+  animation: background-fade 6s ease;
 }
 
 /* line 13, ../sass/global/_layout.scss */
@@ -1211,6 +1211,12 @@ a:hover {
   display: block;
   clear: both;
 }
+@media screen and (max-width: 40em) {
+  /* line 14, ../sass/global/_links.scss */
+  .more-button {
+    background: none;
+  }
+}
 
 /* line 1, ../sass/global/_typography.scss */
 html, body, input, button {
@@ -1268,6 +1274,11 @@ code {
   padding: 3px 6px;
   border-radius: 2px;
   white-space: nowrap;
+}
+
+/* line 33, ../sass/global/_typography.scss */
+strong {
+  font-weight: 700;
 }
 
 /* line 1, ../sass/modules/_progress-bar.scss */
@@ -2414,14 +2425,13 @@ img.user-avatar {
 .user-table .user .user-avatar {
   height: 4rem;
   width: 4rem;
-  background-size: cover;
   display: block;
   -moz-border-radius: 4rem;
   -webkit-border-radius: 4rem;
   border-radius: 4rem;
 }
 
-/* line 15, ../sass/modules/_users.scss */
+/* line 14, ../sass/modules/_users.scss */
 .filter-sort {
   /* For modern browsers */
   /* For IE 6/7 (trigger hasLayout) */
@@ -2439,25 +2449,25 @@ img.user-avatar {
 .filter-sort:after {
   clear: both;
 }
-/* line 21, ../sass/modules/_users.scss */
+/* line 20, ../sass/modules/_users.scss */
 .filter-sort a, .filter-sort span {
   display: inline-block;
   margin-right: 20px;
   color: white;
 }
-/* line 26, ../sass/modules/_users.scss */
+/* line 25, ../sass/modules/_users.scss */
 .filter-sort a.active, .filter-sort span.active {
   border-bottom: 2px solid #f1592a;
 }
-/* line 30, ../sass/modules/_users.scss */
+/* line 29, ../sass/modules/_users.scss */
 .filter-sort a:last-child, .filter-sort span:last-child {
   margin-right: 0;
 }
-/* line 35, ../sass/modules/_users.scss */
+/* line 34, ../sass/modules/_users.scss */
 .filter-sort .filter {
   float: left;
 }
-/* line 39, ../sass/modules/_users.scss */
+/* line 38, ../sass/modules/_users.scss */
 .filter-sort .sort {
   float: right;
 }
@@ -2869,14 +2879,23 @@ img.user-avatar {
   border: none;
 }
 
-/* line 1, ../sass/modules/_footer.scss */
+/* line 3, ../sass/modules/_footer.scss */
 .footer {
   background: #f2f2f2;
-  clear: both;
   display: inline-block;
-  height: 12rem;
-  line-height: 12rem;
-  margin-top: 5rem;
+  height: 5rem;
+  line-height: 5rem;
+  margin-top: 3rem;
   text-align: center;
   width: 100%;
+}
+/* line 12, ../sass/modules/_footer.scss */
+.footer a {
+  display: inline-block;
+  width: 100px;
+}
+/* line 16, ../sass/modules/_footer.scss */
+.footer a svg {
+  display: table-cell;
+  vertical-align: middle;
 }

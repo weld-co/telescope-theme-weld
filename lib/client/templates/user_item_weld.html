@@ -1,9 +1,9 @@
 <!-- used img tag instead of style background for avatar -->
 <template name="user_item_weld">
 <tr class="user">
-	<td><span class="user-avatar"><img src="{{avatarUrl}}" alt="{{displayName}}"></span></td>
+	<td>{{>avatar user=this}}</td>
 	<td>
-		<a href="{{getProfileUrl}}">{{displayName}}</a>
+		<a href="{{getProfileUrl}}"><strong>{{displayName}}</strong></a>
 		<br/>
 		<a href="mailto:{{getEmail}}">{{getEmail}}</a>
 	</td>

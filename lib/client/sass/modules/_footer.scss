@@ -1,10 +1,21 @@
+$footer-height: 5rem;
+
 .footer {
   background: $lightest-grey;
-  clear: both;
   display: inline-block;
-  height: 12rem;
-  line-height: 12rem;
-  margin-top: 5rem;
+  height: $footer-height;
+  line-height: $footer-height;
+  margin-top: 3rem;
   text-align: center;
   width: 100%;
+
+  a {
+    display: inline-block;
+    width: 100px;
+
+    svg {
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
 }
