@@ -5,6 +5,11 @@
   @include small {
     margin-top: 0;
   }
+
+  .dialog {  
+    max-width: 30rem;
+    padding: 0 1rem;
+  }
 }
 
 .template-userProfileWeld {
@@ -28,7 +33,8 @@
 .template-user_edit_weld,
 .template-post_submit_weld,
 .template-post_page,
-.template-post_edit,
+.template-user_email,
+.template-post_edit_weld,
 .template-comment_reply,
 .template-comment_edit {
   max-width: 40rem;

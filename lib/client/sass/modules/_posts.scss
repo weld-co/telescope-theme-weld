@@ -55,6 +55,10 @@
   &.sticky {
     background: $lightest-grey;
     
+    &:nth-child(2n) {
+      background: #E9E9E9 !important;
+    }
+
     &:after {
       content: 'Featured Post';
       color: white;

@@ -24,3 +24,14 @@ a {
     background: none;
   }
 }
+
+.delete-link {
+  padding: .5rem 1rem;
+  border: 1px solid red;
+  border-radius: 3px;
+  color: red;
+  &:hover {
+    color: white;
+    background: red;
+  }
+}

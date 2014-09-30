@@ -1,28 +1,73 @@
-$banner-height: 120px;
+$banner-height: 100px;
 
 .newsletter-banner.newsletter-banner {
-  background: $darkest-grey;
+  background: linear-gradient(to bottom right, $primary-color, darken($primary-color, 20%)) no-repeat;
   color: white;
   min-height: $banner-height;
   padding: 0;
-  margin: 0;
+  margin-bottom: 4rem;
+  position:relative;
   @include animation ( fade-in 600ms ease-in-out );
+  @include small {
+    margin: 1rem;
+  }
+}
+
+.newsletter-banner .pull-right {
+  @include small {
+   float: none;
+
+    > button:only-child {
+      max-width: 100%;
+    }
+  }
+}
+
+.newsletter-banner:before {
+  content:"";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 0px; 
+  line-height: 0%; 
+  width: 0px;
+  border-top: 20px solid transparent;
+  border-right: 20px solid #fff;
 }
 
 .newsletter-banner form {
   line-height: $banner-height;
-  margin: 0 auto;
-  max-width: 55rem;
-  padding: 0 1rem;
-  position: relative;
+  padding: 0 4rem 0 2rem;
   text-align: left;
+  @include small {
+    padding: 1rem;
+    line-height: 80px;
+  }
+}
+
+.newsletter-header {
+  vertical-align: middle;
+  @include scale (1.2);
+  @include transform-origin (left);
+  @include small {
+    @include scale (none);
+    width: 100%;
+  }
 }
 
 .newsletter-tagline {
-  margin: 0;
+  margin: 0 !important;
+  padding: 0 !important;
   display: inline-block;
   vertical-align: middle;
-  font: 100 1.25rem/1.2 "Source Sans Pro";
+  font: 400 1.25rem/1.2 "Avenir Next";
+}
+
+.tagline.subdued {
+  display: block;
+  @include small {
+    display: inline;
+  }
 }
 
 .newsletter-subscribed {
@@ -45,22 +90,22 @@ $banner-height: 120px;
 .newsletter-email.newsletter-email {
   display: inline-block;
   margin: 0;
-  width: auto;
+  max-width: 7.5rem;
   vertical-align: middle;
   border: none;
   border-radius: 0;
   padding: 1rem;
   height: 3rem;
-  line-height: 1;
 }
 
 .button.newsletter-button {
   display: inline-block;
-  width: auto;
+  max-width: 7.5rem;
   vertical-align: middle;
   margin: 0;
   height: 3rem;
-  padding: 1rem;
+  padding: 1rem 2rem;
+  font-size: 14px;
 }
 
 .show-loader {
@@ -107,19 +152,14 @@ $banner-height: 120px;
   }
 }
 
-.newsletter-dismiss:hover{
+.newsletter-dismiss:hover {
   color: inherit;
 }
-@media screen and (max-width: 30em) {
-  .newsletter-dismiss, .newsletter-dismiss:link{
+
+@include small {
+  .newsletter-dismiss, .newsletter-dismiss:link {
     top: 10px;
     right: 10px;
     margin-top: 0px;
-  }
-  .newsletter-tagline{
-    padding: 0 30px;
-  }
-  .newsletter-tagline, .newsletter-email, .newsletter-button{
-    margin-bottom: 10px;
   }
 }

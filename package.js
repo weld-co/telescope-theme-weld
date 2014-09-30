@@ -31,6 +31,7 @@ Package.on_use(function (api) {
     'lib/client/templates/post_item_weld.html',
     'lib/client/templates/post_submit_weld.html',
     'lib/client/templates/post_title_weld.html',
+    'lib/client/templates/post_edit_weld.html',
     'lib/client/templates/posts_list_weld.html',
     'lib/client/templates/search_weld.html',
     'lib/client/templates/submit_button_weld.html',
@@ -54,6 +55,7 @@ Package.on_use(function (api) {
     'lib/client/js/progress_bar.js',
 
     'img/apple-touch-icon-120.png',
+    'img/apple-touch-icon-180.png',
     'img/apple-touch-icon-152.png',
     'img/apple-touch-icon-76.png',
     'img/favicon.ico',
