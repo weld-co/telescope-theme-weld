@@ -8,18 +8,13 @@ Package.on_use(function (api) {
 
   api.use([
     'templating',
+    'telescope-base',
     'telescope-tags',
     'telescope-search',
     'telescope-module-embedly',
     'telescope-notifications',
     'telescope-newsletter'
   ], ['client']);
-
-  api.use([
-    'telescope-lib', 
-    'telescope-base',
-    'iron:router'
-  ], ['client', 'server']);
 
   api.add_files([
     'lib/client/stylesheets/main.css',
@@ -51,12 +46,6 @@ Package.on_use(function (api) {
     'lib/client/templates/user_menu_weld.html',
     'lib/client/templates/user_profile_weld.html',
     'lib/client/templates/views_menu_weld.html',
-
-    'lib/client/templates/members_page.html',
-    'lib/client/templates/members_item.html',
-    'lib/client/js/members_page.js',
-    'lib/client/js/members_item.js',
-    'lib/client/js/members.js',
 
     'lib/client/js/fastclick.js',
     'lib/client/js/fastclick_init.js',
