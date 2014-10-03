@@ -10,6 +10,15 @@
     background-size: 42px 40px;
   }
 
+  .edit-avatar {
+    display: block;
+    color: $grey;
+    margin-top: 5px;
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
   .profile-links {
     margin: 2rem 0;
     font-size: 16px;
@@ -104,4 +113,8 @@
 .user-profile-posts,
 .user-profile-comments {
   margin-bottom: 2rem;
+}
+
+.user-edit {
+  position: relative;
 }

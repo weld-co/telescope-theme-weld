@@ -5,7 +5,7 @@ $banner-height: 100px;
   color: white;
   min-height: $banner-height;
   padding: 0;
-  margin-bottom: 4rem;
+  margin: 1rem 1rem 4rem;
   position:relative;
   @include animation ( fade-in 600ms ease-in-out );
   @include small {
@@ -100,7 +100,6 @@ $banner-height: 100px;
 
 .button.newsletter-button {
   display: inline-block;
-  max-width: 7.5rem;
   vertical-align: middle;
   margin: 0;
   height: 3rem;

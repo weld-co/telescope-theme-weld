@@ -15,13 +15,21 @@
 
 .post-meta-item {
   line-height: 1.3;
+
+  .post-author img {
+    margin-right: 0.5rem;
+    margin-top: -5px;
+    margin-bottom: 2rem;
+    float: left;
+  }
 }
 
-.upvote-link:after,
-.points:after,
-.post-time:before, 
+.upvote-link:before,
+.points:before,
+.post-time:before,
+.comments-link:before, 
 .edit-link:before,
 .comment-permalink:before {
   content: '・';
-  padding: 0 5px;
+  padding: 0 3px;
 }

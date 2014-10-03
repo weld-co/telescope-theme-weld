@@ -1,4 +1,4 @@
-.header {
+.weld-header {
   background: $lightest-grey;
   padding: 0;
   height: $header-height;
@@ -59,12 +59,11 @@
   
   > * {
     margin: 0 20px 0 0;
-
-    &:last-child,
-    &:only-child {
-      margin-right: 0;
-    }
   }
+}
+
+.sign-up {
+  margin-right: 0;
 }
 
 .weld-logo {

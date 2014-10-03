@@ -49,6 +49,13 @@
   padding: 0 1rem;
 }
 
+.inner-wrapper.template-fullPageAtForm {
+  margin-top: 10%;
+}
+
 .template-users {
   width: 100%;
+  .content-wrapper > div {
+    @include animation(none);
+  }
 }

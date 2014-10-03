@@ -1,0 +1,10 @@
+<!-- changed grid div to span for positioning -->
+<template name="error_item_weld">
+  {{#if show}}
+    <span class="grid">
+      <div class="error {{type}}-message module">
+        {{message}}
+      </div>
+    </span>
+  {{/if}}
+</template>

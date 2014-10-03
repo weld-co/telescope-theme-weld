@@ -54,6 +54,7 @@
 
   &.sticky {
     background: $lightest-grey;
+    border: none;
     
     &:nth-child(2n) {
       background: #E9E9E9 !important;
@@ -62,23 +63,31 @@
     &:after {
       content: 'Featured Post';
       color: white;
-      font-size: 12px;
+      font-size: 10px;
       display: block;
       text-align: center;
       position: absolute;
       top: 0;
-      padding: 0 1rem;
+      padding: 0 0.3rem;
       right: 0;
       background: $primary-color;
-      height: 1.5rem;
-      line-height: 1.5rem;
+      height: 1rem;
+      line-height: 1rem;
     }
 
     .inner {
       padding: 0 1.25rem;
-      width: 80%;
+    }
+
+    .user-avatar {
+      background: white url("/packages/telescope-theme-weld/img/weld_logo.png") no-repeat center;
+      background-size: 13px;
     }
   }
+}
+
+.sticky + .post {
+  border: none;
 }
 
 .post {
@@ -93,7 +102,7 @@
     display: block;
     font-size: 18px;
     color: $dark-grey;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
     font-weight: 600;
     line-height: 1.2;
     @include small {
@@ -107,18 +116,9 @@
     font-weight: normal;
     white-space: nowrap;
 
-    // &:after {
-    //   content: url('data:image/svg+xml;utf8,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%20width%3D%228px%22%20height%3D%228px%22%20viewBox%3D%220%200%208%208%22%20enable-background%3D%22new%200%200%208%208%22%20xml%3Aspace%3D%22preserve%22%3E%3Cpolygon%20fill%3D%22%23AAAAAA%22%20points%3D%221%2C0%201%2C2%204.6%2C2%200%2C6.6%201.4%2C8%206%2C3.4%206%2C7%208%2C7%208%2C0%20%22%2F%3E%3C%2Fsvg%3E');
-    //   font-family: Helvetica;
-    //   margin-left: 5px;
-    // }
-
-    // &:hover {
-    //   color: $primary-color;
-    //   &:after {
-    //     content: url('data:image/svg+xml;utf8,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%20width%3D%228px%22%20height%3D%228px%22%20viewBox%3D%220%200%208%208%22%20enable-background%3D%22new%200%200%208%208%22%20xml%3Aspace%3D%22preserve%22%3E%3Cpolygon%20fill%3D%22%23f1592a%22%20points%3D%221%2C0%201%2C2%204.6%2C2%200%2C6.6%201.4%2C8%206%2C3.4%206%2C7%208%2C7%208%2C0%20%22%2F%3E%3C%2Fsvg%3E');
-    //   }
-    // }
+    &:hover {
+      color: $primary-color;
+    }
   }
 }
 
@@ -138,8 +138,7 @@
   .post-info {
     .post-meta {
       background: $lightest-grey;
-      padding: 0.5rem;
-      padding-left: 1rem;
+      padding: 0.75rem;
     }
   }
 

@@ -5,9 +5,12 @@
 		<div class="user-profile">
 
 			<div class="profile-header">
-				<a href="{{#if profile.site}}{{profile.site}}{{/if}}" target="_blank">
+				<a href="{{#if profile.site}}{{profile.site}}{{else}}http://en.gravatar.com{{/if}}" target="_blank">
 					{{>avatar user=this}}
 				</a>
+				{{#if canEditProfile}}
+				<a class="edit-avatar" href="http://en.gravatar.com/" target="_blank">Edit on Gravatar</a>
+				{{/if}}
 			</div>
 
 			<ul class="profile-links">
@@ -32,13 +35,6 @@
 			<div class="user-actions">
 				{{#if canEditProfile}}
 				<a href="/users/{{slug}}/edit">{{i18n "Edit Profile"}}</a>
-				{{/if}}
-				{{#if canInvite}}
-				{{#if inviteCount}}
-				<a class="invite-link" href="#">{{i18n "Invite"}} ({{inviteCount}} {{i18n "left"}})</a>
-				{{else}}
-				<a class="disabled" href="#">{{i18n "Invite (none left)"}}</a>
-				{{/if}}
 				{{/if}}
 			</div>
 

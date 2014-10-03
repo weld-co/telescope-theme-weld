@@ -1,8 +1,22 @@
 .non-member {
-  margin: 25vh auto;
+  margin: 15% auto;
   text-align: center;
   font-size: 38px;
   font-weight: 400;
+  padding: 1rem;
+  max-width: 700px;
+
+  h1 {
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    line-height: 1.4;
+  }
+
+  .sign-up {
+    color: $primary-color;
+  }
 
   .button {
     max-width: 320px;
@@ -11,7 +25,8 @@
     margin-top: 2rem;
   }
 
-  a {
+  .text-button {
+    color: $grey;
     font-size: 14px;
   }
 }
