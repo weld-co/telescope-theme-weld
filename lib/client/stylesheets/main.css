@@ -2296,7 +2296,7 @@ input[type="search"].search-input-field:focus {
   padding: 0 1.25rem;
 }
 /* line 82, ../sass/modules/_posts.scss */
-.posts.list > .post.sticky .user-avatar {
+.posts.list > .post.sticky .avatar {
   background: white url("/packages/telescope-theme-weld/img/weld_logo.png") no-repeat center;
   background-size: 13px;
 }
@@ -2324,64 +2324,72 @@ input[type="search"].search-input-field:focus {
   font-weight: 600;
   line-height: 1.2;
 }
+/* line 109, ../sass/modules/_posts.scss */
+.post .post-heading a:visited {
+  color: #aaaaaa;
+}
 @media screen and (max-width: 40em) {
   /* line 101, ../sass/modules/_posts.scss */
   .post .post-heading {
     font-size: 16px;
   }
 }
-/* line 113, ../sass/modules/_posts.scss */
+/* line 118, ../sass/modules/_posts.scss */
 .post .post-domain {
   font-size: 16px;
   color: #aaaaaa;
   font-weight: normal;
   white-space: nowrap;
 }
-/* line 119, ../sass/modules/_posts.scss */
+/* line 124, ../sass/modules/_posts.scss */
 .post .post-domain:hover {
   color: #f1592a;
 }
 
-/* line 125, ../sass/modules/_posts.scss */
+/* line 130, ../sass/modules/_posts.scss */
 .single-post .post {
   border-top: none;
   padding-top: 0;
   padding-bottom: 2rem;
 }
-/* line 130, ../sass/modules/_posts.scss */
+/* line 135, ../sass/modules/_posts.scss */
 .single-post .post .post-heading {
   font-size: 28px;
   margin: 2rem 0;
 }
+/* line 138, ../sass/modules/_posts.scss */
+.single-post .post .post-heading a:visited {
+  color: inherit;
+}
 @media screen and (max-width: 40em) {
-  /* line 130, ../sass/modules/_posts.scss */
+  /* line 135, ../sass/modules/_posts.scss */
   .single-post .post .post-heading {
     font-size: 21px;
   }
 }
-/* line 139, ../sass/modules/_posts.scss */
+/* line 147, ../sass/modules/_posts.scss */
 .single-post .post .post-info .post-meta {
   background: #f2f2f2;
   padding: 0.75rem;
 }
-/* line 145, ../sass/modules/_posts.scss */
+/* line 153, ../sass/modules/_posts.scss */
 .single-post .post .comments-link {
   padding: 0;
 }
 
-/* line 150, ../sass/modules/_posts.scss */
+/* line 158, ../sass/modules/_posts.scss */
 .post-body {
   margin-bottom: 2rem;
   font-size: 16px;
 }
 @media screen and (max-width: 40em) {
-  /* line 150, ../sass/modules/_posts.scss */
+  /* line 158, ../sass/modules/_posts.scss */
   .post-body {
     font-size: 14px;
   }
 }
 
-/* line 158, ../sass/modules/_posts.scss */
+/* line 166, ../sass/modules/_posts.scss */
 .posts-wrapper .more-button {
   margin-top: 2rem;
 }
@@ -2519,8 +2527,8 @@ input[type="search"].search-input-field:focus {
   font-size: 13px;
 }
 /* line 5, ../sass/modules/_users.scss */
-.user-list .user .user-avatar,
-.user-table .user .user-avatar {
+.user-list .user .avatar,
+.user-table .user .avatar {
   height: 4rem;
   width: 4rem;
   display: block;
