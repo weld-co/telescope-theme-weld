@@ -61,6 +61,7 @@ Package.on_use(function (api) {
     'lib/client/js/post_thumbnail_weld.js',
     'lib/client/js/progress_bar.js',
     'lib/client/js/newsletter_banner_weld.js',
+    'lib/client/js/avatar_weld.js',
 
     'img/apple-touch-icon-120.png',
     'img/apple-touch-icon-180.png',
@@ -70,7 +71,8 @@ Package.on_use(function (api) {
     'img/favicon.png',
     'img/startup.png',
     'img/startup@2x.png',
-    'img/weld_logo.png'
+    'img/weld_logo.png',
+    'img/avatar_blank.png'
 
   ], ['client']);
 
