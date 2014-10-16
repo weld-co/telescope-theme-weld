@@ -30,6 +30,8 @@
 }
 
 .posts.list > .post {
+  cursor: pointer;
+  @include transition ( background 150ms ease-in-out );
   @include animation ( slide-left cubic-bezier(0.5, 0, 0.25, 1.5), fade-in ease-in );
   &:nth-child(1) { @include animation-duration(300ms); }
   &:nth-child(2) { @include animation-duration(400ms); }
@@ -42,14 +44,12 @@
   &:nth-child(9) { @include animation-duration(1100ms); }
   &:nth-child(10) { @include animation-duration(1200ms); }
 
-  @include small {
-    .inner {
-      padding: 0 1rem;
-    }
+  &:hover {
+    background: transparentize($primary-color, .95) !important;
+  }
 
-    &:first-child {
-      border-top: none;
-    }
+  .inner {
+    padding: 0 1.25rem;
   }
 
   &.sticky {
@@ -57,7 +57,7 @@
     border: none;
     
     &:nth-child(2n) {
-      background: #E9E9E9 !important;
+      background: #E9E9E9;
     }
 
     &:after {
@@ -75,15 +75,23 @@
       line-height: 1rem;
     }
 
-    .inner {
-      padding: 0 1.25rem;
-    }
-
     .avatar {
       background: white url("/packages/telescope-theme-weld/img/weld_logo.png") no-repeat center;
       background-size: 13px;
     }
   }
+
+  @include small {
+    @include animation (none);
+    .inner {
+      padding: 0 1rem;
+    }
+
+    &:first-child {
+      border-top: none;
+    }
+  }
+
 }
 
 .sticky + .post {
@@ -100,30 +108,32 @@
 
   .post-heading {
     display: block;
-    font-size: 18px;
-    color: $dark-grey;
     margin-bottom: 1rem;
-    font-weight: 600;
-    line-height: 1.2;
 
-    a:visited {
-      color: $grey;
-    }
+    .post-title {
+      font-size: 18px;
+      color: $dark-grey;
+      font-weight: 600;
+      line-height: 1.2;
+      
+      &:visited {
+        color: $grey;
+      }
 
-    @include small {
-      font-size: 16px;
+      &:hover {
+        color: $primary-color;
+        text-decoration: underline;
+      }
+
+      @include small {
+        font-size: 16px;
+      }
     }
   }
 
-  .post-domain {
-    font-size: 16px;
-    color: $grey;
-    font-weight: normal;
-    white-space: nowrap;
-
-    &:hover {
-      color: $primary-color !important;
-    }
+  .launch-icon {
+    margin-left: 5px;
+    cursor: default;
   }
 }
 

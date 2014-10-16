@@ -1,4 +1,4 @@
-<!-- title routes to post page rather than post link -->
+<!-- needed for stopPropogation to work on .post click -->
 <template name="postTitleWeld">
-  <a href="/posts/{{_id}}" class="post-title">{{title}}</a>
+  <a href="{{postLink}}" class="post-title" target="{{postTarget}}">{{title}}</a>
 </template>
