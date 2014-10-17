@@ -2374,42 +2374,50 @@ input[type="search"].search-input-field:focus {
 }
 /* line 145, ../sass/modules/_posts.scss */
 .single-post .post .post-heading {
-  font-size: 28px;
   margin: 2rem 0;
 }
-/* line 148, ../sass/modules/_posts.scss */
+/* line 147, ../sass/modules/_posts.scss */
 .single-post .post .post-heading a:visited {
   color: inherit;
 }
+/* line 151, ../sass/modules/_posts.scss */
+.single-post .post .post-heading .post-title {
+  font-size: 28px;
+}
 @media screen and (max-width: 40em) {
-  /* line 145, ../sass/modules/_posts.scss */
-  .single-post .post .post-heading {
+  /* line 151, ../sass/modules/_posts.scss */
+  .single-post .post .post-heading .post-title {
     font-size: 21px;
   }
 }
-/* line 157, ../sass/modules/_posts.scss */
+/* line 159, ../sass/modules/_posts.scss */
+.single-post .post .post-heading .launch-icon {
+  vertical-align: super;
+  transform: translateY(2px);
+}
+/* line 166, ../sass/modules/_posts.scss */
 .single-post .post .post-info .post-meta {
   background: #f2f2f2;
   padding: 0.75rem;
 }
-/* line 163, ../sass/modules/_posts.scss */
+/* line 172, ../sass/modules/_posts.scss */
 .single-post .post .comments-link {
   padding: 0;
 }
 
-/* line 168, ../sass/modules/_posts.scss */
+/* line 177, ../sass/modules/_posts.scss */
 .post-body {
   margin-bottom: 2rem;
   font-size: 16px;
 }
 @media screen and (max-width: 40em) {
-  /* line 168, ../sass/modules/_posts.scss */
+  /* line 177, ../sass/modules/_posts.scss */
   .post-body {
     font-size: 14px;
   }
 }
 
-/* line 176, ../sass/modules/_posts.scss */
+/* line 185, ../sass/modules/_posts.scss */
 .posts-wrapper .more-button {
   margin-top: 2rem;
 }
