@@ -143,15 +143,24 @@
   padding-bottom: 2rem;
 
   .post-heading {
-    font-size: 28px;
     margin: 2rem 0;
     a:visited {
       color: inherit;
     }
+
+  .post-title {
+    font-size: 28px;
+
     @include small {
       font-size: 21px;
     }
   }
+
+  .launch-icon {
+    vertical-align: super;
+    transform: translateY(2px);
+  }
+}
 
   .post-info {
     .post-meta {
