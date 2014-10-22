@@ -2779,42 +2779,48 @@ a.back-link:hover {
 }
 
 /* line 18, ../sass/modules/_comments.scss */
+.comment-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* line 23, ../sass/modules/_comments.scss */
 .comment-text p {
   line-height: 1.5;
 }
 
-/* line 23, ../sass/modules/_comments.scss */
+/* line 28, ../sass/modules/_comments.scss */
 .comment-children .comment.module {
   border-left: 5px solid #f2f2f2;
 }
-/* line 26, ../sass/modules/_comments.scss */
+/* line 31, ../sass/modules/_comments.scss */
 .comment-children .comment-body {
   padding-left: 1rem;
 }
 
-/* line 31, ../sass/modules/_comments.scss */
+/* line 36, ../sass/modules/_comments.scss */
 .comment-meta {
   margin: 1rem 0;
   text-align: right;
 }
 
-/* line 36, ../sass/modules/_comments.scss */
+/* line 41, ../sass/modules/_comments.scss */
 .comment-username {
   font-size: bold;
   margin-top: 0.5rem;
 }
 
-/* line 41, ../sass/modules/_comments.scss */
+/* line 46, ../sass/modules/_comments.scss */
 .selected-comment {
   margin-bottom: 2rem;
 }
 
-/* line 45, ../sass/modules/_comments.scss */
+/* line 50, ../sass/modules/_comments.scss */
 .authorname {
   display: block;
   margin-top: 1rem;
 }
-/* line 48, ../sass/modules/_comments.scss */
+/* line 53, ../sass/modules/_comments.scss */
 .authorname:after {
   content: attr(data-username);
   color: #aaaaaa;
