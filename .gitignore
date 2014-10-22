@@ -1,3 +1,3 @@
 .build*
 *.scssc
-.sass-cache/
+.sass-cache/*
