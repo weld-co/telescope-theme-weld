@@ -11,11 +11,10 @@ $footer-height: 5rem;
 
   a {
     display: inline-block;
-    width: 100px;
+    vertical-align: middle;
 
     svg {
       display: table-cell;
-      vertical-align: middle;
     }
   }
 }

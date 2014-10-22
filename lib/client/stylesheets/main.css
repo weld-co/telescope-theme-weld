@@ -613,30 +613,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     transform: scale(1, 1);
   }
 }
-@-moz-keyframes background-fade {
-  from {
-    background: white;
-  }
-  to {
-    background: linear-gradient(to bottom, #333333, #000000) no-repeat;
-  }
-}
-@-webkit-keyframes background-fade {
-  from {
-    background: white;
-  }
-  to {
-    background: linear-gradient(to bottom, #333333, #000000) no-repeat;
-  }
-}
-@keyframes background-fade {
-  from {
-    background: white;
-  }
-  to {
-    background: linear-gradient(to bottom, #333333, #000000) no-repeat;
-  }
-}
 /* line 1, ../sass/global/_layout.scss */
 html {
   height: 100%;
@@ -647,44 +623,40 @@ html {
 body {
   font-size: 14px;
   height: 100%;
-  background: linear-gradient(to bottom, #333333, #000000) no-repeat;
-  -moz-animation: background-fade 6s ease;
-  -webkit-animation: background-fade 6s ease;
-  animation: background-fade 6s ease;
 }
 
-/* line 13, ../sass/global/_layout.scss */
+/* line 11, ../sass/global/_layout.scss */
 .outer-wrapper {
   background: white;
   min-height: 100%;
 }
 
-/* line 18, ../sass/global/_layout.scss */
+/* line 16, ../sass/global/_layout.scss */
 .inner-wrapper {
   width: 85%;
   margin: 5% auto;
 }
 @media screen and (max-width: 40em) {
-  /* line 18, ../sass/global/_layout.scss */
+  /* line 16, ../sass/global/_layout.scss */
   .inner-wrapper {
     width: 100%;
   }
 }
 @media screen and (min-width: 70em) {
-  /* line 18, ../sass/global/_layout.scss */
+  /* line 16, ../sass/global/_layout.scss */
   .inner-wrapper {
     width: 65%;
   }
 }
 
-/* line 29, ../sass/global/_layout.scss */
+/* line 27, ../sass/global/_layout.scss */
 .content-wrapper {
   padding: 0 1rem;
   position: relative;
   background: white;
 }
 @media screen and (max-width: 40em) {
-  /* line 29, ../sass/global/_layout.scss */
+  /* line 27, ../sass/global/_layout.scss */
   .content-wrapper {
     padding: 0;
   }
@@ -1895,48 +1867,43 @@ input[type="search"].search-input-field:focus {
 }
 
 /* line 14, ../sass/modules/_mobile_nav.scss */
+.outer-wrapper,
+.mobile-nav {
+  -moz-transition: -moz-transform 300ms cubic-bezier(0.25, 0, 0.25, 1.1);
+  -o-transition: -o-transform 300ms cubic-bezier(0.25, 0, 0.25, 1.1);
+  -webkit-transition: -webkit-transform 300ms cubic-bezier(0.25, 0, 0.25, 1.1);
+  transition: transform 300ms cubic-bezier(0.25, 0, 0.25, 1.1);
+}
+
+/* line 19, ../sass/modules/_mobile_nav.scss */
 .mobile-nav {
   position: fixed;
   overflow: hidden;
-  padding: 1.5rem;
   padding-bottom: 0;
   height: 100%;
   width: 100%;
-  visibility: hidden;
-}
-
-/* line 24, ../sass/modules/_mobile_nav.scss */
-.outer-wrapper {
-  -moz-transition: -moz-transform 400ms cubic-bezier(0.5, 0, 0.25, 1.25);
-  -o-transition: -o-transform 400ms cubic-bezier(0.5, 0, 0.25, 1.25);
-  -webkit-transition: -webkit-transform 400ms cubic-bezier(0.5, 0, 0.25, 1.25);
-  transition: transform 400ms cubic-bezier(0.5, 0, 0.25, 1.25);
-}
-
-/* line 28, ../sass/modules/_mobile_nav.scss */
-.mobile-menu {
+  background: linear-gradient(to bottom, #333333, #000000) no-repeat;
   -moz-transform: translateX(-100%);
   -ms-transform: translateX(-100%);
   -webkit-transform: translateX(-100%);
   transform: translateX(-100%);
-  -moz-transition: -moz-transform 400ms cubic-bezier(0.5, 0, 0.25, 1.25), opacity 400ms ease, visibility 400ms ease;
-  -o-transition: -o-transform 400ms cubic-bezier(0.5, 0, 0.25, 1.25), opacity 400ms ease, visibility 400ms ease;
-  -webkit-transition: -webkit-transform 400ms cubic-bezier(0.5, 0, 0.25, 1.25), opacity 400ms ease, visibility 400ms ease;
-  transition: transform 400ms cubic-bezier(0.5, 0, 0.25, 1.25), opacity 400ms ease, visibility 400ms ease;
-  visibility: hidden;
-  opacity: 0;
+}
+
+/* line 29, ../sass/modules/_mobile_nav.scss */
+.mobile-menu {
   max-width: 100%;
   max-height: 100%;
   overflow-x: hidden;
   overflow-y: scroll;
+  padding: 1.5rem;
   -webkit-overflow-scrolling: touch;
 }
 
-/* line 40, ../sass/modules/_mobile_nav.scss */
+/* line 38, ../sass/modules/_mobile_nav.scss */
 .mobile-nav-open {
   overflow: hidden;
 }
-/* line 43, ../sass/modules/_mobile_nav.scss */
+/* line 41, ../sass/modules/_mobile_nav.scss */
 .mobile-nav-open .outer-wrapper {
   -moz-transform: translateX(80%);
   -ms-transform: translateX(80%);
@@ -1945,76 +1912,26 @@ input[type="search"].search-input-field:focus {
   overflow: hidden;
   box-shadow: 0 0 200px 50px rgba(0, 0, 0, 0.5);
 }
-/* line 49, ../sass/modules/_mobile_nav.scss */
-.mobile-nav-open .mobile-menu {
+/* line 47, ../sass/modules/_mobile_nav.scss */
+.mobile-nav-open .mobile-nav {
   -moz-transform: translateX(0);
   -ms-transform: translateX(0);
   -webkit-transform: translateX(0);
   transform: translateX(0);
-  opacity: 1;
-  visibility: visible;
-}
-/* line 54, ../sass/modules/_mobile_nav.scss */
-.mobile-nav-open .mobile-menu li {
-  -moz-animation: slide-right cubic-bezier(0.5, 0, 0.25, 1.5), fade-in ease-in;
-  -webkit-animation: slide-right cubic-bezier(0.5, 0, 0.25, 1.5), fade-in ease-in;
-  animation: slide-right cubic-bezier(0.5, 0, 0.25, 1.5), fade-in ease-in;
-}
-/* line 56, ../sass/modules/_mobile_nav.scss */
-.mobile-nav-open .mobile-menu li:nth-child(1) {
-  -moz-animation-duration: 400ms;
-  -webkit-animation-duration: 400ms;
-  animation-duration: 400ms;
-}
-/* line 57, ../sass/modules/_mobile_nav.scss */
-.mobile-nav-open .mobile-menu li:nth-child(2) {
-  -moz-animation-duration: 500ms;
-  -webkit-animation-duration: 500ms;
-  animation-duration: 500ms;
-}
-/* line 58, ../sass/modules/_mobile_nav.scss */
-.mobile-nav-open .mobile-menu li:nth-child(3) {
-  -moz-animation-duration: 600ms;
-  -webkit-animation-duration: 600ms;
-  animation-duration: 600ms;
-}
-/* line 59, ../sass/modules/_mobile_nav.scss */
-.mobile-nav-open .mobile-menu li:nth-child(4) {
-  -moz-animation-duration: 700ms;
-  -webkit-animation-duration: 700ms;
-  animation-duration: 700ms;
-}
-/* line 60, ../sass/modules/_mobile_nav.scss */
-.mobile-nav-open .mobile-menu li:nth-child(5) {
-  -moz-animation-duration: 800ms;
-  -webkit-animation-duration: 800ms;
-  animation-duration: 800ms;
-}
-/* line 61, ../sass/modules/_mobile_nav.scss */
-.mobile-nav-open .mobile-menu li:nth-child(6) {
-  -moz-animation-duration: 900ms;
-  -webkit-animation-duration: 900ms;
-  animation-duration: 900ms;
-}
-/* line 62, ../sass/modules/_mobile_nav.scss */
-.mobile-nav-open .mobile-menu li:nth-child(7) {
-  -moz-animation-duration: 1000ms;
-  -webkit-animation-duration: 1000ms;
-  animation-duration: 1000ms;
 }
 
-/* line 69, ../sass/modules/_mobile_nav.scss */
+/* line 54, ../sass/modules/_mobile_nav.scss */
 .mobile-menu::-webkit-scrollbar {
   width: 0px;
   height: 0px;
   background: transparent;
 }
-/* line 75, ../sass/modules/_mobile_nav.scss */
+/* line 60, ../sass/modules/_mobile_nav.scss */
 .mobile-menu .header-module, .mobile-menu .header-submodule {
   display: block;
   margin-right: 0px;
 }
-/* line 80, ../sass/modules/_mobile_nav.scss */
+/* line 65, ../sass/modules/_mobile_nav.scss */
 .mobile-menu > li {
   display: block;
   height: auto;
@@ -2024,11 +1941,11 @@ input[type="search"].search-input-field:focus {
   color: #aaaaaa;
   max-width: 200px;
 }
-/* line 90, ../sass/modules/_mobile_nav.scss */
+/* line 75, ../sass/modules/_mobile_nav.scss */
 .mobile-menu > li a, .mobile-menu > li a:link, .mobile-menu > li a:visited {
   color: #aaaaaa;
 }
-/* line 99, ../sass/modules/_mobile_nav.scss */
+/* line 84, ../sass/modules/_mobile_nav.scss */
 .mobile-menu .dropdown > a:after {
   display: inline-block;
   position: relative;
@@ -2037,13 +1954,13 @@ input[type="search"].search-input-field:focus {
   content: "▼";
   font-size: 8px;
 }
-/* line 112, ../sass/modules/_mobile_nav.scss */
+/* line 97, ../sass/modules/_mobile_nav.scss */
 .mobile-menu .dropdown-menu li {
   padding: 10px 0;
   margin-bottom: 0;
   border-top: 1px rgba(255, 255, 255, 0.2) solid;
 }
-/* line 118, ../sass/modules/_mobile_nav.scss */
+/* line 103, ../sass/modules/_mobile_nav.scss */
 .mobile-menu .dropdown-menu li:first-child {
   margin-top: 1rem;
 }
@@ -3146,10 +3063,9 @@ a.back-link:hover {
 /* line 12, ../sass/modules/_footer.scss */
 .footer a {
   display: inline-block;
-  width: 100px;
+  vertical-align: middle;
 }
 /* line 16, ../sass/modules/_footer.scss */
 .footer a svg {
   display: table-cell;
-  vertical-align: middle;
 }

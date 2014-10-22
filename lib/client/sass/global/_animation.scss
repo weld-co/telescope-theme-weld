@@ -41,7 +41,3 @@
 @include keyframes (scale-up) {
   from { @include scale(0.75); }
   to { @include scale(1); }}
-
-@include keyframes (background-fade) {
-  from { background: white; }
-  to { background: linear-gradient(to bottom, #333333, black) no-repeat; }}
