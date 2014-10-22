@@ -2367,57 +2367,68 @@ input[type="search"].search-input-field:focus {
 }
 
 /* line 140, ../sass/modules/_posts.scss */
+a.back-link {
+  color: #aaaaaa;
+  display: block;
+  margin-bottom: 1rem;
+}
+/* line 144, ../sass/modules/_posts.scss */
+a.back-link:hover {
+  color: #f1592a;
+}
+
+/* line 149, ../sass/modules/_posts.scss */
 .single-post .post {
   border-top: none;
   padding-top: 0;
   padding-bottom: 2rem;
 }
-/* line 145, ../sass/modules/_posts.scss */
+/* line 154, ../sass/modules/_posts.scss */
 .single-post .post .post-heading {
-  margin: 2rem 0;
+  margin-bottom: 2rem;
 }
-/* line 147, ../sass/modules/_posts.scss */
+/* line 156, ../sass/modules/_posts.scss */
 .single-post .post .post-heading a:visited {
   color: inherit;
 }
-/* line 151, ../sass/modules/_posts.scss */
+/* line 160, ../sass/modules/_posts.scss */
 .single-post .post .post-heading .post-title {
   font-size: 28px;
 }
 @media screen and (max-width: 40em) {
-  /* line 151, ../sass/modules/_posts.scss */
+  /* line 160, ../sass/modules/_posts.scss */
   .single-post .post .post-heading .post-title {
     font-size: 21px;
   }
 }
-/* line 159, ../sass/modules/_posts.scss */
+/* line 168, ../sass/modules/_posts.scss */
 .single-post .post .post-heading .launch-icon {
   vertical-align: super;
   transform: translateY(2px);
 }
-/* line 166, ../sass/modules/_posts.scss */
+/* line 175, ../sass/modules/_posts.scss */
 .single-post .post .post-info .post-meta {
   background: #f2f2f2;
   padding: 0.75rem;
 }
-/* line 172, ../sass/modules/_posts.scss */
+/* line 181, ../sass/modules/_posts.scss */
 .single-post .post .comments-link {
   padding: 0;
 }
 
-/* line 177, ../sass/modules/_posts.scss */
+/* line 186, ../sass/modules/_posts.scss */
 .post-body {
   margin-bottom: 2rem;
   font-size: 16px;
 }
 @media screen and (max-width: 40em) {
-  /* line 177, ../sass/modules/_posts.scss */
+  /* line 186, ../sass/modules/_posts.scss */
   .post-body {
     font-size: 14px;
   }
 }
 
-/* line 185, ../sass/modules/_posts.scss */
+/* line 194, ../sass/modules/_posts.scss */
 .posts-wrapper .more-button {
   margin-top: 2rem;
 }
@@ -2682,7 +2693,7 @@ input[type="search"].search-input-field:focus {
 .template-userProfileWeld,
 .template-user_edit_weld,
 .template-post_submit_weld,
-.template-post_page,
+.template-post_page_weld,
 .template-user_email,
 .template-post_edit_weld,
 .template-comment_reply,

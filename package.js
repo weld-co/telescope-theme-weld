@@ -46,6 +46,7 @@ Package.on_use(function (api) {
     'lib/client/templates/user_menu_weld.html',
     'lib/client/templates/user_profile_weld.html',
     'lib/client/templates/views_menu_weld.html',
+    'lib/client/templates/post_page_weld.html',
 
     'lib/client/js/fastclick.js',
     'lib/client/js/fastclick_init.js',
@@ -61,6 +62,7 @@ Package.on_use(function (api) {
     'lib/client/js/progress_bar.js',
     'lib/client/js/newsletter_banner_weld.js',
     'lib/client/js/avatar_weld.js',
+    'lib/client/js/post_page_weld.js',
     'lib/client/js/post_item_weld.js',
     'lib/client/js/post_title_weld.js',
 

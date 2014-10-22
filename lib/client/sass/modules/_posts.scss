@@ -137,13 +137,22 @@
   }
 }
 
+a.back-link {
+  color: $grey;
+  display: block;
+  margin-bottom: 1rem;
+  &:hover {
+    color: $primary-color;
+  }
+}
+
 .single-post .post {
   border-top: none;
   padding-top: 0;
   padding-bottom: 2rem;
 
   .post-heading {
-    margin: 2rem 0;
+    margin-bottom: 2rem;
     a:visited {
       color: inherit;
     }
