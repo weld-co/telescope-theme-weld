@@ -2444,17 +2444,19 @@ a.back-link:hover {
 /* line 90, ../sass/modules/_profile.scss */
 .user-profile-comments td {
   vertical-align: top;
+  overflow: hidden;
+  max-width: 300px;
 }
-/* line 93, ../sass/modules/_profile.scss */
+/* line 95, ../sass/modules/_profile.scss */
 .user-profile-comments td:nth-child(1) {
   width: 25%;
   font-weight: 600;
 }
-/* line 98, ../sass/modules/_profile.scss */
+/* line 100, ../sass/modules/_profile.scss */
 .user-profile-comments td:nth-child(2) {
   width: 50%;
 }
-/* line 102, ../sass/modules/_profile.scss */
+/* line 104, ../sass/modules/_profile.scss */
 .user-profile-comments td:nth-child(3) {
   width: 25%;
   color: #aaaaaa;
@@ -2466,13 +2468,13 @@ a.back-link:hover {
   }
 }
 
-/* line 113, ../sass/modules/_profile.scss */
+/* line 115, ../sass/modules/_profile.scss */
 .user-profile-posts,
 .user-profile-comments {
   margin-bottom: 2rem;
 }
 
-/* line 118, ../sass/modules/_profile.scss */
+/* line 120, ../sass/modules/_profile.scss */
 .user-edit {
   position: relative;
 }

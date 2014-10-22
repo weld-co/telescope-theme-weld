@@ -89,6 +89,8 @@
 
   td {
     vertical-align: top;
+    overflow: hidden;
+    max-width: 300px;
 
     &:nth-child(1) {
       width: 25%;
