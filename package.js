@@ -48,8 +48,6 @@ Package.on_use(function (api) {
     'lib/client/templates/views_menu_weld.html',
     'lib/client/templates/post_page_weld.html',
 
-    'lib/client/js/fastclick.js',
-    'lib/client/js/fastclick_init.js',
     'lib/client/js/weld.js',
     'lib/client/js/base_weld.js',
     'lib/client/js/mobile_nav_weld.js',

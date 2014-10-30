@@ -1612,7 +1612,7 @@ input[type="search"].search-input-field:focus {
 /* line 45, ../sass/modules/_dropdown.scss */
 .has-dropdown .dropdown-menu ul {
   background: white;
-  padding: 1rem;
+  padding: 0.75rem;
   font-size: 14px;
   min-width: 140px;
   -moz-border-radius: 3px;
@@ -1625,8 +1625,8 @@ input[type="search"].search-input-field:focus {
 }
 /* line 54, ../sass/modules/_dropdown.scss */
 .has-dropdown .dropdown-menu ul li {
-  padding-bottom: 1rem;
-  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
   border-bottom: 1px solid #eeeeee;
 }
 /* line 59, ../sass/modules/_dropdown.scss */
