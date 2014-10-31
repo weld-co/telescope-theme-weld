@@ -581,8 +581,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 @-moz-keyframes scale-up {
   from {
-    -moz-transform: scale(0.75, 0.75);
-    transform: scale(0.75, 0.75);
+    -moz-transform: scale(0.85, 0.85);
+    transform: scale(0.85, 0.85);
   }
   to {
     -moz-transform: scale(1, 1);
@@ -591,8 +591,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 @-webkit-keyframes scale-up {
   from {
-    -webkit-transform: scale(0.75, 0.75);
-    transform: scale(0.75, 0.75);
+    -webkit-transform: scale(0.85, 0.85);
+    transform: scale(0.85, 0.85);
   }
   to {
     -webkit-transform: scale(1, 1);
@@ -601,16 +601,58 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 @keyframes scale-up {
   from {
-    -moz-transform: scale(0.75, 0.75);
-    -ms-transform: scale(0.75, 0.75);
-    -webkit-transform: scale(0.75, 0.75);
-    transform: scale(0.75, 0.75);
+    -moz-transform: scale(0.85, 0.85);
+    -ms-transform: scale(0.85, 0.85);
+    -webkit-transform: scale(0.85, 0.85);
+    transform: scale(0.85, 0.85);
   }
   to {
     -moz-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     -webkit-transform: scale(1, 1);
     transform: scale(1, 1);
+  }
+}
+@-moz-keyframes flash {
+  0% {
+    opacity: 0;
+  }
+  33% {
+    opacity: 0.85;
+  }
+  66% {
+    opacity: 0.40;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes flash {
+  0% {
+    opacity: 0;
+  }
+  33% {
+    opacity: 0.85;
+  }
+  66% {
+    opacity: 0.40;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes flash {
+  0% {
+    opacity: 0;
+  }
+  33% {
+    opacity: 0.85;
+  }
+  66% {
+    opacity: 0.40;
+  }
+  100% {
+    opacity: 1;
   }
 }
 /* line 1, ../sass/global/_layout.scss */
@@ -1286,6 +1328,138 @@ strong {
   font-weight: 700;
 }
 
+/* line 1, ../sass/global/_modals.scss */
+.inline-link.formatting {
+  cursor: pointer;
+  color: #f1592a !important;
+  float: right;
+  line-height: 3rem;
+}
+
+/* line 8, ../sass/global/_modals.scss */
+.modal-container {
+  -moz-transition: opacity 400ms ease-in-out, visibility 500ms ease-in-out;
+  -o-transition: opacity 400ms ease-in-out, visibility 500ms ease-in-out;
+  -webkit-transition: opacity 400ms ease-in-out, visibility 500ms ease-in-out;
+  transition: opacity 400ms ease-in-out, visibility 500ms ease-in-out;
+  z-index: 9999;
+  background: rgba(241, 89, 42, 0.85);
+  position: fixed;
+  left: 0;
+  top: 0;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+  padding: 30px 0;
+  overflow: auto;
+  visibility: hidden;
+  opacity: 0;
+}
+
+/* line 24, ../sass/global/_modals.scss */
+.modal-container.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* line 29, ../sass/global/_modals.scss */
+.modal-wrap {
+  text-align: center;
+  display: table;
+  width: 100%;
+  margin: 0 auto;
+}
+@media screen and (max-width: 40em) {
+  /* line 29, ../sass/global/_modals.scss */
+  .modal-wrap {
+    margin-top: 2rem;
+  }
+}
+
+/* line 39, ../sass/global/_modals.scss */
+.modal {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: left;
+}
+
+/* line 45, ../sass/global/_modals.scss */
+.modal-container .modal-wrap {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 50, ../sass/global/_modals.scss */
+.modal-content {
+  max-width: 425px;
+  width: 90%;
+  padding: 30px;
+  margin: auto;
+  border-radius: 3px;
+  background: #fff;
+  text-align: left;
+}
+
+/* line 60, ../sass/global/_modals.scss */
+.open .modal-content {
+  -moz-animation: slide-down 400ms cubic-bezier(0.5, 0, 0.25, 1.25);
+  -webkit-animation: slide-down 400ms cubic-bezier(0.5, 0, 0.25, 1.25);
+  animation: slide-down 400ms cubic-bezier(0.5, 0, 0.25, 1.25);
+}
+
+/* line 64, ../sass/global/_modals.scss */
+.close-icon {
+  font-size: 38px;
+  font-weight: 200;
+  color: #FFF;
+  position: absolute;
+  right: 0;
+  top: 0;
+  line-height: .75;
+  padding: 15px;
+  cursor: pointer;
+}
+
+/* line 76, ../sass/global/_modals.scss */
+.cheatsheet {
+  max-width: 500px;
+  font-size: 1rem;
+}
+@media screen and (max-width: 40em) {
+  /* line 76, ../sass/global/_modals.scss */
+  .cheatsheet {
+    font-size: 0.875rem;
+  }
+}
+
+/* line 84, ../sass/global/_modals.scss */
+.cheatsheet p {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  display: block;
+  border-bottom: 1px dotted #aaaaaa;
+}
+@media screen and (max-width: 40em) {
+  /* line 84, ../sass/global/_modals.scss */
+  .cheatsheet p {
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+}
+
+/* line 95, ../sass/global/_modals.scss */
+.cheatsheet p:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: 0 none;
+}
+
+/* line 101, ../sass/global/_modals.scss */
+.md-char {
+  color: #f1592a;
+  font-weight: 500;
+}
+
 /* line 1, ../sass/modules/_progress-bar.scss */
 #iron-router-progress {
   background-color: #f1592a !important;
@@ -1614,7 +1788,7 @@ input[type="search"].search-input-field:focus {
   background: white;
   padding: 0.75rem;
   font-size: 14px;
-  min-width: 140px;
+  min-width: 170px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
@@ -1882,7 +2056,7 @@ input[type="search"].search-input-field:focus {
   padding-bottom: 0;
   height: 100%;
   width: 100%;
-  background: linear-gradient(to bottom, #333333, #000000) no-repeat;
+  background: #111111;
   -moz-transform: translateX(-100%);
   -ms-transform: translateX(-100%);
   -webkit-transform: translateX(-100%);
@@ -1910,9 +2084,8 @@ input[type="search"].search-input-field:focus {
   -webkit-transform: translateX(80%);
   transform: translateX(80%);
   overflow: hidden;
-  box-shadow: 0 0 200px 50px rgba(0, 0, 0, 0.5);
 }
-/* line 47, ../sass/modules/_mobile_nav.scss */
+/* line 46, ../sass/modules/_mobile_nav.scss */
 .mobile-nav-open .mobile-nav {
   -moz-transform: translateX(0);
   -ms-transform: translateX(0);
@@ -1920,18 +2093,18 @@ input[type="search"].search-input-field:focus {
   transform: translateX(0);
 }
 
-/* line 54, ../sass/modules/_mobile_nav.scss */
+/* line 53, ../sass/modules/_mobile_nav.scss */
 .mobile-menu::-webkit-scrollbar {
   width: 0px;
   height: 0px;
   background: transparent;
 }
-/* line 60, ../sass/modules/_mobile_nav.scss */
+/* line 59, ../sass/modules/_mobile_nav.scss */
 .mobile-menu .header-module, .mobile-menu .header-submodule {
   display: block;
   margin-right: 0px;
 }
-/* line 65, ../sass/modules/_mobile_nav.scss */
+/* line 64, ../sass/modules/_mobile_nav.scss */
 .mobile-menu > li {
   display: block;
   height: auto;
@@ -1941,11 +2114,11 @@ input[type="search"].search-input-field:focus {
   color: #aaaaaa;
   max-width: 200px;
 }
-/* line 75, ../sass/modules/_mobile_nav.scss */
+/* line 74, ../sass/modules/_mobile_nav.scss */
 .mobile-menu > li a, .mobile-menu > li a:link, .mobile-menu > li a:visited {
   color: #aaaaaa;
 }
-/* line 84, ../sass/modules/_mobile_nav.scss */
+/* line 83, ../sass/modules/_mobile_nav.scss */
 .mobile-menu .dropdown > a:after {
   display: inline-block;
   position: relative;
@@ -1954,13 +2127,13 @@ input[type="search"].search-input-field:focus {
   content: "▼";
   font-size: 8px;
 }
-/* line 97, ../sass/modules/_mobile_nav.scss */
+/* line 96, ../sass/modules/_mobile_nav.scss */
 .mobile-menu .dropdown-menu li {
   padding: 10px 0;
   margin-bottom: 0;
   border-top: 1px rgba(255, 255, 255, 0.2) solid;
 }
-/* line 103, ../sass/modules/_mobile_nav.scss */
+/* line 102, ../sass/modules/_mobile_nav.scss */
 .mobile-menu .dropdown-menu li:first-child {
   margin-top: 1rem;
 }
@@ -2118,9 +2291,9 @@ input[type="search"].search-input-field:focus {
   -o-transition: background 150ms ease-in-out;
   -webkit-transition: background 150ms ease-in-out;
   transition: background 150ms ease-in-out;
-  -moz-animation: slide-left cubic-bezier(0.5, 0, 0.25, 1.5), fade-in ease-in;
-  -webkit-animation: slide-left cubic-bezier(0.5, 0, 0.25, 1.5), fade-in ease-in;
-  animation: slide-left cubic-bezier(0.5, 0, 0.25, 1.5), fade-in ease-in;
+  -moz-animation: flash;
+  -webkit-animation: flash;
+  animation: flash;
 }
 /* line 36, ../sass/modules/_posts.scss */
 .posts.list > .post:nth-child(1) {
@@ -2677,6 +2850,18 @@ a.back-link:hover {
   margin-bottom: 0.75rem;
   color: #aaaaaa !important;
   cursor: default;
+}
+
+/* line 32, ../sass/modules/_sidebar.scss */
+.dropdown-sub-level[href$="category/buysell"]:after {
+  content: 'New';
+  background: #f1592a;
+  padding: 2px 4px;
+  position: absolute;
+  right: 0.875rem;
+  color: white;
+  font-size: 10px;
+  border-radius: 2px;
 }
 
 /* line 1, ../sass/modules/_comments.scss */

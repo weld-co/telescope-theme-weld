@@ -1,0 +1,104 @@
+.inline-link.formatting {
+  cursor: pointer;
+  color: $primary-color !important;
+  float: right;
+  line-height: 3rem;
+}
+
+.modal-container {
+  @include transition (opacity 400ms ease-in-out, visibility 500ms ease-in-out);
+  z-index: 9999;
+  background: transparentize($primary-color, 0.15);
+  position: fixed;
+  left: 0;
+  top: 0;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+  padding: 30px 0;
+  overflow: auto;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.modal-container.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-wrap {
+  text-align: center;
+  display: table;
+  width: 100%;
+  margin: 0 auto;
+  @include small {
+    margin-top: 2rem;
+  }
+}
+
+.modal {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: left;
+}
+
+.modal-container .modal-wrap {
+  width: 100%;
+  height: 100%;
+}
+
+.modal-content {
+  max-width: 425px;
+  width: 90%;
+  padding: 30px;
+  margin: auto;
+  border-radius: 3px;
+  background: #fff;
+  text-align: left;
+}
+
+.open .modal-content {
+  @include animation (slide-down 400ms cubic-bezier(0.5, 0, 0.25, 1.25));
+}
+
+.close-icon {
+  font-size: 38px;
+  font-weight: 200;
+  color: #FFF;
+  position: absolute;
+  right: 0;
+  top: 0;
+  line-height: .75;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.cheatsheet {
+  max-width: 500px;
+  font-size: 1rem;
+  @include small {
+    font-size: 0.875rem;
+  }
+}
+
+.cheatsheet p {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  display: block;
+  border-bottom: 1px dotted $grey;
+  @include small {
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+}
+
+.cheatsheet p:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: 0 none;
+}
+
+.md-char {
+  color: $primary-color;
+  font-weight: 500;
+}

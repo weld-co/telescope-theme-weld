@@ -22,7 +22,7 @@
   padding-bottom: 0;
   height: 100%;
   width: 100%;
-  background: linear-gradient(to bottom, #333333, black) no-repeat;
+  background: $black;
   @include translateX ( -100% );
 }
 
@@ -41,7 +41,6 @@
   .outer-wrapper {
     @include translateX (80%);
     overflow: hidden;
-    box-shadow: 0 0 200px 50px rgba(0,0,0,0.5);
   }
 
   .mobile-nav {

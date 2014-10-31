@@ -26,3 +26,16 @@
     cursor: default;
   }
 }
+
+// "New" Category Badge.
+
+.dropdown-sub-level[href$="category/buysell"]:after {
+  content: 'New';
+  background: $primary-color;
+  padding: 2px 4px;
+  position: absolute;
+  right: 0.875rem;
+  color: white;
+  font-size: 10px;
+  border-radius: 2px;
+}

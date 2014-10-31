@@ -39,5 +39,11 @@
   to { @include translateX(0); }}
 
 @include keyframes (scale-up) {
-  from { @include scale(0.75); }
+  from { @include scale(0.85); }
   to { @include scale(1); }}
+
+@include keyframes (flash) {
+  0% { opacity: 0; }
+  33% { opacity: 0.85; }
+  66% { opacity: 0.40; }
+  100% { opacity: 1; }}

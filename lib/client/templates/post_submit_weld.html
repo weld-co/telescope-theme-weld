@@ -13,18 +13,13 @@
       <div class="control-group">
         <label class="control-label">{{i18n "Body"}}</label>
         <div class="controls" id="editor"><textarea id="body" value="" class="input-xlarge"></textarea></div>
-        <span class="inline-link">Display images with: <input class="link-select" type="text" name="link-select" value="![](http://link.to/image.png)" onclick="this.select()" /></span>
+        <span class="inline-link formatting">Formatting?</span>
       </div>
 
       {{#if categoriesEnabled}}
       <div class="control-group">
         <label class="control-label">{{i18n "Category"}}</label>
         <div class="controls">
-          <!-- <select class="styled-select">
-            {{#each categories}}
-              <option id="category_{{_id}}" value="{{_id}}" name="category">{{name}}</option>
-            {{/each}}
-          </select> -->
           {{#each categories}}
           <label class="radio inline">
             <input id="category_{{_id}}" type="checkbox" value="{{_id}}" name="category" /> {{name}}
@@ -81,4 +76,7 @@
       </div>
     </form>
   </div>
+
+{{> cheatsheet}}
+
 </template>

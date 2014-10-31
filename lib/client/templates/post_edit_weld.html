@@ -23,6 +23,7 @@
         <div class="control-group">
           <label class="control-label post-form-body">{{i18n "Body"}}</label>
           <div class="controls" id="editor"><textarea id="body" value="" class="input-xlarge">{{body}}</textarea></div>
+          <span class="inline-link formatting">Formatting?</span>
         </div>
         {{#if categoriesEnabled}}
         <div class="control-group post-form-category">
@@ -90,4 +91,5 @@
       </form>
     {{/with}}
   </div>
+  {{> cheatsheet}}
 </template>

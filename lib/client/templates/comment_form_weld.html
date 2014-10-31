@@ -1,0 +1,16 @@
+<template name="comment_form_weld">
+  {{#if canComment}}
+    <div class="comment-new module">
+      <form>
+        <div class="comment-field" id="editor">
+          <textarea id="comment" rows="3" autofocus="autofocus"></textarea> 
+        </div>
+        <span class="inline-link formatting">Formatting?</span>
+        <div class="comment-submit">
+          <input type="submit" class="button" value="{{i18n "Add Comment"}}" title="(⌘+enter)" />
+        </div>
+      </form>
+    </div>
+  {{/if}}  
+  {{> cheatsheet}}
+</template>
