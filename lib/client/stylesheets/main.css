@@ -1324,6 +1324,12 @@ code {
 }
 
 /* line 33, ../sass/global/_typography.scss */
+.important {
+  font-weight: 500;
+  color: #f1592a !important;
+}
+
+/* line 38, ../sass/global/_typography.scss */
 strong {
   font-weight: 700;
 }

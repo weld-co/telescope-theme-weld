@@ -30,6 +30,11 @@ code {
   white-space: nowrap;
 }
 
+.important {
+  font-weight: 500;
+  color: $primary-color !important;
+}
+
 strong {
   font-weight: 700;
 }

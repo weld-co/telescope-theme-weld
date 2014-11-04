@@ -69,7 +69,6 @@ Package.on_use(function (api) {
     'lib/client/js/post_title_weld.js',
     'lib/client/js/post_submit_weld.js',
 
-
     'img/apple-touch-icon-120.png',
     'img/apple-touch-icon-180.png',
     'img/apple-touch-icon-152.png',
