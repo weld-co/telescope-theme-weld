@@ -61,7 +61,7 @@ Package.on_use(function (api) {
     'lib/client/js/notifications_menu_weld.js',
     'lib/client/js/post_info_weld.js',  
     'lib/client/js/user_profile_weld.js',
-    'lib/client/js/sidebar_weld.js',
+    'lib/client/js/sidebar.js',
     'lib/client/js/post_thumbnail_weld.js',
     'lib/client/js/progress_bar.js',
     'lib/client/js/newsletter_banner_weld.js',

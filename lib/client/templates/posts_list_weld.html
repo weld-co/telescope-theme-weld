@@ -1,14 +1,6 @@
 <!-- added sidebar. could be it's own template if needed -->
 <template name="posts_list_weld">
-    {{#if hasPrimaryNav}}
-      <ul class="sidebar {{dropdownClass}}">
-        {{#each primaryNav}}
-          <li>
-            {{> UI.dynamic template=getTemplate}}
-          </li>
-        {{/each}}
-      </ul>
-    {{/if}}
+    {{> sidebar}}
     <div class="posts-wrapper">
     {{> submitButtonWeld}}
     	<div class="posts list">
