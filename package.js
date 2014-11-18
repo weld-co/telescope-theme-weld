@@ -40,6 +40,7 @@ Package.on_use(function (api) {
     'lib/client/templates/post_thumbnail_weld.html',
     'lib/client/templates/posts_list_weld.html',
     'lib/client/templates/search_weld.html',
+    'lib/client/templates/sidebar.html',
     'lib/client/templates/submit_button_weld.html',
     'lib/client/templates/user_edit_weld.html',
     'lib/client/templates/user_item_weld.html',
