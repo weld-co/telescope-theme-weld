@@ -31,11 +31,14 @@
   text-align: left;
 
   .dropdown-menu {
-    left: auto;
     min-width: 300px;
-    right: 0;
-    top: 0.5rem;
-    @include transform-origin( right, top );
+    position: fixed;
+    right: 0rem;
+    top: 6rem;
+    margin-top: 0;
+    @include small {
+      position: static;
+    }
 
     ul {
       padding: 1rem;

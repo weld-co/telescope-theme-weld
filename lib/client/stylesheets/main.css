@@ -127,14 +127,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   -webkit-tap-highlight-color: transparent;
 }
 
-@media screen and (min-width: 40em) {
+@media screen and (min-width: 45em) {
   /* line 13, ../sass/global/_global.scss */
   .mobile-only {
     display: none !important;
   }
 }
 
-@media screen and (max-width: 40em) {
+@media screen and (max-width: 45em) {
   /* line 19, ../sass/global/_global.scss */
   .desktop-only {
     display: none !important;
@@ -167,7 +167,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: inline-block;
   height: 14px;
 }
-@media screen and (max-width: 40em) {
+@media screen and (max-width: 45em) {
   /* line 41, ../sass/global/_global.scss */
   .underline {
     height: 16px;
@@ -196,7 +196,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   right: 0;
   width: auto;
 }
-@media screen and (max-width: 40em) {
+@media screen and (max-width: 45em) {
   /* line 62, ../sass/global/_global.scss */
   .top-right {
     margin-right: 0;
@@ -678,7 +678,7 @@ body {
   width: 85%;
   margin: 5% auto;
 }
-@media screen and (max-width: 40em) {
+@media screen and (max-width: 45em) {
   /* line 16, ../sass/global/_layout.scss */
   .inner-wrapper {
     width: 100%;
@@ -697,7 +697,7 @@ body {
   position: relative;
   background: white;
 }
-@media screen and (max-width: 40em) {
+@media screen and (max-width: 45em) {
   /* line 27, ../sass/global/_layout.scss */
   .content-wrapper {
     padding: 0;
@@ -1245,7 +1245,7 @@ a:hover {
   display: block;
   clear: both;
 }
-@media screen and (max-width: 40em) {
+@media screen and (max-width: 45em) {
   /* line 14, ../sass/global/_links.scss */
   .more-button {
     background: none;
@@ -1270,7 +1270,7 @@ html, body, input, button {
   font-family: "Avenir Next", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: subpixel-antialiased;
 }
-@media screen and (max-width: 40em) {
+@media screen and (max-width: 45em) {
   /* line 1, ../sass/global/_typography.scss */
   html, body, input, button {
     font-weight: 500;
@@ -1375,7 +1375,7 @@ strong {
   width: 100%;
   margin: 0 auto;
 }
-@media screen and (max-width: 40em) {
+@media screen and (max-width: 45em) {
   /* line 29, ../sass/global/_modals.scss */
   .modal-wrap {
     margin-top: 2rem;
@@ -1431,7 +1431,7 @@ strong {
   max-width: 500px;
   font-size: 1rem;
 }
-@media screen and (max-width: 40em) {
+@media screen and (max-width: 45em) {
   /* line 76, ../sass/global/_modals.scss */
   .cheatsheet {
     font-size: 0.875rem;
@@ -1445,7 +1445,7 @@ strong {
   display: block;
   border-bottom: 1px dotted #aaaaaa;
 }
-@media screen and (max-width: 40em) {
+@media screen and (max-width: 45em) {
   /* line 84, ../sass/global/_modals.scss */
   .cheatsheet p {
     margin-bottom: 0.75rem;
@@ -1472,7 +1472,7 @@ strong {
   box-shadow: none !important;
   height: 2px !important;
 }
-@media screen and (max-width: 40em) {
+@media screen and (max-width: 45em) {
   /* line 1, ../sass/modules/_progress-bar.scss */
   #iron-router-progress {
     background-color: #444444 !important;
@@ -1755,65 +1755,65 @@ input[type="search"].search-input-field:focus {
   content: "▼";
   font-size: 8px;
 }
+
 /* line 16, ../sass/modules/_dropdown.scss */
-.has-dropdown .dropdown:hover .dropdown-menu {
-  display: block;
+.dropdown-open {
+  display: block !important;
 }
 
-/* line 22, ../sass/modules/_dropdown.scss */
+/* line 20, ../sass/modules/_dropdown.scss */
 .has-dropdown .dropdown-menu {
   display: none;
   cursor: pointer;
-  top: 0.5rem;
-  left: 0;
-  position: absolute;
-  padding-top: 1rem;
-  z-index: 100;
-  -moz-animation: scale-up 200ms cubic-bezier(0.5, -0.75, 0.25, 1.5), fade-in 300ms ease;
-  -webkit-animation: scale-up 200ms cubic-bezier(0.5, -0.75, 0.25, 1.5), fade-in 300ms ease;
-  animation: scale-up 200ms cubic-bezier(0.5, -0.75, 0.25, 1.5), fade-in 300ms ease;
-  -moz-transform-origin: left top;
-  -ms-transform-origin: left top;
-  -webkit-transform-origin: left top;
-  transform-origin: left top;
 }
-/* line 33, ../sass/modules/_dropdown.scss */
+/* line 24, ../sass/modules/_dropdown.scss */
 .has-dropdown .dropdown-menu, .has-dropdown .dropdown-menu a, .has-dropdown .dropdown-menu a:link, .has-dropdown .dropdown-menu a:visited {
-  color: #444444;
+  color: #aaaaaa;
 }
-/* line 37, ../sass/modules/_dropdown.scss */
+/* line 28, ../sass/modules/_dropdown.scss */
 .has-dropdown .dropdown-menu a:hover {
   color: #f1592a;
 }
-/* line 41, ../sass/modules/_dropdown.scss */
+/* line 32, ../sass/modules/_dropdown.scss */
 .has-dropdown .dropdown-menu a.button {
   color: white;
 }
-/* line 45, ../sass/modules/_dropdown.scss */
+/* line 36, ../sass/modules/_dropdown.scss */
 .has-dropdown .dropdown-menu ul {
-  background: white;
+  background: #f2f2f2;
   padding: 0.75rem;
   font-size: 14px;
   min-width: 170px;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
-  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
   list-style-type: none;
 }
-/* line 54, ../sass/modules/_dropdown.scss */
+/* line 43, ../sass/modules/_dropdown.scss */
 .has-dropdown .dropdown-menu ul li {
   padding-bottom: 0.5rem;
   margin-bottom: 0.5rem;
-  border-bottom: 1px solid #eeeeee;
+  border-bottom: 1px solid #ddd;
 }
-/* line 59, ../sass/modules/_dropdown.scss */
+/* line 48, ../sass/modules/_dropdown.scss */
 .has-dropdown .dropdown-menu ul li:last-child {
   margin-bottom: 0;
   padding-bottom: 0;
   border-bottom: none;
+}
+
+/* line 57, ../sass/modules/_dropdown.scss */
+.dropdown-top-level + .dropdown-menu {
+  margin-top: 1rem;
+}
+
+/* line 63, ../sass/modules/_dropdown.scss */
+.dropdown-sub-level[href$="category/buysell"]:after {
+  content: 'New';
+  background: #f1592a;
+  padding: 2px 4px;
+  position: absolute;
+  right: 2rem;
+  color: white;
+  font-size: 10px;
+  border-radius: 2px;
 }
 
 /* line 1, ../sass/modules/_errors.scss */
@@ -1835,7 +1835,7 @@ input[type="search"].search-input-field:focus {
   -webkit-animation: fade-in-out 3s ease-out;
   animation: fade-in-out 3s ease-out;
 }
-@media screen and (max-width: 40em) {
+@media screen and (max-width: 45em) {
   /* line 1, ../sass/modules/_errors.scss */
   .error {
     height: 3.375rem;
@@ -1851,8 +1851,9 @@ input[type="search"].search-input-field:focus {
   margin: 0;
   color: #444444;
   position: relative;
+  z-index: 1000;
 }
-@media screen and (max-width: 40em) {
+@media screen and (max-width: 45em) {
   /* line 1, ../sass/modules/_header.scss */
   .weld-header {
     background: #f1592a;
@@ -1860,24 +1861,24 @@ input[type="search"].search-input-field:focus {
     margin-bottom: 0;
   }
 }
-/* line 16, ../sass/modules/_header.scss */
+/* line 17, ../sass/modules/_header.scss */
 .weld-header a.button, .weld-header a:link.button, .weld-header a:visited.button {
   color: white;
 }
-/* line 21, ../sass/modules/_header.scss */
+/* line 22, ../sass/modules/_header.scss */
 .weld-header .nav {
   list-style-type: none;
 }
-/* line 24, ../sass/modules/_header.scss */
+/* line 25, ../sass/modules/_header.scss */
 .weld-header .nav > li {
   margin-bottom: 0;
   display: inline-block;
 }
-/* line 28, ../sass/modules/_header.scss */
+/* line 29, ../sass/modules/_header.scss */
 .weld-header .nav > li:last-child .header-submodule {
   margin-right: 0px;
 }
-/* line 34, ../sass/modules/_header.scss */
+/* line 35, ../sass/modules/_header.scss */
 .weld-header .mobile-header-link {
   font-weight: 600;
   color: white;
@@ -1888,14 +1889,14 @@ input[type="search"].search-input-field:focus {
   width: 5rem;
   line-height: 3.375rem;
 }
-@media screen and (min-width: 40em) {
-  /* line 34, ../sass/modules/_header.scss */
+@media screen and (min-width: 45em) {
+  /* line 35, ../sass/modules/_header.scss */
   .weld-header .mobile-header-link {
     display: none;
   }
 }
 
-/* line 49, ../sass/modules/_header.scss */
+/* line 50, ../sass/modules/_header.scss */
 .header-module {
   position: absolute;
   right: 0;
@@ -1904,21 +1905,21 @@ input[type="search"].search-input-field:focus {
   margin-right: 1.25rem;
 }
 
-/* line 57, ../sass/modules/_header.scss */
+/* line 58, ../sass/modules/_header.scss */
 .header-submodule {
   display: inline-block;
 }
-/* line 60, ../sass/modules/_header.scss */
+/* line 61, ../sass/modules/_header.scss */
 .header-submodule > * {
   margin: 0 20px 0 0;
 }
 
-/* line 65, ../sass/modules/_header.scss */
+/* line 66, ../sass/modules/_header.scss */
 .sign-up {
   margin-right: 0;
 }
 
-/* line 69, ../sass/modules/_header.scss */
+/* line 70, ../sass/modules/_header.scss */
 .weld-logo {
   position: absolute;
   left: 0;
@@ -1927,20 +1928,20 @@ input[type="search"].search-input-field:focus {
   width: 140px;
   background: #f1592a url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22101%22%20height%3D%2231%22%20viewBox%3D%220%200%20101%2031%22%3E%3Cg%20fill%3D%22%23fff%22%3E%3Cpath%20d%3D%22M0%2031h29l4-4v-27h-33v31zm22-25h5v14l-5%205v-19zm-8%203h5v11l-5%205v-16zm-8-3h5v14l-5%205v-19zM54%2026h-3v-26h-5v26h-3v-26h-5v31h8l2.5-2%202.5%202h8v-31h-5zM62%2031h10v-5h-5v-9h5v-5h-5v-7h5v-5h-10zM80%200h-5v31h10v-5h-5zM98%200h-10v31h10l3-3v-25l-3-3zm-2%2026h-3v-21h3v21z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") no-repeat center;
 }
-@media screen and (max-width: 40em) {
-  /* line 69, ../sass/modules/_header.scss */
+@media screen and (max-width: 45em) {
+  /* line 70, ../sass/modules/_header.scss */
   .weld-logo {
     position: static;
     margin: 0 auto;
     height: 3.375rem;
   }
-  /* line 82, ../sass/modules/_header.scss */
+  /* line 83, ../sass/modules/_header.scss */
   .weld-logo .tagline {
     display: none;
   }
 }
-@media screen and (min-width: 40em) {
-  /* line 69, ../sass/modules/_header.scss */
+@media screen and (min-width: 45em) {
+  /* line 70, ../sass/modules/_header.scss */
   .weld-logo {
     -moz-transform-origin: left 50%;
     -ms-transform-origin: left 50%;
@@ -1951,16 +1952,16 @@ input[type="search"].search-input-field:focus {
     -webkit-transition: width 250ms cubic-bezier(0.5, -0.75, 0.25, 1.5), background-position 250ms cubic-bezier(0.5, -0.75, 0.25, 1.5);
     transition: width 250ms cubic-bezier(0.5, -0.75, 0.25, 1.5), background-position 250ms cubic-bezier(0.5, -0.75, 0.25, 1.5);
   }
-  /* line 92, ../sass/modules/_header.scss */
+  /* line 93, ../sass/modules/_header.scss */
   .weld-logo:hover {
     width: 170px;
     background-position: 45px center;
   }
-  /* line 96, ../sass/modules/_header.scss */
+  /* line 97, ../sass/modules/_header.scss */
   .weld-logo:hover > .tagline {
     margin-left: 200px;
   }
-  /* line 101, ../sass/modules/_header.scss */
+  /* line 102, ../sass/modules/_header.scss */
   .weld-logo:before {
     content: '←';
     color: white;
@@ -1972,11 +1973,11 @@ input[type="search"].search-input-field:focus {
     transition: opacity 250ms ease;
     opacity: 0;
   }
-  /* line 110, ../sass/modules/_header.scss */
+  /* line 111, ../sass/modules/_header.scss */
   .weld-logo:hover:before {
     opacity: 1;
   }
-  /* line 114, ../sass/modules/_header.scss */
+  /* line 115, ../sass/modules/_header.scss */
   .weld-logo .tagline {
     position: absolute;
     margin-left: 160px;
@@ -1994,17 +1995,17 @@ input[type="search"].search-input-field:focus {
   }
 }
 
-/* line 129, ../sass/modules/_header.scss */
+/* line 130, ../sass/modules/_header.scss */
 .logo {
   vertical-align: middle;
   line-height: 1;
 }
-@media screen and (max-width: 40em) {
-  /* line 129, ../sass/modules/_header.scss */
+@media screen and (max-width: 45em) {
+  /* line 130, ../sass/modules/_header.scss */
   .logo {
     margin-right: 0;
   }
-  /* line 136, ../sass/modules/_header.scss */
+  /* line 137, ../sass/modules/_header.scss */
   .logo a {
     font-size: 24px;
     display: block;
@@ -2019,7 +2020,7 @@ input[type="search"].search-input-field:focus {
   }
 }
 
-/* line 152, ../sass/modules/_header.scss */
+/* line 153, ../sass/modules/_header.scss */
 .logo-image a, .logo-image img {
   display: block;
   height: 100%;
@@ -2032,7 +2033,7 @@ input[type="search"].search-input-field:focus {
   position: relative;
 }
 
-@media screen and (max-width: 40em) {
+@media screen and (max-width: 45em) {
   /* line 1, ../sass/modules/_mobile_nav.scss */
   .mobile-menu-button {
     display: block;
@@ -2169,7 +2170,7 @@ input[type="search"].search-input-field:focus {
   margin-right: 5px;
   margin-top: 1px;
 }
-@media screen and (max-width: 40em) {
+@media screen and (max-width: 45em) {
   /* line 15, ../sass/modules/_notifications.scss */
   .notifications-link:before {
     margin-top: -3px;
@@ -2187,63 +2188,66 @@ input[type="search"].search-input-field:focus {
 }
 /* line 33, ../sass/modules/_notifications.scss */
 .notifications-menu .dropdown-menu {
-  left: auto;
   min-width: 300px;
-  right: 0;
-  top: 0.5rem;
-  -moz-transform-origin: right top;
-  -ms-transform-origin: right top;
-  -webkit-transform-origin: right top;
-  transform-origin: right top;
+  position: fixed;
+  right: 0rem;
+  top: 6rem;
+  margin-top: 0;
 }
-/* line 40, ../sass/modules/_notifications.scss */
+@media screen and (max-width: 45em) {
+  /* line 33, ../sass/modules/_notifications.scss */
+  .notifications-menu .dropdown-menu {
+    position: static;
+  }
+}
+/* line 43, ../sass/modules/_notifications.scss */
 .notifications-menu .dropdown-menu ul {
   padding: 1rem;
 }
-@media screen and (max-width: 40em) {
-  /* line 40, ../sass/modules/_notifications.scss */
+@media screen and (max-width: 45em) {
+  /* line 43, ../sass/modules/_notifications.scss */
   .notifications-menu .dropdown-menu ul {
     padding: 0;
     max-width: 205px;
     color: white;
   }
 }
-/* line 49, ../sass/modules/_notifications.scss */
+/* line 52, ../sass/modules/_notifications.scss */
 .notifications-menu .dropdown-menu a.mark-as-read {
   font-weight: bold;
   color: #f1592a;
 }
-/* line 54, ../sass/modules/_notifications.scss */
+/* line 57, ../sass/modules/_notifications.scss */
 .notifications-menu .dropdown-menu menu {
   padding-bottom: 1rem;
 }
-/* line 59, ../sass/modules/_notifications.scss */
+/* line 62, ../sass/modules/_notifications.scss */
 .notifications-menu .notification-item {
   margin-bottom: 1rem;
   font-size: 16px;
 }
-/* line 64, ../sass/modules/_notifications.scss */
+/* line 67, ../sass/modules/_notifications.scss */
 .notifications-menu .notification-timestamp {
   color: #aaaaaa;
   font-size: 12px;
   display: block;
 }
-/* line 69, ../sass/modules/_notifications.scss */
+/* line 72, ../sass/modules/_notifications.scss */
 .notifications-menu .notification-timestamp:last-child {
   margin-bottom: 1rem;
 }
-/* line 74, ../sass/modules/_notifications.scss */
+/* line 77, ../sass/modules/_notifications.scss */
 .notifications-menu .notification-html {
   font-weight: bold;
 }
-/* line 77, ../sass/modules/_notifications.scss */
+/* line 80, ../sass/modules/_notifications.scss */
 .notifications-menu .notification-html .action-link {
   display: block;
   font-weight: normal;
   font-size: 14px;
 }
-@media screen and (max-width: 40em) {
-  /* line 77, ../sass/modules/_notifications.scss */
+@media screen and (max-width: 45em) {
+  /* line 80, ../sass/modules/_notifications.scss */
   .notifications-menu .notification-html .action-link {
     display: inline;
     color: #aaaaaa;
@@ -2252,10 +2256,10 @@ input[type="search"].search-input-field:focus {
 
 /* line 1, ../sass/modules/_posts.scss */
 .posts-wrapper {
-  width: 75%;
+  width: 70%;
   float: right;
 }
-@media screen and (max-width: 40em) {
+@media screen and (max-width: 45em) {
   /* line 1, ../sass/modules/_posts.scss */
   .posts-wrapper {
     width: 100%;
@@ -2274,7 +2278,7 @@ input[type="search"].search-input-field:focus {
   font-weight: 500;
   margin-bottom: 1rem;
 }
-@media screen and (max-width: 40em) {
+@media screen and (max-width: 45em) {
   /* line 8, ../sass/modules/_posts.scss */
   .posts-wrapper .submit,
   .posts-wrapper .sign-in {
@@ -2398,7 +2402,7 @@ input[type="search"].search-input-field:focus {
   background: white url("/packages/telescope-theme-weld/img/weld_logo.png") no-repeat center;
   background-size: 13px;
 }
-@media screen and (max-width: 40em) {
+@media screen and (max-width: 45em) {
   /* line 32, ../sass/modules/_posts.scss */
   .posts.list > .post {
     -moz-animation: none;
@@ -2450,7 +2454,7 @@ input[type="search"].search-input-field:focus {
   color: #f1592a;
   text-decoration: underline;
 }
-@media screen and (max-width: 40em) {
+@media screen and (max-width: 45em) {
   /* line 113, ../sass/modules/_posts.scss */
   .post .post-heading .post-title {
     font-size: 16px;
@@ -2491,7 +2495,7 @@ a.back-link:hover {
 .single-post .post .post-heading .post-title {
   font-size: 28px;
 }
-@media screen and (max-width: 40em) {
+@media screen and (max-width: 45em) {
   /* line 160, ../sass/modules/_posts.scss */
   .single-post .post .post-heading .post-title {
     font-size: 21px;
@@ -2517,7 +2521,7 @@ a.back-link:hover {
   margin-bottom: 2rem;
   font-size: 16px;
 }
-@media screen and (max-width: 40em) {
+@media screen and (max-width: 45em) {
   /* line 186, ../sass/modules/_posts.scss */
   .post-body {
     font-size: 14px;
@@ -2573,7 +2577,7 @@ a.back-link:hover {
 .user-profile .profile-links li:not(.username):last-child {
   margin-right: 0;
 }
-@media screen and (max-width: 40em) {
+@media screen and (max-width: 45em) {
   /* line 33, ../sass/modules/_profile.scss */
   .user-profile .profile-links li:not(.username) {
     display: block;
@@ -2640,7 +2644,7 @@ a.back-link:hover {
   width: 25%;
   color: #aaaaaa;
 }
-@media screen and (max-width: 40em) {
+@media screen and (max-width: 45em) {
   /* line 88, ../sass/modules/_profile.scss */
   .user-profile-comments {
     display: none;
@@ -2721,7 +2725,7 @@ a.back-link:hover {
   -webkit-animation: none;
   animation: none;
 }
-@media screen and (max-width: 40em) {
+@media screen and (max-width: 45em) {
   /* line 1, ../sass/modules/_pages.scss */
   .template-posts_list_weld {
     margin-top: 0;
@@ -2828,7 +2832,7 @@ a.back-link:hover {
 /* line 1, ../sass/modules/_sidebar.scss */
 .sidebar {
   float: left;
-  width: 25%;
+  width: 30%;
   color: #aaaaaa;
 }
 /* line 6, ../sass/modules/_sidebar.scss */
@@ -2843,7 +2847,7 @@ a.back-link:hover {
 .sidebar li:last-child {
   margin-bottom: 0;
 }
-@media screen and (max-width: 40em) {
+@media screen and (max-width: 45em) {
   /* line 1, ../sass/modules/_sidebar.scss */
   .sidebar {
     display: none;
@@ -2856,18 +2860,6 @@ a.back-link:hover {
   margin-bottom: 0.75rem;
   color: #aaaaaa !important;
   cursor: default;
-}
-
-/* line 32, ../sass/modules/_sidebar.scss */
-.dropdown-sub-level[href$="category/buysell"]:after {
-  content: 'New';
-  background: #f1592a;
-  padding: 2px 4px;
-  position: absolute;
-  right: 0.875rem;
-  color: white;
-  font-size: 10px;
-  border-radius: 2px;
 }
 
 /* line 1, ../sass/modules/_comments.scss */
@@ -2950,14 +2942,14 @@ a.back-link:hover {
   -webkit-animation: fade-in 600ms ease-in-out;
   animation: fade-in 600ms ease-in-out;
 }
-@media screen and (max-width: 40em) {
+@media screen and (max-width: 45em) {
   /* line 3, ../sass/modules/_newsletter.scss */
   .newsletter-banner.newsletter-banner {
     margin: 1rem;
   }
 }
 
-@media screen and (max-width: 40em) {
+@media screen and (max-width: 45em) {
   /* line 16, ../sass/modules/_newsletter.scss */
   .newsletter-banner .pull-right {
     float: none;
@@ -2987,7 +2979,7 @@ a.back-link:hover {
   padding: 0 4rem 0 2rem;
   text-align: left;
 }
-@media screen and (max-width: 40em) {
+@media screen and (max-width: 45em) {
   /* line 38, ../sass/modules/_newsletter.scss */
   .newsletter-banner form {
     padding: 1rem;
@@ -3007,7 +2999,7 @@ a.back-link:hover {
   -webkit-transform-origin: left 50%;
   transform-origin: left 50%;
 }
-@media screen and (max-width: 40em) {
+@media screen and (max-width: 45em) {
   /* line 48, ../sass/modules/_newsletter.scss */
   .newsletter-header {
     -moz-transform: scale(none, none);
@@ -3031,7 +3023,7 @@ a.back-link:hover {
 .tagline.subdued {
   display: block;
 }
-@media screen and (max-width: 40em) {
+@media screen and (max-width: 45em) {
   /* line 66, ../sass/modules/_newsletter.scss */
   .tagline.subdued {
     display: inline;
@@ -3135,7 +3127,7 @@ a.back-link:hover {
   color: inherit;
 }
 
-@media screen and (max-width: 40em) {
+@media screen and (max-width: 45em) {
   /* line 159, ../sass/modules/_newsletter.scss */
   .newsletter-dismiss, .newsletter-dismiss:link {
     top: 10px;
@@ -3210,7 +3202,7 @@ a.back-link:hover {
   border-radius: 3px;
   pointer-events: none;
 }
-@media screen and (max-width: 40em) {
+@media screen and (max-width: 45em) {
   /* line 1, ../sass/modules/_thumbnails.scss */
   .post-thumbnail {
     margin: 0 0 1rem 1rem;

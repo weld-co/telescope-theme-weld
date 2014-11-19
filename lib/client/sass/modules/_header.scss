@@ -5,6 +5,7 @@
   margin: 0;
   color: $dark-grey;
   position: relative;
+  z-index: 1000;
 
   @include small {
     background: $primary-color;

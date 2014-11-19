@@ -11,27 +11,18 @@
       font-size: 8px;
     }
   }
+}
 
-  &:hover {
-    .dropdown-menu {
-      display: block;
-    }
-  }
+.dropdown-open {
+  display: block !important;
 }
 
 .has-dropdown .dropdown-menu {
   display: none;
   cursor: pointer;
-  top: 0.5rem;
-  left: 0;
-  position: absolute;
-  padding-top: 1rem;
-  z-index: 100;
-  @include animation( scale-up 200ms cubic-bezier(0.5, -0.75, 0.25, 1.5), fade-in 300ms ease );
-  @include transform-origin( left, top );
 
   &, a, a:link, a:visited {
-    color: $text;
+    color: $grey;
   }
 
   a:hover {
@@ -43,18 +34,16 @@
   }
 
   ul {
-    background: white;
+    background: $lightest-grey;
     padding: 0.75rem;
     font-size: 14px;
     min-width: 170px;
-    @include border-radius( 3px );
-    @include box-shadow( 0 1px 3px black(0.35) );
     list-style-type: none;
 
     li {
       padding-bottom: 0.5rem;
       margin-bottom: 0.5rem;
-      border-bottom: 1px solid #eeeeee;
+      border-bottom: 1px solid #ddd;
 
       &:last-child {
         margin-bottom: 0;
@@ -63,4 +52,21 @@
       }
     }
   }
+}
+
+.dropdown-top-level + .dropdown-menu {
+  margin-top: 1rem;
+}
+
+// "New" Category Badge.
+
+.dropdown-sub-level[href$="category/buysell"]:after {
+  content: 'New';
+  background: $primary-color;
+  padding: 2px 4px;
+  position: absolute;
+  right: 2rem;
+  color: white;
+  font-size: 10px;
+  border-radius: 2px;
 }
