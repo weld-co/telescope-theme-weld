@@ -4,32 +4,23 @@
   font-size: 12px;
   
   a, a:link, a:visited {
-    color: $grey;
-    text-decoration: underline;
-
-    &:hover {
-      text-decoration: none;
-    }
-  }
-}
-
-.post-meta-item {
-  line-height: 1.3;
-
-  .post-author img {
-    margin-right: 0.5rem;
-    margin-top: -5px;
-    margin-bottom: 2rem;
-    float: left;
+    color: currentColor;
   }
 }
 
 .upvote-link:before,
 .points:before,
-.post-time:before,
 .comments-link:before, 
 .edit-link:before,
 .comment-permalink:before {
   content: '・';
   padding: 0 3px;
+}
+
+.post-time {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  font-size: 10px;
+  opacity: 0.5;
 }

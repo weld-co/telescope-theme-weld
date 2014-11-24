@@ -66,8 +66,7 @@ Package.on_use(function (api) {
     'lib/client/js/progress_bar.js',
     'lib/client/js/newsletter_banner_weld.js',
     'lib/client/js/avatar_weld.js',
-    'lib/client/js/post_item_weld.js',
-    'lib/client/js/post_title_weld.js',
+    'lib/client/js/post_domain_weld.js',
     'lib/client/js/post_submit_weld.js',
 
     'img/apple-touch-icon-120.png',

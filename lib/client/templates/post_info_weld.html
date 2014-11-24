@@ -5,9 +5,9 @@
     <a class="post-author" href="{{profileUrl}}">{{>avatar}}{{authorName}}</a>
     {{#if upvoted}}
     {{else}}
-    <span class="upvote-link"><a href="#">{{i18n "Upvote"}}</a></span>
+    <span class="upvote-link"><a href="#">{{i18n "Like"}}</a></span>
     {{/if}}
-    <span class="points">{{baseScore}} <span class="unit">{{pointsUnitDisplayText}}</span></span>
+    <span class="points">{{baseScore}} <span class="unit">{{likesUnitDisplayText}}</span></span>
     <span class="comments-link"><a href="/posts/{{_id}}">{{commentsCount}} {{i18n 'Comments'}}</a></span>
     {{#if can_edit}}
     <span class="edit-link"><a href="/posts/{{_id}}/edit" class="goto-edit">Edit</a></span>
