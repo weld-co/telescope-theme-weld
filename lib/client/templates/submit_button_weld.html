@@ -1,8 +1,8 @@
 <!-- removed button class -->
 <template name="submitButtonWeld">
   {{#if isLoggedIn}}
-    <a class="submit" href="/submit">{{i18n "Share Something"}}</a>
+    <a class="submit" href="/submit">{{_ "Share Something"}}</a>
   {{else}}
-    <a class="sign-in mobile-only" href="/sign-in">{{i18n "Sign in"}}</a>
+    <a class="sign-in mobile-only" href="/sign-in">{{_ "Sign in"}}</a>
   {{/if}}
 </template>

@@ -6,7 +6,7 @@
       <div class="dropdown-menu">
         <ul role="menu" aria-labelledby="dLabel">
           {{#if hasNotifications}}
-            <li><a href="#" class="mark-as-read">{{i18n "Mark All As Read"}}</a></li>  
+            <li><a href="#" class="mark-as-read">{{_ "Mark All As Read"}}</a></li>  
             {{#each notifications}}
               {{> UI.dynamic template=notificationItem}}
             {{/each}}

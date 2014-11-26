@@ -1,7 +1,7 @@
 <template name="no_rights_weld">
   <div class="non-member">
     {{#if isLoggedIn}}
-    <h1>{{i18n "Thanks for signing up!"}}</h1>
+    <h1>{{_ "Thanks for signing up!"}}</h1>
     <h3>We'll confirm your account shortly! Been over 30 minutes? Reconfirm your account.</h3>
     <a href="mailto:support@welderwire.co?Subject=Confirm%20My%20Account&Body=Please%20confirm%20my%20new%20WELDER%20WIRE%20account.%20Thank%20you." class="button">Reconfirm My Account</a>
     {{else}}

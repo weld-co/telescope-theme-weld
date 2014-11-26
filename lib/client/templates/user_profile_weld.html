@@ -34,9 +34,9 @@
 
 			<div class="user-actions">
 				{{#if canEditProfile}}
-				<a href="/users/{{slug}}/edit">{{i18n "Edit Profile"}}</a>
+				<a href="/users/{{slug}}/edit">{{_ "Edit Profile"}}</a>
 				{{/if}}
-				<a href="/sign-out">{{i18n "Sign Out"}}</a>
+				<a href="/sign-out">{{_ "Sign Out"}}</a>
 			</div>
 
 		</div> <!-- .user-profile -->
@@ -44,10 +44,10 @@
 		{{#if isAdmin}}
 		<div class="user-data">
 			<div class="user-id">
-				{{i18n "ID"}}: {{_id}}
+				{{_ "ID"}}: {{_id}}
 			</div>
 			<div class="date-joined">
-				{{i18n "Joined"}}:
+				{{_ "Joined"}}:
 				{{createdAtFormatted}}
 			</div>
 		</div> <!-- .user-data -->
@@ -55,7 +55,7 @@
 
      {{#if isLoggedIn}}
 			<div class="user-profile-posts">
-				<h2>{{i18n "Posts"}}</h2>
+				<h2>{{_ "Posts"}}</h2>
 				<table>
 				<thead>
 					<tr>
@@ -72,7 +72,7 @@
 				{{#if hasMorePosts}}
 					<tr>
 						<td colspan="3">
-	    				<a class="posts-more more-button" href="#"><span>{{i18n "Load more"}}</span></a>
+	    				<a class="posts-more more-button" href="#"><span>{{_ "Load more"}}</span></a>
 						</td>
 					</tr>
 				{{/if}}
@@ -80,7 +80,7 @@
 			</div> <!-- .user-profile-posts -->
 
 			<div class="user-profile-comments">
-				<h2>{{i18n "Comments"}}</h2>
+				<h2>{{_ "Comments"}}</h2>
 				<table>
 				<thead>
 					<tr>
@@ -99,7 +99,7 @@
 				{{#if hasMoreComments}}
 					<tr>
 						<td colspan="3">
-	    				<a class="comments-more more-button" href="#"><span>{{i18n "Load more"}}</span></a>
+	    				<a class="comments-more more-button" href="#"><span>{{_ "Load more"}}</span></a>
 						</td>
 					</tr>
 				{{/if}}

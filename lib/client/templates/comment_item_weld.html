@@ -13,11 +13,11 @@
             <div class="comment-meta">
               <div class="comment-actions">
                 {{#if getSetting "nestedComments" true}}
-                <a href="/comments/{{_id}}" class="comment-reply goto-comment">{{i18n "Reply"}}</a>
+                <a href="/comments/{{_id}}" class="comment-reply goto-comment">{{_ "Reply"}}</a>
                 {{/if}}
-                <!-- <span class="comment-permalink"><a href="/comments/{{_id}}" class="goto-comment">{{i18n "Link"}}</a></span> -->
+                <!-- <span class="comment-permalink"><a href="/comments/{{_id}}" class="goto-comment">{{_ "Link"}}</a></span> -->
                 {{#if can_edit}}
-                <span class="edit-link"><a href="/comments/{{_id}}/edit">{{i18n "Edit"}}</a></span>
+                <span class="edit-link"><a href="/comments/{{_id}}/edit">{{_ "Edit"}}</a></span>
                 {{/if}}
               </div> <!-- comment-actions -->
             </div> <!-- comment-meta -->

@@ -64,7 +64,6 @@ Package.on_use(function (api) {
     'lib/client/js/weld.js',
     'lib/client/js/base_weld.js',
     'lib/client/js/mobile_nav_weld.js',
-    'lib/client/js/comment_item_weld.js',
     'lib/client/js/notifications_menu_weld.js',
     'lib/client/js/post_info_weld.js',  
     'lib/client/js/user_profile_weld.js',

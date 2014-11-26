@@ -13,22 +13,22 @@
 	<td>{{getKarma}}</td>
 	<td>
 		{{#if invites}}
-		<h4>{{i18n "Invited"}} {{invitedCount}} {{i18n "users"}}:</h4>
+		<h4>{{_ "Invited"}} {{invitedCount}} {{_ "users"}}:</h4>
 		<ul>
 			{{#each invites}}
 				<li><a href="{{getInvitedUserProfileUrl}}">{{invitedName}}</a></li>
 			{{/each}}
 		</ul>
 		{{/if}}
-		<p>({{inviteCount}} {{i18n "invites left"}})</p>
+		<p>({{inviteCount}} {{_ "invites left"}})</p>
 	</td>
 	<td>{{#if isInvited}}<i class="icon-check"></i>{{/if}}</td>
 	<td>{{#if userIsAdmin}}<i class="icon-check"></i>{{/if}}</td>
 	<td>
 		<ul>
-			<li>{{#if isInvited}}<a class="uninvite-link" href="#">{{i18n "Uninvite"}}</a>{{else}}<a href="#" class="invite-link">{{i18n "Invite"}}</a>{{/if}}</li>
-			<li>{{#if userIsAdmin}}<a class="unadmin-link" href="#">{{i18n "Unadmin"}}</a>{{else}}<a href="#" class="admin-link">{{i18n "Make admin"}}</a>{{/if}}</li>
-			<li><a class="delete-link" href="#">{{i18n "Delete User"}}</a></li>
+			<li>{{#if isInvited}}<a class="uninvite-link" href="#">{{_ "Uninvite"}}</a>{{else}}<a href="#" class="invite-link">{{_ "Invite"}}</a>{{/if}}</li>
+			<li>{{#if userIsAdmin}}<a class="unadmin-link" href="#">{{_ "Unadmin"}}</a>{{else}}<a href="#" class="admin-link">{{_ "Make admin"}}</a>{{/if}}</li>
+			<li><a class="delete-link" href="#">{{_ "Delete User"}}</a></li>
 		</ul>
 	</td>
 </tr>
