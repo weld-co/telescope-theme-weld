@@ -8,7 +8,7 @@
     <span class="upvote-link"><a href="#">{{i18n "Like"}}</a></span>
     {{/if}}
     <span class="points">{{baseScore}} <span class="unit">{{likesUnitDisplayText}}</span></span>
-    <span class="comments-link"><a href="/posts/{{_id}}">{{commentsCount}} {{i18n 'Comments'}}</a></span>
+    <span class="comments-link"><a href="/posts/{{_id}}">{{commentCount}} {{i18n 'Comments'}}</a></span>
     {{#if can_edit}}
     <span class="edit-link"><a href="/posts/{{_id}}/edit" class="goto-edit">Edit</a></span>
     {{/if}}

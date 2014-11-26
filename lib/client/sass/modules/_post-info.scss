@@ -7,6 +7,12 @@
     color: currentColor;
   }
 }
+.post:not(.sticky) {
+  .upvote-link {
+    font-weight: 500;
+    color: $primary-color;
+  }
+}
 
 .upvote-link:before,
 .points:before,

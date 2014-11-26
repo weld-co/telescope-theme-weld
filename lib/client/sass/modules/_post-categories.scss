@@ -8,8 +8,16 @@ a.post-domain {
   background: $lightest-grey;
   vertical-align: middle;
   display: inline-block;
+  margin-bottom: 4px;
 
   &:hover {
     color: $primary-color !important;
+  }
+}
+
+.posts.list .post:hover {
+  a.post-category,
+  a.post-domain {
+    background: white;
   }
 }

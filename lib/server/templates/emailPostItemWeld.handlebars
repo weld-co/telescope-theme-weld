@@ -1,0 +1,23 @@
+<div class="post-item">
+  <span class="header">
+    {{#if thumbnailUrl}}
+      <img class="post-thumbnail" src="{{thumbnailUrl}}"/>
+    {{/if}}
+    <a class="title" href="{{postLink}}" target="_blank">{{title}}</a>
+
+    <div class="post-meta">
+    {{#if domain}}
+      <a class="post-domain" href="">{{domain}}</a>
+      | 
+    {{/if}}
+    <span class="post-submitted">Submitted by <a href="{{profileUrl}}" class="comment-link" target="_blank">{{authorName}}</a></span>
+    <span class="post-date">on {{date}}</span> | 
+    <a class="pull-right" href="{{postPageLink}}" class="comment-link" target="_blank">{{comments}} Comments</a>
+    </div>
+  </span>
+
+  {{#if body}}
+    {{{htmlBody}}}
+  {{/if}}
+</div>
+

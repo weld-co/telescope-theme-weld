@@ -36,6 +36,15 @@
 .comment-meta { //also in post_info.scss
   margin: 1rem 0;
   text-align: right;
+  opacity: 0;
+  transition: opacity 200ms ease-in-out;
+  @include small {
+    opacity: 1;
+  }
+}
+
+.comment-main:hover .comment-meta {
+  opacity: 1;
 }
 
 .comment-username {
@@ -55,5 +64,14 @@
     color: $grey;
     vertical-align: middle;
     font-size: 12px;
+  }
+}
+
+.posts.list {
+  .post:not(.sticky):hover {
+    .comments-link a {
+      color: $primary-color;
+      text-decoration: underline;
+    }
   }
 }

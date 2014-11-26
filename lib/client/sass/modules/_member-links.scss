@@ -1,0 +1,19 @@
+.member-links {
+  display: block !important;
+  background: $lightest-grey;
+  padding: 0.75rem;
+  font-size: 14px;
+  min-width: 170px;
+  list-style-type: none;
+  width: 80%;
+
+  li:last-child {
+    margin-bottom: 0;
+  }
+
+  @include small {
+    font-size: 1rem;
+    background: transparentize($lightest-grey, 0.9);
+    width: 100%;
+  }
+}

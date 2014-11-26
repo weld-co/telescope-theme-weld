@@ -1,0 +1,14 @@
+<div class="new-post">New Post by <a href="{{profileUrl}}">{{postAuthorName}}</a></div>
+
+<a class="title" href="{{postPageLink}}">
+{{#if thumbnailUrl}}
+  <img class="post-thumbnail" src="{{thumbnailUrl}}"/>
+{{/if}}
+  {{postTitle}}}
+</a>
+
+{{#if htmlBody}}
+  {{{htmlBody}}}
+{{/if}}
+
+<a class="button" href="{{postPageLink}}" target="_blank">Comment on this post</a>

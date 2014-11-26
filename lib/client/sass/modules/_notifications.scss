@@ -31,21 +31,16 @@
   text-align: left;
 
   .dropdown-menu {
+    left: auto;
     min-width: 300px;
-    position: fixed;
-    right: 0rem;
-    top: 6rem;
-    margin-top: 0;
-    color: white;
-    @include small {
-      position: static;
-      width: 100%;
-    }
+    right: 0;
+    top: 1rem;
+    @include transform-origin( right, top );
 
     ul {
       padding: 1rem;
-      background: $darkest-grey;
       @include small {
+        padding: 0;
         max-width: 205px;
         color: white;
       }
@@ -55,38 +50,37 @@
       font-weight: bold;
       color: $primary-color;
     }
+
+    menu {
+      padding-bottom: 1rem;
+    }
   }
 
   .notification-item {
     margin-bottom: 1rem;
     font-size: 16px;
-    padding-top: 1rem;
-    border-top: 1px solid $grey;
-    &:last-child {
-      margin-bottom: 0;
-    }
   }
 
   .notification-timestamp {
     color: $grey;
     font-size: 12px;
+    display: block;
+
+    &:last-child {
+      margin-bottom: 1rem;
+    }
   }
 
   .notification-html {
-    font-size: 14px;
+    font-weight: bold;
 
     .action-link {
-      background: $primary-color;
-      color: white !important;
       display: block;
-      margin-top: 1rem; 
-      max-width: 280px;
-      overflow: hidden;
-      padding: 1rem;
-      text-overflow: ellipsis;
-      white-space: nowrap;
+      font-weight: normal;
+      font-size: 14px;
       @include small {
         display: inline;
+        color: $grey;
       }
     }
   }
