@@ -1,0 +1,87 @@
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="initial-scale=1.0">    <!-- So that mobile webkit will display zoomed in -->
+
+  <title>{{siteName}}</title>
+  <style type="text/css">
+
+    a {
+      color: #F1592A;
+    }
+
+    p {
+      margin-top: 20px;
+    }
+
+    body {
+      background: #eee;
+      font-family: "Avenir", Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.4;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .container {
+      background: #ffffff;
+      margin: 0 auto 40px auto;
+      max-width: 600px;
+      padding: 30px;
+      text-align: left;
+    }
+
+    .new-post {
+      color: #777;
+      margin-bottom: 30px;
+    }
+
+    .title {
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 1.2;
+      display: block;
+      margin-bottom: 30px;
+    }
+
+    .post-thumbnail {
+      border-radius: 3px;
+      float: left;
+      height: auto;
+      margin-bottom: 20px;
+      margin-right: 20px;
+      max-width: 70px;
+    }
+
+    .button {
+      background: #F1592A;
+      border-radius: 3px;
+      color: white;
+      display: block;
+      font-weight: bold;
+      margin-top: 30px;
+      padding: 20px 0;
+      text-align: center;
+      text-decoration: none;
+      width: 100%;
+    }
+    
+    @media screen and (max-width: 600px) {
+      .post-thumbnail {
+        display: block !important;
+        float: none !important;
+      }
+    }
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  {{{body}}}
+</div>
+<a href="{{accountLink}}">Change your notifications settings</a>
+
+</body>
+</html>

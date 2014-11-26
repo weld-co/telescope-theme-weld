@@ -1,8 +1,49 @@
 .avatar {
-  display: inline;
+  border-radius: 100%;
+  display: inline-block;
   height: 1.5rem;
+  margin-right: 0.5rem;
+  margin-top: -2px;
+  vertical-align: middle;
   width: 1.5rem;
-  @include border-radius(50%);
-  background: $lightest-grey url('/packages/telescope-theme-weld/img/weld_logo.png') no-repeat center;
-  background-size: 13px;
+
+  .avatar-image,
+  .avatar-initials {
+    background: $light-grey;
+    color: $primary-color;
+    border-radius: 100%;
+    font-family: inherit;
+    font-size: 0.55rem;
+    font-weight: 600;
+    line-height: 3;
+    transition: background 200ms ease, transform 200ms cubic-bezier(0, -1, 0.5, 1.75);
+
+    &:hover {
+      transform: scale(1.1)
+    }
+  }
+}
+
+.template-users {
+  .avatar-initials {
+    font-size: 1rem;
+    line-height: 4rem;
+  }
+}
+
+.post:not(.sticky) {
+  .avatar-initials:hover {
+    background: $primary-color !important;
+    color: $light-grey;
+  }
+}
+
+.posts.list .post:not(.sticky):hover,
+.single-post {
+  .post-meta {
+    .avatar-image,
+    .avatar-initials {
+      background: white;
+    }
+  }
 }

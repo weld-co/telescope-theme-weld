@@ -1,0 +1,23 @@
+a.post-category,
+a.post-domain {
+  font-size: 0.65rem;
+  font-weight: 500;
+  padding: 3px 5px 2px 5px;
+  color: $grey;
+  border-radius: 2px;
+  background: $lightest-grey;
+  vertical-align: middle;
+  display: inline-block;
+  margin-bottom: 4px;
+
+  &:hover {
+    color: $primary-color !important;
+  }
+}
+
+.posts.list .post:hover {
+  a.post-category,
+  a.post-domain {
+    background: white;
+  }
+}

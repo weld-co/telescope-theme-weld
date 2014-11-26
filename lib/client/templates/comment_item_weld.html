@@ -3,7 +3,6 @@
   <li class="comment module comment-displayed" id="{{_id}}">
    <div class="comment-body">
       {{#if isDeleted}}
-        <div class="comment-deleted">This comment has been deleted.</div>
       {{else}}
         <div class="comment-content">
           <div class="comment-main">
@@ -12,16 +11,11 @@
               {{>avatar}}
             </a>
             <div class="comment-meta">
-              <div class="comment-actions {{#if upvoted}}upvoted{{else}}not-upvoted{{/if}} {{#if downvoted}}downvoted{{else}}not-downvoted{{/if}}">
+              <div class="comment-actions">
                 {{#if getSetting "nestedComments" true}}
                 <a href="/comments/{{_id}}" class="comment-reply goto-comment">{{i18n "Reply"}}</a>
                 {{/if}}
-                {{#if upvoted}}
-                {{else}}
-                <span class="upvote-link"><a class="upvote" href="#">{{i18n "Upvote"}}</a></span>
-                {{/if}}
-                <span class="points">{{baseScore}} <span class="unit">{{pointsUnitDisplayText}}</span></span>
-                <span class="comment-permalink"><a href="/comments/{{_id}}" class="goto-comment">{{i18n "Link"}}</a></span>
+                <!-- <span class="comment-permalink"><a href="/comments/{{_id}}" class="goto-comment">{{i18n "Link"}}</a></span> -->
                 {{#if can_edit}}
                 <span class="edit-link"><a href="/comments/{{_id}}/edit">{{i18n "Edit"}}</a></span>
                 {{/if}}

@@ -5,9 +5,12 @@
   .avatar {
     height: 100px;
     width: 100px;
-    float: none;
     margin: 0;
-    background-size: 42px 40px;
+
+    .avatar-initials {
+      font-size: 1.5rem;
+      line-height: 4.5;
+    }
   }
 
   .edit-avatar {
