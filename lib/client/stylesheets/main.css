@@ -2601,7 +2601,7 @@ input[type="search"].search-input-field:focus {
 .post .post-heading .post-body {
   color: #aaaaaa;
   font-size: 14px;
-  height: 2rem;
+  max-height: 2rem;
   margin-bottom: 1.25rem;
 }
 /* line 152, ../sass/modules/_posts.scss */
