@@ -11,8 +11,8 @@
   vertical-align: middle;
   visibility: hidden;
   width: 100%;
-  z-index: 100;
-  @include animation ( fade-in-out 3s ease-out);
+  z-index: 999999;
+  @include animation (fade-in-out 3s ease-out);
   @include small {
     height: $mobile-header-height;
     line-height: $mobile-header-height;

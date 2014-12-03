@@ -30,7 +30,7 @@
 }
 
 .posts.list > .post {
-  @include transition ( background 150ms ease-in-out );
+  @include transition ( background 150ms ease-in-out, transform 150ms ease-in-out );
   // @include animation ( flash );
   // &:nth-child(1) { @include animation-duration(300ms); }
   // &:nth-child(2) { @include animation-duration(400ms); }
@@ -45,6 +45,10 @@
 
   &:hover {
     background: $lightest-grey;
+
+    .post-body:after {
+        background: linear-gradient(to right, rgba(242, 242, 242, 0), rgba(242, 242, 242, 1) 50%);
+    }
   }
 
   .inner {
@@ -56,7 +60,9 @@
     border: none;
 
     .post-title,
-    .post-meta {
+    .post-meta,
+    .post-body,
+    .post-body a {
       color: white;
     }
 
@@ -105,26 +111,24 @@
 .post {
   background: #ffffff;
   border-top: 1px solid $light-grey;
-  padding: 1.25rem 0;
+  padding: 1.25rem 0 1rem;
   position: relative;
 
   .post-heading {
-    display: block;
-    margin-bottom: 1rem;
-    text-rendering: optimizeLegibility;
 
     .post-title {
-      color: $dark-grey;
+      color: $darkest-grey;
       display: block;
-      font-size: 18px;
+      font-size: 21px;
       font-weight: 600;
-      line-height: 1.2;
-      margin-bottom: 0.5rem;
-      margin-right: 4px;
+      margin-bottom: 0.25rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      text-rendering: optimizeLegibility;
       
       &:visited {
         color: $grey;
-        text-decoration: line-through !important;
       }
 
       &:hover {
@@ -133,8 +137,15 @@
       }
 
       @include small {
-        font-size: 16px;
+        font-size: 18px;
       }
+    }
+
+    .post-body {
+      color: $grey;
+      font-size: 14px;
+      height: 2rem;
+      margin-bottom: 1.25rem;
     }
   }
 
@@ -166,19 +177,25 @@ a.back-link {
       color: inherit;
     }
 
-  .post-title {
-    font-size: 28px;
+    .post-title {
+      font-size: 28px;
+      margin-bottom: 0.25rem;
+      white-space: normal;
+      @include small {
+        font-size: 21px;
+      }
+    }
 
-    @include small {
-      font-size: 21px;
+    .post-body {
+      display: none;
     }
   }
-}
 
   .post-info {
     .post-meta {
       background: $lightest-grey;
       padding: 0.75rem;
+      opacity: 1;
     }
   }
 

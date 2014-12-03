@@ -1,17 +1,28 @@
 .post-meta,
 .comment-meta {
   color: $grey;
-  font-size: 12px;
-  
-  a, a:link, a:visited {
-    color: currentColor;
+  font-size: 10px;
+  opacity: 0.5;
+  transition: opacity 200ms ease;
+  @include small {
+    font-size: 12px;
   }
 }
-.post:not(.sticky) {
-  .upvote-link {
-    font-weight: 500;
-    color: $primary-color;
+
+.posts.list .post:hover {
+  .post-meta {
+    opacity: 1;
+    font-size: 12px;
   }
+}
+
+.posts.list .sticky .post-meta a:hover {
+  color: white;
+}
+
+.post:not(.sticky) .upvote-link a {
+  font-weight: 500;
+  color: $primary-color;
 }
 
 .upvote-link:before,
@@ -25,8 +36,15 @@
 
 .post-time {
   position: absolute;
-  right: 10px;
-  bottom: 10px;
-  font-size: 10px;
-  opacity: 0.5;
+  right: 1rem;
+  line-height: 1.2rem;
+}
+
+.author,
+.upvote-link:before,
+.post-author + .points:before,
+.post-time {
+  @include small {
+    display: none;
+  }
 }

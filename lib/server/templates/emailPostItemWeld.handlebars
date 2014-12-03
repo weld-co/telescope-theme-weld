@@ -3,21 +3,22 @@
     {{#if thumbnailUrl}}
       <img class="post-thumbnail" src="{{thumbnailUrl}}"/>
     {{/if}}
-    <a class="title" href="{{postLink}}" target="_blank">{{title}}</a>
+    <a class="title" href="{{postUrl}}" target="_blank">{{title}}</a>
 
     <div class="post-meta">
     {{#if domain}}
-      <a class="post-domain" href="">{{domain}}</a>
-      | 
+      <a class="post-domain" href="">{{domain}}</a>&nbsp;・&nbsp;
     {{/if}}
-    <span class="post-submitted">Submitted by <a href="{{profileUrl}}" class="comment-link" target="_blank">{{authorName}}</a></span>
-    <span class="post-date">on {{date}}</span> | 
-    <a class="pull-right" href="{{postPageLink}}" class="comment-link" target="_blank">{{comments}} Comments</a>
+    <span class="post-submitted">By <a href="{{profileUrl}}" class="comment-link" target="_blank">{{authorName}}</a></span>&nbsp;・&nbsp;
+    <a class="pull-right" href="{{postUrl}}" class="comment-link" target="_blank">{{commentCount}} Comments</a>
     </div>
   </span>
 
   {{#if body}}
+  <div class="post-body">   
     {{{htmlBody}}}
+  </div>
   {{/if}}
+
 </div>
 

@@ -21,6 +21,10 @@
     &:hover {
       transform: scale(1.1)
     }
+
+    @include small {
+      font-weight: 700;
+    }
   }
 }
 

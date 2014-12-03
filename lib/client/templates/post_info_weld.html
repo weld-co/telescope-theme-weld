@@ -2,7 +2,7 @@
 <template name="postInfoWeld">
   <div class="post-meta-item">
     
-    <a class="post-author" href="{{profileUrl}}">{{>avatar}}{{authorName}}</a>
+    <a class="post-author" href="{{profileUrl}}">{{>avatar}}<span class="author">{{authorName}}</span></a>
     {{#if upvoted}}
     {{else}}
     <span class="upvote-link"><a href="#">{{_ "Like"}}</a></span>
@@ -12,6 +12,6 @@
     {{#if can_edit}}
     <span class="edit-link"><a href="/posts/{{_id}}/edit" class="goto-edit">Edit</a></span>
     {{/if}}
-    <span class="post-time">{{ago}}</span>
+    <span class="post-time">{{timeAgo ago}}</span>
   </div>
 </template>

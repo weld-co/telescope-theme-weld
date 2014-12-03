@@ -23,6 +23,8 @@
 // Module Styles (header, posts, etc.)
 
 @import "modules/progress-bar";
+@import "modules/loading";
+@import "modules/loader";
 @import "modules/accounts";
 @import "modules/search";
 @import "modules/post-info";
@@ -31,7 +33,6 @@
 @import "modules/dropdown";
 @import "modules/errors";
 @import "modules/header";
-@import "modules/loading";
 @import "modules/mobile_nav";
 @import "modules/notifications";
 @import "modules/posts";

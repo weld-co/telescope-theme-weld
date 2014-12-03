@@ -1,9 +1,8 @@
-<span class="heading">
-<a href="{{profileUrl}}">{{comment.author}}</a>
-left a new comment on 
-<a href="{{postLink}}">{{post.title}}</a>:
-</span>
+<div class="title" style="margin-bottom: 10px !important">New Comment!</div>
+<a href="{{profileUrl}}">{{comment.author}}</a> commented on <a href="{{postUrl}}">{{post.title}}</a>:
 
-{{{body}}}
+<div class="post-body">
+  {{{body}}}
+</div>
 
-<a href="{{postCommentUrl}}" class="action-link">Reply</a><br/><br/>
+<a href="{{postCommentUrl}}" class="button">Reply to this comment</a>

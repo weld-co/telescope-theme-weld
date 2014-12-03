@@ -2,46 +2,61 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="initial-scale=1.0">    <!-- So that mobile webkit will display zoomed in -->
+  <meta name="format-detection" content="telephone=no"> <!-- disable auto telephone linking in iOS -->
 
   <title>{{siteName}}</title>
   <style type="text/css">
+
+    html,
+    body {
+      -ms-text-size-adjust: none;
+      -webkit-text-size-adjust: none;
+      height: 100%;
+      margin:0; 
+      padding:0;
+      background-color: #eee;
+    }
+
+    div {
+      display: block;
+    }
 
     a {
       color: #F1592A;
     }
 
-    p {
-      margin-top: 20px;
-    }
-
-    body {
-      background: #eee;
+    .background {
+      background-color: #eee;
       font-family: "Avenir", Helvetica, sans-serif;
-      font-size: 16px;
-      line-height: 1.4;
-      padding: 20px;
+      height: 100%;
+      padding: 40px 20px;
       text-align: center;
     }
 
     .container {
       background: #ffffff;
-      margin: 0 auto 40px auto;
+      margin-bottom: 40px;
+      margin-left: auto;
+      margin-right: auto;
       max-width: 600px;
       padding: 30px;
       text-align: left;
     }
 
-    .new-post {
+    .notification-type {
       color: #777;
-      margin-bottom: 30px;
+      display: block;
+      font-family: "Avenir", Helvetica, sans-serif;
+      margin-bottom: 40px;
     }
 
     .title {
+      font-family: "Avenir", Helvetica, sans-serif;
       font-size: 24px;
       font-weight: bold;
-      line-height: 1.2;
       display: block;
-      margin-bottom: 30px;
+      line-height: 1.2;
+      margin-bottom: 40px;
     }
 
     .post-thumbnail {
@@ -53,17 +68,34 @@
       max-width: 70px;
     }
 
+    .post-body {
+      font-family: "Avenir", Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.4;
+    }
+
+    p img {
+      max-width: 600px;
+    }
+
     .button {
       background: #F1592A;
       border-radius: 3px;
       color: white;
       display: block;
+      font-family: "Avenir", Helvetica, sans-serif;
       font-weight: bold;
+      margin-bottom: 40px;
       margin-top: 30px;
       padding: 20px 0;
       text-align: center;
       text-decoration: none;
       width: 100%;
+    }
+
+    .account-link {
+      margin-bottom: 80px;
+      display: block;
     }
     
     @media screen and (max-width: 600px) {
@@ -72,16 +104,21 @@
         float: none !important;
       }
     }
+    @media screen and (max-width: 480px) {
+      .title {
+        font-size: 18px !important;
+      }
+    }
 
 </style>
 </head>
 
 <body>
-
-<div class="container">
-  {{{body}}}
-</div>
-<a href="{{accountLink}}">Change your notifications settings</a>
-
+  <div class="background">
+    <div class="container">
+      {{{body}}}
+    </div> <!-- .container -->
+    <a class="account-link" href="{{accountLink}}">Change your notifications settings</a>
+  </div> <!-- .background -->
 </body>
 </html>

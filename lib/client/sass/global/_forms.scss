@@ -119,7 +119,7 @@ input[type="submit"].text-button {
     font-size: 0.875rem;
     background: white;
     height: $input-height;
-    border: 1px solid $middle-grey;
+    border: 1px solid $light-grey;
     border-radius: 0;
     @include single-transition (border-color, 500ms);
 
@@ -163,7 +163,7 @@ input[type="submit"].text-button {
 }
 
 #editor iframe {
-  border: 1px solid $middle-grey;
+  border: 1px solid $light-grey;
 }
 
 input[type="submit"],
@@ -199,7 +199,7 @@ button,
 }
 
 .styled-select {
-  border: 1px solid $middle-grey;
+  border: 1px solid $light-grey;
   width: 100%;
   height: $input-height;
   padding: 0 1rem;

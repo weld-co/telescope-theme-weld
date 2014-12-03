@@ -1,9 +1,20 @@
 .post-thumbnail {
   float: right;
   margin-left: 1rem;
-  opacity: 0.6;
   position: relative;
   cursor: pointer;
+  height: 5rem;
+
+  @include small {
+    margin: 0 0 1rem 1rem;
+  }
+}
+
+.post-thumbnail-link {
+  margin: 0;
+  max-width: 60px;
+  max-height: none;
+  opacity: 0.6;
   -webkit-will-change: opacity, filter;
   will-change: opacity, filter;
   @include transition (opacity 300ms ease, filter 300ms ease);
@@ -26,14 +37,8 @@
   }
 
   @include small {
-    margin: 0 0 1rem 1rem;
+    width: 50px;
   }
-}
-
-.post-thumbnail-link {
-  margin: 0;
-  max-width: 60px;
-  max-height: none;
 }
 
 .post-thumbnail-image {
