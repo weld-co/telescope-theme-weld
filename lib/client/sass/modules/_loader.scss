@@ -1,15 +1,29 @@
+.loader-wrap {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #FFF;
+  z-index: 10000;
+}
+
 .spinner {
-  margin: 100px auto;
   width: 40px;
   height: 40px;
-  position: relative;
+  position: absolute;
+  margin: auto;
+  top: -5rem; // for optical centering
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 .container1 > div, .container2 > div, .container3 > div {
   width: 8px;
   height: 8px;
   background-color: $primary-color;
-
   border-radius: 100%;
   position: absolute;
   -webkit-animation: bouncedelay 1.2s infinite ease-in-out;

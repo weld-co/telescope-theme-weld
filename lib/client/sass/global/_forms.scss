@@ -1,5 +1,14 @@
 $input-height: 2.5rem;
 
+.at-form {
+  width: 100%;
+  max-width: 30rem;
+}
+
+.fullPageAtForm {
+  margin: 0;
+}
+
 form, .accounts-dialog {
   &.form-block {
     background: $lightest-grey;
@@ -106,6 +115,7 @@ input[type="submit"].text-button {
 }
 
   input[type="text"],
+  input[type="url"],
   input[type="password"],
   input[type="number"],
   input[type="email"],
@@ -135,7 +145,7 @@ input[type="submit"].text-button {
   }
 
   ::-webkit-input-placeholder {
-    line-height: 1.1rem;
+    line-height: 1;
   }
 
   input[type="number"] {

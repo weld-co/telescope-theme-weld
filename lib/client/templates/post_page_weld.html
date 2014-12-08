@@ -1,8 +1,6 @@
 <template name="post_page_weld">
-  <div class="single-post grid">
-    <div class="posts">
-      {{> UI.dynamic template=post_item}}
-    </div>
+  <div class="full-width single-post">
+    {{> UI.dynamic template=post_item}}
     {{#if body}}
       {{> UI.dynamic template=post_body}}
     {{/if}}

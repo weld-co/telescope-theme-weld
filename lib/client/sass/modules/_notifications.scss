@@ -32,19 +32,7 @@
 
   .dropdown-menu {
     left: auto;
-    min-width: 300px;
-    right: 0;
-    top: 1rem;
-    @include transform-origin( right, top );
-
-    ul {
-      padding: 1rem;
-      @include small {
-        padding: 0;
-        max-width: 205px;
-        color: white;
-      }
-    }
+    width: 100%;
 
     a.mark-as-read {
       font-weight: bold;
@@ -59,6 +47,9 @@
   .notification-item {
     margin-bottom: 1rem;
     font-size: 16px;
+    &:last-child {
+      border-bottom: 1px rgba(255, 255, 255, 0.2) solid;
+    }
   }
 
   .notification-timestamp {
@@ -68,20 +59,6 @@
 
     &:last-child {
       margin-bottom: 1rem;
-    }
-  }
-
-  .notification-html {
-    font-weight: bold;
-
-    .action-link {
-      display: block;
-      font-weight: normal;
-      font-size: 14px;
-      @include small {
-        display: inline;
-        color: $grey;
-      }
     }
   }
 }

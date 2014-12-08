@@ -1,0 +1,14 @@
+.member-menu {
+  display: block !important;
+  color: $grey;
+  padding: 10% 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  list-style-type: none;
+  font-size: 1rem;
+  width: 100%;
+
+  li:last-child {
+    margin-bottom: 0;
+  }
+}

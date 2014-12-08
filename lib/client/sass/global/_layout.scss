@@ -1,35 +1,68 @@
-html {
-  height: 100%;
-  overflow-x: hidden;
-  @include animation(fade-in 200ms ease-in-out);
-}
-
+html, 
 body {
-  font-size: 14px;
-  height: 100%;
-}
-
-.outer-wrapper {
-  background: white;
   min-height: 100%;
-}
-
-.inner-wrapper {
-  width: 85%;
-  margin: 5% auto;
-  @include small {
-    width: 100%;
-  }
-  @include x-large {
-    width: 65%;
-  }
-}
-
-.content-wrapper {
-  padding: 0 1rem;
   position: relative;
-  background: white;
+}
+
+.sidebar,
+.content-wrap {
+  height: 100vh;
+  overflow-y: scroll;
+  -webkit-backface-visibility: hidden;
+  -webkit-overflow-scrolling: touch;
+  will-change: opacity, visibility, transform, filter;
+  @include transition ( 
+    opacity    500ms ease, 
+    visibility 500ms ease, 
+    transform  500ms ease,
+    -webkit-filter 500ms ease)
+}
+
+.sidebar {
+  flex: 0 0 auto;
+  -webkit-flex: 0 0 auto;
+  z-index: 200;
   @include small {
-    padding: 0;
+    position: fixed;
+    max-width: 100%;
+    pointer-events: none;
+    visibility: hidden;
+    width: 100%;
+    @include translateX(-100%);
   }
 }
+
+.content-wrap {
+  z-index: 100;
+  position: relative;
+  width: 100%;
+  @include small {
+    box-shadow: 0 0 0 99999px black;
+  }
+}
+
+.content {
+  @include align-self(center);
+  min-height: 100%;
+  padding: 8% $padding;
+  width: 100%;
+  max-width: 50rem;
+}
+
+// Mobile off-canvas nav
+
+.mobile-nav-open {
+  .sidebar {
+    pointer-events: auto;
+    visibility: visible;
+    @include translateX(0);
+  }
+  .content-wrap {
+    @include small {
+      pointer-events: none;
+      @include transform(scale(0.9) translateX(25%));
+      @include filter(brightness(40%));
+    }
+  }
+}
+

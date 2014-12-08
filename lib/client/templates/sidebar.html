@@ -1,11 +1,21 @@
 <template name="sidebar">
-  {{#if hasPrimaryNav}}
-    <ul class="sidebar {{dropdownClass}}">
+  <nav class="sidebar column">
+  <div class="close-icon mobile-only">×</div>
+  <a href="/" class="weld-logo desktop-only" alt="{{site_title}}"></a>
+    <ul class="sidebar-menu">
+      <li class="desktop-only">{{> searchWeld}}</li>
+      <li><a href="#">{{> notificationsMenuWeld}}</a></li>
       {{#each primaryNav}}
         <li>
           {{> UI.dynamic template=getTemplate}}
         </li>
       {{/each}}
+      {{#if isLoggedIn}}
+        <li><a href="{{profileUrl}}">{{_ "Profile"}}</a></li>
+        <li><a href="/sign-out">{{_ "Sign Out"}}</a></li>
+      {{else}}
+        <li><a href="/sign-in">{{_ "Sign In"}}</a></li>
+      {{/if}}
     </ul>
-  {{/if}}
+  </nav>
 </template>

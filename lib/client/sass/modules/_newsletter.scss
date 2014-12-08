@@ -5,7 +5,7 @@ $banner-height: 100px;
   color: white;
   min-height: $banner-height;
   padding: 0;
-  margin: 1rem 1rem 4rem;
+  margin: 1rem;
   position:relative;
   @include animation ( fade-in 600ms ease-in-out );
   @include small {

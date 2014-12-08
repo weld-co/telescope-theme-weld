@@ -1,28 +1,61 @@
 .sidebar {
-  float: left;
-  width: 30%;
-  color: $grey;
-  
-  a {
+  background: $darkest-grey;
+  padding-bottom: 5rem;
+  &::-webkit-scrollbar { 
+    width: 0px;
+    height: 0px;
+    background: transparent;
+  }
+}
+
+.sidebar-menu {
+  padding: $padding;
+  @include small {
+    margin-top: 2rem;
+  }
+
+
+  li {
     color: $grey;
-    &:hover {
-      color: $dark-grey;
+    display: block;
+    font-size: 1rem;
+    font-weight: 400;
+    height: auto;
+    margin-bottom: $gutter;
+    
+    a {
+      display: block;
+      &, &:link, &:visited {
+        color: $grey;
+      }
     }
   }
 
-  li:last-child {
-    margin-bottom: 0;
+  .dropdown {
+    
+    > a {
+      &:after {
+        display: inline-block;
+        position: relative;
+        top: -2px;
+        margin-left: 6px;
+        content: "▼";
+        font-size: 8px;
+      }
+    }
   }
 
-  @include small {
+  .dropdown-menu {
     display: none;
-  }
 
-  .submit:before {
-    content: '—';
-    display: block;
-    margin-bottom: 0.75rem;
-    color: $grey !important;
-    cursor: default;
+    li {
+      padding: 10px 0;
+      margin-bottom: 0;
+      border-top: 1px white(0.2) solid;
+    }
+
+    li:first-child {
+      margin-top: 1rem;
+    }
   }
 }

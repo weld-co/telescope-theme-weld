@@ -1,15 +1,14 @@
 <template name="no_rights_weld">
-  <div class="non-member">
+  <div class="non-member center">
     {{#if isLoggedIn}}
     <h1>{{_ "Thanks for signing up!"}}</h1>
     <h3>We'll confirm your account shortly! Been over 30 minutes? Reconfirm your account.</h3>
     <a href="mailto:support@welderwire.co?Subject=Confirm%20My%20Account&Body=Please%20confirm%20my%20new%20WELDER%20WIRE%20account.%20Thank%20you." class="button">Reconfirm My Account</a>
     {{else}}
-    <h1>Welcome to the WELDER Wire.</h1>
-    <h2>We’ve seen how powerful the WELDER Wire has been for our community. So we’ve made it even better through this custom platform. It’s now searchable, sortable and so much more. We think it’s going to be a much better way for us to communicate, share resources and create together!</h2>
-    <h3>After you create your account, we’ll confirm it.</h3>
-    <a href="/sign-up" class="button">Create An Account</a>
-    <a href="http://weld.co" class="text-button">Or learn more about WELD.</a>
+    <h1>THE WELDER WIRE</h1>
+    <h2>The private social network of the <a href="http://weld.co">WELD</a> community.</h2>
+    <h3></h3>
+    <a href="/sign-up" class="button">Request An Account</a>
     {{/if}}
   </div>
 </template>

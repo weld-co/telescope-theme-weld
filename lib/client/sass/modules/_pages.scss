@@ -1,61 +1,31 @@
-.template-posts_list_weld {
-  .content-wrapper > div {
-    @include animation (none);
-  }
-  @include small {
-    margin-top: 0;
-  }
-
-  .dialog {  
-    max-width: 30rem;
-    padding: 0 1rem;
-  }
+.content-wrap {
+  background: white;
 }
 
-.template-userProfileWeld {
-  .content-wrapper > div {
-    @include animation (slide-up cubic-bezier(0.5, 0, 0.25, 1.5), fade-in ease-in);
-    &:nth-child(1) { @include animation-duration (300ms); }
-    &:nth-child(2) { @include animation-duration (400ms); }
-    &:nth-child(3) { @include animation-duration (500ms); }
-    &:nth-child(4) { @include animation-duration (600ms); }
-    &:nth-child(5) { @include animation-duration (700ms); }
-    &:nth-child(6) { @include animation-duration (800ms); }
-  }
+.posts_list_weld {
+  padding: 0;
+  margin: 0;
 }
 
-.content-wrapper > div {
-  @include animation (scale-up 300ms cubic-bezier(0.5, 0, 0.25, 1.25), fade-in 300ms ease-in);
-  @include transform-origin (top, center)
+.userProfileWeld,
+.post_submit_weld,
+.post_page_weld,
+.post_edit_weld,
+.user_edit_weld {
+  @include animation (slide-left 300ms ease-in-out, fade-in 300ms ease-in);
 }
 
-.template-userProfileWeld,
-.template-user_edit_weld,
-.template-post_submit_weld,
-.template-post_page_weld,
-.template-user_email,
-.template-post_edit_weld,
-.template-comment_reply,
-.template-comment_edit {
-  max-width: 40rem;
-  padding: 0 1rem;
+.users {
+  max-width: 100%;
 }
 
-.template-fullPageAtForm,
-.template-settings,
-.template-categories,
-.template-toolbox {
-  max-width: 30rem;
-  padding: 0 1rem;
-}
+// // Unused animations on user profiles
+// @include animation (slide-up cubic-bezier(0.5, 0, 0.25, 1.5), fade-in ease-in);
+// &:nth-child(1) { @include animation-duration (300ms); }
+// &:nth-child(2) { @include animation-duration (400ms); }
+// &:nth-child(3) { @include animation-duration (500ms); }
+// &:nth-child(4) { @include animation-duration (600ms); }
+// &:nth-child(5) { @include animation-duration (700ms); }
+// &:nth-child(6) { @include animation-duration (800ms); }
 
-.inner-wrapper.template-fullPageAtForm {
-  margin-top: 10%;
-}
 
-.template-users {
-  width: 100%;
-  .content-wrapper > div {
-    @include animation(none);
-  }
-}

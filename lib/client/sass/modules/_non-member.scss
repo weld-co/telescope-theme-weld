@@ -1,17 +1,27 @@
 .non-member {
-  margin: 15% auto;
   text-align: center;
-  font-size: 38px;
   font-weight: 400;
-  padding: 1rem;
-  max-width: 700px;
+  color: $dark-grey;
+  padding: 0 $padding;
+  @include small {
+    font-size: 60%;
+  }
 
   h1 {
-    margin-bottom: 1rem;
+    font-size: 2em;
+    text-transform: uppercase;
+    margin-bottom: 0;
+    font-weight: 700;
+    letter-spacing: 3px;
   }
 
   h2 {
+    font-size: 1.5em;
     line-height: 1.4;
+  }
+
+  a {
+    color: $primary-color;
   }
 
   .sign-up {

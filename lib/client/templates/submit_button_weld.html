@@ -1,8 +1,7 @@
 <!-- removed button class -->
 <template name="submitButtonWeld">
+  <a class="new-post row desktop-only" href="/submit">+</a>
   {{#if isLoggedIn}}
-    <a class="submit" href="/submit">{{_ "Share Something"}}</a>
-  {{else}}
-    <a class="sign-in mobile-only" href="/sign-in">{{_ "Sign in"}}</a>
+    <a class="mobile-new-post mobile-only" href="/submit">{{_ "Share Something"}}</a>
   {{/if}}
 </template>

@@ -1,17 +1,38 @@
-.weld-header {
-  background: $lightest-grey;
-  padding: 0;
-  height: $header-height;
-  margin: 0;
-  color: $dark-grey;
-  position: relative;
-  z-index: 1000;
+.mobile-menu-button {
+  @include flex-grow(1);
+  width: 5rem;
+  line-height: $mobile-header-height; 
+  height: $mobile-header-height;
+  cursor: pointer;
+  background: url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2221%22%20height%3D%2217%22%20viewBox%3D%220%200%2021%2017%22%3E%3Cg%20fill%3D%22%23fff%22%3E%3Cpath%20d%3D%22M0%200h21v2h-21zM0%205h18v2h-18zM0%2010h20v2h-20zM0%2015h15v2h-15z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E') no-repeat left center;
+}
 
-  @include small {
-    background: $primary-color;
-    height: $mobile-header-height;
-    margin-bottom: 0;
+.sign-in {
+  @include flex-grow(1);
+  font-weight: 600;
+  color: white;
+  width: 5rem;
+  white-space: nowrap;
+  line-height: $mobile-header-height;
+  &:hover {
+    color: white;
   }
+}
+
+.mobile-search {
+  @include flex-grow(1);
+  width: 5rem;
+}
+
+.header {
+  @include flex-wrap (nowrap);
+  width: 100%;
+  background: $primary-color;
+  color: white;
+  min-height: $mobile-header-height;
+  max-height: $mobile-header-height;
+  padding: 0 ($padding / 2);
+  z-index: 9000;
 
   a, a:link, a:visited {
     &.button {
@@ -25,134 +46,6 @@
     > li {
       margin-bottom: 0;
       display: inline-block;
-
-      &:last-child .header-submodule {
-        margin-right: 0px;
-      }
     }
-  }
-
-  .mobile-header-link {
-    font-weight: 600;
-    color: white;
-    position: absolute;
-    right: 0;
-    top: 0;
-    text-align: center;
-    width: 5rem;
-    line-height: $mobile-header-height;
-    @include medium-large {
-      display: none;
-    }
-  }
-}
-
-.header-module {
-  position: absolute;
-  right: 0;
-  top: 0;
-  line-height: $header-height;
-  margin-right: 1.25rem;
-}
-
-.header-submodule {
-  display: inline-block;
-  
-  > * {
-    margin: 0 20px 0 0;
-  }
-}
-
-.sign-up {
-  margin-right: 0;
-}
-
-.weld-logo {
-  position: absolute;
-  left: 0;
-  display: block;
-  height: 70px;
-  width: 140px;
-  background: $primary-color url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22101%22%20height%3D%2231%22%20viewBox%3D%220%200%20101%2031%22%3E%3Cg%20fill%3D%22%23fff%22%3E%3Cpath%20d%3D%22M0%2031h29l4-4v-27h-33v31zm22-25h5v14l-5%205v-19zm-8%203h5v11l-5%205v-16zm-8-3h5v14l-5%205v-19zM54%2026h-3v-26h-5v26h-3v-26h-5v31h8l2.5-2%202.5%202h8v-31h-5zM62%2031h10v-5h-5v-9h5v-5h-5v-7h5v-5h-10zM80%200h-5v31h10v-5h-5zM98%200h-10v31h10l3-3v-25l-3-3zm-2%2026h-3v-21h3v21z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E') no-repeat center;
-
-  @include small {
-    position: static;
-    margin: 0 auto;
-    height: $mobile-header-height;
-
-    .tagline {
-      display: none;
-    }
-  }
-
-  @include medium-large {
-
-    @include transform-origin ( left );
-    @include transition ( width 250ms cubic-bezier(0.5, -0.75, 0.25, 1.5), background-position 250ms cubic-bezier(0.5, -0.75, 0.25, 1.5) );
-
-    &:hover {
-      width: 170px;
-      background-position: 45px center;
-
-      > .tagline {
-        margin-left: 200px;
-      }
-    }
-
-    &:before {
-      content: '←';
-      color: white;
-      line-height: $header-height;
-      margin-left: 20px;
-      @include transition ( opacity 250ms ease );
-      opacity: 0;
-    }
-
-    &:hover:before {
-      opacity: 1;
-    }
-
-    .tagline {
-      position: absolute;
-      margin-left: 160px;
-      font-style: italic;
-      color: $grey;
-      line-height: 70px;
-      width: 315px;
-      top: 0;
-      cursor: default;
-      pointer-events: none;
-      @include transition ( margin-left 250ms cubic-bezier(0.5, -0.75, 0.25, 1.5) );
-    }
-  }
-} // weld-logo
-
-.logo {
-  vertical-align: middle;
-  line-height: 1;
-
-  @include small {
-    margin-right: 0;
-
-    a {
-      font-size: 24px;
-      display: block;
-      position: static;
-      width: 100%;
-      height: $header-height;
-      line-height: $header-height;
-      text-align: center;
-      left: 0px;
-      top: 0px;
-      margin-right: 0;
-    }
-  }
-}
-
-.logo-image {
-  a, img {
-    display: block;
-    height: 100%;
-    width: 100%;
   }
 }

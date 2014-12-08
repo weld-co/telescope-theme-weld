@@ -17,12 +17,9 @@ a {
   width: 100%;
   text-align: center;
   color: $primary-color !important;
-  font-weight: bold;
+  font-weight: 600;
   display: block;
   clear: both;
-  @include small {
-    background: none;
-  }
 }
 
 .delete-link {

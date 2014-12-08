@@ -1,0 +1,11 @@
+<template name="sidebar">
+  {{#if hasPrimaryNav}}
+    <ul class="sidebar {{dropdownClass}}">
+      {{#each primaryNav}}
+        <li>
+          {{> UI.dynamic template=getTemplate}}
+        </li>
+      {{/each}}
+    </ul>
+  {{/if}}
+</template>

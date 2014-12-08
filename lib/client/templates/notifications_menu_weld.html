@@ -1,6 +1,5 @@
 <!-- added .notification-link class -->
 <template name="notificationsMenuWeld">
-  {{#if isLoggedIn}}
     <div class="dropdown notifications-menu header-submodule">
       <a class="view dropdown-top-level notifications-link {{#if hasNotifications}}has-notifications{{/if}}" href="/">{{notification_count_weld}}</a>
       <div class="dropdown-menu">
@@ -16,5 +15,4 @@
         </ul>
       </div>
     </div>
-  {{/if}}
 </template>

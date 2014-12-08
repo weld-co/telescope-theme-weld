@@ -1,0 +1,36 @@
+.weld-logo {
+  width: 100%;
+  min-height: $header-height;
+  background: $primary-color url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22101%22%20height%3D%2231%22%20viewBox%3D%220%200%20101%2031%22%3E%3Cg%20fill%3D%22%23fff%22%3E%3Cpath%20d%3D%22M0%2031h29l4-4v-27h-33v31zm22-25h5v14l-5%205v-19zm-8%203h5v11l-5%205v-16zm-8-3h5v14l-5%205v-19zM54%2026h-3v-26h-5v26h-3v-26h-5v31h8l2.5-2%202.5%202h8v-31h-5zM62%2031h10v-5h-5v-9h5v-5h-5v-7h5v-5h-10zM80%200h-5v31h10v-5h-5zM98%200h-10v31h10l3-3v-25l-3-3zm-2%2026h-3v-21h3v21z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E') no-repeat center;
+  padding: 0 10%;
+  background-origin: content-box;
+  @include transition ( background-position 250ms cubic-bezier(0.5, -0.75, 0.25, 1.5) );
+  @include medium-large {
+    &:hover {
+      background-position: 60% center;
+    }
+  }
+
+  &:before {
+    content: '←';
+    color: white;
+    margin-left: 20%;
+    line-height: $header-height;
+    opacity: 0;
+    @include transition ( opacity 250ms ease );
+    @include small {
+      display: none;
+    }
+  }
+
+  &:hover:before {
+    opacity: 1;
+  }
+
+  @include small {
+    @include flex-grow(2);
+    padding: 0;
+    min-height: $mobile-header-height;
+    background-color: transparent;
+  }
+}
