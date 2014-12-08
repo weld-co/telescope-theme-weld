@@ -1,7 +1,7 @@
 To get working run
 
 `meteor remove telescope-theme-hubble`  
-`meteor remove telscope-theme-base`  
+`meteor remove telescope-theme-base`  
 `meteor add telescope-theme-weld`  
 
 Also, you can add:  
