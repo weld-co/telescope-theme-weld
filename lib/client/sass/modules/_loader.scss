@@ -5,13 +5,14 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: #FFF;
   z-index: 10000;
+  background: rgba(255,255,255,0.2);
 }
 
-.spinner {
-  width: 40px;
-  height: 40px;
+.spinner,
+.background {
+  width: 35px;
+  height: 35px;
   position: absolute;
   margin: auto;
   top: -5rem; // for optical centering
@@ -20,10 +21,19 @@
   left: 0;
 }
 
+.background {
+  background: rgba(255,255,255,0.2);
+  border-radius: 100%;
+  width: 70px;
+  height: 70px;
+  z-index: -1;
+  top: calc(-5rem - 1px);
+}
+
 .container1 > div, .container2 > div, .container3 > div {
   width: 8px;
   height: 8px;
-  background-color: $primary-color;
+  background-color: $light-grey;
   border-radius: 100%;
   position: absolute;
   -webkit-animation: bouncedelay 1.2s infinite ease-in-out;

@@ -15,7 +15,9 @@
   @include animation (slide-left 300ms ease-in-out, fade-in 300ms ease-in);
 }
 
-.users {
+.admin,
+.usersWeld {
+  width: 100%;
   max-width: 100%;
 }
 

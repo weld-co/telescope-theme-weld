@@ -1,0 +1,29 @@
+<!-- removed user invites sections -->
+<template name="user_item_weld">
+<tr class="user">
+	<td>{{> avatar user=this shape="circle"}}</td>
+	<td>
+		<a class="display-name" href="{{getProfileUrl}}">{{displayName}}</a>
+		<br/>
+		<a href="mailto:{{getEmail}}">{{getEmail}}</a>
+	</td>
+	<td>{{createdAtFormatted}}</td>
+	<td>{{postCount}}</td>
+	<td>{{commentCount}}</td>
+	<td>{{getKarma}}</td>
+	<td>
+		{{#if isInvited}}
+			<a class="action-link uninvite-link" href="#">{{_ "uninvite"}}</a>
+		{{else}}
+			<a href="#" class="action-link invite-link">{{_ "invite"}}</a>
+		{{/if}}
+
+		{{#if userIsAdmin}}
+			<a class="action-link unadmin-link" href="#">{{_ "unadmin"}}</a>
+		{{else}}
+			<a href="#" class="action-link admin-link">{{_ "make_admin"}}</a>
+		{{/if}}
+			<a class="action-link delete-link" href="#">{{_ "delete_user"}}</a>
+	</td>
+</tr>
+</template>

@@ -7,12 +7,17 @@
     </div>
     <div class="control-group">
       <label class="control-label">{{_ "Title"}}</label>
-      <div class="controls"><input id="title" type="text" value="" /><a href="#" class="get-title-link inline-link">{{_ "Suggest a title from URL"}}</a></div>
+      <div class="controls">
+        <input id="title" type="text" value="" />
+        <a href="#" class="help-block get-title-link">{{_ "Suggest a title from URL"}}</a>
+      </div>
     </div>
     <div class="control-group">
       <label class="control-label">{{_ "Body"}}</label>
-      <div class="controls" id="editor"><textarea id="body" value="" class="input-xlarge"></textarea></div>
-      <span class="inline-link formatting">Formatting?</span>
+      <div class="controls" id="editor">
+        <textarea id="body" value="" class="input-xlarge"></textarea>
+      </div>
+      <span class="help-block important formatting">Formatting?</span>
     </div>
 
     {{#if categoriesEnabled}}
@@ -61,13 +66,17 @@
       <div id="postedAt" class={{showPostedAt}}>
         <div class="control-group">
           <label class="control-label post-form-date">{{_ "Posted Date"}}</label>
-          <div class="controls"><input id="postedAtDate" type="text" value="{{postedAtDate}}" /></div>
+          <div class="controls">
+            <input id="postedAtDate" type="text" value="{{postedAtDate}}" />
+          </div>
         </div>
         <div class="control-group">
           <label class="control-label post-form-time">{{_ "Posted Time"}}</label>
-          <div class="controls"><input id="postedAtTime" type="text" value="{{postedAtTime}}" /></div>
+          <div class="controls">
+            <input id="postedAtTime" type="text" value="{{postedAtTime}}" />
+            <span class="help-block">Leave blank to post at current time.</span>
+          </div>
         </div>
-        <p class="help-block">Leave blank to post at current time.</p>
       </div>
     {{/if}}
     <div class="form-actions">

@@ -5,7 +5,7 @@ $padding: $gutter * 1.25;
 
 // Grid Components
 
-.grid {
+.grid-wrap {
   @include display-flex;
   @include flex-wrap(nowrap);
   width: 100%;

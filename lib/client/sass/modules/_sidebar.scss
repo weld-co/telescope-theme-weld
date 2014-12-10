@@ -1,6 +1,5 @@
 .sidebar {
   background: $darkest-grey;
-  padding-bottom: 5rem;
   &::-webkit-scrollbar { 
     width: 0px;
     height: 0px;
@@ -11,9 +10,10 @@
 .sidebar-menu {
   padding: $padding;
   @include small {
+    min-height: 100vh;
+    margin-bottom: 20rem;
     margin-top: 2rem;
   }
-
 
   li {
     color: $grey;

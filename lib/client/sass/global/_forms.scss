@@ -9,6 +9,13 @@ $input-height: 2.5rem;
   margin: 0;
 }
 
+.fieldset-heading {
+  font-weight: 600;
+  font-size: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid $light-grey;
+}
+
 form, .accounts-dialog {
   &.form-block {
     background: $lightest-grey;
@@ -23,57 +30,13 @@ form, .accounts-dialog {
 
   .control-group, .form-group, .at-input {
     @include cf;
-    margin-bottom: $grid-padding;
+    margin-bottom: 1rem;
 
     > label {
-      font-weight: bold;
+      font-weight: 600;
       display: block;
       margin-bottom: 0.5rem;
       color: $dark-grey;
-      font-weight: 400;
-    }
-
-    .inline-link {
-      margin-top: .5rem;
-      color: $grey;
-      float: right;
-      font-size: 12px;
-      line-height: 1.6;
-      text-align: right;
-
-    .controls {
-      position: relative;
-
-        &.loading {
-          background: url(/img/loading.gif) no-repeat center;
-          height: $input-height;
-          width: $input-height + 1rem;
-          @include hide-text2;
-        }
-      }
-
-      label {
-        display: block;
-        margin-bottom: 0.5rem;
-      }
-
-      label.inline {
-        display: inline-block;
-        margin-bottom: 0;
-        margin-right: 10px;
-      }
-    }
-
-    &.inline {
-      .controls {
-        margin-left: 0px;
-        width: 80%;
-        float: left;
-      }
-
-      .submit {
-        float:right;
-      }
     }
   }
 
@@ -129,7 +92,7 @@ input[type="submit"].text-button {
     font-size: 0.875rem;
     background: white;
     height: $input-height;
-    border: 1px solid $light-grey;
+    border: 2px solid $light-grey;
     border-radius: 0;
     @include single-transition (border-color, 500ms);
 
@@ -137,10 +100,6 @@ input[type="submit"].text-button {
       outline: none;
       border-color: $primary-color;
       @include box-shadow (0px 0px 5px 0px rgba($primary-color,0.3));
-    }
-
-    &[type="number"] {
-      width: 30%;
     }
   }
 
@@ -173,7 +132,7 @@ input[type="submit"].text-button {
 }
 
 #editor iframe {
-  border: 1px solid $light-grey;
+  border: 2px solid $light-grey;
 }
 
 input[type="submit"],
@@ -239,6 +198,16 @@ input[type="search"] {
   display:block;
 }
 
+.help-block,
+.instruction-block {
+  margin-top: .5rem;
+  color: $grey;
+  float: right;
+  font-size: 14px;
+  line-height: 1.6;
+  text-align: right;
+}
+
 .ui-autocomplete {
   background: white;
   width: 200px!important;
@@ -247,9 +216,11 @@ input[type="search"] {
   @include box-shadow(0 1px 1px black(0.15));
 }
 
-.help-block {
+.help-block,
+.instructions-block {
+  font-size: 12px;
   color: $light-text;
-  margin-bottom:$grid-padding;
+  margin-bottom: $padding;
 }
 
 .link-select {

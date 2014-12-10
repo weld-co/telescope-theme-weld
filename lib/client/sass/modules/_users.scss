@@ -1,14 +1,26 @@
+.usersWeld {
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
 .user-list,
 .user-table {
-  font-size: 13px;  
-  .user {
-    .avatar {
-      height: 4rem;
-      width: 4rem;
-      display: block;
-      @include border-radius(4rem);
-    }
+  font-size: 13px;
+  min-width: 900px;
+
+  tr td:last-child,
+  .user td:last-child {
+    border-left: 2px solid transparentize($grey, 0.9);
   }
+}
+
+.display-name {
+  font-weight: 600;
+}
+
+.action-link:not(:last-child) {
+  margin-right: 1.5rem;
+  font-weight: 600;
 }
 
 .filter-sort {

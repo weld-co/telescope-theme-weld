@@ -9,6 +9,14 @@
   }
 }
 
+.post-meta-item {
+  position: relative;
+}
+
+.comment-meta {
+  font-size: 12px;
+}
+
 .posts.list .post:hover {
   .post-meta {
     opacity: 1;
@@ -28,7 +36,7 @@
 .upvote-link:before,
 .points:before,
 .comments-link:before, 
-.edit-link:before,
+.edit-post:before,
 .comment-permalink:before {
   content: '・';
   padding: 0 3px;
@@ -36,7 +44,7 @@
 
 .post-time {
   position: absolute;
-  right: 1rem;
+  right: 0;
   line-height: 1.2rem;
 }
 

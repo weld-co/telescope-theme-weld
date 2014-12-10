@@ -52,13 +52,22 @@
     }
   }
 
-  .notification-timestamp {
-    color: $grey;
-    font-size: 12px;
-    display: block;
+  .notification-html {
+    word-wrap: break-word;
+    word-break: break-all;
+    max-width: 200px;
 
-    &:last-child {
-      margin-bottom: 1rem;
+    a {
+      display: inline;
+      text-decoration: underline;
     }
+  }
+
+  .notification-timestamp {
+    color: $middle-grey;
+    font-size: 12px;
+    margin-bottom: 5px;
+    text-transform: capitalize;
+    display: block;
   }
 }

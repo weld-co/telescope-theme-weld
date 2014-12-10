@@ -23,12 +23,11 @@ a {
 }
 
 .delete-link {
-  padding: .5rem 1rem;
-  border: 1px solid red;
+  color: white !important;
+  background: $primary-color;
   border-radius: 3px;
-  color: red;
+  padding: .5rem 1rem;
   &:hover {
-    color: white;
     background: red;
   }
 }

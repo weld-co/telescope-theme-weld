@@ -21,3 +21,23 @@ a.post-domain {
     background: white;
   }
 }
+
+// Categories Admin Page
+
+input.category-name,
+input.category-number {
+  margin-bottom: 1rem;
+}
+
+.category-slug {
+  background: $lightest-grey;
+  border: 2px solid $light-grey;
+  padding: 12px;
+  cursor: not-allowed;
+  font-family: monospace;
+  width: 100%;
+}
+
+.category-save {
+  margin-bottom: 4rem;
+}

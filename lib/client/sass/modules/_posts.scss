@@ -10,10 +10,13 @@ a.new-post {
   width: $mobile-header-height;
   border-radius: 100%;
   margin: 5% auto;
-  transition: background 100ms ease, transform 100ms ease-in-out, box-shadow 100ms ease-in-out;
+  @include transition(
+    background 100ms ease, 
+    transform 100ms ease-in-out, 
+    box-shadow 100ms ease-in-out);
 
   &:hover {
-    transform: translateY(-2px);
+    @include translateY(-2px);
     box-shadow: 0 3px 8px 1px rgba(0,0,0,0.2);
   }
 
@@ -64,10 +67,6 @@ a.new-post {
 
   &:hover {
     background: $lightest-grey;
-
-    .post-body:after {
-        background: linear-gradient(to right, rgba(242, 242, 242, 0), rgba(242, 242, 242, 1) 50%);
-    }
   }
 
   .inner {
@@ -116,7 +115,6 @@ a.new-post {
   background: #ffffff;
   border-top: 1px solid $light-grey;
   padding: 1.25rem 0 1rem;
-  position: relative;
 
   &:first-child {
     border: none;
@@ -189,7 +187,6 @@ a.back-link {
       line-height: 1;
       margin-bottom: 1rem;
       white-space: normal;
-      pointer-events: none;
       white-space: normal;
       overflow: visible;
       @include small {
@@ -203,8 +200,13 @@ a.back-link {
       background: $lightest-grey;
       padding: 0.75rem;
       opacity: 1;
+      font-size: 12px;
     }
   }
+}
+
+.post_page_weld .post-title {
+  pointer-events: none;
 }
 
 .post-body {
