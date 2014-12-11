@@ -1,9 +1,20 @@
 .sidebar {
   background: $darkest-grey;
-  &::-webkit-scrollbar { 
-    width: 0px;
-    height: 0px;
-    background: transparent;
+}
+
+.close-icon {
+  font-size: 38px;
+  font-weight: 200;
+  color: #FFF;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 15px;
+  cursor: pointer;
+  @include small {
+    font-weight: 400;
   }
 }
 

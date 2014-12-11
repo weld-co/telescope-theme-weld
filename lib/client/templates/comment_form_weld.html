@@ -5,12 +5,12 @@
         <div class="comment-field" id="editor">
           <textarea id="comment" rows="3" autofocus="autofocus"></textarea> 
         </div>
-        <span class="inline-link formatting">Formatting?</span>
+        <div class="help-block important formatting">Formatting?</div>
+        {{> cheatsheet}}
         <div class="comment-submit">
           <input type="submit" class="button" value="{{_ "Add Comment"}}" title="(⌘+enter)" />
         </div>
       </form>
     </div>
   {{/if}}  
-  {{> cheatsheet}}
 </template>

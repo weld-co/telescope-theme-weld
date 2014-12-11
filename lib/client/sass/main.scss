@@ -18,10 +18,10 @@
 @import "global/tables";
 @import "global/links";
 @import "global/typography";
-@import "global/modals";
 
 // Module Styles (header, posts, etc.)
 
+@import "modules/cheatsheet";
 @import "modules/progress-bar";
 @import "modules/loader";
 @import "modules/accounts";

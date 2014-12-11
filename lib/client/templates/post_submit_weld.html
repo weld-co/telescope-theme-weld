@@ -9,7 +9,7 @@
       <label class="control-label">{{_ "Title"}}</label>
       <div class="controls">
         <input id="title" type="text" value="" />
-        <a href="#" class="help-block get-title-link">{{_ "Suggest a title from URL"}}</a>
+        <a href="#" class="help-block important get-title-link">{{_ "Suggest a title from URL"}}</a>
       </div>
     </div>
     <div class="control-group">
@@ -17,17 +17,19 @@
       <div class="controls" id="editor">
         <textarea id="body" value="" class="input-xlarge"></textarea>
       </div>
-      <span class="help-block important formatting">Formatting?</span>
+      <div class="help-block important formatting">Formatting?</div>
+      {{> cheatsheet}}
     </div>
 
     {{#if categoriesEnabled}}
     <div class="control-group">
-      <label class="control-label">{{_ "Category"}}</label>
-      <div class="controls">
+      <label class="control-label">Tag Your Post</label>
+      <div class="controls categories-wrap row">
         {{#each categories}}
-        <label class="radio inline">
-          <input id="category_{{_id}}" type="checkbox" value="{{_id}}" name="category" /> {{name}}
-        </label>
+        <div class="checkbox-styled">            
+          <input id="category_{{_id}}" type="checkbox" value="{{_id}}" name="category" /> 
+          <label for="category_{{_id}}" class="center">{{name}}</label>
+        </div>
         {{/each}}
       </div>
     </div>
@@ -74,7 +76,7 @@
           <label class="control-label post-form-time">{{_ "Posted Time"}}</label>
           <div class="controls">
             <input id="postedAtTime" type="text" value="{{postedAtTime}}" />
-            <span class="help-block">Leave blank to post at current time.</span>
+            <div class="help-block">Leave blank to post at current time.</div>
           </div>
         </div>
       </div>
@@ -83,5 +85,4 @@
       <input type="submit" class="button" value="{{_ "Submit"}}" />
     </div>
   </form>
-{{> cheatsheet}}
 </template>

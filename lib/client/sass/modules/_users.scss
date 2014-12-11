@@ -1,6 +1,7 @@
 .usersWeld {
   overflow-x: scroll;
   -webkit-overflow-scrolling: touch;
+  padding: 0;
 }
 
 .user-list,
@@ -11,6 +12,8 @@
   tr td:last-child,
   .user td:last-child {
     border-left: 2px solid transparentize($grey, 0.9);
+    min-width: 300px;
+    position: relative;
   }
 }
 
@@ -23,11 +26,27 @@
   font-weight: 600;
 }
 
+.delete-user {
+  color: #FFF !important;
+  background: $primary-color;
+  border-radius: 3px;
+  position: absolute;
+  right: 1rem;
+  top: 0;
+  margin: auto;
+  bottom: 0;
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  padding: 0;
+}
+
 .filter-sort {
   @include cf;
-  padding: $grid-padding;
+  padding: $padding;
   background: $dark-grey;
-  border-radius: 3px 3px 0 0;
+  height: $header-height;
 
   a, span {
     display: inline-block;

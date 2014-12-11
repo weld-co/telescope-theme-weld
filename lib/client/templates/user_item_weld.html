@@ -5,7 +5,7 @@
 	<td>
 		<a class="display-name" href="{{getProfileUrl}}">{{displayName}}</a>
 		<br/>
-		<a href="mailto:{{getEmail}}">{{getEmail}}</a>
+		<a href="mailto:{{getEmail}}">Email</a>
 	</td>
 	<td>{{createdAtFormatted}}</td>
 	<td>{{postCount}}</td>
@@ -23,7 +23,7 @@
 		{{else}}
 			<a href="#" class="action-link admin-link">{{_ "make_admin"}}</a>
 		{{/if}}
-			<a class="action-link delete-link" href="#">{{_ "delete_user"}}</a>
+			<a class="action-link delete-link delete-user" href="#">{{_ "delete_user"}}</a>
 	</td>
 </tr>
 </template>

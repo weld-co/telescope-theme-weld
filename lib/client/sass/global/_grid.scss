@@ -57,5 +57,8 @@ $padding: $gutter * 1.25;
   @include align-self(center);
   @include align-items(center);
   @include justify-content(center);
-  transform: translateY(-10%); // optically centering
+}
+
+.optical-center {
+  transform: translateY(-10%);
 }

@@ -1,0 +1,45 @@
+.formatting {
+  cursor: pointer;
+  @include small {
+    font-size: 14px;
+  }
+}
+
+.cheatsheet {
+  width: 100%;
+  font-size: 1rem;
+  background: $lightest-grey;
+  padding: $padding;
+  margin: $padding 0;
+  display: none;
+  @include small {
+    font-size: 0.875rem;
+  }
+}
+
+.cheatsheet.open {
+  display: block;
+  @include animation(fade-in-down 300ms ease-in-out);
+}
+
+.cheatsheet p {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  display: block;
+  border-bottom: 1px dotted $grey;
+  @include small {
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+}
+
+.cheatsheet p:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: 0 none;
+}
+
+.md-char {
+  color: $primary-color;
+  font-weight: 500;
+}

@@ -24,19 +24,19 @@ form, .accounts-dialog {
     padding: 1.5rem;
   }
 
-  > div {
-    @include cf;
-  }
-
   .control-group, .form-group, .at-input {
     @include cf;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 
     > label {
       font-weight: 600;
       display: block;
       margin-bottom: 0.5rem;
       color: $dark-grey;
+    }
+
+    .controls {
+      clear: both;
     }
   }
 
@@ -61,8 +61,6 @@ form, .accounts-dialog {
         float: none;
         margin-right: 1rem;
       }
-
-
     }
   }
 
@@ -92,6 +90,7 @@ input[type="submit"].text-button {
     font-size: 0.875rem;
     background: white;
     height: $input-height;
+    line-height: $input-height;
     border: 2px solid $light-grey;
     border-radius: 0;
     @include single-transition (border-color, 500ms);
@@ -104,7 +103,7 @@ input[type="submit"].text-button {
   }
 
   ::-webkit-input-placeholder {
-    line-height: 1;
+    line-height: $input-height;
   }
 
   input[type="number"] {
@@ -131,8 +130,15 @@ input[type="submit"].text-button {
   }
 }
 
-#editor iframe {
-  border: 2px solid $light-grey;
+#editor {
+  iframe {
+    border: 2px solid $light-grey;
+    &:focus {
+      outline: none;
+      border-color: $primary-color;
+      @include box-shadow (0px 0px 5px 0px rgba($primary-color,0.3));
+    }
+  }
 }
 
 input[type="submit"],
@@ -183,29 +189,20 @@ input[type="search"] {
 }
 
 .twitter-signup {
-  margin-bottom:20px;
-  padding-bottom:20px;
-  border-bottom:1px solid $lighter-grey;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: m1px solid $lighter-grey;
 
   .twitter-button {
-    background:#00aced;
+    background: #00aced;
   }
 }
+
 .category-slug {
   font-size:12px;
   float:left;
   width:80%;
   display:block;
-}
-
-.help-block,
-.instruction-block {
-  margin-top: .5rem;
-  color: $grey;
-  float: right;
-  font-size: 14px;
-  line-height: 1.6;
-  text-align: right;
 }
 
 .ui-autocomplete {
@@ -218,9 +215,11 @@ input[type="search"] {
 
 .help-block,
 .instructions-block {
+  color: $grey;
   font-size: 12px;
-  color: $light-text;
-  margin-bottom: $padding;
+  margin-top: .5rem;
+  text-align: right;
+  display: block;
 }
 
 .link-select {
@@ -242,4 +241,46 @@ input[type="search"] {
     outline: none !important;
     box-shadow: none !important;
   }
+}
+
+// Custom Styled Radio Buttons
+
+.categories-wrap {
+  @include justify-content(flex-start);
+  margin-top: 1rem;
+}
+
+.checkbox-styled {
+  display: inline;
+  min-width: 125px;
+  margin-bottom: 0.5rem;
+  &:not(:last-child) {
+    margin-right: 0.5rem;
+  }
+
+  @include small {
+    max-width: 100%;
+    width: 100%;
+    &:not(:last-child) {
+      margin-right: 0;
+    }
+  }
+}
+
+.checkbox-styled input {
+  display: none;
+}
+
+.checkbox-styled > input + label {
+    background: $lightest-grey;
+    width: 100%;
+    @include display-flex;
+    height: 3rem;
+    padding: 0 1rem;
+}
+
+.checkbox-styled > input:checked + label {
+    background: $primary-color;
+    color: white;
+    @include animation (scale-up 200ms cubic-bezier(0.5, -0.75, 0.25, 1.5));
 }

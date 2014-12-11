@@ -23,16 +23,19 @@
         <div class="control-group">
           <label class="control-label post-form-body">{{_ "Body"}}</label>
           <div class="controls" id="editor"><textarea id="body" value="" class="input-xlarge">{{body}}</textarea></div>
-          <span class="inline-link formatting">Formatting?</span>
+          <div class="help-block important formatting">Formatting?</div>
+          {{> cheatsheet}}
         </div>
+
         {{#if categoriesEnabled}}
         <div class="control-group post-form-category">
           <label class="control-label">{{_ "Categories"}}</label>
           <div class="controls">
             {{#each categories}}
-            <label class="radio inline">
-              <input id="category_{{_id}}" type="checkbox" value="{{_id}}" name="category" {{checked}} /> {{name}}
-            </label>
+              <div class="checkbox-styled">            
+                <input id="category_{{_id}}" type="checkbox" value="{{_id}}" name="category" /> 
+                <label for="category_{{_id}}" class="center">{{name}}</label>
+              </div>
             {{/each}}
           </div>
         </div>
@@ -91,5 +94,4 @@
       </form>
     {{/with}}
   </div>
-  {{> cheatsheet}}
 </template>

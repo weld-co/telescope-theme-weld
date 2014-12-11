@@ -11,17 +11,20 @@ body {
   -webkit-backface-visibility: hidden;
   -webkit-overflow-scrolling: touch;
   will-change: opacity, visibility, transform, filter;
-  @include transition ( 
-    opacity    500ms ease, 
-    visibility 500ms ease, 
-    transform  500ms ease,
-    -webkit-filter 500ms ease)
+  @include transition ( opacity 500ms ease, visibility 500ms ease, transform 500ms ease, -webkit-filter 500ms ease);
 }
 
 .sidebar {
   flex: 0 0 auto;
   -webkit-flex: 0 0 auto;
   z-index: 200;
+
+  &::-webkit-scrollbar { 
+    width: 0px;
+    height: 0px;
+    background: transparent;
+  }
+
   @include small {
     position: fixed;
     max-width: 100%;
@@ -36,6 +39,20 @@ body {
   z-index: 100;
   position: relative;
   width: 100%;
+
+  // &::-webkit-scrollbar { 
+  //   width: 4px;
+  //   height: 4px;
+  // }
+
+  // &::-webkit-scrollbar-track { 
+  //   background: #DADADA;
+  // }
+
+  // &::-webkit-scrollbar-thumb { 
+  //   background: $primary-color;
+  // }
+
   @include small {
     box-shadow: 0 0 0 99999px black;
   }
