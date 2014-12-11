@@ -19,7 +19,7 @@
 
 .cheatsheet.open {
   display: block;
-  @include animation(fade-in-down 300ms ease-in-out);
+  @include animation(fade-in 300ms ease-in-out);
 }
 
 .cheatsheet p {

@@ -1,9 +1,10 @@
+<!--  add markdown cheatsheet module -->
 <template name="comment_form_weld">
   {{#if canComment}}
     <div class="comment-new module">
       <form>
         <div class="comment-field" id="editor">
-          <textarea id="comment" rows="3" autofocus="autofocus"></textarea> 
+          <textarea id="comment" rows="3"></textarea> 
         </div>
         <div class="help-block important formatting">Formatting?</div>
         {{> cheatsheet}}

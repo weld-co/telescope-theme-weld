@@ -118,8 +118,8 @@ input[type="submit"].text-button {
 
   textarea {
     min-height: 120px;
+    font-family: inherit;
     line-height: 1.4;
-    font-size: 12px;
     resize: vertical;
   }
 
@@ -274,6 +274,7 @@ input[type="search"] {
 .checkbox-styled > input + label {
     background: $lightest-grey;
     width: 100%;
+    cursor: pointer;
     @include display-flex;
     height: 3rem;
     padding: 0 1rem;

@@ -1,5 +1,5 @@
 <!-- link to post page -->
 <template name="postTitleWeld">
   <a href="/posts/{{_id}}" class="post-title">{{title}}</a>
-  <div class="post-body truncate">{{{sanitize htmlBody}}}</div>
+  <div class="post-body truncate">{{{stripHTML htmlBody}}}</div>
 </template>
