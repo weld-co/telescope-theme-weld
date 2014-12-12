@@ -75,6 +75,7 @@ Package.on_use(function (api) {
     'lib/client/js/post_domain_weld.js',
     'lib/client/js/post_info_weld.js',
     'lib/client/js/post_item_weld.js',
+    'lib/client/js/post_title_weld.js',
     'lib/client/js/cheatsheet.js',
     'lib/client/js/post_thumbnail_weld.js', 
     'lib/client/js/progress_bar.js',

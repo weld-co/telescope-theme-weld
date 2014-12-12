@@ -1028,8 +1028,8 @@ form input[disabled='disabled'], .accounts-dialog input[disabled='disabled'] {
 /* line 119, ../sass/global/_forms.scss */
 form textarea, .accounts-dialog textarea {
   min-height: 120px;
+  font-family: inherit;
   line-height: 1.4;
-  font-size: 12px;
   resize: vertical;
 }
 /* line 126, ../sass/global/_forms.scss */
@@ -1223,13 +1223,14 @@ input[type="search"] {
 .checkbox-styled > input + label {
   background: #f2f2f2;
   width: 100%;
+  cursor: pointer;
   display: -webkit-flex;
   display: flex;
   height: 3rem;
   padding: 0 1rem;
 }
 
-/* line 282, ../sass/global/_forms.scss */
+/* line 283, ../sass/global/_forms.scss */
 .checkbox-styled > input:checked + label {
   background: #f1592a;
   color: white;
@@ -1506,9 +1507,9 @@ strong {
 /* line 20, ../sass/modules/_cheatsheet.scss */
 .cheatsheet.open {
   display: block;
-  -moz-animation: fade-in-down 300ms ease-in-out;
-  -webkit-animation: fade-in-down 300ms ease-in-out;
-  animation: fade-in-down 300ms ease-in-out;
+  -moz-animation: fade-in 300ms ease-in-out;
+  -webkit-animation: fade-in 300ms ease-in-out;
+  animation: fade-in 300ms ease-in-out;
 }
 
 /* line 25, ../sass/modules/_cheatsheet.scss */
@@ -2503,9 +2504,10 @@ a.new-post:active {
   font-size: 14px;
   max-height: 2rem;
   margin-bottom: 1.25rem;
+  overflow: hidden;
 }
 
-/* line 159, ../sass/modules/_posts.scss */
+/* line 160, ../sass/modules/_posts.scss */
 .launch-icon {
   vertical-align: middle;
   display: inline-block;
@@ -2513,32 +2515,32 @@ a.new-post:active {
   margin-left: 2px;
 }
 
-/* line 166, ../sass/modules/_posts.scss */
+/* line 167, ../sass/modules/_posts.scss */
 a.back-link {
   color: #aaaaaa;
   display: block;
   margin-bottom: 1rem;
 }
-/* line 170, ../sass/modules/_posts.scss */
+/* line 171, ../sass/modules/_posts.scss */
 a.back-link:hover {
   color: #f1592a;
 }
 
-/* line 175, ../sass/modules/_posts.scss */
+/* line 176, ../sass/modules/_posts.scss */
 .single-post .post {
   border-top: none;
   padding-top: 0;
   padding-bottom: 2rem;
 }
-/* line 180, ../sass/modules/_posts.scss */
+/* line 181, ../sass/modules/_posts.scss */
 .single-post .post .post-heading {
   margin-bottom: 2rem;
 }
-/* line 182, ../sass/modules/_posts.scss */
+/* line 183, ../sass/modules/_posts.scss */
 .single-post .post .post-heading a:visited {
   color: inherit;
 }
-/* line 186, ../sass/modules/_posts.scss */
+/* line 187, ../sass/modules/_posts.scss */
 .single-post .post .post-heading .post-title {
   font-size: 28px;
   line-height: 1;
@@ -2548,12 +2550,12 @@ a.back-link:hover {
   overflow: visible;
 }
 @media screen and (max-width: 40em) {
-  /* line 186, ../sass/modules/_posts.scss */
+  /* line 187, ../sass/modules/_posts.scss */
   .single-post .post .post-heading .post-title {
     font-size: 21px;
   }
 }
-/* line 200, ../sass/modules/_posts.scss */
+/* line 201, ../sass/modules/_posts.scss */
 .single-post .post .post-info .post-meta {
   background: #f2f2f2;
   padding: 0.75rem;
@@ -2561,24 +2563,24 @@ a.back-link:hover {
   font-size: 12px;
 }
 
-/* line 209, ../sass/modules/_posts.scss */
+/* line 210, ../sass/modules/_posts.scss */
 .post_page_weld .post-title {
   pointer-events: none;
 }
 
-/* line 213, ../sass/modules/_posts.scss */
+/* line 214, ../sass/modules/_posts.scss */
 .post-body {
   margin-bottom: 2rem;
   font-size: 16px;
 }
 @media screen and (max-width: 40em) {
-  /* line 213, ../sass/modules/_posts.scss */
+  /* line 214, ../sass/modules/_posts.scss */
   .post-body {
     font-size: 14px;
   }
 }
 
-/* line 221, ../sass/modules/_posts.scss */
+/* line 222, ../sass/modules/_posts.scss */
 .more-button {
   margin-top: 2rem;
 }
@@ -2602,19 +2604,24 @@ a.post-domain:hover {
   color: #f1592a !important;
 }
 
-/* line 19, ../sass/modules/_post-categories.scss */
+/* line 18, ../sass/modules/_post-categories.scss */
+a.post-category[href$="category/undefined"] {
+  display: none;
+}
+
+/* line 23, ../sass/modules/_post-categories.scss */
 .posts.list .post:hover a.post-category,
 .posts.list .post:hover a.post-domain {
   background: white;
 }
 
-/* line 27, ../sass/modules/_post-categories.scss */
+/* line 31, ../sass/modules/_post-categories.scss */
 input.category-name,
 input.category-number {
   margin-bottom: 1rem;
 }
 
-/* line 32, ../sass/modules/_post-categories.scss */
+/* line 36, ../sass/modules/_post-categories.scss */
 .category-slug {
   background: #f2f2f2;
   border: 2px solid #eeeeee;
@@ -2624,7 +2631,7 @@ input.category-number {
   width: 100%;
 }
 
-/* line 41, ../sass/modules/_post-categories.scss */
+/* line 45, ../sass/modules/_post-categories.scss */
 .category-save {
   margin-bottom: 3rem;
 }
@@ -2864,7 +2871,7 @@ input.category-number {
   margin: 0;
 }
 
-/* line 10, ../sass/modules/_pages.scss */
+/* line 12, ../sass/modules/_pages.scss */
 .userProfileWeld,
 .post_submit_weld,
 .post_page_weld,
@@ -2875,7 +2882,7 @@ input.category-number {
   animation: slide-left 300ms ease-in-out, fade-in 300ms ease-in;
 }
 
-/* line 18, ../sass/modules/_pages.scss */
+/* line 20, ../sass/modules/_pages.scss */
 .admin,
 .usersWeld {
   width: 100%;
