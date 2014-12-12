@@ -47,6 +47,17 @@ a.new-post {
     }
 }
 
+.post-loading {
+  border-top: 1px solid $light-grey;
+  box-sizing: content-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  z-index: 100;  
+}
+
 .posts {
   width: 100%;
 }
@@ -96,7 +107,6 @@ a.new-post {
   }
 
   @include small {
-    @include animation (none);
     .inner {
       padding: 0 1rem;
     }
@@ -116,6 +126,8 @@ a.new-post {
   background: #ffffff;
   border-top: 1px solid $light-grey;
   padding: 1.25rem 0 1rem;
+  position: relative;
+  will-change: transform;
 
   &:first-child {
     border: none;

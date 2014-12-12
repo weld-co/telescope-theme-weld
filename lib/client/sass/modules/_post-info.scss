@@ -6,6 +6,7 @@
   transition: opacity 200ms ease;
   @include small {
     font-size: 12px;
+    min-width: 320px;
   }
 }
 
@@ -46,13 +47,4 @@
   position: absolute;
   right: 0;
   line-height: 1.2rem;
-}
-
-.author,
-.upvote-link:before,
-.post-author + .points:before,
-.post-time {
-  @include small {
-    display: none;
-  }
 }

@@ -1,8 +1,8 @@
 <!-- added upvote and comments links and icon -->
 <template name="postInfoWeld">
   <div class="post-meta-item">
-    
-    <a class="post-author" href="{{profileUrl}}">{{>avatar}}<span class="author">{{authorName}}</span></a>
+    <a class="post-author desktop-only" href="{{profileUrl}}">{{>avatar}}</a>
+    <a class="author" href="{{profileUrl}}">{{authorName}}</a>
     {{#if upvoted}}
     {{else}}
     <span class="upvote-link"><a href="#">{{_ "Like"}}</a></span>
@@ -12,6 +12,6 @@
     {{#if can_edit}}
     <span class="edit-post"><a href="/posts/{{_id}}/edit" class="goto-edit">Edit</a></span>
     {{/if}}
-    <span class="post-time">{{timeAgo ago}}</span>
+    <span class="post-time desktop-only">{{timeAgo ago}}</span>
   </div>
 </template>

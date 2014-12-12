@@ -69,7 +69,6 @@ Package.on_use(function (api) {
     'lib/client/js/weld.js',
     'lib/client/js/base_weld.js',
     'lib/client/js/layout_weld.js',
-    'lib/client/js/avatar_weld.js',
     'lib/client/js/newsletter_banner_weld.js',
     'lib/client/js/notifications_menu_weld.js',
     'lib/client/js/post_domain_weld.js',

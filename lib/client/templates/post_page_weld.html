@@ -1,6 +1,8 @@
 <template name="post_page_weld">
   <div class="full-width single-post">
+    <div class="post {{rankClass}} {{#if sticky}}sticky{{/if}} {{inactiveClass}}" id="{{_id}}">
     {{> UI.dynamic template=post_item}}
+    </div>
     {{#if body}}
       {{> UI.dynamic template=post_body}}
     {{/if}}

@@ -1956,37 +1956,38 @@ input[type="search"].search-input-field:focus {
   .post-meta,
   .comment-meta {
     font-size: 12px;
+    min-width: 320px;
   }
 }
 
-/* line 12, ../sass/modules/_post-info.scss */
+/* line 13, ../sass/modules/_post-info.scss */
 .post-meta-item {
   position: relative;
 }
 
-/* line 16, ../sass/modules/_post-info.scss */
+/* line 17, ../sass/modules/_post-info.scss */
 .comment-meta {
   font-size: 12px;
 }
 
-/* line 21, ../sass/modules/_post-info.scss */
+/* line 22, ../sass/modules/_post-info.scss */
 .posts.list .post:hover .post-meta {
   opacity: 1;
   font-size: 12px;
 }
 
-/* line 27, ../sass/modules/_post-info.scss */
+/* line 28, ../sass/modules/_post-info.scss */
 .posts.list .sticky .post-meta a:hover {
   color: white;
 }
 
-/* line 31, ../sass/modules/_post-info.scss */
+/* line 32, ../sass/modules/_post-info.scss */
 .post:not(.sticky) .upvote-link a {
   font-weight: 500;
   color: #f1592a;
 }
 
-/* line 36, ../sass/modules/_post-info.scss */
+/* line 37, ../sass/modules/_post-info.scss */
 .upvote-link:before,
 .points:before,
 .comments-link:before,
@@ -1996,21 +1997,11 @@ input[type="search"].search-input-field:focus {
   padding: 0 3px;
 }
 
-/* line 45, ../sass/modules/_post-info.scss */
+/* line 46, ../sass/modules/_post-info.scss */
 .post-time {
   position: absolute;
   right: 0;
   line-height: 1.2rem;
-}
-
-@media screen and (max-width: 40em) {
-  /* line 51, ../sass/modules/_post-info.scss */
-  .author,
-  .upvote-link:before,
-  .post-author + .points:before,
-  .post-time {
-    display: none;
-  }
 }
 
 /* line 1, ../sass/modules/_avatars.scss */
@@ -2333,11 +2324,23 @@ a.new-post:active {
 }
 
 /* line 50, ../sass/modules/_posts.scss */
+.post-loading {
+  border-top: 1px solid #eeeeee;
+  box-sizing: content-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  z-index: 100;
+}
+
+/* line 61, ../sass/modules/_posts.scss */
 .posts {
   width: 100%;
 }
 
-/* line 54, ../sass/modules/_posts.scss */
+/* line 65, ../sass/modules/_posts.scss */
 .posts.list > .post {
   cursor: pointer;
   -moz-transition: background 150ms ease-in-out, -moz-transform 150ms ease-in-out;
@@ -2348,129 +2351,125 @@ a.new-post:active {
   -webkit-animation: slide-left;
   animation: slide-left;
 }
-/* line 58, ../sass/modules/_posts.scss */
+/* line 69, ../sass/modules/_posts.scss */
 .posts.list > .post:nth-child(1) {
   -moz-animation-duration: 300ms;
   -webkit-animation-duration: 300ms;
   animation-duration: 300ms;
 }
-/* line 59, ../sass/modules/_posts.scss */
+/* line 70, ../sass/modules/_posts.scss */
 .posts.list > .post:nth-child(2) {
   -moz-animation-duration: 400ms;
   -webkit-animation-duration: 400ms;
   animation-duration: 400ms;
 }
-/* line 60, ../sass/modules/_posts.scss */
+/* line 71, ../sass/modules/_posts.scss */
 .posts.list > .post:nth-child(3) {
   -moz-animation-duration: 500ms;
   -webkit-animation-duration: 500ms;
   animation-duration: 500ms;
 }
-/* line 61, ../sass/modules/_posts.scss */
+/* line 72, ../sass/modules/_posts.scss */
 .posts.list > .post:nth-child(4) {
   -moz-animation-duration: 600ms;
   -webkit-animation-duration: 600ms;
   animation-duration: 600ms;
 }
-/* line 62, ../sass/modules/_posts.scss */
+/* line 73, ../sass/modules/_posts.scss */
 .posts.list > .post:nth-child(5) {
   -moz-animation-duration: 700ms;
   -webkit-animation-duration: 700ms;
   animation-duration: 700ms;
 }
-/* line 63, ../sass/modules/_posts.scss */
+/* line 74, ../sass/modules/_posts.scss */
 .posts.list > .post:nth-child(6) {
   -moz-animation-duration: 800ms;
   -webkit-animation-duration: 800ms;
   animation-duration: 800ms;
 }
-/* line 64, ../sass/modules/_posts.scss */
+/* line 75, ../sass/modules/_posts.scss */
 .posts.list > .post:nth-child(7) {
   -moz-animation-duration: 900ms;
   -webkit-animation-duration: 900ms;
   animation-duration: 900ms;
 }
-/* line 65, ../sass/modules/_posts.scss */
+/* line 76, ../sass/modules/_posts.scss */
 .posts.list > .post:nth-child(8) {
   -moz-animation-duration: 1000ms;
   -webkit-animation-duration: 1000ms;
   animation-duration: 1000ms;
 }
-/* line 66, ../sass/modules/_posts.scss */
+/* line 77, ../sass/modules/_posts.scss */
 .posts.list > .post:nth-child(9) {
   -moz-animation-duration: 1100ms;
   -webkit-animation-duration: 1100ms;
   animation-duration: 1100ms;
 }
-/* line 67, ../sass/modules/_posts.scss */
+/* line 78, ../sass/modules/_posts.scss */
 .posts.list > .post:nth-child(10) {
   -moz-animation-duration: 1200ms;
   -webkit-animation-duration: 1200ms;
   animation-duration: 1200ms;
 }
-/* line 69, ../sass/modules/_posts.scss */
+/* line 80, ../sass/modules/_posts.scss */
 .posts.list > .post:hover {
   background: #f2f2f2;
 }
-/* line 73, ../sass/modules/_posts.scss */
+/* line 84, ../sass/modules/_posts.scss */
 .posts.list > .post .inner {
   padding: 0 1.25rem;
 }
-/* line 77, ../sass/modules/_posts.scss */
+/* line 88, ../sass/modules/_posts.scss */
 .posts.list > .post.sticky {
   background: #f1592a;
   border: none;
 }
-/* line 81, ../sass/modules/_posts.scss */
+/* line 92, ../sass/modules/_posts.scss */
 .posts.list > .post.sticky .post-title,
 .posts.list > .post.sticky .post-meta,
 .posts.list > .post.sticky .post-body,
 .posts.list > .post.sticky .post-body a {
   color: white;
 }
-/* line 88, ../sass/modules/_posts.scss */
+/* line 99, ../sass/modules/_posts.scss */
 .posts.list > .post.sticky .avatar-initials {
   color: #f1592a;
   background: white;
 }
-/* line 93, ../sass/modules/_posts.scss */
+/* line 104, ../sass/modules/_posts.scss */
 .posts.list > .post.sticky:nth-child(2n) {
   background: rgba(241, 89, 42, 0.85);
 }
 @media screen and (max-width: 40em) {
-  /* line 54, ../sass/modules/_posts.scss */
-  .posts.list > .post {
-    -moz-animation: none;
-    -webkit-animation: none;
-    animation: none;
-  }
-  /* line 100, ../sass/modules/_posts.scss */
+  /* line 110, ../sass/modules/_posts.scss */
   .posts.list > .post .inner {
     padding: 0 1rem;
   }
-  /* line 104, ../sass/modules/_posts.scss */
+  /* line 114, ../sass/modules/_posts.scss */
   .posts.list > .post:first-child {
     border-top: none;
   }
 }
 
-/* line 111, ../sass/modules/_posts.scss */
+/* line 121, ../sass/modules/_posts.scss */
 .sticky + .post {
   border: none;
 }
 
-/* line 115, ../sass/modules/_posts.scss */
+/* line 125, ../sass/modules/_posts.scss */
 .post {
   background: #ffffff;
   border-top: 1px solid #eeeeee;
   padding: 1.25rem 0 1rem;
+  position: relative;
+  will-change: transform;
 }
-/* line 120, ../sass/modules/_posts.scss */
+/* line 132, ../sass/modules/_posts.scss */
 .post:first-child {
   border: none;
 }
 
-/* line 125, ../sass/modules/_posts.scss */
+/* line 137, ../sass/modules/_posts.scss */
 .post-title {
   color: #222222;
   display: block;
@@ -2482,23 +2481,23 @@ a.new-post:active {
   white-space: nowrap;
   text-rendering: optimizeLegibility;
 }
-/* line 136, ../sass/modules/_posts.scss */
+/* line 148, ../sass/modules/_posts.scss */
 .post-title:visited {
   color: #aaaaaa;
 }
-/* line 140, ../sass/modules/_posts.scss */
+/* line 152, ../sass/modules/_posts.scss */
 .post-title:hover {
   color: #f1592a;
   text-decoration: underline;
 }
 @media screen and (max-width: 40em) {
-  /* line 125, ../sass/modules/_posts.scss */
+  /* line 137, ../sass/modules/_posts.scss */
   .post-title {
     font-size: 18px;
   }
 }
 
-/* line 151, ../sass/modules/_posts.scss */
+/* line 163, ../sass/modules/_posts.scss */
 .post-heading .post-body {
   color: #aaaaaa;
   font-size: 14px;
@@ -2507,7 +2506,7 @@ a.new-post:active {
   overflow: hidden;
 }
 
-/* line 160, ../sass/modules/_posts.scss */
+/* line 172, ../sass/modules/_posts.scss */
 .launch-icon {
   vertical-align: middle;
   display: inline-block;
@@ -2515,32 +2514,32 @@ a.new-post:active {
   margin-left: 2px;
 }
 
-/* line 167, ../sass/modules/_posts.scss */
+/* line 179, ../sass/modules/_posts.scss */
 a.back-link {
   color: #aaaaaa;
   display: block;
   margin-bottom: 1rem;
 }
-/* line 171, ../sass/modules/_posts.scss */
+/* line 183, ../sass/modules/_posts.scss */
 a.back-link:hover {
   color: #f1592a;
 }
 
-/* line 176, ../sass/modules/_posts.scss */
+/* line 188, ../sass/modules/_posts.scss */
 .single-post .post {
   border-top: none;
   padding-top: 0;
   padding-bottom: 2rem;
 }
-/* line 181, ../sass/modules/_posts.scss */
+/* line 193, ../sass/modules/_posts.scss */
 .single-post .post .post-heading {
   margin-bottom: 2rem;
 }
-/* line 183, ../sass/modules/_posts.scss */
+/* line 195, ../sass/modules/_posts.scss */
 .single-post .post .post-heading a:visited {
   color: inherit;
 }
-/* line 187, ../sass/modules/_posts.scss */
+/* line 199, ../sass/modules/_posts.scss */
 .single-post .post .post-heading .post-title {
   font-size: 28px;
   line-height: 1;
@@ -2550,12 +2549,12 @@ a.back-link:hover {
   overflow: visible;
 }
 @media screen and (max-width: 40em) {
-  /* line 187, ../sass/modules/_posts.scss */
+  /* line 199, ../sass/modules/_posts.scss */
   .single-post .post .post-heading .post-title {
     font-size: 21px;
   }
 }
-/* line 201, ../sass/modules/_posts.scss */
+/* line 213, ../sass/modules/_posts.scss */
 .single-post .post .post-info .post-meta {
   background: #f2f2f2;
   padding: 0.75rem;
@@ -2563,24 +2562,24 @@ a.back-link:hover {
   font-size: 12px;
 }
 
-/* line 210, ../sass/modules/_posts.scss */
+/* line 222, ../sass/modules/_posts.scss */
 .post_page_weld .post-title {
   pointer-events: none;
 }
 
-/* line 214, ../sass/modules/_posts.scss */
+/* line 226, ../sass/modules/_posts.scss */
 .post-body {
   margin-bottom: 2rem;
   font-size: 16px;
 }
 @media screen and (max-width: 40em) {
-  /* line 214, ../sass/modules/_posts.scss */
+  /* line 226, ../sass/modules/_posts.scss */
   .post-body {
     font-size: 14px;
   }
 }
 
-/* line 222, ../sass/modules/_posts.scss */
+/* line 234, ../sass/modules/_posts.scss */
 .more-button {
   margin-top: 2rem;
 }
@@ -2943,7 +2942,13 @@ input.category-number {
 .sidebar-menu li a, .sidebar-menu li a:link, .sidebar-menu li a:visited {
   color: #aaaaaa;
 }
-/* line 48, ../sass/modules/_sidebar.scss */
+@media screen and (max-width: 40em) {
+  /* line 29, ../sass/modules/_sidebar.scss */
+  .sidebar-menu li {
+    font-size: 1.2rem;
+  }
+}
+/* line 52, ../sass/modules/_sidebar.scss */
 .sidebar-menu .dropdown > a:after {
   display: inline-block;
   position: relative;
@@ -2952,17 +2957,17 @@ input.category-number {
   content: "▼";
   font-size: 8px;
 }
-/* line 59, ../sass/modules/_sidebar.scss */
+/* line 63, ../sass/modules/_sidebar.scss */
 .sidebar-menu .dropdown-menu {
   display: none;
 }
-/* line 62, ../sass/modules/_sidebar.scss */
+/* line 66, ../sass/modules/_sidebar.scss */
 .sidebar-menu .dropdown-menu li {
   padding: 10px 0;
   margin-bottom: 0;
   border-top: 1px rgba(255, 255, 255, 0.2) solid;
 }
-/* line 68, ../sass/modules/_sidebar.scss */
+/* line 72, ../sass/modules/_sidebar.scss */
 .sidebar-menu .dropdown-menu li:first-child {
   margin-top: 1rem;
 }
@@ -3060,7 +3065,7 @@ input.category-number {
   text-decoration: underline;
 }
 
-/* line 3, ../sass/modules/_newsletter.scss */
+/* line 4, ../sass/modules/_newsletter.scss */
 .newsletter-banner.newsletter-banner {
   background: linear-gradient(to bottom right, #f1592a, #aa310b) no-repeat;
   color: white;
@@ -3073,24 +3078,25 @@ input.category-number {
   animation: fade-in 600ms ease-in-out;
 }
 @media screen and (max-width: 40em) {
-  /* line 3, ../sass/modules/_newsletter.scss */
+  /* line 4, ../sass/modules/_newsletter.scss */
   .newsletter-banner.newsletter-banner {
     margin: 1rem;
+    min-height: 180px;
   }
 }
 
 @media screen and (max-width: 40em) {
-  /* line 16, ../sass/modules/_newsletter.scss */
+  /* line 18, ../sass/modules/_newsletter.scss */
   .newsletter-banner .pull-right {
     float: none;
   }
-  /* line 20, ../sass/modules/_newsletter.scss */
+  /* line 22, ../sass/modules/_newsletter.scss */
   .newsletter-banner .pull-right > button:only-child {
     max-width: 100%;
   }
 }
 
-/* line 26, ../sass/modules/_newsletter.scss */
+/* line 28, ../sass/modules/_newsletter.scss */
 .newsletter-banner:before {
   content: "";
   position: absolute;
@@ -3103,21 +3109,21 @@ input.category-number {
   border-right: 20px solid #fff;
 }
 
-/* line 38, ../sass/modules/_newsletter.scss */
+/* line 40, ../sass/modules/_newsletter.scss */
 .newsletter-banner form {
   line-height: 100px;
   padding: 0 4rem 0 2rem;
   text-align: left;
 }
 @media screen and (max-width: 40em) {
-  /* line 38, ../sass/modules/_newsletter.scss */
+  /* line 40, ../sass/modules/_newsletter.scss */
   .newsletter-banner form {
     padding: 1rem;
     line-height: 80px;
   }
 }
 
-/* line 48, ../sass/modules/_newsletter.scss */
+/* line 50, ../sass/modules/_newsletter.scss */
 .newsletter-header {
   vertical-align: middle;
   -moz-transform: scale(1.2, 1.2);
@@ -3130,7 +3136,7 @@ input.category-number {
   transform-origin: left 50%;
 }
 @media screen and (max-width: 40em) {
-  /* line 48, ../sass/modules/_newsletter.scss */
+  /* line 50, ../sass/modules/_newsletter.scss */
   .newsletter-header {
     -moz-transform: scale(none, none);
     -ms-transform: scale(none, none);
@@ -3140,7 +3146,7 @@ input.category-number {
   }
 }
 
-/* line 58, ../sass/modules/_newsletter.scss */
+/* line 60, ../sass/modules/_newsletter.scss */
 .newsletter-tagline {
   margin: 0 !important;
   padding: 0 !important;
@@ -3149,18 +3155,18 @@ input.category-number {
   font: 400 1.25rem/1.2 "Avenir Next";
 }
 
-/* line 66, ../sass/modules/_newsletter.scss */
+/* line 68, ../sass/modules/_newsletter.scss */
 .tagline.subdued {
   display: block;
 }
 @media screen and (max-width: 40em) {
-  /* line 66, ../sass/modules/_newsletter.scss */
+  /* line 68, ../sass/modules/_newsletter.scss */
   .tagline.subdued {
     display: inline;
   }
 }
 
-/* line 73, ../sass/modules/_newsletter.scss */
+/* line 75, ../sass/modules/_newsletter.scss */
 .newsletter-subscribed {
   text-align: center;
   vertical-align: middle;
@@ -3174,7 +3180,7 @@ input.category-number {
   pointer-events: none;
 }
 
-/* line 86, ../sass/modules/_newsletter.scss */
+/* line 88, ../sass/modules/_newsletter.scss */
 .newsletter-banner form, .newsletter-subscribed {
   -moz-transition: opacity 0.3s ease-out;
   -o-transition: opacity 0.3s ease-out;
@@ -3182,7 +3188,7 @@ input.category-number {
   transition: opacity 0.3s ease-out;
 }
 
-/* line 90, ../sass/modules/_newsletter.scss */
+/* line 92, ../sass/modules/_newsletter.scss */
 .newsletter-email.newsletter-email {
   display: inline-block;
   margin: 0;
@@ -3194,7 +3200,7 @@ input.category-number {
   height: 3rem;
 }
 
-/* line 101, ../sass/modules/_newsletter.scss */
+/* line 103, ../sass/modules/_newsletter.scss */
 .button.newsletter-button {
   display: inline-block;
   vertical-align: middle;
@@ -3204,29 +3210,29 @@ input.category-number {
   font-size: 14px;
 }
 
-/* line 110, ../sass/modules/_newsletter.scss */
+/* line 112, ../sass/modules/_newsletter.scss */
 .show-loader {
   pointer-events: none;
 }
 
-/* line 114, ../sass/modules/_newsletter.scss */
+/* line 116, ../sass/modules/_newsletter.scss */
 .show-loader .newsletter-tagline,
 .show-loader .newsletter-email {
   opacity: 0.35;
 }
 
-/* line 119, ../sass/modules/_newsletter.scss */
+/* line 121, ../sass/modules/_newsletter.scss */
 .show-loader .newsletter-button {
   color: rgba(255, 255, 255, 0);
   /* hide button text */
 }
 
-/* line 123, ../sass/modules/_newsletter.scss */
+/* line 125, ../sass/modules/_newsletter.scss */
 .button-loader {
   display: none;
 }
 
-/* line 127, ../sass/modules/_newsletter.scss */
+/* line 129, ../sass/modules/_newsletter.scss */
 .show-loader .button-loader {
   position: absolute;
   z-index: 100;
@@ -3237,7 +3243,7 @@ input.category-number {
   display: block;
 }
 
-/* line 139, ../sass/modules/_newsletter.scss */
+/* line 141, ../sass/modules/_newsletter.scss */
 .newsletter-dismiss:link, .newsletter-dismiss:visited {
   display: block;
   position: absolute;
@@ -3252,13 +3258,13 @@ input.category-number {
   margin: 0;
 }
 
-/* line 154, ../sass/modules/_newsletter.scss */
+/* line 156, ../sass/modules/_newsletter.scss */
 .newsletter-dismiss:hover {
   color: inherit;
 }
 
 @media screen and (max-width: 40em) {
-  /* line 159, ../sass/modules/_newsletter.scss */
+  /* line 161, ../sass/modules/_newsletter.scss */
   .newsletter-dismiss, .newsletter-dismiss:link {
     top: 10px;
     right: 10px;
