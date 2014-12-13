@@ -100,7 +100,7 @@ a.new-post {
       background: white;
     }
 
-    &:nth-child(2n) {
+    &:nth-of-type(2n) {
       background: transparentize($primary-color, 0.15);
     }
   }

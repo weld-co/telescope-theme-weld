@@ -2436,7 +2436,7 @@ a.new-post:active {
   background: white;
 }
 /* line 103, ../sass/modules/_posts.scss */
-.posts.list > .post.sticky:nth-child(2n) {
+.posts.list > .post.sticky:nth-of-type(2n) {
   background: rgba(241, 89, 42, 0.85);
 }
 @media screen and (max-width: 40em) {
@@ -3066,7 +3066,7 @@ input.category-number {
 
 /* line 4, ../sass/modules/_newsletter.scss */
 .newsletter-banner.newsletter-banner {
-  background: linear-gradient(to bottom right, #f1592a, #aa310b) no-repeat;
+  background: #222222;
   color: white;
   min-height: 100px;
   padding: 0;

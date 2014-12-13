@@ -2,7 +2,7 @@ $banner-height: 100px;
 $mobile-banner-height: 180px;
 
 .newsletter-banner.newsletter-banner {
-  background: linear-gradient(to bottom right, $primary-color, darken($primary-color, 20%)) no-repeat;
+  background: $darkest-grey;
   color: white;
   min-height: $banner-height;
   padding: 0;

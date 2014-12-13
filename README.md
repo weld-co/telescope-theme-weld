@@ -4,6 +4,7 @@ Run these commmands from your Telescope Directory:
 `meteor remove telescope-theme-base`  
 `meteor add telescope-theme-weld`  
 `meteor add archive:jquery-dotdotdot`
+`meteor add mystor:device-detection`
 `meteor add multiply:iron-router-progress`  
 `meteor add fastclick`  
 

@@ -1,9 +1,9 @@
 <template name="sidebar">
   <nav class="sidebar column">
-  <div class="close-icon mobile-only">×</div>
-  <a href="/" class="weld-logo desktop-only" alt="{{site_title}}"></a>
+    <div class="close-icon mobile-only">×</div>
+    <a href="/" class="weld-logo desktop-only" alt="{{site_title}}"></a>
     <ul class="sidebar-menu">
-      <li class="desktop-only">{{> searchWeld}}</li>
+      {{#if isDesktop}}<li>{{> searchWeld}}</li>{{/if}}
       <li><a href="#">{{> notificationsMenuWeld}}</a></li>
       {{#each primaryNav}}
         <li>
