@@ -6,7 +6,20 @@
   transition: opacity 200ms ease;
   @include small {
     font-size: 12px;
-    min-width: 320px;
+  }
+}
+
+.post-meta {
+  @include small {
+    white-space: nowrap;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  &::-webkit-scrollbar { 
+    width: 0px;
+    height: 0px;
+    background: transparent;
   }
 }
 

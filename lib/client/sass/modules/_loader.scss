@@ -6,11 +6,9 @@
   right: 0;
   bottom: 0;
   z-index: 10000;
-  background: rgba(255,255,255,0.2);
 }
 
-.spinner,
-.background {
+.spinner{
   width: 35px;
   height: 35px;
   position: absolute;
@@ -19,15 +17,6 @@
   right: 0;
   bottom: 0;
   left: 0;
-}
-
-.background {
-  background: rgba(255,255,255,0.2);
-  border-radius: 100%;
-  width: 70px;
-  height: 70px;
-  z-index: -1;
-  top: calc(-5rem - 1px);
 }
 
 .container1 > div, .container2 > div, .container3 > div {
