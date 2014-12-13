@@ -48,7 +48,6 @@ a.new-post {
 }
 
 .post-loading {
-  border-top: 1px solid $light-grey;
   box-sizing: content-box;
   position: absolute;
   top: 0;
@@ -127,7 +126,7 @@ a.new-post {
   border-top: 1px solid $light-grey;
   padding: 1.25rem 0 1rem;
   position: relative;
-  will-change: transform;
+  overflow: hidden;
 
   &:first-child {
     border: none;
