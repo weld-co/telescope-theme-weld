@@ -8,6 +8,10 @@
   z-index: 10000;
 }
 
+.fade-out {
+  @include animation (fade-out 300ms ease);
+}
+
 .spinner{
   width: 35px;
   height: 35px;

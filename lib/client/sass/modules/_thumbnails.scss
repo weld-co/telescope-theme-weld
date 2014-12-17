@@ -3,11 +3,14 @@
   margin-left: 1rem;
   position: relative;
   cursor: pointer;
-  height: 5rem;
 
   @include small {
     margin: 0 0 1rem 1rem;
   }
+}
+
+.posts.list .post-thumbnail {
+  height: 5rem;
 }
 
 .post-thumbnail-link {

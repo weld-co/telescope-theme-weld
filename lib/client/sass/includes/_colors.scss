@@ -1,7 +1,10 @@
+// Colors
+
 $red: #DD3416;
 $green: #a3d06d;
 
-$orange: #f1592a;
+$weld: #f1592a;
+
 $blue: #7ac0e4;
 $dark-blue: #4e555d;
 $blue-grey: #b3c1c6;
@@ -20,8 +23,17 @@ $light-grey: #eeeeee;
 $lighter-grey: #dfdbdb;
 $lightest-grey: #f2f2f2;
 
+// CCL Overrides
 
-$primary-color: $orange;
+$ccl: #46bfae;
+$ccl-darkest-grey: #35393C;
+$ccl-dark-grey: #4B5358;
+
+// Applied Variables
+
+$primary-color: $weld;
+$sidebar-bg: $darkest-grey;
+$search-bg: $dark-grey;
 $bg-color: $white;
 $header-bg: $dark-grey;
 $text: $dark-grey;

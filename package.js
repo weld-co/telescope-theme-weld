@@ -23,7 +23,7 @@ Package.on_use(function (api) {
 
   api.use('cmather:handlebars-server');
 
-  api.add_files([
+  api.addFiles([
     'lib/client/stylesheets/main.css',
 
     'lib/client/templates/categories_menu_weld.html',
@@ -31,6 +31,7 @@ Package.on_use(function (api) {
     'lib/client/templates/cheatsheet.html',
     'lib/client/templates/comment_form_weld.html',
     'lib/client/templates/comment_item_weld.html',
+    'lib/client/templates/custom_css.html',
     'lib/client/templates/error_item_weld.html',
     'lib/client/templates/footer_weld.html',
     'lib/client/templates/layout_weld.html',
@@ -42,6 +43,7 @@ Package.on_use(function (api) {
     'lib/client/templates/no_invite_weld.html',
     'lib/client/templates/no_rights_weld.html',
     'lib/client/templates/not_found_weld.html',
+    'lib/client/templates/logo.html',
     'lib/client/templates/notifications_menu_weld.html',
     'lib/client/templates/post_domain_weld.html',
     'lib/client/templates/post_edit_weld.html',
@@ -70,7 +72,9 @@ Package.on_use(function (api) {
     'lib/client/js/base_weld.js',
     'lib/client/js/device_detection.js',
     'lib/client/js/layout_weld.js',
+    'lib/client/js/header_weld.js',
     'lib/client/js/newsletter_banner_weld.js',
+    'lib/client/js/no_rights_weld.js',
     'lib/client/js/notifications_menu_weld.js',
     'lib/client/js/post_domain_weld.js',
     'lib/client/js/post_info_weld.js',
@@ -91,10 +95,9 @@ Package.on_use(function (api) {
     'img/favicon.png',
     'img/weld_logo.png',
     'img/avatar_blank.png'
-
   ], ['client']);
 
-  api.add_files([
+  api.addFiles([
     'lib/server/js/template_overwrites.js',
     'lib/server/js/reset_password_url_fix.js',
     'lib/server/templates/emailWrapperWeld.handlebars',

@@ -6,25 +6,43 @@
   transition: opacity 200ms ease;
   @include small {
     font-size: 12px;
+    opacity: 1;
   }
 }
 
 .post-meta {
-  @include small {
-    white-space: nowrap;
-    overflow-x: scroll;
-    -webkit-overflow-scrolling: touch;
-  }
-  
+  @include display-flex;
+  white-space: nowrap;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
   &::-webkit-scrollbar { 
     width: 0px;
     height: 0px;
     background: transparent;
   }
+  @include small {
+    -webkit-mask-image: linear-gradient(to right, rgba(255,255,255,1) 75%, rgba(255,255,255,0));
+  }
 }
 
 .post-meta-item {
+  @include align-self(center);
+  width: 100%;
+  margin: 0.75rem 0;
   position: relative;
+}
+
+.single-post .post {
+  .post-meta {
+    background: $lightest-grey;
+    opacity: 1;
+    font-size: 12px;
+  }
+
+  .post-meta-item {
+    margin: 0.75rem;
+  }
 }
 
 .comment-meta {
@@ -54,6 +72,10 @@
 .comment-permalink:before {
   content: '・';
   padding: 0 3px;
+}
+
+.post-info .edit-post {
+  margin-right: 50%;
 }
 
 .post-time {

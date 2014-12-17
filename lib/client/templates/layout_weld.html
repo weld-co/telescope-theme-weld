@@ -1,5 +1,6 @@
 <!-- overwritten to move nav and mobile_nav outside of outer-wrapper -->
 <template name="layoutWeld">
+{{> UI.dynamic template=css}}
   <div class="grid-wrap">
     {{> sidebar}}
     <main class="content-wrap column">
@@ -10,7 +11,7 @@
       <div class="content row {{pageName}}">
         {{> UI.dynamic template=error}}
         {{> yield}}
-        <div class="spacer-bottom row"></div>   
+        <div class="spacer row"></div>
       </div> <!-- page-wrap -->
     </main> <!-- main column-->
   </div> <!-- container row -->

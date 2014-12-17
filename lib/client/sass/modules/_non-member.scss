@@ -7,6 +7,10 @@
     font-size: 60%;
   }
 
+  + .spacer {
+    display: none;
+  }
+
   h1 {
     font-size: 2em;
     text-transform: uppercase;
@@ -18,6 +22,7 @@
   h2 {
     font-size: 1.5em;
     line-height: 1.4;
+    max-width: 30rem;
   }
 
   a {
@@ -30,9 +35,8 @@
 
   .button {
     max-width: 320px;
-    margin: 0 auto;
+    margin: 2rem auto;
     font-size: 16px;
-    margin-top: 2rem;
   }
 
   .text-button {

@@ -59,6 +59,11 @@ $padding: $gutter * 1.25;
   @include justify-content(center);
 }
 
-.optical-center {
+.optical {
   transform: translateY(-10%);
+}
+
+.spacer {
+  width: 100%;
+  height: 20vh;
 }

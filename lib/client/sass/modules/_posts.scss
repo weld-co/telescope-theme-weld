@@ -17,6 +17,7 @@ a.new-post {
 
   &:hover {
     @include translateY(-2px);
+    color: white;
     box-shadow: 0 3px 8px 1px rgba(0,0,0,0.2);
   }
 
@@ -48,13 +49,13 @@ a.new-post {
 }
 
 .post-loading {
-  box-sizing: content-box;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   pointer-events: none;
   z-index: 100;  
+  background: white;
 }
 
 .posts {
@@ -86,7 +87,6 @@ a.new-post {
 
   &.sticky {
     background: $primary-color;
-    border: none;
 
     .post-title,
     .post-meta,
@@ -98,10 +98,6 @@ a.new-post {
     .avatar-initials {
       color: $primary-color;
       background: white;
-    }
-
-    &:nth-of-type(2n) {
-      background: transparentize($primary-color, 0.15);
     }
   }
 
@@ -117,13 +113,9 @@ a.new-post {
 
 }
 
-.sticky + .post {
-  border: none;
-}
-
 .post {
   background: #ffffff;
-  border-top: 1px solid $light-grey;
+  border-top: 1px solid $lightest-grey;
   padding: 1.25rem 0 1rem;
   position: relative;
   overflow: hidden;
@@ -159,6 +151,7 @@ a.new-post {
 }
 
 .post-heading {
+  margin-bottom: 1rem;
   .post-body {
     color: $grey;
     font-size: 14px;
@@ -173,6 +166,10 @@ a.new-post {
   display: inline-block;
   margin-top: -1px;
   margin-left: 2px;
+
+  path {
+    fill: $primary-color;
+  }
 }
 
 a.back-link {
@@ -205,15 +202,6 @@ a.back-link {
       @include small {
         font-size: 21px;
       }
-    }
-  }
-
-  .post-info {
-    .post-meta {
-      background: $lightest-grey;
-      padding: 0.75rem;
-      opacity: 1;
-      font-size: 12px;
     }
   }
 }

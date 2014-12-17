@@ -40,19 +40,6 @@ body {
   position: relative;
   width: 100%;
 
-  // &::-webkit-scrollbar { 
-  //   width: 4px;
-  //   height: 4px;
-  // }
-
-  // &::-webkit-scrollbar-track { 
-  //   background: #DADADA;
-  // }
-
-  // &::-webkit-scrollbar-thumb { 
-  //   background: $primary-color;
-  // }
-
   @include small {
     box-shadow: 0 0 0 99999px black;
   }
@@ -67,11 +54,6 @@ body {
   @include small {
     padding: 8% ($padding / 2);
   }
-}
-
-.spacer-bottom {
-  width: 100%;
-  height: 20vh;
 }
 
 // Mobile off-canvas nav

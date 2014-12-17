@@ -2,14 +2,9 @@
 <template name="headerWeld">
   <header class="header row mobile-only">
     <a href="#menu" class="mobile-menu-button"></a>
-    <a href="/" class="weld-logo" alt="{{site_title}}">
-    </a>
-    {{#if isLoggedIn}}
+    {{> UI.dynamic template=logo}}
     <div class="mobile-search">
       {{> searchWeld}}
     </div>
-    {{else}}
-      <a class="sign-in mobile-header-link" href="/sign-in">{{_ "Sign In"}}</a>
-    {{/if}}
   </header>
 </template>
