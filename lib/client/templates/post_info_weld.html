@@ -12,6 +12,6 @@
     {{#if can_edit}}
     <span class="edit-post"><a href="/posts/{{_id}}/edit" class="goto-edit">Edit</a></span>
     {{/if}}
-    {{#if isDesktop}}<span class="post-time">{{timeAgo ago}}</span>{{/if}}
+    {{#if isDesktop}}{{#if postedAt}}<span class="post-time">{{timeAgo postedAt}}</span>{{/if}}{{/if}}
   </div>
 </template>

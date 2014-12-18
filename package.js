@@ -10,7 +10,7 @@ Package.on_use(function (api) {
     'templating',
     'telescope-tags',
     'telescope-search',
-    'telescope-module-embedly',
+    'telescope-embedly',
     'telescope-notifications',
     'telescope-newsletter'
   ], ['client']);
@@ -50,7 +50,6 @@ Package.on_use(function (api) {
     'lib/client/templates/post_info_weld.html',
     'lib/client/templates/post_page_weld.html',
     'lib/client/templates/post_submit_weld.html',
-    'lib/client/templates/post_thumbnail_weld.html',
     'lib/client/templates/post_title_weld.html',
     'lib/client/templates/post_item_weld.html',
     'lib/client/templates/posts_list_weld.html',
@@ -79,9 +78,7 @@ Package.on_use(function (api) {
     'lib/client/js/post_domain_weld.js',
     'lib/client/js/post_info_weld.js',
     'lib/client/js/post_item_weld.js',
-    'lib/client/js/post_title_weld.js',
-    'lib/client/js/cheatsheet.js',
-    'lib/client/js/post_thumbnail_weld.js', 
+    'lib/client/js/post_title_weld.js', 
     'lib/client/js/progress_bar.js',
     'lib/client/js/sidebar.js',
     'lib/client/js/user_profile_weld.js',

@@ -5,6 +5,7 @@ a.new-post {
   color: white;
   font-size: 40px;
   font-weight: 100;
+  line-height: $mobile-header-height;
   min-height: $mobile-header-height;
   max-height: $mobile-header-height;
   width: $mobile-header-height;
@@ -24,28 +25,6 @@ a.new-post {
   &:active {
     transform: translateY(0);
   }
-}
-
-.mobile-new-post {
-    display: block;
-    height: 3rem;
-    text-align: center;
-    background: $lightest-grey;
-    color: $dark-grey;
-    width: 100%;
-    line-height: 3rem;
-    font-weight: 500;
-    margin-bottom: 1rem;
-    @include small {
-      margin-top: 1rem;
-      background: white;
-    }
-
-    &:hover {
-      background: $primary-color;
-      color: white;
-      transition: none;
-    }
 }
 
 .post-loading {
@@ -81,10 +60,6 @@ a.new-post {
     background: $lightest-grey;
   }
 
-  .inner {
-    padding: 0 1.25rem;
-  }
-
   &.sticky {
     background: $primary-color;
 
@@ -116,7 +91,7 @@ a.new-post {
 .post {
   background: #ffffff;
   border-top: 1px solid $lightest-grey;
-  padding: 1.25rem 0 1rem;
+  padding: 1.5rem 1.5rem 0.5rem;
   position: relative;
   overflow: hidden;
 
@@ -161,17 +136,6 @@ a.new-post {
   }
 }
 
-.launch-icon {
-  vertical-align: middle;
-  display: inline-block;
-  margin-top: -1px;
-  margin-left: 2px;
-
-  path {
-    fill: $primary-color;
-  }
-}
-
 a.back-link {
   color: $grey;
   display: block;
@@ -183,6 +147,7 @@ a.back-link {
 
 .single-post .post {
   border-top: none;
+  padding: 0;
   padding-top: 0;
   padding-bottom: 2rem;
 
