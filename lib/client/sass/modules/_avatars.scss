@@ -1,11 +1,16 @@
+.avatar-link {
+  display: inline-block;
+}
+
 .avatar {
   border-radius: 100%;
   display: inline-block;
   height: 1.5rem;
-  margin-right: 0.5rem;
+  width: 1.5rem;
+  margin-right: 2px;
   margin-top: -2px;
   vertical-align: middle;
-  width: 1.5rem;
+
 
   .avatar-image,
   .avatar-initials {
@@ -46,4 +51,9 @@
       background: white;
     }
   }
+}
+
+.post-upvoters {
+  display: inline-block;
+  margin-right: 1rem;
 }

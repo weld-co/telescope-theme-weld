@@ -1,8 +1,8 @@
-<!-- needed to make .post click handler work -->
+<!-- moved .post wrapper to post_list_weld so loading graphic doesn't occur on post_page-->
 <template name="post_item_weld">
   {{#each postModules}}
-    <div class="{{moduleClass}}">
-      {{> UI.dynamic template=getTemplate data=..}}
-    </div>
-  {{/each}}
+  <div class="{{moduleClass}}">
+    {{> UI.dynamic template=getTemplate data=..}}
+  </div>
+  {{/each}} 
 </template>

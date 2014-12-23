@@ -16,8 +16,10 @@ $padding: $gutter * 1.25;
 /* Legacy grid element overrides */
 
 .grid,
+.grid-module,
 .grid-block {
   width: 100%;
+  margin-bottom: 1rem;
 }
 
 .row {

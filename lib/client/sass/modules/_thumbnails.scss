@@ -5,9 +5,11 @@
   position: relative;
   cursor: pointer;
 }
-
-.posts.list .post-thumbnail {
+.post-thumbnail {
   height: 5rem;
+  @include small {
+    height: 3rem;
+  }
 }
 
 .post-thumbnail-link {
@@ -19,7 +21,6 @@
 
   &:hover {
     opacity: 1;
-    @include filter (brightness(1));
   }
 
   &:after {
@@ -38,10 +39,11 @@
   border-radius: 3px;
 }
 
-@include small {
- .post-video-lightbox-inner > iframe.embedly-embed {
-    max-width: 320px;
-    max-height: 250px;
+// Video Lightbox
+
+.showing-lightbox {
+  html, body, main {
+    overflow: hidden;
   }
 }
 
@@ -49,9 +51,14 @@
   z-index: 20100;
 }
 
-.showing-lightbox {
-  html, body, main {
-    overflow: hidden;
+.post-video-lightbox {
+  will-change: opacity;
+}
+
+@include small {
+ .post-video-lightbox-inner > iframe.embedly-embed {
+    max-width: 320px;
+    max-height: 250px;
   }
 }
 

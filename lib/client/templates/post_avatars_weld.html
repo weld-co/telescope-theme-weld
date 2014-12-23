@@ -1,0 +1,17 @@
+<!-- changed to show upvoters instead of commenters, removed .avatar-small -->
+<template name="postAvatarsWeld">
+{{#if isDesktop}}
+  <a href="{{profileUrl userId}}" class="avatar-link author-avatar">
+    {{> avatar userId=userId shape="circle"}}
+  </a>
+  {{#if upvoters}}
+    <div class="post-upvoters">
+    {{#each upvoters}}
+      <a href="{{profileUrl this}}" class="avatar-link upvoter-avatar">
+        {{> avatar userId=this shape="circle"}}
+      </a>
+    {{/each}}
+    </div>
+  {{/if}}
+{{/if}}
+</template>

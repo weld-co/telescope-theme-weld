@@ -1,4 +1,4 @@
-<!-- overwritten to remove downvote and reorder items -->
+<!-- removed downvote, changed to Likes and reorder items -->
 <template name="comment_item_weld">
   <li class="comment module comment-displayed" id="{{_id}}">
    <div class="comment-body">
@@ -12,6 +12,11 @@
             </a>
             <div class="comment-meta">
               <div class="comment-actions">
+                {{#if upvoted}}
+                {{else}}
+                <span class="upvote-link"><a href="#">{{_ "Like"}}</a></span>
+                {{/if}}
+                <span class="points">{{baseScore}} <span class="unit">{{likesUnitDisplayText}}</span></span>
                 {{#if getSetting "nestedComments" true}}
                 <a href="/comments/{{_id}}" class="comment-reply goto-comment">{{_ "Reply"}}</a>
                 {{/if}}

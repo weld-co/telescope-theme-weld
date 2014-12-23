@@ -9,11 +9,13 @@
 
 // Page transitions triggered by class changes of template names
 
-.userProfileWeld,
-.post_submit_weld,
-.post_page_weld,
-.post_edit_weld,
-.user_edit_weld {
+.userAccount,
+.post_submit,
+.post_page,
+.post_edit,
+.comment_edit,
+.user_profile,
+.user_edit {
   @include animation (slide-left 300ms ease-in-out, fade-in 300ms ease-in);
 }
 
@@ -22,14 +24,3 @@
   width: 100%;
   max-width: 100%;
 }
-
-// // Unused animations on user profiles
-// @include animation (slide-up cubic-bezier(0.5, 0, 0.25, 1.5), fade-in ease-in);
-// &:nth-child(1) { @include animation-duration (300ms); }
-// &:nth-child(2) { @include animation-duration (400ms); }
-// &:nth-child(3) { @include animation-duration (500ms); }
-// &:nth-child(4) { @include animation-duration (600ms); }
-// &:nth-child(5) { @include animation-duration (700ms); }
-// &:nth-child(6) { @include animation-duration (800ms); }
-
-

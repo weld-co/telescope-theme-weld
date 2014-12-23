@@ -1,17 +1,14 @@
 <!-- added upvote and comments links and icon -->
 <template name="postInfoWeld">
-  <div class="post-meta-item">
-    {{#if isDesktop}}<a class="post-author" href="{{profileUrl}}">{{>avatar}}</a>{{/if}}
-    <a class="author" href="{{profileUrl}}">{{authorName}}</a>
-    {{#if upvoted}}
-    {{else}}
-    <span class="upvote-link"><a href="#">{{_ "Like"}}</a></span>
-    {{/if}}
-    <span class="points">{{baseScore}} <span class="unit">{{likesUnitDisplayText}}</span></span>
-    <span class="comments-link"><a href="/posts/{{_id}}">{{commentCount}} {{_ 'Comments'}}</a></span>
-    {{#if can_edit}}
-    <span class="edit-post"><a href="/posts/{{_id}}/edit" class="goto-edit">Edit</a></span>
-    {{/if}}
-    {{#if isDesktop}}{{#if postedAt}}<span class="post-time">{{timeAgo postedAt}}</span>{{/if}}{{/if}}
-  </div>
+  <a class="author" href="{{profileUrl}}">by {{authorName}}</a>
+  {{#if upvoted}}
+  {{else}}
+  <span class="upvote-link"><a href="#">Like</a></span>
+  {{/if}}
+  <span class="points">{{baseScore}} <span class="unit">{{likesUnitDisplayText}}</span></span>
+  <span class="comments-link"><a href="/posts/{{_id}}">{{commentCount}} {{_ 'Comments'}}</a></span>
+  {{#if can_edit}}
+  <span class="edit-post"><a href="/posts/{{_id}}/edit" class="goto-edit">Edit</a></span>
+  {{/if}}
+  {{#if postedAt}}<span class="post-time">{{timeAgo postedAt}}</span>{{/if}}
 </template>

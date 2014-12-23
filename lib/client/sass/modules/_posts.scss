@@ -58,6 +58,9 @@ a.new-post {
 
   &:hover {
     background: $lightest-grey;
+    .post-title {
+      text-decoration: underline;
+    }
   }
 
   &.sticky {
@@ -101,6 +104,7 @@ a.new-post {
 }
 
 .post-title {
+  pointer-events: none;
   color: $darkest-grey;
   display: block;
   font-size: 21px;
@@ -145,10 +149,7 @@ a.back-link {
   }
 }
 
-.single-post .post {
-  border-top: none;
-  padding: 0;
-  padding-top: 0;
+.single-post .post-content {
   padding-bottom: 2rem;
 
   .post-heading {
@@ -171,18 +172,10 @@ a.back-link {
   }
 }
 
-.post_page_weld .post-title {
-  pointer-events: none;
-}
-
 .post-body {
   margin-bottom: 2rem;
   font-size: 16px;
   @include small {
     font-size: 14px;
   }
-}
-
-.more-button {
-  margin-top: 2rem;
 }

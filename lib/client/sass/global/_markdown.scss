@@ -97,9 +97,10 @@
     background-color: $dark-grey;
     border-radius: 3px;
     overflow-x: scroll;
+    -webkit-overflow-scroll: touch;
     
     code {
-      color: #FFB39B;
+      color: $light-grey;
       background: none;
       white-space: pre;
       padding: 0;
