@@ -1,8 +1,22 @@
+// hiding social login until it works better
+
 .at-oauth {
   text-align: center;
 
   .at-social-btn {
     margin: 0 auto 15px auto;
+  }
+}
+
+.at-oauth,
+.at-sep {
+  display: none;
+}
+
+.at-form {
+  @include align-self(center);
+  + .spacer {
+    display: none;
   }
 }
 

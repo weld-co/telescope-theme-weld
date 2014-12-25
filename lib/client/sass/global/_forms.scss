@@ -221,11 +221,10 @@ textarea:focus + .instructions-block {
 .help-block,
 .instructions-block {
   color: $grey;
-  font-size: 12px;
+  font-size: 0.75rem;
   margin-top: .5rem;
-  text-align: right;
   display: block;
-  white-space: pre;
+  white-space: pre-wrap;
 
   &:active,
   &:hover {

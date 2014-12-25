@@ -2,12 +2,12 @@
   <div class="non-member center optical">
     {{#if isLoggedIn}}
     <h1>Thanks for signing up!</h1>
-    <h3>We’ll confirm your account shortly! <a href="/help">Need Help?</a></h3>
+    <h3>We'll notify you when your account has been confirmed.</h3>
     {{else}}
     <h1>{{siteName}}</h1>
     <h2>{{tagline}}</h2>
-    <a href="/sign-up" class="button">Request An Account</a>
-    <a class="sign-in" href="/sign-in">{{_ "Sign In"}}</a>
+    <a href="/sign-in" class="sign-in button">{{_ "Sign In"}}</a>
+    <a href="/sign-up">Request An Account</a>
     {{/if}}
   </div>
 </template>

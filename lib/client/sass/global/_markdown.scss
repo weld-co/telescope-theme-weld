@@ -1,5 +1,9 @@
 .markdown {
-
+    font-feature-settings:"onum" 1;
+    -moz-font-feature-settings:"onum=1"; 
+    -ms-font-feature-settings:"onum" 1; 
+    -o-font-feature-settings:"onum" 1; 
+    -webkit-font-feature-settings:"onum" 1;
   color: $dark-grey;
 
   ul, ol, p, pre, blockquote {

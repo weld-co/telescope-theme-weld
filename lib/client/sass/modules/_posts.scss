@@ -101,6 +101,10 @@ a.new-post {
   &:first-child {
     border: none;
   }
+
+  @include small {
+    padding: 1.5rem 1rem 0.5rem;
+  }
 }
 
 .post-title {

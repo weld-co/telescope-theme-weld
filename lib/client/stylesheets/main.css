@@ -768,12 +768,17 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 
 /* line 75, ../sass/global/_grid.scss */
+.dialog + .spacer {
+  display: none;
+}
+
+/* line 79, ../sass/global/_grid.scss */
 .spacer {
   width: 100%;
   height: 20vh;
 }
 
-/* line 80, ../sass/global/_grid.scss */
+/* line 84, ../sass/global/_grid.scss */
 .no-scroll {
   overflow: hidden;
 }
@@ -1199,25 +1204,24 @@ textarea:focus + .instructions-block {
 .help-block,
 .instructions-block {
   color: #aaaaaa;
-  font-size: 12px;
+  font-size: 0.75rem;
   margin-top: .5rem;
-  text-align: right;
   display: block;
-  white-space: pre;
+  white-space: pre-wrap;
 }
-/* line 230, ../sass/global/_forms.scss */
+/* line 229, ../sass/global/_forms.scss */
 .help-block:active, .help-block:hover,
 .instructions-block:active,
 .instructions-block:hover {
   opacity: 1;
 }
 
-/* line 236, ../sass/global/_forms.scss */
+/* line 235, ../sass/global/_forms.scss */
 .md-hints * {
   margin-left: 0.5rem;
 }
 
-/* line 240, ../sass/global/_forms.scss */
+/* line 239, ../sass/global/_forms.scss */
 .link-select {
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -1234,13 +1238,13 @@ textarea:focus + .instructions-block {
   white-space: nowrap;
   width: 190px !important;
 }
-/* line 255, ../sass/global/_forms.scss */
+/* line 254, ../sass/global/_forms.scss */
 .link-select:focus {
   outline: none !important;
   box-shadow: none !important;
 }
 
-/* line 263, ../sass/global/_forms.scss */
+/* line 262, ../sass/global/_forms.scss */
 .categories-wrap {
   justify-content: flex-start;
   -webkit-justify-content: flex-start;
@@ -1248,34 +1252,34 @@ textarea:focus + .instructions-block {
   margin-top: 1rem;
 }
 
-/* line 268, ../sass/global/_forms.scss */
+/* line 267, ../sass/global/_forms.scss */
 .checkbox-styled {
   display: inline;
   min-width: 125px;
   margin-bottom: 0.5rem;
 }
-/* line 272, ../sass/global/_forms.scss */
+/* line 271, ../sass/global/_forms.scss */
 .checkbox-styled:not(:last-child) {
   margin-right: 0.5rem;
 }
 @media screen and (max-width: 40em) {
-  /* line 268, ../sass/global/_forms.scss */
+  /* line 267, ../sass/global/_forms.scss */
   .checkbox-styled {
     max-width: 100%;
     width: 100%;
   }
-  /* line 279, ../sass/global/_forms.scss */
+  /* line 278, ../sass/global/_forms.scss */
   .checkbox-styled:not(:last-child) {
     margin-right: 0;
   }
 }
 
-/* line 285, ../sass/global/_forms.scss */
+/* line 284, ../sass/global/_forms.scss */
 .checkbox-styled input {
   display: none;
 }
 
-/* line 289, ../sass/global/_forms.scss */
+/* line 288, ../sass/global/_forms.scss */
 .checkbox-styled > input + label {
   background: #f2f2f2;
   width: 100%;
@@ -1286,7 +1290,7 @@ textarea:focus + .instructions-block {
   padding: 0 1rem;
 }
 
-/* line 298, ../sass/global/_forms.scss */
+/* line 297, ../sass/global/_forms.scss */
 .checkbox-styled > input:checked + label {
   background: #f1592a;
   color: white;
@@ -1297,83 +1301,88 @@ textarea:focus + .instructions-block {
 
 /* line 1, ../sass/global/_markdown.scss */
 .markdown {
+  font-feature-settings: "onum" 1;
+  -moz-font-feature-settings: "onum=1";
+  -ms-font-feature-settings: "onum" 1;
+  -o-font-feature-settings: "onum" 1;
+  -webkit-font-feature-settings: "onum" 1;
   color: #333333;
 }
-/* line 5, ../sass/global/_markdown.scss */
+/* line 9, ../sass/global/_markdown.scss */
 .markdown ul, .markdown ol, .markdown p, .markdown pre, .markdown blockquote {
   margin-bottom: 1.5em;
   line-height: 1.5;
 }
-/* line 10, ../sass/global/_markdown.scss */
+/* line 14, ../sass/global/_markdown.scss */
 .markdown strong {
   font-weight: bold;
 }
-/* line 14, ../sass/global/_markdown.scss */
+/* line 18, ../sass/global/_markdown.scss */
 .markdown em {
   font-style: italic;
 }
-/* line 18, ../sass/global/_markdown.scss */
+/* line 22, ../sass/global/_markdown.scss */
 .markdown ul, .markdown ol {
   padding-left: 1.5rem;
 }
-/* line 22, ../sass/global/_markdown.scss */
+/* line 26, ../sass/global/_markdown.scss */
 .markdown ul {
   list-style-type: disc;
 }
-/* line 26, ../sass/global/_markdown.scss */
+/* line 30, ../sass/global/_markdown.scss */
 .markdown ol {
   list-style-type: decimal;
 }
-/* line 31, ../sass/global/_markdown.scss */
+/* line 35, ../sass/global/_markdown.scss */
 .markdown a:link, .markdown a:visited, .markdown a:active {
   color: #f1592a;
 }
-/* line 35, ../sass/global/_markdown.scss */
+/* line 39, ../sass/global/_markdown.scss */
 .markdown a:hover {
   text-decoration: underline;
 }
-/* line 41, ../sass/global/_markdown.scss */
+/* line 45, ../sass/global/_markdown.scss */
 .markdown p:last-child {
   display: inline;
   margin-bottom: 0;
 }
-/* line 47, ../sass/global/_markdown.scss */
+/* line 51, ../sass/global/_markdown.scss */
 .markdown h1, .markdown h2, .markdown h3, .markdown h4, .markdown h5 {
   font-weight: bold;
   margin-bottom: 1rem;
 }
-/* line 52, ../sass/global/_markdown.scss */
+/* line 56, ../sass/global/_markdown.scss */
 .markdown h1 {
   font-size: 36px;
 }
-/* line 56, ../sass/global/_markdown.scss */
+/* line 60, ../sass/global/_markdown.scss */
 .markdown h2 {
   font-size: 24px;
 }
-/* line 60, ../sass/global/_markdown.scss */
+/* line 64, ../sass/global/_markdown.scss */
 .markdown h3 {
   font-size: 18px;
   line-height: 1.4;
 }
-/* line 65, ../sass/global/_markdown.scss */
+/* line 69, ../sass/global/_markdown.scss */
 .markdown h4 {
   font-size: 16px;
 }
-/* line 69, ../sass/global/_markdown.scss */
+/* line 73, ../sass/global/_markdown.scss */
 .markdown h5 {
   font-size: 14px;
 }
-/* line 73, ../sass/global/_markdown.scss */
+/* line 77, ../sass/global/_markdown.scss */
 .markdown img {
   max-width: 100%;
   margin-bottom: 1rem;
 }
-/* line 78, ../sass/global/_markdown.scss */
+/* line 82, ../sass/global/_markdown.scss */
 .markdown p img {
   display: inline;
   vertical-align: middle;
 }
-/* line 83, ../sass/global/_markdown.scss */
+/* line 87, ../sass/global/_markdown.scss */
 .markdown code {
   font-family: Monaco;
   font-size: 12px;
@@ -1383,7 +1392,7 @@ textarea:focus + .instructions-block {
   border-radius: 2px;
   white-space: nowrap;
 }
-/* line 94, ../sass/global/_markdown.scss */
+/* line 98, ../sass/global/_markdown.scss */
 .markdown pre {
   padding: 1rem 1.25rem;
   border: 1px solid black;
@@ -1392,14 +1401,14 @@ textarea:focus + .instructions-block {
   overflow-x: scroll;
   -webkit-overflow-scroll: touch;
 }
-/* line 102, ../sass/global/_markdown.scss */
+/* line 106, ../sass/global/_markdown.scss */
 .markdown pre code {
   color: #eeeeee;
   background: none;
   white-space: pre;
   padding: 0;
 }
-/* line 110, ../sass/global/_markdown.scss */
+/* line 114, ../sass/global/_markdown.scss */
 .markdown blockquote {
   border-left: 3px solid #eee;
   padding-left: 1rem;
@@ -1548,6 +1557,15 @@ code {
 /* line 36, ../sass/global/_typography.scss */
 strong {
   font-weight: 700;
+}
+
+/* line 40, ../sass/global/_typography.scss */
+.onum {
+  font-feature-settings: "onum" 1;
+  -moz-font-feature-settings: "onum=1";
+  -ms-font-feature-settings: "onum" 1;
+  -o-font-feature-settings: "onum" 1;
+  -webkit-font-feature-settings: "onum" 1;
 }
 
 /* line 1, ../sass/modules/_cheatsheet.scss */
@@ -1791,16 +1809,32 @@ strong {
     -webkit-transform: scale(1);
   }
 }
-/* line 1, ../sass/modules/_accounts.scss */
+/* line 3, ../sass/modules/_accounts.scss */
 .at-oauth {
   text-align: center;
 }
-/* line 4, ../sass/modules/_accounts.scss */
+/* line 6, ../sass/modules/_accounts.scss */
 .at-oauth .at-social-btn {
   margin: 0 auto 15px auto;
 }
 
-/* line 9, ../sass/modules/_accounts.scss */
+/* line 11, ../sass/modules/_accounts.scss */
+.at-oauth,
+.at-sep {
+  display: none;
+}
+
+/* line 16, ../sass/modules/_accounts.scss */
+.at-form {
+  -webkit-align-self: center;
+  align-self: center;
+}
+/* line 18, ../sass/modules/_accounts.scss */
+.at-form + .spacer {
+  display: none;
+}
+
+/* line 23, ../sass/modules/_accounts.scss */
 .at-sep {
   text-align: center;
   position: relative;
@@ -1808,7 +1842,7 @@ strong {
   font-weight: 500;
   margin: 2rem 0;
 }
-/* line 16, ../sass/modules/_accounts.scss */
+/* line 30, ../sass/modules/_accounts.scss */
 .at-sep:before, .at-sep:after {
   display: block;
   content: " ";
@@ -1817,46 +1851,46 @@ strong {
   position: absolute;
   top: 48%;
 }
-/* line 25, ../sass/modules/_accounts.scss */
+/* line 39, ../sass/modules/_accounts.scss */
 .at-sep:before {
   left: -55%;
 }
-/* line 29, ../sass/modules/_accounts.scss */
+/* line 43, ../sass/modules/_accounts.scss */
 .at-sep:after {
   right: -55%;
 }
 
-/* line 35, ../sass/modules/_accounts.scss */
+/* line 49, ../sass/modules/_accounts.scss */
 .at-input label {
   margin-bottom: 5px;
 }
 
-/* line 40, ../sass/modules/_accounts.scss */
+/* line 54, ../sass/modules/_accounts.scss */
 #at-forgotPwd {
   font-size: 13px;
   float: right;
   margin-top: -8px;
 }
 
-/* line 46, ../sass/modules/_accounts.scss */
+/* line 60, ../sass/modules/_accounts.scss */
 #at-btn {
   margin: 0 auto;
 }
 
-/* line 50, ../sass/modules/_accounts.scss */
+/* line 64, ../sass/modules/_accounts.scss */
 .at-title {
   font-weight: 500;
   text-align: center;
 }
 
-/* line 55, ../sass/modules/_accounts.scss */
+/* line 69, ../sass/modules/_accounts.scss */
 .at-signup-link,
 .at-signin-link {
   margin-top: 1rem;
   text-align: center;
 }
 
-/* line 61, ../sass/modules/_accounts.scss */
+/* line 75, ../sass/modules/_accounts.scss */
 #at-forgotPwd {
   float: none;
   text-align: left;
@@ -1864,7 +1898,7 @@ strong {
   display: block;
 }
 
-/* line 68, ../sass/modules/_accounts.scss */
+/* line 82, ../sass/modules/_accounts.scss */
 .has-error span,
 .at-error,
 .at-result {
@@ -1881,7 +1915,7 @@ strong {
   animation: scale-up 200ms cubic-bezier(0.5, -0.5, 0.25, 1.5);
 }
 
-/* line 82, ../sass/modules/_accounts.scss */
+/* line 96, ../sass/modules/_accounts.scss */
 .at-result {
   background: #98c288 !important;
 }
@@ -2478,8 +2512,14 @@ a.new-post:active {
 .post:first-child {
   border: none;
 }
+@media screen and (max-width: 40em) {
+  /* line 94, ../sass/modules/_posts.scss */
+  .post {
+    padding: 1.5rem 1rem 0.5rem;
+  }
+}
 
-/* line 106, ../sass/modules/_posts.scss */
+/* line 110, ../sass/modules/_posts.scss */
 .post-title {
   pointer-events: none;
   color: #222222;
@@ -2492,27 +2532,27 @@ a.new-post:active {
   white-space: nowrap;
   text-rendering: optimizeLegibility;
 }
-/* line 118, ../sass/modules/_posts.scss */
+/* line 122, ../sass/modules/_posts.scss */
 .post-title:visited {
   color: #aaaaaa;
 }
-/* line 122, ../sass/modules/_posts.scss */
+/* line 126, ../sass/modules/_posts.scss */
 .post-title:hover {
   color: #f1592a;
   text-decoration: underline;
 }
 @media screen and (max-width: 40em) {
-  /* line 106, ../sass/modules/_posts.scss */
+  /* line 110, ../sass/modules/_posts.scss */
   .post-title {
     font-size: 18px;
   }
 }
 
-/* line 132, ../sass/modules/_posts.scss */
+/* line 136, ../sass/modules/_posts.scss */
 .post-heading {
   margin-bottom: 1rem;
 }
-/* line 134, ../sass/modules/_posts.scss */
+/* line 138, ../sass/modules/_posts.scss */
 .post-heading .post-body {
   color: #aaaaaa;
   font-size: 14px;
@@ -2521,30 +2561,30 @@ a.new-post:active {
   overflow: hidden;
 }
 
-/* line 143, ../sass/modules/_posts.scss */
+/* line 147, ../sass/modules/_posts.scss */
 a.back-link {
   color: #aaaaaa;
   display: block;
   margin-bottom: 1rem;
 }
-/* line 147, ../sass/modules/_posts.scss */
+/* line 151, ../sass/modules/_posts.scss */
 a.back-link:hover {
   color: #f1592a;
 }
 
-/* line 152, ../sass/modules/_posts.scss */
+/* line 156, ../sass/modules/_posts.scss */
 .single-post .post-content {
   padding-bottom: 2rem;
 }
-/* line 155, ../sass/modules/_posts.scss */
+/* line 159, ../sass/modules/_posts.scss */
 .single-post .post-content .post-heading {
   margin-bottom: 2rem;
 }
-/* line 157, ../sass/modules/_posts.scss */
+/* line 161, ../sass/modules/_posts.scss */
 .single-post .post-content .post-heading a:visited {
   color: inherit;
 }
-/* line 161, ../sass/modules/_posts.scss */
+/* line 165, ../sass/modules/_posts.scss */
 .single-post .post-content .post-heading .post-title {
   font-size: 28px;
   line-height: 1;
@@ -2554,19 +2594,19 @@ a.back-link:hover {
   overflow: visible;
 }
 @media screen and (max-width: 40em) {
-  /* line 161, ../sass/modules/_posts.scss */
+  /* line 165, ../sass/modules/_posts.scss */
   .single-post .post-content .post-heading .post-title {
     font-size: 21px;
   }
 }
 
-/* line 175, ../sass/modules/_posts.scss */
+/* line 179, ../sass/modules/_posts.scss */
 .post-body {
   margin-bottom: 2rem;
   font-size: 16px;
 }
 @media screen and (max-width: 40em) {
-  /* line 175, ../sass/modules/_posts.scss */
+  /* line 179, ../sass/modules/_posts.scss */
   .post-body {
     font-size: 14px;
   }
@@ -2641,37 +2681,39 @@ input.category-number {
 
 /* line 1, ../sass/modules/_profile.scss */
 .user-profile {
+  text-align: center;
   min-height: 60vh;
 }
-/* line 4, ../sass/modules/_profile.scss */
+/* line 5, ../sass/modules/_profile.scss */
 .user-profile .avatar {
   height: 100px;
   width: 100px;
   margin: 0;
 }
-/* line 9, ../sass/modules/_profile.scss */
+/* line 10, ../sass/modules/_profile.scss */
 .user-profile .avatar .avatar-initials {
   font-size: 1.5rem;
   line-height: 4.5;
 }
-/* line 15, ../sass/modules/_profile.scss */
+/* line 16, ../sass/modules/_profile.scss */
 .user-profile .edit-avatar {
   display: block;
   font-size: 14px;
   color: #aaaaaa;
-  margin-top: 5px;
+  margin-top: 10px;
 }
-/* line 20, ../sass/modules/_profile.scss */
+/* line 21, ../sass/modules/_profile.scss */
 .user-profile .edit-avatar:hover {
   color: #f1592a;
 }
-/* line 25, ../sass/modules/_profile.scss */
+/* line 26, ../sass/modules/_profile.scss */
 .user-profile .profile-links {
   margin: 2rem 0;
   font-size: 16px;
+  line-height: 2;
   color: #aaaaaa;
 }
-/* line 30, ../sass/modules/_profile.scss */
+/* line 32, ../sass/modules/_profile.scss */
 .user-profile .profile-links .username {
   font-size: 32px;
   font-weight: 400;
@@ -2679,75 +2721,68 @@ input.category-number {
   margin-bottom: 2rem;
   text-rendering: optimizeLegibility;
 }
-/* line 38, ../sass/modules/_profile.scss */
+/* line 40, ../sass/modules/_profile.scss */
 .user-profile .profile-links .has-icon svg {
   fill: currentColor;
   vertical-align: middle;
   margin-right: 0.2rem;
   margin-top: -2px;
 }
-/* line 45, ../sass/modules/_profile.scss */
+/* line 47, ../sass/modules/_profile.scss */
 .user-profile .profile-links li:not(.username) {
-  display: inline;
+  display: inline-block;
   margin-right: 1rem;
 }
-/* line 49, ../sass/modules/_profile.scss */
+/* line 51, ../sass/modules/_profile.scss */
 .user-profile .profile-links li:not(.username):last-child {
   margin-right: 0;
 }
-@media screen and (max-width: 40em) {
-  /* line 45, ../sass/modules/_profile.scss */
-  .user-profile .profile-links li:not(.username) {
-    display: block;
-    margin: 1rem 0;
-  }
-}
-/* line 60, ../sass/modules/_profile.scss */
+/* line 58, ../sass/modules/_profile.scss */
 .user-profile .profile-bio {
   font-size: 21px;
   line-height: 1.5;
 }
 
-/* line 67, ../sass/modules/_profile.scss */
+/* line 65, ../sass/modules/_profile.scss */
 .user-data {
   background: #f2f2f2;
   padding: 1rem 2rem;
   margin-bottom: 2rem;
 }
-/* line 72, ../sass/modules/_profile.scss */
+/* line 70, ../sass/modules/_profile.scss */
 .user-data:empty {
   display: none;
 }
-/* line 76, ../sass/modules/_profile.scss */
+/* line 74, ../sass/modules/_profile.scss */
 .user-data > div {
   display: inline-block;
 }
-/* line 79, ../sass/modules/_profile.scss */
+/* line 77, ../sass/modules/_profile.scss */
 .user-data > div:first-child {
   margin-right: 2rem;
 }
 
-/* line 85, ../sass/modules/_profile.scss */
+/* line 83, ../sass/modules/_profile.scss */
 .user-actions {
   margin: 3rem 0;
 }
-/* line 88, ../sass/modules/_profile.scss */
+/* line 86, ../sass/modules/_profile.scss */
 .user-actions a {
   color: #f1592a;
   margin-right: 1rem;
 }
-/* line 92, ../sass/modules/_profile.scss */
+/* line 90, ../sass/modules/_profile.scss */
 .user-actions a:last-child, .user-actions a:only-child {
   margin-right: 0;
 }
 
-/* line 99, ../sass/modules/_profile.scss */
+/* line 97, ../sass/modules/_profile.scss */
 .user-profile-posts,
 .user-profile-comments {
   margin-bottom: 2rem;
 }
 
-/* line 104, ../sass/modules/_profile.scss */
+/* line 102, ../sass/modules/_profile.scss */
 .user-edit {
   position: relative;
 }
