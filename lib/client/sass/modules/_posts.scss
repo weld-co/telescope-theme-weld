@@ -59,7 +59,7 @@ a.new-post {
   &:hover {
     background: $lightest-grey;
     .post-title {
-      text-decoration: underline;
+      color: $primary-color;
     }
   }
 
@@ -121,11 +121,6 @@ a.new-post {
   
   &:visited {
     color: $grey;
-  }
-
-  &:hover {
-    color: $primary-color;
-    text-decoration: underline;
   }
 
   @include small {

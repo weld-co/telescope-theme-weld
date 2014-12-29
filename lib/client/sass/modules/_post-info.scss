@@ -47,9 +47,9 @@
   color: white;
 }
 
-.post:not(.sticky) .upvote-link a {
-  font-weight: 500;
-  color: $primary-color;
+.post:not(.sticky) .upvote-link.upvoted a {
+  color: $primary-color !important;
+  fill: $primary-color;
 }
 
 .author,
@@ -66,4 +66,24 @@
 
 .post-time {
   margin-right: 5rem;
+}
+
+.posts.list {
+  .post:not(.sticky):hover {
+    .comments-link a,
+    .upvote-link a {
+      color: $primary-color;
+    }
+  }
+}
+
+// Post Info Icons
+.post-meta svg {
+  vertical-align: middle;
+  fill: currentcolor;
+  margin-right: .25rem;
+}
+
+.upvote-icon {
+  margin-top: -2px;
 }

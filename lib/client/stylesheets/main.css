@@ -2090,9 +2090,9 @@ input[type="search"].search-input-field:focus {
 }
 
 /* line 50, ../sass/modules/_post-info.scss */
-.post:not(.sticky) .upvote-link a {
-  font-weight: 500;
-  color: #f1592a;
+.post:not(.sticky) .upvote-link.upvoted a {
+  color: #f1592a !important;
+  fill: #f1592a;
 }
 
 /* line 62, ../sass/modules/_post-info.scss */
@@ -2109,6 +2109,24 @@ input[type="search"].search-input-field:focus {
 /* line 67, ../sass/modules/_post-info.scss */
 .post-time {
   margin-right: 5rem;
+}
+
+/* line 73, ../sass/modules/_post-info.scss */
+.posts.list .post:not(.sticky):hover .comments-link a,
+.posts.list .post:not(.sticky):hover .upvote-link a {
+  color: #f1592a;
+}
+
+/* line 81, ../sass/modules/_post-info.scss */
+.post-meta svg {
+  vertical-align: middle;
+  fill: currentcolor;
+  margin-right: .25rem;
+}
+
+/* line 87, ../sass/modules/_post-info.scss */
+.upvote-icon {
+  margin-top: -2px;
 }
 
 /* line 1, ../sass/modules/_avatars.scss */
@@ -2471,7 +2489,7 @@ a.new-post:active {
 }
 /* line 61, ../sass/modules/_posts.scss */
 .posts.list > .post:hover .post-title {
-  text-decoration: underline;
+  color: #f1592a;
 }
 /* line 66, ../sass/modules/_posts.scss */
 .posts.list > .post.sticky {
@@ -2536,11 +2554,6 @@ a.new-post:active {
 .post-title:visited {
   color: #aaaaaa;
 }
-/* line 126, ../sass/modules/_posts.scss */
-.post-title:hover {
-  color: #f1592a;
-  text-decoration: underline;
-}
 @media screen and (max-width: 40em) {
   /* line 110, ../sass/modules/_posts.scss */
   .post-title {
@@ -2548,11 +2561,11 @@ a.new-post:active {
   }
 }
 
-/* line 136, ../sass/modules/_posts.scss */
+/* line 131, ../sass/modules/_posts.scss */
 .post-heading {
   margin-bottom: 1rem;
 }
-/* line 138, ../sass/modules/_posts.scss */
+/* line 133, ../sass/modules/_posts.scss */
 .post-heading .post-body {
   color: #aaaaaa;
   font-size: 14px;
@@ -2561,30 +2574,30 @@ a.new-post:active {
   overflow: hidden;
 }
 
-/* line 147, ../sass/modules/_posts.scss */
+/* line 142, ../sass/modules/_posts.scss */
 a.back-link {
   color: #aaaaaa;
   display: block;
   margin-bottom: 1rem;
 }
-/* line 151, ../sass/modules/_posts.scss */
+/* line 146, ../sass/modules/_posts.scss */
 a.back-link:hover {
   color: #f1592a;
 }
 
-/* line 156, ../sass/modules/_posts.scss */
+/* line 151, ../sass/modules/_posts.scss */
 .single-post .post-content {
   padding-bottom: 2rem;
 }
-/* line 159, ../sass/modules/_posts.scss */
+/* line 154, ../sass/modules/_posts.scss */
 .single-post .post-content .post-heading {
   margin-bottom: 2rem;
 }
-/* line 161, ../sass/modules/_posts.scss */
+/* line 156, ../sass/modules/_posts.scss */
 .single-post .post-content .post-heading a:visited {
   color: inherit;
 }
-/* line 165, ../sass/modules/_posts.scss */
+/* line 160, ../sass/modules/_posts.scss */
 .single-post .post-content .post-heading .post-title {
   font-size: 28px;
   line-height: 1;
@@ -2594,19 +2607,19 @@ a.back-link:hover {
   overflow: visible;
 }
 @media screen and (max-width: 40em) {
-  /* line 165, ../sass/modules/_posts.scss */
+  /* line 160, ../sass/modules/_posts.scss */
   .single-post .post-content .post-heading .post-title {
     font-size: 21px;
   }
 }
 
-/* line 179, ../sass/modules/_posts.scss */
+/* line 174, ../sass/modules/_posts.scss */
 .post-body {
   margin-bottom: 2rem;
   font-size: 16px;
 }
 @media screen and (max-width: 40em) {
-  /* line 179, ../sass/modules/_posts.scss */
+  /* line 174, ../sass/modules/_posts.scss */
   .post-body {
     font-size: 14px;
   }
@@ -3084,12 +3097,6 @@ input.category-number {
   color: #aaaaaa;
   vertical-align: middle;
   font-size: 12px;
-}
-
-/* line 77, ../sass/modules/_comments.scss */
-.posts.list .post:not(.sticky):hover .comments-link a {
-  color: #f1592a;
-  text-decoration: underline;
 }
 
 /* line 4, ../sass/modules/_newsletter.scss */

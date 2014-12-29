@@ -71,12 +71,3 @@
     font-size: 12px;
   }
 }
-
-.posts.list {
-  .post:not(.sticky):hover {
-    .comments-link a {
-      color: $primary-color;
-      text-decoration: underline;
-    }
-  }
-}
