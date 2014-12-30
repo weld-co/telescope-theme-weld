@@ -2625,6 +2625,22 @@ a.back-link:hover {
   }
 }
 
+/* line 1, ../sass/modules/_categories.scss */
+.categories .grid-module {
+  margin-bottom: 5rem;
+}
+
+/* line 5, ../sass/modules/_categories.scss */
+.add-category {
+  background: #f2f2f2;
+  padding: 5%;
+}
+
+/* line 1, ../sass/modules/_feeds.scss */
+.add-feed {
+  background: none;
+}
+
 /* line 1, ../sass/modules/_post-categories.scss */
 a.post-category,
 a.post-domain {
