@@ -6,11 +6,13 @@ a.post-domain {
   color: $middle-grey;
   border-radius: 2px;
   background: $lightest-grey;
+  text-transform: initial;
   vertical-align: middle;
   display: inline-block;
   margin-bottom: 4px;
 
   &:hover {
+    background: $lightest-grey;
     color: $primary-color !important;
   }
 }
@@ -44,4 +46,17 @@ input.category-number {
 
 .category-save {
   margin-bottom: 3rem;
+}
+
+.launch-icon {
+  vertical-align: middle;
+  display: inline-block;
+  margin-top: -1px;
+  margin-left: 2px;
+  padding-right: 1px;
+  box-sizing: content-box;
+
+  path {
+    fill: $primary-color;
+  }
 }

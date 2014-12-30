@@ -1,6 +1,6 @@
 .user-profile {
   text-align: center;
-  margin-bottom: 3rem;
+  min-height: 60vh;
 
   .avatar {
     height: 100px;
@@ -15,8 +15,9 @@
 
   .edit-avatar {
     display: block;
+    font-size: 14px;
     color: $grey;
-    margin-top: 5px;
+    margin-top: 10px;
     &:hover {
       color: $primary-color;
     }
@@ -25,26 +26,32 @@
   .profile-links {
     margin: 2rem 0;
     font-size: 16px;
+    line-height: 2;
     color: $grey;
    
     .username {
       font-size: 32px;
       font-weight: 400;
       color: $dark-grey;
+      margin-bottom: 2rem;
+      text-rendering: optimizeLegibility;
+    }
+
+    .has-icon svg {
+      fill: currentColor;
+      vertical-align: middle;
+      margin-right: 0.2rem;
+      margin-top: -2px;
     }
 
     li:not(.username) {
-      display: inline;
+      display: inline-block;
       margin-right: 1rem;
 
       &:last-child {
         margin-right: 0;
       }
 
-      @include small {
-        display: block;
-        margin: 1rem 0;
-      }
     }
   }
 
@@ -57,8 +64,7 @@
 
 .user-data {
   background: $lightest-grey;
-  text-align: center;
-  padding: 1rem;
+  padding: 1rem 2rem;
   margin-bottom: 2rem;
 
   &:empty {
@@ -69,7 +75,7 @@
     display: inline-block;
 
     &:first-child {
-      margin-right: 1rem;
+      margin-right: 2rem;
     }
   }
 } // .user-data
@@ -85,33 +91,6 @@
     &:only-child {
       margin-right: 0;
     }
-  }
-}
-
-.user-profile-comments {
-
-  td {
-    vertical-align: top;
-    overflow: hidden;
-    max-width: 300px;
-
-    &:nth-child(1) {
-      width: 25%;
-      font-weight: 600;
-    }
-
-    &:nth-child(2) {
-      width: 50%;
-    }
-    
-    &:nth-child(3) {
-      width: 25%;
-      color: $grey;
-    }
-  }
-
-  @include small {
-    display: none;
   }
 }
 

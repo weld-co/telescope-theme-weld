@@ -12,14 +12,20 @@ a {
 }
 
 .more-button {
+  @include display-flex;
+  @include flex-direction(row);
+  @include flex-wrap(wrap);
+  @include justify-content(space-around);
+  @include align-self(center);
+  @include align-items(center);
+  @include justify-content(center);
   background: $lightest-grey;
-  padding: 1rem 2rem;
-  width: 100%;
-  text-align: center;
   color: $primary-color !important;
   font-weight: 600;
-  display: block;
-  clear: both;
+  margin-top: 2rem;
+  height: 3rem;
+  width: 100%;
+  border-radius: 3px;
 }
 
 .delete-link {

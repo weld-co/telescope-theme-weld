@@ -1,15 +1,17 @@
 <!-- overwritten to move nav and mobile_nav outside of outer-wrapper -->
 <template name="layoutWeld">
 {{> UI.dynamic template=css}}
+{{> UI.dynamic template=messages}}
   <div class="grid-wrap">
-    {{> sidebar}}
+    {{#if canView}}
+      {{> sidebar}}
+    {{/if}}
     <main class="content-wrap column">
       {{> UI.dynamic template=nav}}
       {{#each heroModules}}
         {{> UI.dynamic template=getTemplate}}
       {{/each}}
       <div class="content row {{pageName}}">
-        {{> UI.dynamic template=error}}
         {{> yield}}
         <div class="spacer row"></div>
       </div> <!-- page-wrap -->

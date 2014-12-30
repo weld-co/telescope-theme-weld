@@ -13,6 +13,15 @@ $padding: $gutter * 1.25;
   -webkit-backface-visibility: hidden;
 }
 
+/* Legacy grid element overrides */
+
+.grid,
+.grid-module,
+.grid-block {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
 .row {
   @include display-flex;
   @include flex-direction(row);
@@ -63,7 +72,15 @@ $padding: $gutter * 1.25;
   transform: translateY(-10%);
 }
 
+.dialog + .spacer {
+  display: none;
+}
+
 .spacer {
   width: 100%;
   height: 20vh;
+}
+
+.no-scroll {
+  overflow: hidden;
 }

@@ -1,88 +1,15 @@
 <!-- changed category selection from checkboxes to dropdown select -->
 <template name="post_submit_weld">
-  <form class="full-width">
-    <div class="control-group">
-      <label class="control-label">{{_ "URL"}}</label>
-      <div class="controls"><input id="url" type="url" placeholder="Enter a link, or leave blank" value="" autofocus="true"/></div>
-    </div>
-    <div class="control-group">
-      <label class="control-label">{{_ "Title"}}</label>
-      <div class="controls">
-        <input id="title" type="text" value="" />
-        <a href="#" class="help-block important get-title-link">{{_ "Suggest a title from URL"}}</a>
-      </div>
-    </div>
-    <div class="control-group">
-      <label class="control-label">{{_ "Body"}}</label>
-      <div class="controls" id="editor">
-        <textarea id="body" value="" class="input-xlarge"></textarea>
-      </div>
-      <div class="help-block important formatting">Formatting?</div>
-      {{> cheatsheet}}
-    </div>
-
-    {{#if categoriesEnabled}}
-    <div class="control-group">
-      <label class="control-label">Tag Your Post</label>
-      <div class="controls categories-wrap row">
-        {{#each categories}}
-        <div class="checkbox-styled">            
-          <input id="category_{{_id}}" type="checkbox" value="{{_id}}" name="category" /> 
-          <label for="category_{{_id}}" class="center">{{name}}</label>
-        </div>
-        {{/each}}
-      </div>
-    </div>
-    {{/if}}
-    {{#if isAdmin}}
-      <div class="control-group">
-        <label class="control-label">{{_ "Sticky?"}}</label>
-        <div class="controls">
-          <input type="checkbox" name="sticky" id="sticky" />
-        </div>
-      </div>
-      <div class="control-group">
-        <label class="control-label">{{_ "User"}}</label>
-        <div class="controls">
-          <select id="postUser" class="styled-select">
-            {{#each users}}
-              <option {{isSelected this}} value="{{_id}}">{{userName}}</option>
-            {{/each}}
-          </select>
-        </div>
-      </div>
-      <div class="control-group">
-        <label class="control-label">{{_ "Status"}}</label>
-        <div class="controls">
-          <label class="radio inline">
-            <input id="status_pending" type="radio" value="1" name="status"/> {{_ "Pending"}}
-          </label>
-          <label class="radio inline">
-            <input id="status_approved" type="radio" value="2" name="status" checked /> {{_ "Approved"}}
-          </label>
-          <label class="radio inline">  
-            <input id="status_rejected" type="radio" value="3" name="status"/> {{_ "Rejected"}}
-          </label>
-        </div>
-      </div>
-      <div id="postedAt" class={{showPostedAt}}>
-        <div class="control-group">
-          <label class="control-label post-form-date">{{_ "Posted Date"}}</label>
-          <div class="controls">
-            <input id="postedAtDate" type="text" value="{{postedAtDate}}" />
-          </div>
-        </div>
-        <div class="control-group">
-          <label class="control-label post-form-time">{{_ "Posted Time"}}</label>
-          <div class="controls">
-            <input id="postedAtTime" type="text" value="{{postedAtTime}}" />
-            <div class="help-block">Leave blank to post at current time.</div>
-          </div>
-        </div>
-      </div>
-    {{/if}}
-    <div class="form-actions">
-      <input type="submit" class="button" value="{{_ "Submit"}}" />
-    </div>
-  </form>
+  <div class="full-width">
+{{#autoForm collection="Posts" id="submitPostForm"}}
+    {{> afQuickField name='url'}}
+    {{> afQuickField name='title'}}
+    {{> afQuickField name='body'}}
+    {{> afQuickField name='categories' template='categories_checkboxes_weld'}}
+    {{> afQuickField name='status'}}
+    {{> afQuickField name='postedAtDate'}}
+    {{> afQuickField name='postedAtTime'}}
+    <button type="submit" class="button">Submit</button>
+{{/autoForm}}
+</div>
 </template>

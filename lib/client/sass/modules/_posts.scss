@@ -5,6 +5,7 @@ a.new-post {
   color: white;
   font-size: 40px;
   font-weight: 100;
+  line-height: $mobile-header-height;
   min-height: $mobile-header-height;
   max-height: $mobile-header-height;
   width: $mobile-header-height;
@@ -24,28 +25,6 @@ a.new-post {
   &:active {
     transform: translateY(0);
   }
-}
-
-.mobile-new-post {
-    display: block;
-    height: 3rem;
-    text-align: center;
-    background: $lightest-grey;
-    color: $dark-grey;
-    width: 100%;
-    line-height: 3rem;
-    font-weight: 500;
-    margin-bottom: 1rem;
-    @include small {
-      margin-top: 1rem;
-      background: white;
-    }
-
-    &:hover {
-      background: $primary-color;
-      color: white;
-      transition: none;
-    }
 }
 
 .post-loading {
@@ -79,10 +58,9 @@ a.new-post {
 
   &:hover {
     background: $lightest-grey;
-  }
-
-  .inner {
-    padding: 0 1.25rem;
+    .post-title {
+      color: $primary-color;
+    }
   }
 
   &.sticky {
@@ -116,16 +94,21 @@ a.new-post {
 .post {
   background: #ffffff;
   border-top: 1px solid $lightest-grey;
-  padding: 1.25rem 0 1rem;
+  padding: 1.5rem 1.5rem 0.5rem;
   position: relative;
   overflow: hidden;
 
   &:first-child {
     border: none;
   }
+
+  @include small {
+    padding: 1.5rem 1rem 0.5rem;
+  }
 }
 
 .post-title {
+  pointer-events: none;
   color: $darkest-grey;
   display: block;
   font-size: 21px;
@@ -138,11 +121,6 @@ a.new-post {
   
   &:visited {
     color: $grey;
-  }
-
-  &:hover {
-    color: $primary-color;
-    text-decoration: underline;
   }
 
   @include small {
@@ -161,17 +139,6 @@ a.new-post {
   }
 }
 
-.launch-icon {
-  vertical-align: middle;
-  display: inline-block;
-  margin-top: -1px;
-  margin-left: 2px;
-
-  path {
-    fill: $primary-color;
-  }
-}
-
 a.back-link {
   color: $grey;
   display: block;
@@ -181,9 +148,7 @@ a.back-link {
   }
 }
 
-.single-post .post {
-  border-top: none;
-  padding-top: 0;
+.single-post .post-content {
   padding-bottom: 2rem;
 
   .post-heading {
@@ -206,18 +171,10 @@ a.back-link {
   }
 }
 
-.post_page_weld .post-title {
-  pointer-events: none;
-}
-
 .post-body {
   margin-bottom: 2rem;
   font-size: 16px;
   @include small {
     font-size: 14px;
   }
-}
-
-.more-button {
-  margin-top: 2rem;
 }

@@ -1,6 +1,6 @@
 Package.describe({ 
     summary: "Telescope WELD Theme Package",
-    version: '0.2.0',
+    version: '0.3.0',
     name: "telescope-theme-weld"
 });
 
@@ -10,7 +10,7 @@ Package.on_use(function (api) {
     'templating',
     'telescope-tags',
     'telescope-search',
-    'telescope-module-embedly',
+    'telescope-embedly',
     'telescope-notifications',
     'telescope-newsletter'
   ], ['client']);
@@ -26,75 +26,91 @@ Package.on_use(function (api) {
   api.addFiles([
     'lib/client/stylesheets/main.css',
 
+    // Overrides 
     'lib/client/templates/categories_menu_weld.html',
-    'lib/client/templates/category_item_weld.html',
-    'lib/client/templates/cheatsheet.html',
     'lib/client/templates/comment_form_weld.html',
     'lib/client/templates/comment_item_weld.html',
     'lib/client/templates/custom_css.html',
-    'lib/client/templates/error_item_weld.html',
     'lib/client/templates/footer_weld.html',
+    'lib/client/templates/header_weld.html',
     'lib/client/templates/layout_weld.html',
     'lib/client/templates/loading_weld.html',
-    'lib/client/templates/loader_weld.html',
-    'lib/client/templates/members_menu_weld.html',
-    'lib/client/templates/header_weld.html',
+    'lib/client/templates/message_item_weld.html',
     'lib/client/templates/newsletter_banner_weld.html',
     'lib/client/templates/no_invite_weld.html',
     'lib/client/templates/no_rights_weld.html',
     'lib/client/templates/not_found_weld.html',
-    'lib/client/templates/logo.html',
     'lib/client/templates/notifications_menu_weld.html',
+    'lib/client/templates/post_avatars_weld.html',
     'lib/client/templates/post_domain_weld.html',
-    'lib/client/templates/post_edit_weld.html',
     'lib/client/templates/post_info_weld.html',
-    'lib/client/templates/post_page_weld.html',
-    'lib/client/templates/post_submit_weld.html',
-    'lib/client/templates/post_thumbnail_weld.html',
     'lib/client/templates/post_title_weld.html',
     'lib/client/templates/post_item_weld.html',
+    'lib/client/templates/post_thumbnail_weld.html',
     'lib/client/templates/posts_list_weld.html',
     'lib/client/templates/posts_load_more_weld.html',
     'lib/client/templates/search_weld.html',
     'lib/client/templates/settings_weld.html',
     'lib/client/templates/sidebar.html',
+    'lib/client/templates/sign_out_weld.html',
     'lib/client/templates/submit_button_weld.html',
+    'lib/client/templates/user_account_weld.html',
+    'lib/client/templates/user_info_weld.html',
+    'lib/client/templates/user_invites_weld.html',
     'lib/client/templates/user_edit_weld.html',
     'lib/client/templates/user_menu_weld.html',
-    'lib/client/templates/user_profile_weld.html',
     'lib/client/templates/user_item_weld.html',
     'lib/client/templates/users_weld.html',
     'lib/client/templates/views_menu_weld.html',
 
+    // Additions
+    'lib/client/templates/cheatsheet.html',
+    'lib/client/templates/loader_weld.html',
+    'lib/client/templates/members_menu_weld.html',
+    'lib/client/templates/logo.html',
+
+    // Plugins
     'lib/client/js/dotdotdot_init.js',
     'lib/client/js/fastclick_init.js',
+    'lib/client/js/device_detection.js',
+
+    // Customizations
     'lib/client/js/weld.js',
     'lib/client/js/base_weld.js',
-    'lib/client/js/device_detection.js',
-    'lib/client/js/layout_weld.js',
+    'lib/client/js/extra_user_info_weld.js',
+    'lib/client/js/comment_item_weld.js',
     'lib/client/js/header_weld.js',
     'lib/client/js/newsletter_banner_weld.js',
     'lib/client/js/no_rights_weld.js',
     'lib/client/js/notifications_menu_weld.js',
+    'lib/client/js/post_avatars_weld.js',
     'lib/client/js/post_domain_weld.js',
     'lib/client/js/post_info_weld.js',
     'lib/client/js/post_item_weld.js',
     'lib/client/js/post_title_weld.js',
-    'lib/client/js/cheatsheet.js',
     'lib/client/js/post_thumbnail_weld.js', 
     'lib/client/js/progress_bar.js',
     'lib/client/js/sidebar.js',
-    'lib/client/js/user_profile_weld.js',
+    'lib/client/js/user_account_weld.js',
+    'lib/client/js/user_info_weld.js',
 
-    'img/landing-bkgd.jpg',
-    'img/apple-touch-icon-120.png',
-    'img/apple-touch-icon-180.png',
-    'img/apple-touch-icon-152.png',
-    'img/apple-touch-icon-76.png',
+    // Images
     'img/favicon.ico',
-    'img/favicon.png',
-    'img/weld_logo.png',
-    'img/avatar_blank.png'
+    'img/favicon-16x16.png',
+    'img/favicon-32x32.png',
+    'img/favicon-96x96.png',
+    'img/favicon-160x160.png',
+    'img/favicon-192x192.png',
+    'img/apple-touch-icon-57x57.png',
+    'img/apple-touch-icon-60x60.png',
+    'img/apple-touch-icon-72x72.png',
+    'img/apple-touch-icon-76x76.png',
+    'img/apple-touch-icon-114x114.png',
+    'img/apple-touch-icon-120x120.png',
+    'img/apple-touch-icon-144x144.png',
+    'img/apple-touch-icon-152x152.png',
+    'img/apple-touch-icon-180x180.png',
+    'img/weld_logo.png'
   ], ['client']);
 
   api.addFiles([
@@ -112,7 +128,8 @@ Package.on_use(function (api) {
     'primaryNav',
     'secondaryNav',
     'postModules',
-    'postMeta'
+    'postMeta',
+    'userProfileDisplay'
   ]);
 
 });

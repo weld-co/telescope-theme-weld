@@ -1,11 +1,16 @@
+.avatar-link {
+  display: inline-block;
+}
+
 .avatar {
   border-radius: 100%;
   display: inline-block;
   height: 1.5rem;
-  margin-right: 0.5rem;
+  width: 1.5rem;
+  margin-right: 2px;
   margin-top: -2px;
   vertical-align: middle;
-  width: 1.5rem;
+
 
   .avatar-image,
   .avatar-initials {
@@ -16,11 +21,7 @@
     font-size: 0.55rem;
     font-weight: 600;
     line-height: 3;
-    transition: background 200ms ease, transform 200ms cubic-bezier(0, -1, 0.5, 1.75);
-
-    &:hover {
-      transform: scale(1.1)
-    }
+    transition: background 200ms ease;
 
     @include small {
       font-weight: 700;
@@ -50,4 +51,9 @@
       background: white;
     }
   }
+}
+
+.post-upvoters {
+  display: inline-block;
+  margin-right: 0.5rem;
 }

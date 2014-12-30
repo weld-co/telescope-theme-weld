@@ -98,7 +98,7 @@ input[type="submit"].text-button {
     &:focus {
       outline: none;
       border-color: $primary-color;
-      @include box-shadow (0px 0px 5px 0px rgba($primary-color,0.3));
+      @include box-shadow (0px 0px 5px 0px rgba($grey,0.5));
     }
   }
 
@@ -117,27 +117,24 @@ input[type="submit"].text-button {
   }
 
   textarea {
-    min-height: 120px;
+    min-height: 7rem;
     font-family: inherit;
     line-height: 1.4;
     resize: vertical;
+    position: relative;
+    &:after {
+      display: block;
+      position: absolute;
+      bottom: -20px;
+      content: '*bold* _italic_ >quote';
+      opacity: 1;
+    }
   }
 
   .note {
     padding: 5px 0;
     color: $light-text;
     font-size: 80%;
-  }
-}
-
-#editor {
-  iframe {
-    border: 2px solid $light-grey;
-    &:focus {
-      outline: none;
-      border-color: $primary-color;
-      @include box-shadow (0px 0px 5px 0px rgba($primary-color,0.3));
-    }
   }
 }
 
@@ -153,7 +150,7 @@ button,
   width: 100%;
   padding: 1rem 2rem;
   border: none;
-  border-radius: 0;
+  border-radius: 3px;
   font-size:  1rem;
   cursor: pointer;
   margin: 1rem 0;
@@ -213,13 +210,30 @@ input[type="search"] {
   @include box-shadow(0 1px 1px black(0.15));
 }
 
+textarea + .instructions-block {
+  opacity: 0
+}
+
+textarea:focus + .instructions-block {
+  opacity: 1;
+}
+
 .help-block,
 .instructions-block {
   color: $grey;
-  font-size: 12px;
+  font-size: 0.75rem;
   margin-top: .5rem;
-  text-align: right;
   display: block;
+  white-space: pre-wrap;
+
+  &:active,
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.md-hints * {
+  margin-left: 0.5rem;
 }
 
 .link-select {

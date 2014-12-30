@@ -4,11 +4,13 @@
 {{#if thumbnailUrl}}
   <img class="post-thumbnail" src="{{thumbnailUrl}}"/>
 {{/if}}
-  {{postTitle}}}
+  {{postTitle}}
 </a>
 
+{{#if htmlBody}}
 <div class="post-body" style="margin-top: 40px !important">
   {{{htmlBody}}}
 </div>
+{{/if}}
 
 <a class="button" href="{{postUrl}}" target="_blank">Comment on this post</a>

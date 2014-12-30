@@ -11,11 +11,11 @@
 }
 
 .post-meta {
-  @include display-flex;
   white-space: nowrap;
   overflow-x: scroll;
   -webkit-overflow-scrolling: touch;
   position: relative;
+  padding: 0.75rem 0;
   &::-webkit-scrollbar { 
     width: 0px;
     height: 0px;
@@ -26,23 +26,12 @@
   }
 }
 
-.post-meta-item {
-  @include align-self(center);
-  width: 100%;
-  margin: 0.75rem 0;
-  position: relative;
-}
-
-.single-post .post {
-  .post-meta {
-    background: $lightest-grey;
-    opacity: 1;
-    font-size: 12px;
-  }
-
-  .post-meta-item {
-    margin: 0.75rem;
-  }
+.single-post .post-meta {
+  background: $lightest-grey;
+  opacity: 1;
+  font-size: 12px;
+  padding: 0.75rem;
+  max-height: 2.75rem;
 }
 
 .comment-meta {
@@ -52,7 +41,6 @@
 .posts.list .post:hover {
   .post-meta {
     opacity: 1;
-    font-size: 12px;
   }
 }
 
@@ -60,26 +48,43 @@
   color: white;
 }
 
-.post:not(.sticky) .upvote-link a {
-  font-weight: 500;
-  color: $primary-color;
+.post:not(.sticky) .upvote-link.upvoted a {
+  color: $primary-color !important;
+  fill: $primary-color;
 }
 
-.upvote-link:before,
-.points:before,
-.comments-link:before, 
-.edit-post:before,
-.comment-permalink:before {
-  content: '・';
-  padding: 0 3px;
-}
-
-.post-info .edit-post {
-  margin-right: 50%;
+.author,
+.upvote-link,
+.points,
+.comments-link, 
+.edit-post,
+.comment-reply,
+.comment-permalink {
+  &:not(:last-child) {
+    margin-right: 1rem;
+  }
 }
 
 .post-time {
-  position: absolute;
-  right: 0;
-  line-height: 1.2rem;
+  margin-right: 5rem;
+}
+
+.posts.list {
+  .post:not(.sticky):hover {
+    .comments-link a,
+    .upvote-link a {
+      color: $primary-color;
+    }
+  }
+}
+
+// Post Info Icons
+.post-meta svg {
+  vertical-align: middle;
+  fill: currentcolor;
+  margin-right: .25rem;
+}
+
+.upvote-icon {
+  margin-top: -2px;
 }
