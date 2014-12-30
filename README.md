@@ -1,12 +1,17 @@
-Run these commmands from your Telescope Directory:
+In `.meteor/packages` comment out:
 
-`meteor remove telescope-theme-hubble`  
-`meteor remove telescope-theme-base`  
-`meteor add telescope-theme-weld`  
-`meteor add mystor:device-detection`  
-`meteor add archive:jquery-dotdotdot`  
-`meteor add multiply:iron-router-progress`  
-`meteor add fastclick`  
+`telescope-theme-hubble`  
+`telescope-theme-base`  
+
+and add: 
+```
+# Custom Packages
+telescope-theme-weld
+mystor:device-detection
+archive:jquery-dotdotdot
+multiply:iron-router-progress
+fastclick
+```  
 
 Look in `/welderwire-overrides` folder copy contents of `main_weld.html` and paste over `/Telescope/client/main.html`
 
