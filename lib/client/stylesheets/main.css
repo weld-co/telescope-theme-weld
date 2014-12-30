@@ -1949,8 +1949,18 @@ strong {
     height: auto;
     width: 0;
     overflow: visible;
+    position: absolute;
+    line-height: 70px;
   }
-  /* line 27, ../sass/modules/_logo.scss */
+}
+@media screen and (min-width: 40em) and (max-width: 40em) {
+  /* line 18, ../sass/modules/_logo.scss */
+  .logo-wrap .back-arrow {
+    line-height: 50px;
+  }
+}
+@media screen and (min-width: 40em) {
+  /* line 31, ../sass/modules/_logo.scss */
   .logo-wrap:hover .back-arrow {
     opacity: 1;
     -moz-transform: translateX(-0.75rem);
@@ -2072,30 +2082,31 @@ input[type="search"].search-input-field:focus {
   opacity: 1;
   font-size: 12px;
   padding: 0.75rem;
+  max-height: 2.75rem;
 }
 
-/* line 36, ../sass/modules/_post-info.scss */
+/* line 37, ../sass/modules/_post-info.scss */
 .comment-meta {
   font-size: 12px;
 }
 
-/* line 41, ../sass/modules/_post-info.scss */
+/* line 42, ../sass/modules/_post-info.scss */
 .posts.list .post:hover .post-meta {
   opacity: 1;
 }
 
-/* line 46, ../sass/modules/_post-info.scss */
+/* line 47, ../sass/modules/_post-info.scss */
 .posts.list .sticky .post-meta a:hover {
   color: white;
 }
 
-/* line 50, ../sass/modules/_post-info.scss */
+/* line 51, ../sass/modules/_post-info.scss */
 .post:not(.sticky) .upvote-link.upvoted a {
   color: #f1592a !important;
   fill: #f1592a;
 }
 
-/* line 62, ../sass/modules/_post-info.scss */
+/* line 63, ../sass/modules/_post-info.scss */
 .author:not(:last-child),
 .upvote-link:not(:last-child),
 .points:not(:last-child),
@@ -2106,25 +2117,25 @@ input[type="search"].search-input-field:focus {
   margin-right: 1rem;
 }
 
-/* line 67, ../sass/modules/_post-info.scss */
+/* line 68, ../sass/modules/_post-info.scss */
 .post-time {
   margin-right: 5rem;
 }
 
-/* line 73, ../sass/modules/_post-info.scss */
+/* line 74, ../sass/modules/_post-info.scss */
 .posts.list .post:not(.sticky):hover .comments-link a,
 .posts.list .post:not(.sticky):hover .upvote-link a {
   color: #f1592a;
 }
 
-/* line 81, ../sass/modules/_post-info.scss */
+/* line 82, ../sass/modules/_post-info.scss */
 .post-meta svg {
   vertical-align: middle;
   fill: currentcolor;
   margin-right: .25rem;
 }
 
-/* line 87, ../sass/modules/_post-info.scss */
+/* line 88, ../sass/modules/_post-info.scss */
 .upvote-icon {
   margin-top: -2px;
 }
@@ -2187,7 +2198,7 @@ input[type="search"].search-input-field:focus {
 /* line 56, ../sass/modules/_avatars.scss */
 .post-upvoters {
   display: inline-block;
-  margin-right: 1rem;
+  margin-right: 0.5rem;
 }
 
 /* line 1, ../sass/modules/_login.scss */

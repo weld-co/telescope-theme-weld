@@ -21,7 +21,11 @@
       height: auto;
       width: 0;
       overflow: visible;
-      
+      position: absolute;
+      line-height: $header-height;
+      @include small {
+        line-height: $mobile-header-height;
+      }
     }
 
     &:hover .back-arrow {
