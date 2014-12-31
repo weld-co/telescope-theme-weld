@@ -1441,10 +1441,10 @@ table thead tr td:first-child, table thead tr th:first-child {
 /* line 1, ../sass/global/_links.scss */
 a {
   text-decoration: none;
-  -moz-transition: color 200ms ease;
-  -o-transition: color 200ms ease;
-  -webkit-transition: color 200ms ease;
-  transition: color 200ms ease;
+  -moz-transition: color 50ms ease;
+  -o-transition: color 50ms ease;
+  -webkit-transition: color 50ms ease;
+  transition: color 50ms ease;
 }
 /* line 5, ../sass/global/_links.scss */
 a, a:link, a:visited, a:active {
@@ -2044,7 +2044,7 @@ input[type="search"].search-input-field:focus {
   color: #aaaaaa;
   font-size: 10px;
   opacity: 0.5;
-  transition: opacity 200ms ease;
+  transition: opacity 50ms ease;
 }
 @media screen and (max-width: 40em) {
   /* line 1, ../sass/modules/_post-info.scss */
@@ -2165,7 +2165,7 @@ input[type="search"].search-input-field:focus {
   font-size: 0.55rem;
   font-weight: 600;
   line-height: 3;
-  transition: background 200ms ease;
+  transition: background 50ms ease;
 }
 @media screen and (max-width: 40em) {
   /* line 15, ../sass/modules/_avatars.scss */
@@ -2426,10 +2426,10 @@ a.new-post:active {
 /* line 44, ../sass/modules/_posts.scss */
 .posts.list > .post {
   cursor: pointer;
-  -moz-transition: background 150ms ease-in-out, -moz-transform 150ms ease-in-out;
-  -o-transition: background 150ms ease-in-out, -o-transform 150ms ease-in-out;
-  -webkit-transition: background 150ms ease-in-out, -webkit-transform 150ms ease-in-out;
-  transition: background 150ms ease-in-out, transform 150ms ease-in-out;
+  -moz-transition: background 50ms ease-in-out, -moz-transform 150ms ease-in-out;
+  -o-transition: background 50ms ease-in-out, -o-transform 150ms ease-in-out;
+  -webkit-transition: background 50ms ease-in-out, -webkit-transform 150ms ease-in-out;
+  transition: background 50ms ease-in-out, transform 150ms ease-in-out;
   -moz-animation: slide-left;
   -webkit-animation: slide-left;
   animation: slide-left;

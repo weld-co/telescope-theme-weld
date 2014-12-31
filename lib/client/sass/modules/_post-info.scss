@@ -3,7 +3,7 @@
   color: $grey;
   font-size: 10px;
   opacity: 0.5;
-  transition: opacity 200ms ease;
+  transition: opacity 50ms ease;
   @include small {
     font-size: 12px;
     opacity: 1;

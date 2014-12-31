@@ -43,7 +43,7 @@ a.new-post {
 
 .posts.list > .post {
   cursor: pointer;
-  @include transition ( background 150ms ease-in-out, transform 150ms ease-in-out );
+  @include transition ( background 50ms ease-in-out, transform 150ms ease-in-out );
   @include animation ( slide-left );
   &:nth-child(1) { @include animation-duration(300ms); }
   &:nth-child(2) { @include animation-duration(400ms); }
