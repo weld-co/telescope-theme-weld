@@ -1,3 +1,7 @@
+## Use the customized fork of Telescope at [weld-co/Telescope](https://github.com/weld-co/Telescope).  
+
+### Or manually edit your own clone of [TelescopeJS/Telescope](https://github.com/TelescopeJS/Telescope).
+
 In `.meteor/packages` comment out:
 
 `telescope-theme-hubble`  
