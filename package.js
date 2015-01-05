@@ -124,7 +124,7 @@ Package.on_use(function (api) {
   ], ['server']);
 
   api.export([
-    'viewNav',
+    'viewsMenu',
     'primaryNav',
     'secondaryNav',
     'postModules',
