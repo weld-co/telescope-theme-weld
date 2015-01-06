@@ -8,20 +8,12 @@ Package.on_use(function (api) {
 
   api.use([
     'templating',
+    'telescope-base',
+    'telescope-lib',
     'telescope-tags',
     'telescope-search',
-    'telescope-embedly',
-    'telescope-notifications',
-    'telescope-newsletter'
+    'telescope-embedly'
   ], ['client']);
-
-  api.use([
-    'iron:router',
-    'telescope-base',
-    'telescope-lib'
-  ], ['client', 'server']);
-
-  api.use('cmather:handlebars-server');
 
   api.addFiles([
     'lib/client/stylesheets/main.css',
@@ -31,13 +23,12 @@ Package.on_use(function (api) {
     'lib/client/templates/comment_form_weld.html',
     'lib/client/templates/comment_item_weld.html',
     'lib/client/templates/custom_css.html',
-    'lib/client/templates/footer_weld.html',
     'lib/client/templates/header_weld.html',
     'lib/client/templates/layout_weld.html',
     'lib/client/templates/loading_weld.html',
+    'lib/client/templates/menu_item_weld.html',
     'lib/client/templates/message_item_weld.html',
     'lib/client/templates/newsletter_banner_weld.html',
-    'lib/client/templates/no_invite_weld.html',
     'lib/client/templates/no_rights_weld.html',
     'lib/client/templates/not_found_weld.html',
     'lib/client/templates/notifications_menu_weld.html',
@@ -50,21 +41,18 @@ Package.on_use(function (api) {
     'lib/client/templates/posts_list_weld.html',
     'lib/client/templates/posts_load_more_weld.html',
     'lib/client/templates/search_weld.html',
-    'lib/client/templates/settings_weld.html',
     'lib/client/templates/sidebar.html',
     'lib/client/templates/sign_out_weld.html',
     'lib/client/templates/submit_button_weld.html',
     'lib/client/templates/user_account_weld.html',
     'lib/client/templates/user_info_weld.html',
     'lib/client/templates/user_invites_weld.html',
-    'lib/client/templates/user_edit_weld.html',
     'lib/client/templates/user_menu_weld.html',
     'lib/client/templates/user_item_weld.html',
     'lib/client/templates/users_weld.html',
     'lib/client/templates/views_menu_weld.html',
 
     // Additions
-    'lib/client/templates/cheatsheet.html',
     'lib/client/templates/loader_weld.html',
     'lib/client/templates/members_menu_weld.html',
     'lib/client/templates/logo.html',
@@ -73,14 +61,13 @@ Package.on_use(function (api) {
     'lib/client/js/dotdotdot_init.js',
     'lib/client/js/fastclick_init.js',
     'lib/client/js/device_detection.js',
+    'lib/client/js/progress_bar.js',
 
     // Customizations
     'lib/client/js/weld.js',
     'lib/client/js/base_weld.js',
-    'lib/client/js/extra_user_info_weld.js',
     'lib/client/js/comment_item_weld.js',
     'lib/client/js/header_weld.js',
-    'lib/client/js/newsletter_banner_weld.js',
     'lib/client/js/no_rights_weld.js',
     'lib/client/js/notifications_menu_weld.js',
     'lib/client/js/post_avatars_weld.js',
@@ -89,7 +76,6 @@ Package.on_use(function (api) {
     'lib/client/js/post_item_weld.js',
     'lib/client/js/post_title_weld.js',
     'lib/client/js/post_thumbnail_weld.js', 
-    'lib/client/js/progress_bar.js',
     'lib/client/js/sidebar.js',
     'lib/client/js/user_account_weld.js',
     'lib/client/js/user_info_weld.js',
@@ -114,13 +100,7 @@ Package.on_use(function (api) {
   ], ['client']);
 
   api.addFiles([
-    'lib/server/js/template_overwrites.js',
-    'lib/server/js/reset_password_url_fix.js',
-    'lib/server/templates/emailWrapperWeld.handlebars',
-    'lib/server/templates/emailNewPostWeld.handlebars',
-    'lib/server/templates/emailNewCommentWeld.handlebars',
-    'lib/server/templates/emailPostItemWeld.handlebars',
-    'lib/server/templates/emailDigestWeld.handlebars'
+    'lib/server/js/reset_password_url_fix.js'
   ], ['server']);
 
   api.export([
