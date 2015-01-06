@@ -1,17 +1,3 @@
-.notifications-link {
-  display: inline-block;
-  opacity: 0.3;
-  transition: opacity 300ms ease;
-  &:after {
-    content: '' !important;
-    display: none !important;
-  }
-}
-
-.notifications-link.has-notifications {
-  opacity: 1;
-}
-
 .notification-icon {
   fill: $primary-color;
   vertical-align: top;
@@ -29,8 +15,7 @@
     width: 100%;
 
     a.mark-as-read {
-      font-weight: bold;
-      color: $primary-color;
+      color: white;
     }
 
     menu {
@@ -47,10 +32,6 @@
   }
 
   .notification-html {
-    word-wrap: break-word;
-    word-break: break-all;
-    max-width: 200px;
-
     a {
       display: inline;
       text-decoration: underline;

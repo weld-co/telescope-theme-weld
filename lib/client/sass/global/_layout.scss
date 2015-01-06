@@ -17,6 +17,7 @@ body {
 .sidebar {
   flex: 0 0 auto;
   -webkit-flex: 0 0 auto;
+  @include flex-basis(280px);
   z-index: 200;
 
   &::-webkit-scrollbar { 

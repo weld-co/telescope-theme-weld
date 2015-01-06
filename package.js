@@ -8,12 +8,19 @@ Package.on_use(function (api) {
 
   api.use([
     'templating',
-    'telescope-base',
-    'telescope-lib',
     'telescope-tags',
     'telescope-search',
-    'telescope-embedly'
+    'telescope-embedly',
+    'telescope-newsletter'
   ], ['client']);
+
+  api.use([
+    'iron:router',
+    'telescope-base',
+    'telescope-lib'
+  ], ['client', 'server']);
+
+  api.use('cmather:handlebars-server');
 
   api.addFiles([
     'lib/client/stylesheets/main.css',
@@ -100,7 +107,13 @@ Package.on_use(function (api) {
   ], ['client']);
 
   api.addFiles([
-    'lib/server/js/reset_password_url_fix.js'
+    'lib/server/js/template_overwrites.js',
+    'lib/server/js/reset_password_url_fix.js',
+    'lib/server/templates/emailWrapperWeld.handlebars',
+    'lib/server/templates/emailNewPostWeld.handlebars',
+    'lib/server/templates/emailNewCommentWeld.handlebars',
+    'lib/server/templates/emailPostItemWeld.handlebars',
+    'lib/server/templates/emailDigestWeld.handlebars'
   ], ['server']);
 
   api.export([

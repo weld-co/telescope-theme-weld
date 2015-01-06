@@ -1,6 +1,6 @@
 <!-- added .notification-link class -->
 <template name="notificationsMenuWeld">
-  {{#if isLoggedIn}}
+  {{#if hasNotifications}}
     <div class="dropdown notifications-menu header-submodule">
       <a class="view dropdown-top-level notifications-link {{#if hasNotifications}}has-notifications{{/if}}" href="/">
         <svg class="notification-icon" xmlns="http://www.w3.org/2000/svg" width="10" height="16" viewBox="0 0 10 16"><path d="M1 16l3-7h-4l9-9-3 7h4l-9 9z"/></svg>
@@ -8,14 +8,10 @@
       </a>
       <div class="dropdown-menu">
         <ul role="menu" aria-labelledby="dLabel">
-          {{#if hasNotifications}}
-            <li><a href="#" class="mark-as-read">{{_ "mark_as_read"}}</a></li>  
-            {{#each notifications}}
-              {{> UI.dynamic template=notificationItem}}
-            {{/each}}
-          {{else}}
-            <li>{{_ "no_notifications"}}</li>
-          {{/if}}
+          <li><a href="#" class="mark-as-read">Mark all as read</a></li>  
+          {{#each notifications}}
+            {{> UI.dynamic template=notificationItem}}
+          {{/each}}
         </ul>
       </div>
     </div>

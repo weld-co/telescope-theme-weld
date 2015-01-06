@@ -1,16 +1,4 @@
 <div class="notification-type">New Post by <a href="{{profileUrl}}">{{postAuthorName}}</a></div>
-
-<a class="title" href="{{postUrl}}">
-{{#if thumbnailUrl}}
-  <img class="post-thumbnail" src="{{thumbnailUrl}}"/>
-{{/if}}
-  {{postTitle}}
-</a>
-
-{{#if htmlBody}}
-<div class="post-body" style="margin-top: 40px !important">
-  {{{htmlBody}}}
-</div>
-{{/if}}
-
+<a class="title" href="{{postUrl}}">{{postTitle}}</a>
+<div class="post-body" style="margin-top: 40px !important">{{{htmlBody}}}</div>
 <a class="button" href="{{postUrl}}" target="_blank">Comment on this post</a>

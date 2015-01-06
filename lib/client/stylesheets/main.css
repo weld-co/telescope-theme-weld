@@ -808,9 +808,11 @@ body {
 .sidebar {
   flex: 0 0 auto;
   -webkit-flex: 0 0 auto;
+  -webkit-flex-basis: 280px;
+  flex-basis: 280px;
   z-index: 200;
 }
-/* line 22, ../sass/global/_layout.scss */
+/* line 23, ../sass/global/_layout.scss */
 .sidebar::-webkit-scrollbar {
   width: 0px;
   height: 0px;
@@ -831,20 +833,20 @@ body {
   }
 }
 
-/* line 38, ../sass/global/_layout.scss */
+/* line 39, ../sass/global/_layout.scss */
 .content-wrap {
   z-index: 100;
   position: relative;
   width: 100%;
 }
 @media screen and (max-width: 40em) {
-  /* line 38, ../sass/global/_layout.scss */
+  /* line 39, ../sass/global/_layout.scss */
   .content-wrap {
     box-shadow: 0 0 0 99999px black;
   }
 }
 
-/* line 48, ../sass/global/_layout.scss */
+/* line 49, ../sass/global/_layout.scss */
 .content {
   -webkit-align-self: center;
   align-self: center;
@@ -854,13 +856,13 @@ body {
   max-width: 50rem;
 }
 @media screen and (max-width: 40em) {
-  /* line 48, ../sass/global/_layout.scss */
+  /* line 49, ../sass/global/_layout.scss */
   .content {
     padding: 8% 0.9375rem;
   }
 }
 
-/* line 62, ../sass/global/_layout.scss */
+/* line 63, ../sass/global/_layout.scss */
 .mobile-nav-open .sidebar {
   pointer-events: auto;
   visibility: visible;
@@ -870,7 +872,7 @@ body {
   transform: translateX(0);
 }
 @media screen and (max-width: 40em) {
-  /* line 67, ../sass/global/_layout.scss */
+  /* line 68, ../sass/global/_layout.scss */
   .mobile-nav-open .content-wrap {
     pointer-events: none;
     -moz-transform: scale(0.9) translateX(25%);
@@ -2300,72 +2302,48 @@ input[type="search"].search-input-field:focus {
 }
 
 /* line 1, ../sass/modules/_notifications.scss */
-.notifications-link {
-  display: inline-block;
-  opacity: 0.3;
-  transition: opacity 300ms ease;
-}
-/* line 5, ../sass/modules/_notifications.scss */
-.notifications-link:after {
-  content: '' !important;
-  display: none !important;
-}
-
-/* line 11, ../sass/modules/_notifications.scss */
-.notifications-link.has-notifications {
-  opacity: 1;
-}
-
-/* line 15, ../sass/modules/_notifications.scss */
 .notification-icon {
   fill: #f1592a;
   vertical-align: top;
 }
 
-/* line 20, ../sass/modules/_notifications.scss */
+/* line 6, ../sass/modules/_notifications.scss */
 .notifications-link:hover {
   opacity: 1;
 }
 
-/* line 24, ../sass/modules/_notifications.scss */
+/* line 10, ../sass/modules/_notifications.scss */
 .notifications-menu {
   text-align: left;
 }
-/* line 27, ../sass/modules/_notifications.scss */
+/* line 13, ../sass/modules/_notifications.scss */
 .notifications-menu .dropdown-menu {
   left: auto;
   width: 100%;
 }
-/* line 31, ../sass/modules/_notifications.scss */
+/* line 17, ../sass/modules/_notifications.scss */
 .notifications-menu .dropdown-menu a.mark-as-read {
-  font-weight: bold;
-  color: #f1592a;
+  color: white;
 }
-/* line 36, ../sass/modules/_notifications.scss */
+/* line 21, ../sass/modules/_notifications.scss */
 .notifications-menu .dropdown-menu menu {
   padding-bottom: 1rem;
 }
-/* line 41, ../sass/modules/_notifications.scss */
+/* line 26, ../sass/modules/_notifications.scss */
 .notifications-menu .notification-item {
   margin-bottom: 1rem;
   font-size: 16px;
 }
-/* line 44, ../sass/modules/_notifications.scss */
+/* line 29, ../sass/modules/_notifications.scss */
 .notifications-menu .notification-item:last-child {
   border-bottom: 1px rgba(255, 255, 255, 0.2) solid;
 }
-/* line 49, ../sass/modules/_notifications.scss */
-.notifications-menu .notification-html {
-  word-wrap: break-word;
-  word-break: break-all;
-  max-width: 200px;
-}
-/* line 54, ../sass/modules/_notifications.scss */
+/* line 35, ../sass/modules/_notifications.scss */
 .notifications-menu .notification-html a {
   display: inline;
   text-decoration: underline;
 }
-/* line 60, ../sass/modules/_notifications.scss */
+/* line 41, ../sass/modules/_notifications.scss */
 .notifications-menu .notification-timestamp {
   color: #666666;
   font-size: 12px;
