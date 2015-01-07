@@ -768,7 +768,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 
 /* line 75, ../sass/global/_grid.scss */
-.dialog + .spacer {
+.center.dialog + .spacer {
   display: none;
 }
 
@@ -2157,7 +2157,7 @@ input[type="search"].search-input-field:focus {
   margin-top: -2px;
   vertical-align: middle;
 }
-/* line 15, ../sass/modules/_avatars.scss */
+/* line 14, ../sass/modules/_avatars.scss */
 .avatar .avatar-image,
 .avatar .avatar-initials {
   background: #eeeeee;
@@ -2170,26 +2170,26 @@ input[type="search"].search-input-field:focus {
   transition: background 50ms ease;
 }
 @media screen and (max-width: 40em) {
-  /* line 15, ../sass/modules/_avatars.scss */
+  /* line 14, ../sass/modules/_avatars.scss */
   .avatar .avatar-image,
   .avatar .avatar-initials {
     font-weight: 700;
   }
 }
 
-/* line 33, ../sass/modules/_avatars.scss */
+/* line 32, ../sass/modules/_avatars.scss */
 .template-users .avatar-initials {
   font-size: 1rem;
   line-height: 4rem;
 }
 
-/* line 40, ../sass/modules/_avatars.scss */
+/* line 39, ../sass/modules/_avatars.scss */
 .post:not(.sticky) .avatar-initials:hover {
   background: #f1592a !important;
   color: #eeeeee;
 }
 
-/* line 49, ../sass/modules/_avatars.scss */
+/* line 48, ../sass/modules/_avatars.scss */
 .posts.list .post:not(.sticky):hover .post-meta .avatar-image,
 .posts.list .post:not(.sticky):hover .post-meta .avatar-initials,
 .single-post .post-meta .avatar-image,
@@ -2197,7 +2197,7 @@ input[type="search"].search-input-field:focus {
   background: white;
 }
 
-/* line 56, ../sass/modules/_avatars.scss */
+/* line 55, ../sass/modules/_avatars.scss */
 .post-upvoters {
   display: inline-block;
   margin-right: 0.5rem;
@@ -2895,6 +2895,78 @@ input.category-number {
 /* line 69, ../sass/modules/_users.scss */
 .filter-sort .sort {
   float: right;
+}
+
+/* line 1, ../sass/modules/_members.scss */
+.row.membersPage {
+  -webkit-align-content: flex-start;
+  align-content: flex-start;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* line 8, ../sass/modules/_members.scss */
+.member-wrap {
+  padding: 2rem;
+  transition: background 200ms ease;
+  text-align: center;
+  flex: 1;
+  -webkit-flex: 1;
+  min-width: 320px;
+  position: relative;
+}
+/* line 17, ../sass/modules/_members.scss */
+.member-wrap:hover {
+  background: #f2f2f2;
+}
+/* line 20, ../sass/modules/_members.scss */
+.member-wrap:hover .profile-blurb {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* line 27, ../sass/modules/_members.scss */
+.member {
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+/* line 32, ../sass/modules/_members.scss */
+.profile-skills,
+.profile-location {
+  font-size: 80%;
+  color: #aaaaaa;
+  line-height: 1.4;
+}
+
+/* line 39, ../sass/modules/_members.scss */
+.profile-blurb {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 200ms ease, visibility 200ms ease;
+  position: absolute;
+  background: rgba(241, 89, 42, 0.8);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: white;
+  text-align: left;
+  padding: 2rem;
+}
+
+/* line 54, ../sass/modules/_members.scss */
+.member .avatar {
+  height: 100px;
+  width: 100px;
+  margin: 0;
+  margin-bottom: 1rem;
+}
+/* line 60, ../sass/modules/_members.scss */
+.member .avatar .avatar-initials {
+  font-size: 1.5rem;
+  line-height: 4.5;
 }
 
 /* line 1, ../sass/modules/_pages.scss */

@@ -1,0 +1,64 @@
+.row.membersPage {
+  @include align-content(flex-start);
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+.member-wrap {
+  padding: 2rem;
+  transition: background 200ms ease;
+  text-align: center;
+  flex: 1;
+  -webkit-flex: 1;
+  min-width: 320px;
+  position: relative;
+
+  &:hover {
+    background: $lightest-grey;
+    
+    .profile-blurb {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+.member {
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.profile-skills,
+.profile-location {
+  font-size: 80%;
+  color: $grey;
+  line-height: 1.4;
+}
+
+.profile-blurb {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 200ms ease, visibility 200ms ease;
+  position: absolute;
+  background: rgba(241, 89, 42, 0.8);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: rgb(255, 255, 255);
+  text-align: left;
+  padding: 2rem;
+}
+
+.member .avatar {
+  height: 100px;
+  width: 100px;
+  margin: 0;
+  margin-bottom: 1rem;
+
+  .avatar-initials {
+    font-size: 1.5rem;
+    line-height: 4.5;
+  }
+}
