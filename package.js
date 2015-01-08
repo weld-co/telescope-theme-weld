@@ -34,6 +34,7 @@ Package.on_use(function (api) {
     'lib/client/templates/layout_weld.html',
     'lib/client/templates/loading_weld.html',
     'lib/client/templates/members_page.html',
+    'lib/client/templates/member_item.html',
     'lib/client/templates/menu_item_weld.html',
     'lib/client/templates/message_item_weld.html',
     'lib/client/templates/newsletter_banner_weld.html',

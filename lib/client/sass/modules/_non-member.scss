@@ -3,26 +3,31 @@
   font-weight: 400;
   color: $dark-grey;
   padding: 0 $padding;
-  @include small {
-    font-size: 60%;
-  }
+  display: block;
+  width: 100%;
+
 
   + .spacer {
     display: none;
   }
 
   h1 {
-    font-size: 2em;
+    font-size: 2rem;
     text-transform: uppercase;
     margin-bottom: 0;
     font-weight: 700;
     letter-spacing: 3px;
+    @include small {
+      font-size: 1.25rem;
+    }
   }
 
   h2 {
-    font-size: 1.5em;
+    font-size: 1.5rem;
     line-height: 1.4;
-    max-width: 30rem;
+    @include small {
+      font-size: 1rem;
+    }
   }
 
   a {

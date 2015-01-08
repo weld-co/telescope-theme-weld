@@ -1,14 +1,5 @@
 <template name="membersPage">
 {{#each members}}
-  <a class="member-wrap" href="{{profileUrl this}}" target="_blank">
-    <div class="member">
-      {{> avatar user=this size="large" shape="circle"}}
-      <div class="username">{{profile.name}}</div>
-      <div class="profile-skills">Specialties: {{profile.skills}}</div>
-      <div class="profile-location">Location: {{profile.location}}</div>
-    </div>
-    <div class="profile-blurb">{{profile.bio}}</div>
-  </a>
-
+  {{> memberItem}}
 {{/each}}
 </template>

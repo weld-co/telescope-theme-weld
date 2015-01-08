@@ -2264,6 +2264,15 @@ input[type="search"].search-input-field:focus {
   }
 }
 
+/* line 22, ../sass/modules/_errors.scss */
+.update-banner {
+  overflow: visible;
+  width: 100%;
+  margin: 2rem;
+  min-height: 70px;
+  padding: 1rem;
+}
+
 /* line 1, ../sass/modules/_header.scss */
 .header {
   -webkit-flex-wrap: nowrap;
@@ -2901,72 +2910,110 @@ input.category-number {
 .row.membersPage {
   -webkit-align-content: flex-start;
   align-content: flex-start;
+  justify-content: flex-start;
+  -webkit-justify-content: flex-start;
+  -moz-justify-content: flex-start;
   padding: 0;
   width: 100%;
   max-width: 100%;
 }
 
-/* line 8, ../sass/modules/_members.scss */
+/* line 9, ../sass/modules/_members.scss */
 .member-wrap {
   padding: 2rem;
-  transition: background 200ms ease;
   text-align: center;
   flex: 1;
   -webkit-flex: 1;
   min-width: 320px;
   position: relative;
 }
-/* line 17, ../sass/modules/_members.scss */
-.member-wrap:hover {
-  background: #f2f2f2;
+/* line 18, ../sass/modules/_members.scss */
+.member-wrap:hover .member {
+  opacity: 0.4;
+  -moz-transform: scale(0.95, 0.95);
+  -ms-transform: scale(0.95, 0.95);
+  -webkit-transform: scale(0.95, 0.95);
+  transform: scale(0.95, 0.95);
 }
-/* line 20, ../sass/modules/_members.scss */
-.member-wrap:hover .profile-blurb {
+/* line 22, ../sass/modules/_members.scss */
+.member-wrap:hover .about {
   opacity: 1;
   visibility: visible;
+  -moz-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  -webkit-transform: scale(1, 1);
+  transform: scale(1, 1);
 }
 
-/* line 27, ../sass/modules/_members.scss */
-.member {
-  font-weight: 500;
-  margin-bottom: 1rem;
-}
-
-/* line 32, ../sass/modules/_members.scss */
-.profile-skills,
-.profile-location {
-  font-size: 80%;
-  color: #aaaaaa;
-  line-height: 1.4;
-}
-
-/* line 39, ../sass/modules/_members.scss */
-.profile-blurb {
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 200ms ease, visibility 200ms ease;
-  position: absolute;
-  background: rgba(241, 89, 42, 0.8);
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  color: white;
-  text-align: left;
-  padding: 2rem;
-}
-
-/* line 54, ../sass/modules/_members.scss */
+/* line 30, ../sass/modules/_members.scss */
 .member .avatar {
   height: 100px;
   width: 100px;
   margin: 0;
   margin-bottom: 1rem;
 }
-/* line 60, ../sass/modules/_members.scss */
+/* line 36, ../sass/modules/_members.scss */
 .member .avatar .avatar-initials {
   font-size: 1.5rem;
   line-height: 4.5;
+}
+
+/* line 42, ../sass/modules/_members.scss */
+.about {
+  background: rgba(241, 89, 42, 0.8);
+  bottom: 0;
+  color: white;
+  left: 0;
+  opacity: 0;
+  padding: 2.75rem 2rem;
+  font-size: 14px;
+  line-height: 1.4;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  visibility: hidden;
+  -moz-transform: scale(0.95, 0.95);
+  -ms-transform: scale(0.95, 0.95);
+  -webkit-transform: scale(0.95, 0.95);
+  transform: scale(0.95, 0.95);
+}
+/* line 58, ../sass/modules/_members.scss */
+.about .username {
+  color: #333333;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+}
+
+/* line 67, ../sass/modules/_members.scss */
+.member,
+.about {
+  transition: opacity 400ms ease, visibility 400ms ease, transform 200ms ease-in-out;
+}
+
+/* line 72, ../sass/modules/_members.scss */
+.profile-skills,
+.profile-location {
+  font-size: 80%;
+  color: #aaaaaa;
+}
+
+/* line 78, ../sass/modules/_members.scss */
+.profile-blurb {
+  max-height: 3rem;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+/* line 84, ../sass/modules/_members.scss */
+.view-more {
+  padding: 0.5rem 1rem;
+  color: #f1592a;
+  background: white;
+  border-radius: 3px;
+  display: inline-block;
 }
 
 /* line 1, ../sass/modules/_pages.scss */
@@ -3388,12 +3435,8 @@ input.category-number {
   font-weight: 400;
   color: #333333;
   padding: 0 1.875rem;
-}
-@media screen and (max-width: 40em) {
-  /* line 1, ../sass/modules/_non-member.scss */
-  .non-member {
-    font-size: 60%;
-  }
+  display: block;
+  width: 100%;
 }
 /* line 10, ../sass/modules/_non-member.scss */
 .non-member + .spacer {
@@ -3401,33 +3444,44 @@ input.category-number {
 }
 /* line 14, ../sass/modules/_non-member.scss */
 .non-member h1 {
-  font-size: 2em;
+  font-size: 2rem;
   text-transform: uppercase;
   margin-bottom: 0;
   font-weight: 700;
   letter-spacing: 3px;
 }
-/* line 22, ../sass/modules/_non-member.scss */
-.non-member h2 {
-  font-size: 1.5em;
-  line-height: 1.4;
-  max-width: 30rem;
+@media screen and (max-width: 40em) {
+  /* line 14, ../sass/modules/_non-member.scss */
+  .non-member h1 {
+    font-size: 1.25rem;
+  }
 }
-/* line 28, ../sass/modules/_non-member.scss */
+/* line 25, ../sass/modules/_non-member.scss */
+.non-member h2 {
+  font-size: 1.5rem;
+  line-height: 1.4;
+}
+@media screen and (max-width: 40em) {
+  /* line 25, ../sass/modules/_non-member.scss */
+  .non-member h2 {
+    font-size: 1rem;
+  }
+}
+/* line 33, ../sass/modules/_non-member.scss */
 .non-member a {
   color: #f1592a;
 }
-/* line 32, ../sass/modules/_non-member.scss */
+/* line 37, ../sass/modules/_non-member.scss */
 .non-member .sign-up {
   color: #f1592a;
 }
-/* line 36, ../sass/modules/_non-member.scss */
+/* line 41, ../sass/modules/_non-member.scss */
 .non-member .button {
   max-width: 320px;
   margin: 2rem auto;
   font-size: 16px;
 }
-/* line 42, ../sass/modules/_non-member.scss */
+/* line 47, ../sass/modules/_non-member.scss */
 .non-member .text-button {
   color: #aaaaaa;
   font-size: 14px;
