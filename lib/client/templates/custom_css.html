@@ -132,8 +132,9 @@ button,
 }
 
 /* line 45, ../sass/modules/_post-info.scss */
-.post:not(.sticky) .upvote-link.upvoted {
-  color: {{getSetting "buttonColor"}} !important;
+.post:not(.sticky) .upvote-link.upvoted,
+.single-post .upvote-link.upvoted {
+  color: {{getSetting "buttonColor"}};
 }
 
 /* line 13, ../sass/modules/_post-categories.scss */

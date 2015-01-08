@@ -2103,9 +2103,9 @@ input[type="search"].search-input-field:focus {
 }
 
 /* line 51, ../sass/modules/_post-info.scss */
-.post:not(.sticky) .upvote-link.upvoted a {
-  color: #f1592a !important;
-  fill: #f1592a;
+.post:not(.sticky) .upvote-link.upvoted,
+.single-post .upvote-link.upvoted {
+  color: #f1592a;
 }
 
 /* line 63, ../sass/modules/_post-info.scss */

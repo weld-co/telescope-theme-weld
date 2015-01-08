@@ -48,9 +48,9 @@
   color: white;
 }
 
-.post:not(.sticky) .upvote-link.upvoted a {
-  color: $primary-color !important;
-  fill: $primary-color;
+.post:not(.sticky) .upvote-link.upvoted,
+.single-post .upvote-link.upvoted {
+  color: $primary-color;
 }
 
 .author,
