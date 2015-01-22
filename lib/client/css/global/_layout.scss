@@ -1,0 +1,77 @@
+html, 
+body {
+  min-height: 100%;
+  position: relative;
+}
+
+.sidebar,
+.content-wrap {
+  height: 100vh;
+  overflow-y: scroll;
+  -webkit-backface-visibility: hidden;
+  -webkit-overflow-scrolling: touch;
+  will-change: opacity, visibility, transform, filter;
+  transition: opacity 500ms ease, 
+              visibility 500ms ease, 
+              transform 500ms ease, 
+              -webkit-filter 500ms ease;
+}
+
+.sidebar {
+  flex: 0 0 auto;
+  flex-basis: 280px;
+  z-index: 200;
+
+  &::-webkit-scrollbar { 
+    width: 0px;
+    height: 0px;
+    background: transparent;
+  }
+
+  @include small {
+    position: fixed;
+    max-width: 100%;
+    pointer-events: none;
+    visibility: hidden;
+    width: 100%;
+    transform: translateX(-100%);
+  }
+}
+
+.content-wrap {
+  z-index: 100;
+  position: relative;
+  width: 100%;
+
+  @include small {
+    box-shadow: 0 0 0 99999px black;
+  }
+}
+
+.content {
+  align-self: center;
+  min-height: 100vh;
+  padding: 8% $padding;
+  width: 100%;
+  max-width: 50rem;
+  @include small {
+    padding: 8% ($padding / 2);
+  }
+}
+
+// Mobile off-canvas nav
+
+.mobile-nav-open {
+  .sidebar {
+    pointer-events: auto;
+    visibility: visible;
+    transform: translateX(0);
+  }
+  .content-wrap {
+    @include small {
+      pointer-events: none;
+      transform: scale(0.9) translateX(25%);
+      filter: brightness(40%);
+    }
+  }
+}

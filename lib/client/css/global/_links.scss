@@ -1,0 +1,39 @@
+a {
+  text-decoration: none;
+  transitio: color 50ms ease;
+
+  &, &:link, &:visited, &:active {
+    color: inherit;
+  }
+
+  &:hover{
+    color: $primary-color;
+  }
+}
+
+.more-button {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  background: $lightest-grey;
+  color: $primary-color !important;
+  font-weight: 600;
+  margin-top: 2rem;
+  height: 3rem;
+  width: 100%;
+  border-radius: 3px;
+}
+
+.delete-link {
+  color: white !important;
+  background: $primary-color;
+  border-radius: 3px;
+  padding: .5rem 1rem;
+  &:hover {
+    background: red;
+  }
+}

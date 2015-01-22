@@ -1,0 +1,27 @@
+.content-wrap {
+  background: white;
+}
+
+.posts_list_weld {
+  padding: 0;
+  margin: 0;
+}
+
+// Page transitions triggered by class changes of template names
+
+.userAccount,
+.post_submit,
+.post_page,
+.post_edit,
+.comment_edit,
+.user_profile,
+.user_edit {
+  animation: slide-left 300ms ease-in-out, 
+             fade-in 300ms ease-in;
+}
+
+.admin,
+.usersWeld {
+  width: 100%;
+  max-width: 100%;
+}

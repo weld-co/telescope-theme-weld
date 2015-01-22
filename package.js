@@ -23,7 +23,7 @@ Package.on_use(function (api) {
   api.use('cmather:handlebars-server');
 
   api.addFiles([
-    'lib/client/stylesheets/main.css',
+    'lib/client/css/main.css',
 
     // Overrides 
     'lib/client/templates/categories_menu_weld.html',

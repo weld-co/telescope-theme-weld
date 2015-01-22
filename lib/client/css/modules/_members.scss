@@ -1,0 +1,90 @@
+.row.membersPage {
+  align-content: flex-start;
+  justify-content: flex-start;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+.member-wrap {
+  padding: 2rem;
+  text-align: center;
+  flex: 1;
+  -webkit-flex: 1;
+  min-width: 320px;
+  position: relative;
+
+  &:hover {
+    .member {
+      opacity: 0.4;
+      transform: scale(0.95);
+    }
+    .about {
+      opacity: 1;
+      visibility: visible;
+      transform: scale(1);
+    }
+  }
+}
+
+.member .avatar {
+  height: 100px;
+  width: 100px;
+  margin: 0;
+  margin-bottom: 1rem;
+
+  .avatar-initials {
+    font-size: 1.5rem;
+    line-height: 4.5;
+  }
+}
+
+.about {
+  background: rgba(241, 89, 42, 0.8);
+  bottom: 0;
+  color: rgb(255, 255, 255);
+  left: 0;
+  opacity: 0;
+  padding: 2.75rem 2rem;
+  font-size: 14px;
+  line-height: 1.4;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  visibility: hidden;
+  transform: scale(0.95);
+
+  .username {
+    color: $dark-grey;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.member,
+.about {
+  transition: opacity 400ms ease, visibility 400ms ease, transform 200ms ease-in-out;
+}
+
+.profile-skills,
+.profile-location {
+  font-size: 80%;
+  color: $grey;
+}
+
+.profile-blurb {
+  max-height: 3rem;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.view-more {
+  padding: 0.5rem 1rem;
+  color: $primary-color;
+  background: white;
+  border-radius: 3px;
+  display: inline-block;
+}

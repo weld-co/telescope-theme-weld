@@ -1,0 +1,28 @@
+.error {
+  background: $primary-color;
+  color: white;
+  height: $header-height;
+  left: 0;
+  line-height: $header-height;
+  opacity: 0;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  vertical-align: middle;
+  visibility: hidden;
+  width: 100%;
+  z-index: 999999;
+  animation: fade-in-out 2s ease-out;
+  @include small {
+    height: $mobile-header-height;
+    line-height: $mobile-header-height;
+  }
+}
+
+.update-banner {
+  overflow: visible;
+  width: 100%;
+  margin: 2rem;
+  min-height: 70px;
+  padding: 1rem;
+}
