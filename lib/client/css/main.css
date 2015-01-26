@@ -371,6 +371,28 @@
             transform: scale(1);
   }
 }
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
 @-webkit-keyframes flash {
   0% {
     opacity: 0;
@@ -1234,7 +1256,7 @@ code {
 }
 
 strong {
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .onum {
@@ -2372,30 +2394,172 @@ input.category-number {
   -webkit-align-content: flex-start;
       -ms-flex-line-pack: start;
           align-content: flex-start;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
   padding: 0;
   width: 100%;
   max-width: 100%;
+}
+
+#sort-container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+
+#sort-container .mix {
+  display: none;
+}
+
+.sort-controls {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #f2f2f2;
+  border-bottom: 2px solid #eeeeee;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-size: 0.875rem;
+  min-height: 70px;
+  padding: 0 1.5rem;
+  position: relative;
+  width: 100%;
+}
+.sort-controls.row {
+  -webkit-box-pack: initial;
+  -webkit-justify-content: initial;
+      -ms-flex-pack: initial;
+          justify-content: initial;
+}
+@media screen and (max-width: 40em) {
+  .sort-controls {
+    padding: 0.75rem;
+  }
+}
+.sort-controls .filter-wrap,
+.sort-controls .sort-wrap,
+.sort-controls .total {
+  margin-right: 1.5rem;
+}
+.sort-controls .filter,
+.sort-controls .sort-label,
+.sort-controls .sort {
+  margin-right: 1rem;
+}
+.sort-controls .filter {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: white;
+  border-radius: 3px;
+  height: 2rem;
+  padding: 0 1rem;
+  box-shadow: 0 2px 0 0 #e6e6e6;
+}
+@media screen and (max-width: 40em) {
+  .sort-controls .filter {
+    margin: 0.5rem;
+  }
+}
+.sort-controls .filter:active {
+  -webkit-transform: translateY(1px);
+      -ms-transform: translateY(1px);
+          transform: translateY(1px);
+  box-shadow: none;
+}
+.sort-controls .filter.active {
+  background: #f1592a;
+  box-shadow: 0 2px 0 0 #da3e0e;
+  color: white;
+}
+.sort-controls .sort-label {
+  color: #aaaaaa;
+}
+.sort-controls .sort.active {
+  color: #f1592a;
+}
+
+.total,
+.total:after {
+  border-radius: 50%;
+  width: 2.25rem;
+  height: 2.25rem;
+}
+
+.total {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  color: white;
+  font-size: 80%;
+  background: #f1592a;
+  -webkit-transition: background 500ms ease-in-out;
+          transition: background 500ms ease-in-out;
+}
+.total.loading {
+  border-style: solid;
+  border-width: 3px;
+  border-color: rgba(241, 89, 42, 0.2);
+  border-left-color: rgba(241, 89, 42, 0.6);
+  -webkit-animation: rotate 500ms infinite linear;
+          animation: rotate 500ms infinite linear;
+  background: none;
 }
 
 .member-wrap {
   padding: 2rem;
   text-align: center;
   -webkit-box-flex: 1;
+  -webkit-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  -webkit-flex: 1;
-  min-width: 320px;
+  -webkit-flex-basis: 250px;
+      -ms-flex-preferred-size: 250px;
+          flex-basis: 250px;
   position: relative;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.member-wrap .member,
+.member-wrap .about {
+  -webkit-transition: opacity 400ms ease, visibility 400ms ease, -webkit-filter 800ms ease, -webkit-transform 200ms ease-in-out, opacity 400ms ease, visibility 400ms ease, filter 800ms ease, -webkit-transform 200ms ease-in-out;
+          transition: opacity 400ms ease, visibility 400ms ease, filter 800ms ease, transform 200ms ease-in-out;
 }
 .member-wrap:hover .member {
-  opacity: 0.4;
-  -webkit-transform: scale(0.95);
-      -ms-transform: scale(0.95);
-          transform: scale(0.95);
+  opacity: 0.5;
+  -webkit-transform: scale(0.9);
+      -ms-transform: scale(0.9);
+          transform: scale(0.9);
+  -webkit-filter: blur(2px);
+          filter: blur(2px);
 }
 .member-wrap:hover .about {
   opacity: 1;
@@ -2417,9 +2581,9 @@ input.category-number {
 }
 
 .about {
-  background: rgba(241, 89, 42, 0.8);
+  background: rgba(242, 242, 242, 0.7);
   bottom: 0;
-  color: white;
+  color: #666666;
   left: 0;
   opacity: 0;
   padding: 2.75rem 2rem;
@@ -2435,35 +2599,37 @@ input.category-number {
           transform: scale(0.95);
 }
 .about .username {
-  color: #333333;
+  color: #222222;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-bottom: 0.5rem;
 }
 
-.member,
-.about {
-  -webkit-transition: opacity 400ms ease, visibility 400ms ease, -webkit-transform 200ms ease-in-out;
-          transition: opacity 400ms ease, visibility 400ms ease, transform 200ms ease-in-out;
-}
-
 .profile-skills,
 .profile-location {
   font-size: 80%;
   color: #aaaaaa;
+  max-width: 20rem;
+  margin: 0 auto;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .profile-blurb {
   max-height: 3rem;
-  overflow: hidden;
-  margin-bottom: 2rem;
+  max-width: 20rem;
+  margin: 0 auto 2rem auto;
+  overflow-y: hidden;
+  position: relative;
+  -webkit-mask-image: linear-gradient(to bottom, white 50%, rgba(255, 255, 255, 0));
 }
 
 .view-more {
   padding: 0.5rem 1rem;
-  color: #f1592a;
-  background: white;
+  background: #f1592a;
+  color: white;
   border-radius: 3px;
   display: inline-block;
 }

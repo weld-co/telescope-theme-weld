@@ -1,12 +1,14 @@
 <!-- overwritten to use custom loader -->
 <template name="postsLoadMoreWeld">
-  {{#if hasMorePosts}}
-    <a class="more-button" href="{{loadMoreUrl}}"><span>{{_ "load_more"}}</span></a>
+  {{#if postsReady}}
+    {{#if hasPosts}}
+      {{#if hasMorePosts}}
+        <a class="more-button" href="#"><span>{{_ "load_more"}}</span></a>
+      {{/if}}
+    {{else}}
+      <div class="no-posts">{{_ "sorry_we_couldnt_find_any_posts"}}</div>
+    {{/if}}
   {{else}}
-    {{#unless ready}}
-      <div class="grid loading-module">
-        {{> loaderWeld}}
-      </div>
-    {{/unless}}
+    <div class="loading-module">{{> loaderWeld}}</div>
   {{/if}}
 </template>

@@ -1,5 +1,20 @@
 <template name="membersPage">
-  {{#each members}}
-    {{> memberItem}}
-  {{/each}}
+  <div class="sort-controls row">
+    <span class="filter-wrap">
+      <span class="filter" data-filter="all">All</span>
+      <span class="filter" data-filter=".Dallas">Dallas</span>
+      <span class="filter" data-filter=".Nashville">Nashville</span>
+    </span>
+    <span class="sort-wrap">
+      <span class="sort-label">Sort:</span>
+      <span class="sort" data-sort="name:asc">A–Z</span> 
+      <span class="sort" data-sort="random">Random</span>
+    </span>
+    <span class="total"><span class="total-number"></span></span>
+  </div>
+  <div id="sort-container">
+    {{#each members}}
+      {{> memberItem}}
+    {{/each}}
+  </div>
 </template>

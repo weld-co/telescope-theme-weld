@@ -1,15 +1,15 @@
 <template name="memberItem">
-  <a class="member-wrap" href="{{profileUrl this}}" target="_blank">
-      <div class="member">
-        {{> avatar user=this size="large" shape="circle"}}
-        <div class="username">{{profile.name}}</div>
-        <div class="profile-skills">Specialties: {{profile.skills}}</div>
-        <div class="profile-location">Location: {{profile.location}}</div>
-      </div>
-      <div class="about">
-        <div class="username">{{profile.name}}</div>
-        <p class="profile-blurb truncate">{{profile.bio}}</p>
-        <p class="view-more">View Profile</p>
-      </div>
-    </a>
+  <a class="member-wrap mix {{profile.location}}" data-name="{{profile.name}}" href="{{profileUrl this}}" target="_blank">
+    <div class="member">
+      {{> avatar user=this size="large" shape="circle"}}
+      <div class="username">{{profile.name}}</div>
+      <div class="profile-skills">{{profile.skills}}</div>
+      <div class="profile-location">{{profile.location}}</div>
+    </div>
+    <div class="about">
+      <div class="username">{{profile.name}}</div>
+      <p class="profile-blurb">{{profile.bio}}</p>
+      <p class="view-more">View Profile</p>
+    </div>
+  </a>
 </template>
