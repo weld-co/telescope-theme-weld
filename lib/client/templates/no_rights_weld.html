@@ -6,8 +6,8 @@
     {{else}}
     <h1>{{siteName}}</h1>
     <h2>{{tagline}}</h2>
-    <a href="/sign-in" class="sign-in button">{{_ "Sign In"}}</a>
-    <a href="/sign-up">Request An Account</a>
+    <a href="{{pathFor route='atSignIn'}}" class="sign-in button">{{_ "Sign In"}}</a>
+    <a href="{{pathFor route='atSignUp'}}">Request An Account</a>
     {{/if}}
   </div>
 </template>
