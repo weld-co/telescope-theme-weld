@@ -71,3 +71,31 @@
     font-size: 12px;
   }
 }
+
+.post-subscribe {
+  text-align: right;
+}
+
+a.subscribe-link,
+a.unsubscribe-link {
+  font-size: 0.875rem;
+  padding: 0.25rem 0.75rem 0.25rem 0;
+  border-radius: 3px;
+  background: $lightest-grey;
+  &:before {
+    background: fade-out($primary-color, 0.8);
+    border-radius: 3px 0 0 3px;
+    padding: 0.25rem 0.5rem;
+    margin-right: 0.75rem;
+    color: white;
+  }
+}
+
+a.subscribe-link:before {
+  content: "★";
+}
+
+a.unsubscribe-link:before {
+  background: $primary-color;
+  content: "✕";
+}

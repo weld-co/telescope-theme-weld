@@ -70,6 +70,10 @@
   filter: brightness(.9);
 }
 
-a.remove-thumbnail-link {
+a.remove-thumbnail-link,
+a.regenerate-thumbnail-link {
   margin-top: 1rem;
+  margin-right: 1rem;
+  font-size: 0.875rem;
+
 }

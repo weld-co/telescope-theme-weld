@@ -1769,6 +1769,38 @@ input[type="search"].search-input-field:focus {
   color: white;
 }
 
+a.new-post {
+  text-align: center;
+  display: block;
+  background-color: #f1592a;
+  background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%22-89%200%2016%2016%22%20enable-background%3D%22new%20-89%200%2016%2016%22%3E%3Cpath%20fill%3D%22%23fff%22%20d%3D%22M-73%207h-7v-7h-2v7h-7v2h7v7h2v-7h7z%22/%3E%3C/svg%3E") no-repeat center;
+  width: 4rem;
+  min-height: 50px;
+}
+@media screen and (min-width: 50em) {
+  a.new-post {
+    min-height: 50px;
+    max-height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    margin: 50px auto;
+    -webkit-transition: -webkit-transform 100ms ease-in-out,  box-shadow 100ms ease-in-out;
+            transition: transform 100ms ease-in-out,  box-shadow 100ms ease-in-out;
+  }
+  a.new-post:hover {
+    -webkit-transform: translateY(-2px);
+        -ms-transform: translateY(-2px);
+            transform: translateY(-2px);
+    color: white;
+    box-shadow: 0 3px 8px 1px rgba(0, 0, 0, 0.2);
+  }
+  a.new-post:active {
+    -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
 .mobile-menu-button {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -1828,35 +1860,6 @@ input[type="search"].search-input-field:focus {
   margin-bottom: 5px;
   text-transform: capitalize;
   display: block;
-}
-
-a.new-post {
-  text-align: center;
-  display: block;
-  background: #f1592a;
-  color: white;
-  font-size: 40px;
-  font-weight: 100;
-  line-height: 50px;
-  min-height: 50px;
-  max-height: 50px;
-  width: 50px;
-  border-radius: 100%;
-  margin: 5% auto;
-  -webkit-transition: background 100ms ease,  -webkit-transform 100ms ease-in-out,  box-shadow 100ms ease-in-out;
-          transition: background 100ms ease,  transform 100ms ease-in-out,  box-shadow 100ms ease-in-out;
-}
-a.new-post:hover {
-  -webkit-transform: translateY(-2px);
-      -ms-transform: translateY(-2px);
-          transform: translateY(-2px);
-  color: white;
-  box-shadow: 0 3px 8px 1px rgba(0, 0, 0, 0.2);
-}
-a.new-post:active {
-  -webkit-transform: translateY(0);
-      -ms-transform: translateY(0);
-          transform: translateY(0);
 }
 
 .posts {
@@ -1963,16 +1966,16 @@ a.back-link:hover {
   color: #f1592a;
 }
 
-.single-post .post-content {
-  padding-bottom: 2rem;
+.single-post .post {
+  padding: 0 0 2rem;
 }
-.single-post .post-content .post-heading {
+.single-post .post .post-heading {
   margin-bottom: 2rem;
 }
-.single-post .post-content .post-heading a:visited {
+.single-post .post .post-heading a:visited {
   color: inherit;
 }
-.single-post .post-content .post-heading .post-title {
+.single-post .post .post-heading .post-title {
   font-size: 28px;
   line-height: 1;
   margin-bottom: 1rem;
@@ -1981,7 +1984,7 @@ a.back-link:hover {
   overflow: visible;
 }
 @media screen and (max-width: 50em) {
-  .single-post .post-content .post-heading .post-title {
+  .single-post .post .post-heading .post-title {
     font-size: 21px;
   }
 }
@@ -2580,6 +2583,24 @@ a.view-more:hover {
 
 .menu-description {
   display: none;
+  position: absolute;
+  background: #222222;
+  color: white;
+  -webkit-animation: scale-up 200ms cubic-bezier(0.5, 0, 0.25, 1.5);
+          animation: scale-up 200ms cubic-bezier(0.5, 0, 0.25, 1.5);
+  font-size: small;
+  left: 0;
+  padding: 0.5rem 1.875rem;
+  -webkit-transform-origin: left;
+      -ms-transform-origin: left;
+          transform-origin: left;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.menu-label:hover + .menu-description,
+.menu-description:hover {
+  display: inline;
 }
 
 .comments-list {
@@ -2653,6 +2674,35 @@ a.view-more:hover {
   color: #aaaaaa;
   vertical-align: middle;
   font-size: 12px;
+}
+
+.post-subscribe {
+  text-align: right;
+}
+
+a.subscribe-link,
+a.unsubscribe-link {
+  font-size: 0.875rem;
+  padding: 0.25rem 0.75rem 0.25rem 0;
+  border-radius: 3px;
+  background: #f2f2f2;
+}
+a.subscribe-link:before,
+a.unsubscribe-link:before {
+  background: rgba(241, 89, 42, 0.2);
+  border-radius: 3px 0 0 3px;
+  padding: 0.25rem 0.5rem;
+  margin-right: 0.75rem;
+  color: white;
+}
+
+a.subscribe-link:before {
+  content: "★";
+}
+
+a.unsubscribe-link:before {
+  background: #f1592a;
+  content: "✕";
 }
 
 .newsletter-banner.newsletter-banner {
@@ -2859,8 +2909,11 @@ a.view-more:hover {
           filter: brightness(0.9);
 }
 
-a.remove-thumbnail-link {
+a.remove-thumbnail-link,
+a.regenerate-thumbnail-link {
   margin-top: 1rem;
+  margin-right: 1rem;
+  font-size: 0.875rem;
 }
 
 .footer {

@@ -28,6 +28,7 @@ Package.on_use(function (api) {
     // Overrides 
     'lib/client/templates/categories_menu_weld.html',
     'lib/client/templates/comment_form_weld.html',
+    'lib/client/templates/comment_list_weld.html',
     'lib/client/templates/comment_item_weld.html',
     'lib/client/templates/custom_css.html',
     'lib/client/templates/header_weld.html',

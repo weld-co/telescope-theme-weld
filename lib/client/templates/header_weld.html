@@ -1,12 +1,10 @@
 <!-- removed site logo and replaced with custom elements -->
 <template name="headerWeld">
-  {{#if isLoggedIn}}
+{{#if isLoggedIn}}
   <header class="header row mobile-only">
     <a href="#menu" class="mobile-menu-button"></a>
     {{> UI.dynamic template=logo}}
-    {{#if isLoggedIn}}
-      <div class="mobile-search">{{> searchWeld}}</div>
-    {{/if}}
+    {{> submitButtonWeld}}
   </header>
-  {{/if}}
+{{/if}}
 </template>

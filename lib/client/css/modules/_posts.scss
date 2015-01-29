@@ -1,32 +1,3 @@
-a.new-post {
-  text-align: center;
-  display: block;
-  background: $primary-color;
-  color: white;
-  font-size: 40px;
-  font-weight: 100;
-  line-height: $mobile-header-height;
-  min-height: $mobile-header-height;
-  max-height: $mobile-header-height;
-  width: $mobile-header-height;
-  border-radius: 100%;
-  margin: 5% auto;
-  transition:
-    background 100ms ease, 
-    transform 100ms ease-in-out, 
-    box-shadow 100ms ease-in-out;
-
-  &:hover {
-    transform: translateY(-2px);
-    color: white;
-    box-shadow: 0 3px 8px 1px rgba(0,0,0,0.2);
-  }
-
-  &:active {
-    transform: translateY(0);
-  }
-}
-
 .posts {
   width: 100%;
 }
@@ -138,8 +109,8 @@ a.back-link {
   }
 }
 
-.single-post .post-content {
-  padding-bottom: 2rem;
+.single-post .post {
+  padding: 0 0 2rem;
 
   .post-heading {
     margin-bottom: 2rem;
