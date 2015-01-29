@@ -1,5 +1,5 @@
 <template name="memberItem">
-  <a class="member-wrap mix {{profile.location}}" data-name="{{profile.name}}" href="{{profileUrl this}}" target="_blank">
+  <span class="member-wrap mix {{profile.location}}" data-name="{{profile.name}}">
     <div class="member">
       {{> avatar user=this size="large" shape="circle"}}
       <div class="username">{{profile.name}}</div>
@@ -9,7 +9,7 @@
     <div class="about">
       <div class="username">{{profile.name}}</div>
       <p class="profile-blurb">{{profile.bio}}</p>
-      <p class="view-more">View Profile</p>
+      <a class="view-more" href="{{profileUrl this}}" target="_blank">View Profile</a>
     </div>
-  </a>
+  </span>
 </template>

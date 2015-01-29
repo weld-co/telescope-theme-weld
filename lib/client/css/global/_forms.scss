@@ -104,6 +104,7 @@ input[type="submit"].text-button {
 
   ::-webkit-input-placeholder {
     line-height: $input-height;
+    color: #ddd;
   }
 
   input[type="number"] {

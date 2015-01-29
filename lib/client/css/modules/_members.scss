@@ -115,12 +115,13 @@
 }
 
 .member-wrap {
-  padding: 2rem;
-  text-align: center;
   flex: 1;
   flex-basis: 250px;
-  position: relative;
   justify-content: center;
+  position: relative;
+  padding: 2rem;
+  text-align: center;
+  cursor: default;
   
   .member,
   .about {
@@ -198,10 +199,13 @@
   -webkit-mask-image: linear-gradient(to bottom, rgba(255,255,255,1) 50%, rgba(255,255,255,0));
 }
 
-.view-more {
+a.view-more {
   padding: 0.5rem 1rem;
   background: $primary-color;
   color: white;
   border-radius: 3px;
   display: inline-block;
+  &:hover {
+    color: white;
+  }
 }

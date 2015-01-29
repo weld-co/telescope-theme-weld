@@ -2,15 +2,16 @@
 <template name="layoutWeld">
 {{> UI.dynamic template=css}}
 {{> UI.dynamic template=messages}}
+      {{#each heroModules}}
+        {{> UI.dynamic template=getTemplate}}
+      {{/each}}
   <div class="grid-wrap">
     {{#if canView}}
       {{> sidebar}}
     {{/if}}
     <main class="content-wrap column">
       {{> UI.dynamic template=nav}}
-      {{#each heroModules}}
-        {{> UI.dynamic template=getTemplate}}
-      {{/each}}
+
       <div class="content row {{pageName}}">
         {{> yield}}
         <div class="spacer row"></div>

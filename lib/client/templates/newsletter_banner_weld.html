@@ -1,23 +1,15 @@
 <!-- replaced with custom tagline -->
 <template name="newsletterBannerWeld">
 {{#if showBanner}}
-    <div class="newsletter-banner">
-      <form>
-      
-        <h4 class="newsletter-tagline">
-         <span class="tagline subdued">A weekly summary of {{siteName}}.</span>
-          Delivered straight to your inbox.
-        </h4>
-
-        <span class="pull-right">
-          <button class="button newsletter-button">Subscribe<span class="button-loader"><img src="/img/loading-balls.svg"/></span></button>
-        </span>
-
-      </form>
-
-      <h4 class="newsletter-subscribed">Thanks for subscribing!</h4>
-      <a href="#" class="newsletter-dismiss">×</a>
-
-    </div>
+  <div class="newsletter-banner">
+    <a href="#" class="newsletter-dismiss">×</a>
+    <form>
+      <a href="#" class="newsletter-button">
+        <span class="newsletter-cta"></span>
+      </a>
+      <span class="spinner absolute-center"></span>
+    </form>
+    <div class="newsletter-subscribed">Success!</div>
+  </div>
 {{/if}}
 </template>

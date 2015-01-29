@@ -1,166 +1,81 @@
-$banner-height: 100px;
+$banner-height: 50px;
 $mobile-banner-height: 180px;
 
 .newsletter-banner.newsletter-banner {
-  background: $darkest-grey;
-  color: white;
-  min-height: $banner-height;
-  padding: 0;
-  margin: 1rem;
-  position:relative;
-  animation: fade-in 600ms ease-in-out;
-  @include small {
-    margin: 1rem;
-    min-height: $mobile-banner-height;
-  }
+  height: $banner-height;
+  background: white;
+  border: 1px solid fade-out($grey, 0.6);
+  box-shadow: 0 2px 6px 2px fade-out($grey, 0.8);
+  border-radius: 25px;
+  font-size: 1rem;
+  color: $dark-grey;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+  width: 290px;
+  z-index: 5000;
+  font: 400 0.875rem "Avenir Next";
+  line-height: $banner-height;
 }
 
-.newsletter-banner .pull-right {
-  @include small {
-   float: none;
-
-    > button:only-child {
-      max-width: 100%;
+.newsletter-banner form {
+  .newsletter-cta:before {
+    content: "Get a weekly recap of the best posts!"
+  }
+  
+  &:hover {
+    .newsletter-cta:before {
+      content: "SUBSCRIBE";
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: $primary-color;
     }
   }
 }
 
-.newsletter-banner:before {
-  content:"";
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  font-size: 0px; 
-  line-height: 0%; 
-  width: 0px;
-  border-top: 20px solid transparent;
-  border-right: 20px solid #fff;
-}
-
-.newsletter-banner form {
-  line-height: $banner-height;
-  padding: 0 4rem 0 2rem;
-  text-align: left;
-  @include small {
-    padding: 1rem;
-    line-height: 80px;
+.newsletter-dismiss:hover + form {
+    .newsletter-cta:before {
+      content: "No thanks."
+    }
   }
+
+.newsletter-banner .spinner {
+  display: none;
 }
 
-.newsletter-header {
-  vertical-align: middle;
-  transform: scale(1.2);
-  transform-origin: left;
-  @include small {
-    transform: scale(none);
-    width: 100%;
-  }
-}
-
-.newsletter-tagline {
-  margin: 0 !important;
-  padding: 0 !important;
-  display: inline-block;
-  vertical-align: middle;
-  font: 400 1.25rem/1.2 "Avenir Next";
-}
-
-.tagline.subdued {
-  display: block;
-  @include small {
-    display: inline;
+.newsletter-banner.show-loader {
+  width: $banner-height;
+  transition: width 400ms cubic-bezier(0.5, -0.75, 0.25, 1.25);
+  .spinner {
+    opacity: 1;
+    display: block;
   }
 }
 
 .newsletter-subscribed {
-  text-align: center;
-  vertical-align: middle;
-  position: absolute;
-  top: 0px;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
-  opacity: 0;
   line-height: $banner-height;
-  pointer-events: none;
-}
-
-.newsletter-banner form, .newsletter-subscribed {
-  transition: opacity 0.3s ease-out;
-}
-
-.newsletter-email.newsletter-email {
-  display: inline-block;
-  margin: 0;
-  max-width: 7.5rem;
-  vertical-align: middle;
-  border: none;
-  border-radius: 0;
-  padding: 1rem;
-  height: 3rem;
-}
-
-.button.newsletter-button {
-  display: inline-block;
-  vertical-align: middle;
-  margin: 0;
-  height: 3rem;
-  padding: 1rem 2rem;
-  font-size: 14px;
-}
-
-.show-loader {
-  pointer-events: none;
-}
-
-.show-loader .newsletter-tagline, 
-.show-loader .newsletter-email {
-  opacity: 0.35;
-}
-
-.show-loader .newsletter-button {
-  color: rgba(255,255,255,0); /* hide button text */
-}
-
-.button-loader {
-  display: none;
-}
-
-.show-loader .button-loader {
-  position: absolute;
-  z-index: 100;
-  top: 0px;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
-  display: block;
+  &:before {
+    content: "✔︎";
+  }
 }
 
 .newsletter-dismiss {
-
-  &:link, &:visited {
-    display: block;
-    position: absolute;
-    height: 30px;
-    width: 30px;
-    border-radius: 0;
-    background: none;
-    color: white;
-    top: 1rem;
-    right: 1rem;
-    font-size: 24px;
-    margin: 0;
-  }
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  background: $light-grey;
+  text-align: center;
+  line-height: 25px;
+  color: #333333;
+  top: -5px;
+  right: -5px;
+  bottom: 0;
+  font-size: 1rem;
 }
 
 .newsletter-dismiss:hover {
-  color: inherit;
-}
-
-@include small {
-  .newsletter-dismiss, .newsletter-dismiss:link {
-    top: 10px;
-    right: 10px;
-    margin-top: 0px;
-  }
+  color: white;
+  background: $primary-color;
 }

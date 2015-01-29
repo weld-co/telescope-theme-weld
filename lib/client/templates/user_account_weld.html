@@ -27,7 +27,7 @@
       </div>
       <div class="control-group">
         <label>{{_ "bio"}}</label>
-        <div class="controls"><textarea name="bio" type="text">{{profile.bio}}</textarea></div>
+        <div class="controls"><textarea name="bio" type="text" placeholder="A description of what you do and why you do it.">{{profile.bio}}</textarea></div>
       </div>
       <div class="control-group">
         <label>{{_ "email"}}</label>
@@ -36,39 +36,39 @@
         </div>
       </div>
       <div class="control-group">
-      <label>Location</label>
+      <label>City</label>
         <div class="controls">
-          <input name="location" type="text" value="{{profile.location}}" />
+          <input name="location" type="text" value="{{profile.location}}" placeholder="Just the city name, please." />
         </div>
       </div>
       <div class="control-group">
       <label>Skills</label>
         <div class="controls">
-          <input name="skills" type="text" value="{{profile.skills}}" />
+          <input name="skills" type="text" value="{{profile.skills}}" placeholder="Example: Fashion, Editorial and Portrait Photography."/>
         </div>
       </div>
       <div class="control-group">
       <label>Phone Number</label>
         <div class="controls">
-          <input name="phone" type="text" value="{{profile.phone}}" />
+          <input name="phone" type="text" value="{{profile.phone}}" placeholder="Only visible to other members." />
         </div>
       </div>
       <div class="control-group">
       <label>Instagram</label>
         <div class="controls">
-          <input name="instagram" type="text" value="{{profile.instagram}}" />
+          <input name="instagram" type="text" value="{{profile.instagram}}" placeholder="No @ necessary."/>
         </div>
       </div>
       <div class="control-group">
       <label>Twitter</label>
         <div class="controls">
-          <input name="twitter" type="text" value="{{getTwitter}}" />
+          <input name="twitter" type="text" value="{{getTwitter}}" placeholder="No @ necessary." />
         </div>
       </div>
       <div class="control-group">
         <label>{{_ "site_url"}}</label>
         <div class="controls">
-          <input name="site" type="text" value="{{profile.site}}" />
+          <input name="site" type="text" value="{{profile.site}}" placeholder="With or without 'http://www' works fine."/>
         </div>
       </div>
       {{#if hasPassword}}

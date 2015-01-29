@@ -68,6 +68,15 @@ $padding: $gutter * 1.25;
   justify-content: center;
 }
 
+.absolute-center {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
 .optical {
   transform: translateY(-10%);
 }
