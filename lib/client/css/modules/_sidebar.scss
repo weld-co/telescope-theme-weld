@@ -62,15 +62,18 @@
 
   .dropdown-menu {
     display: none;
+    
+    li:first-child {
+      margin-top: 1rem;
+    }
 
     li {
       padding: 10px 0;
       margin-bottom: 0;
-      border-top: 1px white(0.2) solid;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
-
-    li:first-child {
-      margin-top: 1rem;
+    li:last-child {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
   }
 }
@@ -80,10 +83,11 @@
   position: absolute;
   background: $sidebar-bg;
   color: white;
-  animation: scale-up 200ms cubic-bezier(0.5, 0, 0.25, 1.5);
+  animation: fade-in 200ms ease-in-out;
   font-size: small;
-  left: 0;
-  padding: 0.5rem $padding;
+  left: $padding;
+  height: 1.5rem;
+  line-height: 1.25;
   transform-origin: left;
   
   white-space: nowrap;

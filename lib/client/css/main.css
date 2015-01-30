@@ -95,12 +95,6 @@
   height: 300px;
 }
 
-.notifications-toggle {
-  background: white;
-  margin-bottom: 1rem;
-  padding: 1rem;
-}
-
 .search-date-header {
   background: #f2f2f2;
 }
@@ -1871,7 +1865,7 @@ a.new-post {
   -webkit-transition: background 50ms ease-in-out;
           transition: background 50ms ease-in-out;
 }
-@media screen and (min-width: 60em) {
+@media screen and (min-width: 50em) {
   .posts.list > .post:hover {
     background: #f2f2f2;
   }
@@ -2572,13 +2566,16 @@ a.view-more:hover {
 .sidebar-menu .dropdown-menu {
   display: none;
 }
+.sidebar-menu .dropdown-menu li:first-child {
+  margin-top: 1rem;
+}
 .sidebar-menu .dropdown-menu li {
   padding: 10px 0;
   margin-bottom: 0;
-  border-top: 1px white(0.2) solid;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
-.sidebar-menu .dropdown-menu li:first-child {
-  margin-top: 1rem;
+.sidebar-menu .dropdown-menu li:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .menu-description {
@@ -2586,11 +2583,12 @@ a.view-more:hover {
   position: absolute;
   background: #222222;
   color: white;
-  -webkit-animation: scale-up 200ms cubic-bezier(0.5, 0, 0.25, 1.5);
-          animation: scale-up 200ms cubic-bezier(0.5, 0, 0.25, 1.5);
+  -webkit-animation: fade-in 200ms ease-in-out;
+          animation: fade-in 200ms ease-in-out;
   font-size: small;
-  left: 0;
-  padding: 0.5rem 1.875rem;
+  left: 1.875rem;
+  height: 1.5rem;
+  line-height: 1.25;
   -webkit-transform-origin: left;
       -ms-transform-origin: left;
           transform-origin: left;
