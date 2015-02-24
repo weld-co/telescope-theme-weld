@@ -1,20 +1,35 @@
 <template name="membersPage">
-  <div class="sort-controls row">
-    <span class="filter-wrap">
-      <span class="filter" data-filter="all">All</span>
-      <span class="filter" data-filter=".Dallas">Dallas</span>
-      <span class="filter" data-filter=".Nashville">Nashville</span>
-    </span>
-    <span class="sort-wrap">
-      <span class="sort-label">Sort:</span>
+  <div class="no-results column">
+    <div class="no-results-headline">Dang it.</div> 
+    No matches were found.
+  </div>
+  <section class="control-bar row">
+    <span class="control-wrap">
+      <span class="filter" data-js="reset" data-filter="all">All</span>
+      <span class="control-label">Filter:</span>
+      {{#each members}}
+        <!-- don't produce a filter toggle if member hasn't set one -->
+        {{#if profile.skill1}}
+        <span class="filter" data-filter=".{{profile.skill1}}">{{profile.skill1}}</span>
+        {{/if}}
+        {{#if profile.skill2}}
+        <span class="filter" data-filter=".{{profile.skill2}}">{{profile.skill2}}</span>
+        {{/if}}
+        {{#if profile.skill3}}
+        <span class="filter" data-filter=".{{profile.skill3}}">{{profile.skill3}}</span>
+        {{/if}}
+      {{/each}}
+      </span>
+    <span class="control-wrap">
+      <span class="control-label">Sort:</span>
       <span class="sort" data-sort="name:asc">A–Z</span> 
       <span class="sort" data-sort="random">Random</span>
     </span>
     <span class="total"><span class="total-number"></span></span>
-  </div>
+  </section>
   <div id="sort-container">
     {{#each members}}
-      {{> memberItem}}
+      {{> membersItem}}
     {{/each}}
   </div>
 </template>

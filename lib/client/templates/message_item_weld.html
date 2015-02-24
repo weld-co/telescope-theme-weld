@@ -1,10 +1,8 @@
 <!-- changed grid div to span for positioning -->
 <template name="message_item_weld">
   {{#if show}}
-    <span>
-      <div class="error {{type}}-message module">
-        {{message}}
-      </div>
-    </span>
+    <div class="error {{type}}-message module">
+      {{message}}
+    </div>
   {{/if}}
 </template>

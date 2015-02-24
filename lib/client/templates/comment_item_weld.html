@@ -28,7 +28,7 @@
         </div> <!-- comment-content -->
     {{#if showChildComments}}
       <ul class="comment-children comment-list">
-      {{#each child_comments}}
+      {{#each childComments}}
         {{#with this}}
           {{> UI.dynamic template=comment_item}}
         {{/with}}

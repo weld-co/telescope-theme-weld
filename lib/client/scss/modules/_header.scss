@@ -1,0 +1,55 @@
+.header {
+  flex-wrap: nowrap;
+  width: 100%;
+  background: $primary-color;
+  color: white;
+  min-height: $mobile-header-height;
+  max-height: $mobile-header-height;
+  padding: 0 ($padding / 2);
+  z-index: 9000;
+
+  a, a:link, a:visited {
+    &.button {
+      color: white;
+    }
+  }
+}
+
+a.new-post {
+  text-align: center;
+  display: block;
+  background-color: $primary-color;
+  background: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%22-89%200%2016%2016%22%20enable-background%3D%22new%20-89%200%2016%2016%22%3E%3Cpath%20fill%3D%22%23fff%22%20d%3D%22M-73%207h-7v-7h-2v7h-7v2h7v7h2v-7h7z%22/%3E%3C/svg%3E') no-repeat center;
+  width: 4rem;
+  min-height: $mobile-header-height;
+
+  @include medium-large {
+    min-height: $mobile-header-height;
+    max-height: $mobile-header-height;
+    width: $mobile-header-height;
+    border-radius: 100%;
+    margin: 50px auto;
+    transition:
+      transform 100ms ease-in-out, 
+      box-shadow 100ms ease-in-out;
+
+    &:hover {
+      transform: translateY(-2px);
+      color: white;
+      box-shadow: 0 3px 8px 1px rgba(0,0,0,0.2);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}
+
+.mobile-menu-button {
+  flex-grow: 1;
+  width: 5rem;
+  line-height: $mobile-header-height; 
+  height: $mobile-header-height;
+  cursor: pointer;
+  background: url(/packages/telescope-theme-weld/img/mobile-navicon.svg) no-repeat left center;
+}

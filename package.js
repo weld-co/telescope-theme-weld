@@ -17,13 +17,17 @@ Package.on_use(function (api) {
   api.use([
     'iron:router',
     'telescope-base',
-    'telescope-lib'
+    'telescope-lib',
+    'fourseven:scss'
   ], ['client', 'server']);
 
   api.use('cmather:handlebars-server');
+  api.use('webapp', 'server') 
 
   api.addFiles([
-    'lib/client/css/main.css',
+
+    // SCSS Compiled & autoprefixed with fourseven:scss
+    'lib/client/scss/main.scss',
 
     // Overrides 
     'lib/client/templates/categories_menu_weld.html',
@@ -35,7 +39,7 @@ Package.on_use(function (api) {
     'lib/client/templates/layout_weld.html',
     'lib/client/templates/loading_weld.html',
     'lib/client/templates/members_page.html',
-    'lib/client/templates/member_item.html',
+    'lib/client/templates/members_item.html',
     'lib/client/templates/menu_item_weld.html',
     'lib/client/templates/message_item_weld.html',
     'lib/client/templates/newsletter_banner_weld.html',
@@ -110,18 +114,26 @@ Package.on_use(function (api) {
     'img/apple-touch-icon-180x180.png',
     'img/weld_logo.png',
     'img/checkbox.svg',
-    'img/checkbox-checked.svg'
+    'img/checkbox-checked.svg',
+    'img/search.svg',
+    'img/close-icon.svg',
+    'img/mobile-navicon.svg'
   ], ['client']);
 
   api.addFiles([
     'lib/server/js/template_overwrites.js',
     'lib/server/js/reset_password_url_fix.js',
-    'lib/server/js/member_publication.js',
+    'lib/server/js/members_publication.js',
     'lib/server/templates/emailWrapperWeld.handlebars',
     'lib/server/templates/emailNewPostWeld.handlebars',
     'lib/server/templates/emailNewCommentWeld.handlebars',
     'lib/server/templates/emailPostItemWeld.handlebars',
     'lib/server/templates/emailDigestWeld.handlebars'
+  ], ['server']);
+
+  // Used for /purchases redirect
+  api.addFiles([
+    'lib/server/js/purchase.js'
   ], ['server']);
 
   api.export([

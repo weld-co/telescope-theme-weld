@@ -1,0 +1,25 @@
+input[type="search"].search-input-field {
+  -webkit-appearance: none;
+  border-radius: 0;
+  border: none;
+  background: $search-bg url(/packages/telescope-theme-weld/img/search.svg) no-repeat; 
+  background-position: 0.875rem center;
+  background-size: 14px;
+  color: white;
+  font-size: 1rem;
+  padding: 0.4rem 0.75rem 0.4rem 2rem;
+  outline: none;
+  margin: 0;
+  width: 100%;
+  transition: background 100ms ease-in-out;
+  
+  &::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    content: url(/packages/telescope-theme-weld/img/close-icon.svg);
+  }
+
+  &:focus {
+    background-color: transparent;
+    outline: 1px solid rgba(255, 255, 255, 0.2);
+  }
+}

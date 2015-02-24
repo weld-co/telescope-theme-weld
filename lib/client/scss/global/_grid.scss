@@ -1,0 +1,99 @@
+// Variables
+
+$gutter: 1.5rem;
+$padding: $gutter * 1.25;
+
+// Grid Components
+
+.grid-wrap {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Legacy grid element overrides */
+
+.grid,
+.grid-module,
+.grid-block {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+// Gutters - add .gutter to any .row element
+
+.gutters {
+  padding: $gutter / 2;
+}
+
+.gutters .column {
+  margin: $gutter / 2;
+}
+
+.gutters + .gutters {
+  padding-top: 0;
+}
+
+// Utility - add to any .column element
+
+.full-width {
+  width: 100%;
+}
+
+.max-width {
+  max-width: 40rem;
+}
+
+.center {
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.absolute-center {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.optical {
+  transform: translateY(-10%);
+}
+
+.center.dialog + .spacer {
+  display: none;
+}
+
+.spacer {
+  width: 100%;
+  height: 20vh;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.justified {
+  justify-content: space-between;
+}
