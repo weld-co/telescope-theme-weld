@@ -19,7 +19,6 @@
   background-color: $lightest-grey;
   border-bottom: 2px solid $light-grey;
   box-sizing: border-box;
-  cursor: pointer;
   font-size: 0.875rem;
   min-height: $header-height;
   padding: 0 1.5rem;
@@ -33,61 +32,65 @@
   @include small {
     padding: 0.75rem;
   }
+}
 
-  .control-wrap,
-  .total {
-    margin-right: 1.5rem;
+.toggle,
+.members-select,
+.control-label,
+.sort {
+  margin-right: 1rem;
+}
+
+.control-label {
+  margin-left: 1rem;
+  color: $grey;
+}
+
+.toggle,
+.members-select {
+  display: inline-flex;
+  border: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  background: white;
+  border-radius: 3px;
+  cursor: pointer;
+  height: 2rem;
+  padding: 0 1rem;
+  box-shadow: 0 2px 0 0 darken(white, 10);
+
+  @include small {
+    margin: 0.5rem;
   }
-
-  .control-label,
-  .filter,
-  .sort {
-    text-transform: capitalize;
-    margin-right: 1rem;
-  }
-
-  .control-label {
-    color: $grey;
-  }
-
-  .filter,
-  .reset {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: white;
-    border-radius: 3px;
-    height: 2rem;
-    padding: 0 1rem;
-    box-shadow: 0 2px 0 0 darken(white, 10);
-
-    @include small {
-      margin: 0.5rem;
-    }
-  }
-
-  .filter:active {
-    transform: translateY(1px);
-    box-shadow: none;
-  }
-
-  .filter.active {
-    background: $primary-color;
-    box-shadow: 0 2px 0 0 darken($primary-color, 10);;
-    color: white;
-  }
-
-  .reset {
-    background: none;
-    border: 1px dotted currentColor;
-    box-shadow: none;
-    color: $grey;
-  }
-
-  .sort.active {
-    color: $primary-color;
+  &:focus {
+    outline: none;
   }
 }
+
+.members-select {
+  -webkit-appearance: none;
+  text-transform: capitalize;
+  font-family: $base-font-family;
+  min-width: 200px;
+  background: white url(/packages/telescope-theme-weld/img/updown-icon.svg) no-repeat right 10px center;
+}
+
+.toggle:active {
+  transform: translateY(1px);
+  box-shadow: none;
+}
+
+.toggle.active {
+  background: $primary-color;
+  box-shadow: 0 2px 0 0 darken($primary-color, 10);;
+  color: white;
+}
+
+.sort.active {
+  color: $primary-color;
+}
+
 
 .total,
 .total:after {
@@ -104,7 +107,7 @@
   right: 0;
   top: 0;
   bottom: 0;
-  margin: auto;
+  margin: auto 1.5rem;
 
   color: white;
   font-size: 80%;

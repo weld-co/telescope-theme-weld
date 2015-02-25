@@ -6,6 +6,7 @@
 
 // Global Styles (forms, typography, etc.)
 
+@import "global/type";
 @import "global/global";
 @import "global/animation";
 @import "global/grid";
@@ -14,7 +15,6 @@
 @import "global/markdown";
 @import "global/tables";
 @import "global/links";
-@import "global/type";
 
 // Module Styles (header, posts, etc.)
 

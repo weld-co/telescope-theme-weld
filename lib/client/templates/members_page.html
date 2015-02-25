@@ -5,21 +5,23 @@
   </div>
   <section class="control-bar row">
     <span class="control-wrap">
-      <span class="filter" data-js="reset" data-filter="all">All</span>
-      <span class="control-label">Filter:</span>
-      {{#each users}}
-        <!-- don't produce a filter toggle if member hasn't set one -->
-        {{#if profile.skill1}}
-        <span class="filter" data-filter=".{{profile.skill1}}">{{profile.skill1}}</span>
-        {{/if}}
-        {{#if profile.skill2}}
-        <span class="filter" data-filter=".{{profile.skill2}}">{{profile.skill2}}</span>
-        {{/if}}
-        {{#if profile.skill3}}
-        <span class="filter" data-filter=".{{profile.skill3}}">{{profile.skill3}}</span>
-        {{/if}}
-      {{/each}}
-      </span>
+      <span class="toggle" data-js="reset">View All</span>
+      <select class="members-select">
+        <option value="default">Select a filter…</option>
+        {{#each users}}
+          <!-- don't produce a filter toggle if member hasn't set one -->
+          {{#if profile.skill1}}
+          <option class="option" value=".{{profile.skill1}}">{{profile.skill1}}</option>
+          {{/if}}
+          {{#if profile.skill2}}
+          <option class="option" value=".{{profile.skill2}}">{{profile.skill2}}</option>
+          {{/if}}
+          {{#if profile.skill3}}
+          <option class="option" value=".{{profile.skill3}}">{{profile.skill3}}</option>
+          {{/if}}
+        {{/each}}
+      </select>
+    </span>
     <span class="control-wrap">
       <span class="control-label">Sort:</span>
       <span class="sort" data-sort="name:asc">A–Z</span> 

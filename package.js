@@ -165,6 +165,7 @@ Package.on_use(function (api) {
     'img/search.svg',
     'img/close-icon.svg',
     'img/plus-icon.svg',
+    'img/updown-icon.svg',
     'img/mobile-navicon.svg'
   ], ['client']);
 
