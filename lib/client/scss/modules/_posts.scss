@@ -6,7 +6,7 @@
   cursor: pointer;
   transition: background 50ms ease-in-out;
 
-  @include medium-large {
+  @include large {
     &:hover {
       background: $lightest-grey;
       .post-title {

@@ -2,40 +2,35 @@
   width: 100%;
   min-height: $header-height;
   background-color: $primary-color;
-
-  .logo,
-  .back-arrow {
-    transition: transform 250ms cubic-bezier(0.5, -0.75, 0.25, 1.5), opacity 350ms ease;
-  }
-
-  @include medium-large {
-    &:hover {
-      .logo {
-        transform: translateX(1rem);
-      }
-    }
-
-    .back-arrow {
-      opacity: 0;
-      color: white;
-      height: auto;
-      width: 0;
-      overflow: visible;
-      position: absolute;
-      line-height: $header-height;
-      @include small {
-        line-height: $mobile-header-height;
-      }
-    }
-
-    &:hover .back-arrow {
-      opacity: 1;
-      transform: translateX(-0.75rem);
-    }
-  }
-
   @include small {
     min-height: $mobile-header-height;
     background-origin: transparent;
   }
 }
+
+.logo,
+.back-arrow {
+  transition: transform 250ms cubic-bezier(0.5, -0.75, 0.25, 1.5), opacity 350ms ease;
+}
+
+.back-arrow {
+  opacity: 0;
+  color: white;
+  height: auto;
+  width: 0;
+  overflow: visible;
+  position: absolute;
+  line-height: $header-height;
+}
+
+.logo-wrap:hover .logo {
+  @include large {
+    transform: translateX(1rem);
+  }
+}
+
+.logo-wrap:hover .back-arrow {
+  opacity: 1;
+  transform: translateX(-0.75rem);
+}
+

@@ -6,7 +6,7 @@ $small-break: 50em;
   }
 }
 
-@mixin medium-large() {
+@mixin large() {
   @media screen and (min-width: $small-break) {
     @content;
   }

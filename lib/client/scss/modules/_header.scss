@@ -18,12 +18,14 @@
 a.new-post {
   text-align: center;
   display: block;
-  background-color: $primary-color;
-  background: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%22-89%200%2016%2016%22%20enable-background%3D%22new%20-89%200%2016%2016%22%3E%3Cpath%20fill%3D%22%23fff%22%20d%3D%22M-73%207h-7v-7h-2v7h-7v2h7v7h2v-7h7z%22/%3E%3C/svg%3E') no-repeat center;
+  background-color: $weld;
+  background-image: url(/packages/telescope-theme-weld/img/plus-icon.svg);
+  background-repeat: no-repeat;
+  background-position: center;
   width: 4rem;
   min-height: $mobile-header-height;
 
-  @include medium-large {
+  @include large {
     min-height: $mobile-header-height;
     max-height: $mobile-header-height;
     width: $mobile-header-height;

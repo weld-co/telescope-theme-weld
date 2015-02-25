@@ -11,7 +11,7 @@ $mobile-header-height: $header-height - 20px;
 
 
 .mobile-only {
-  @include medium-large {
+  @include large {
     display: none !important;
   }
 }

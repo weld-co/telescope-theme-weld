@@ -26,7 +26,52 @@ Package.on_use(function (api) {
 
   api.addFiles([
 
-    // SCSS Compiled & autoprefixed with fourseven:scss
+    // SCSS Compiled/Prefixed with fourseven:scss
+
+    // Includes
+    'lib/client/scss/includes/_breakpoints.scss',
+    'lib/client/scss/includes/_colors.scss',
+    'lib/client/scss/includes/_mixins.scss',
+
+    // Global
+    'lib/client/scss/global/_global.scss',
+    'lib/client/scss/global/_animation.scss',
+    'lib/client/scss/global/_grid.scss',
+    'lib/client/scss/global/_layout.scss',
+    'lib/client/scss/global/_forms.scss',
+    'lib/client/scss/global/_markdown.scss',
+    'lib/client/scss/global/_tables.scss',
+    'lib/client/scss/global/_links.scss',
+    'lib/client/scss/global/_type.scss',
+
+    // Modules
+    'lib/client/scss/modules/_progress-bar.scss',
+    'lib/client/scss/modules/_loader.scss',
+    'lib/client/scss/modules/_accounts.scss',
+    'lib/client/scss/modules/_logo.scss',
+    'lib/client/scss/modules/_search.scss',
+    'lib/client/scss/modules/_post-info.scss',
+    'lib/client/scss/modules/_avatars.scss',
+    'lib/client/scss/modules/_login.scss',
+    'lib/client/scss/modules/_errors.scss',
+    'lib/client/scss/modules/_header.scss',
+    'lib/client/scss/modules/_notifications.scss',
+    'lib/client/scss/modules/_posts.scss',
+    'lib/client/scss/modules/_categories.scss',
+    'lib/client/scss/modules/_feeds.scss',
+    'lib/client/scss/modules/_post-categories.scss',
+    'lib/client/scss/modules/_profile.scss',
+    'lib/client/scss/modules/_users.scss',
+    'lib/client/scss/modules/_members.scss',
+    'lib/client/scss/modules/_pages.scss',
+    'lib/client/scss/modules/_sidebar.scss',
+    'lib/client/scss/modules/_comments.scss',
+    'lib/client/scss/modules/_newsletter.scss',
+    'lib/client/scss/modules/_non-member.scss',
+    'lib/client/scss/modules/_member-menu.scss',
+    'lib/client/scss/modules/_thumbnails.scss',
+
+    // Final Imports
     'lib/client/scss/main.scss',
 
     // Overrides 
@@ -117,6 +162,7 @@ Package.on_use(function (api) {
     'img/checkbox-checked.svg',
     'img/search.svg',
     'img/close-icon.svg',
+    'img/plus-icon.svg',
     'img/mobile-navicon.svg'
   ], ['client']);
 
