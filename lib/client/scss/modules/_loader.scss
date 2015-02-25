@@ -1,16 +1,16 @@
-.spinner-wrap {
+.loader-wrap {
   background: white;
   z-index: 50000;
 }
 
-.spinner,
-.spinner:after {
+.loader,
+.loader:after {
   border-radius: 50%;
   width: 2.25rem;
   height: 2.25rem;
 }
 
-.spinner {
+.loader {
   border-style: solid;
   border-width: 3px;
   border-color: fade-out($primary-color, 0.8);

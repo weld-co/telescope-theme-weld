@@ -128,7 +128,6 @@ Package.on_use(function (api) {
     'lib/client/js/comment_item_weld.js',
     'lib/client/js/header_weld.js',
     'lib/client/js/no_rights_weld.js',
-    'lib/client/js/members.js',
     'lib/client/js/members_page.js',
     'lib/client/js/notifications_menu_weld.js',
     'lib/client/js/post_avatars_weld.js',
@@ -140,6 +139,9 @@ Package.on_use(function (api) {
     'lib/client/js/sidebar.js',
     'lib/client/js/user_account_weld.js',
     'lib/client/js/user_info_weld.js',
+
+    // Routes
+    'lib/routes/members.js',
 
     // Images
     'img/favicon.ico',

@@ -7,7 +7,7 @@
     <span class="control-wrap">
       <span class="filter" data-js="reset" data-filter="all">All</span>
       <span class="control-label">Filter:</span>
-      {{#each members}}
+      {{#each users}}
         <!-- don't produce a filter toggle if member hasn't set one -->
         {{#if profile.skill1}}
         <span class="filter" data-filter=".{{profile.skill1}}">{{profile.skill1}}</span>
@@ -28,7 +28,7 @@
     <span class="total"><span class="total-number"></span></span>
   </section>
   <div id="sort-container">
-    {{#each members}}
+    {{#each users}}
       {{> membersItem}}
     {{/each}}
   </div>

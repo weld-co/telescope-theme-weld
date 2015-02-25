@@ -5,9 +5,8 @@
 .posts.list > .post {
   cursor: pointer;
   transition: background 50ms ease-in-out;
-
-  @include large {
-    &:hover {
+  &:hover {
+    @include large {
       background: $lightest-grey;
       .post-title {
         color: $primary-color;
