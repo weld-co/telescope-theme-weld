@@ -12,19 +12,7 @@ table {
       td, th {
         font-weight: 600;
         background: $lightest-grey;
-
-        &:first-child {
-          padding-left: 1rem;
-        }
       }
-    }
-  }
-
-  tbody {
-    tr {
-      td {
-        
-      }     
     }
   }
 }

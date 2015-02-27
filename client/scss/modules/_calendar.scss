@@ -1,0 +1,97 @@
+.bookPage {
+  width: 100%;
+  max-width: 100%;
+  padding: 5%;
+
+  .fc {
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+
+  .fc-view-container {
+
+  }
+
+/*====================================================
+    UI Elements
+====================================================*/
+  
+  .fc-toolbar {
+    margin-bottom: 2rem;
+  }
+
+  .ui-button {
+    width: auto;
+    display: inline-block;
+    height: 2rem;
+    line-height: 2rem;
+    text-transform: capitalize;
+    outline: none;
+    &:hover {
+      background: darken($primary-color, 10);
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .fc .fc-button-group > * {
+    margin: 0;
+    float: none;
+  }
+
+  .fc-today-button {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .fc-prev-button,
+  .fc-next-button {
+    width: 2rem;
+    font-size: 0.5rem;
+  }
+
+  .fc-prev-button {
+    border-radius: 2px 0 0 2px;
+    border-right: 1px solid fade-out(white, 0.5);
+    &:after {
+      content: '◀︎';
+    }
+  }
+
+  .fc-next-button {
+    border-radius: 0 2px 2px 0;
+    &:after {
+      content: '▶︎';
+    }
+  }
+
+/*====================================================
+    Table Styles
+====================================================*/
+
+  .fc-view-container {
+    border-radius: 3px;
+  }
+
+  .ui-widget-header {
+    height: 2rem;
+    line-height: 2rem;
+    background: $dark-grey;
+    color: white;
+    border-right: 1px solid fade-out(white, 0.75);
+  }
+
+  .ui-state-highlight {
+    background: fade-out($primary-color, 0.9);
+  }
+
+  .fc td,
+  table tr {
+    border-color: $grey;
+  }
+
+  thead tr {
+    background: fade-out($grey, 0.9);
+  }
+}
