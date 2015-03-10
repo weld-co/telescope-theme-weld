@@ -1,0 +1,53 @@
+<template name="calendar">
+
+  <div class="modal column">
+  <div class="follow-up row center">
+    <div class="follow-up-wrap">
+      <h1>Thanks for booking!</h1>
+      <h2>Don’t forget to tip for the studio.</h2>
+      <a href="https://plasso.co/s/4ScTtpYf2G" class="button tip-button" target="_blank">Tip the Studio</a>
+    </div>
+  </div>
+  <form class="new-event-form absolute-center" accept-charset="UTF-8" action="https://formkeep.com/f/bf7a23106faa" method="POST">
+    <input type="hidden" name="utf8" value="✓">
+
+      <div class="close-button">✕</div>
+
+      <div class="control-group">
+        <label>Which space do you need?</label>
+        <select class="styled-select" name="space" required autofocus>
+          <option value="studio">Studio</option>
+          <option value="meeting-room">Meeting Room</option>
+        </select>
+      </div>
+
+      <input type="hidden" name="name" value="{{profile.name}}">
+      <input type="hidden" name="email" value="{{profile.email}}">
+
+      <div class="control-group">
+        <label>Date</label>
+        <input type="text" class="date" name="date" required>
+      </div>
+
+      <div class="group-wrap row">
+        <div class="control-group half-width">
+          <label>Start Time</label>
+          <input type="time" class="timepicker" name="startTime" required>
+        </div>
+
+        <div class="control-group half-width">
+          <label>End Time</label>
+          <input type="time" class="timepicker" name="endTime" required>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label>Anything else we should know about?</label>
+        <textarea placeholder="Kitchen, lots of people, sound sensitive, murder, electricity?" name="description"></textarea>
+      </div>
+      <input class="button" type="submit" value="Make Your Reservation">
+    </form>
+  </div>
+      
+  {{> fullcalendar options id="calendar"}}
+</template>

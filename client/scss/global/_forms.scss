@@ -86,6 +86,8 @@ input[type="submit"].save-button {
   input[type="url"],
   input[type="password"],
   input[type="number"],
+  input[type="date"],
+  input[type="time"],
   input[type="email"],
   textarea,
   .login-form input,
@@ -152,7 +154,7 @@ input[type="submit"].save-button {
     font-size: 80%;
   }
 }
- 
+
 button,
 .button, 
 .btn {
@@ -169,6 +171,7 @@ button,
   cursor: pointer;
   margin: 1rem 0;
   font-weight: normal;
+  outline: none;
 
   &.disabled {
     background: $lightest-grey;
@@ -185,10 +188,17 @@ button,
 }
 
 .styled-select {
-  border: 1px solid $light-grey;
+  -webkit-appearance: none;
+  border: 2px solid $light-grey;
+  border-radius: 0;
+  font-size: 0.875rem;
+  cursor: pointer;
+  height: 2.5rem;
+  padding: 0.5rem;
   width: 100%;
-  height: $input-height;
-  padding: 0 1rem;
+  text-transform: capitalize;
+  font-family: $base-font-family;
+  background: white url(/packages/telescope-theme-weld/img/updown-icon.svg) no-repeat right 10px center;
 
   &:focus {
     outline: none;

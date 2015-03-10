@@ -1,5 +1,8 @@
 Router.route('/book', {
   name: 'book',
   loadingTemplate: 'loadingWeld',
-  template: getTemplate('bookPage')
+  template: getTemplate('calendar'),
+  data: function() {
+    return Meteor.user();
+  },
 });

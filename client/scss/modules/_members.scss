@@ -46,18 +46,17 @@
   color: $grey;
 }
 
-.toggle,
-.members-select {
+.toggle {
   display: inline-flex;
   border: none;
   align-items: center;
   justify-content: center;
   font-size: 0.875rem;
-  background: white;
   border-radius: 3px;
   cursor: pointer;
   height: 2rem;
   padding: 0 1rem;
+  background-color: white;
   box-shadow: 0 2px 0 0 darken(white, 10);
 
   @include small {
@@ -68,12 +67,10 @@
   }
 }
 
-.members-select {
-  -webkit-appearance: none;
-  text-transform: capitalize;
-  font-family: $base-font-family;
-  min-width: 200px;
-  background: white url(/packages/telescope-theme-weld/img/updown-icon.svg) no-repeat right 10px center;
+.skills-select {
+  width: auto;
+  max-height: 2rem;
+  max-width: 200px;
 }
 
 .toggle:active {

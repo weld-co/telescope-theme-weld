@@ -1,23 +1,53 @@
-.bookPage {
+.calendar {
   width: 100%;
   max-width: 100%;
-  padding: 5%;
+  padding: 0;
 
   .fc {
-    font-size: 0.75rem;
+    font-size: 0.85rem;
     font-weight: 500;
+    text-rendering: optimizeLegibility;
+
+    + .spacer {
+      display: none;
+    }
   }
 
-  .fc-view-container {
-
+  .new-event-button {
+    max-width: 280px;
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 100;
   }
 
 /*====================================================
-    UI Elements
+    Header
 ====================================================*/
   
+  $button-border: 1px solid $dark-grey;
+
   .fc-toolbar {
-    margin-bottom: 2rem;
+    height: $header-height;
+    background: $dark-grey;
+    color: white;
+    margin: 0;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h2 {
+      padding-left: 1rem;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+  }
+
+  .fc-center,
+  .fc-clear {
+    display: none !important;
   }
 
   .ui-button {
@@ -27,6 +57,10 @@
     line-height: 2rem;
     text-transform: capitalize;
     outline: none;
+    -webkit-appearance: none;
+    border: none;
+    border-radius: 3px;
+    color: white;
     &:hover {
       background: darken($primary-color, 10);
     }
@@ -53,7 +87,7 @@
 
   .fc-prev-button {
     border-radius: 2px 0 0 2px;
-    border-right: 1px solid fade-out(white, 0.5);
+    border-right: $button-border;
     &:after {
       content: '◀︎';
     }
@@ -66,32 +100,216 @@
     }
   }
 
-/*====================================================
-    Table Styles
-====================================================*/
-
-  .fc-view-container {
-    border-radius: 3px;
+  .fc-month-button,
+  .fc-agendaWeek-button {
+    min-width: 50px;
+    padding: 0 10px;
+    opacity: 0.75;
   }
+
+  .fc-month-button {
+    border-radius: 2px 0 0 2px;
+    border-right: $button-border;
+  }
+
+  .fc-agendaWeek-button {
+    border-radius: 0 2px 2px 0;
+  }
+
+  .ui-state-active {
+    opacity: 1;
+  }
+
+/*====================================================
+    Grid
+====================================================*/
 
   .ui-widget-header {
     height: 2rem;
+    border: 1px solid fade-out($grey, 0.85);
     line-height: 2rem;
-    background: $dark-grey;
-    color: white;
-    border-right: 1px solid fade-out(white, 0.75);
+    background: white;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
   }
 
-  .ui-state-highlight {
-    background: fade-out($primary-color, 0.9);
+  .fc-day-header {
+    border-right: 1px solid fade-out($grey, 0.85);
   }
 
-  .fc td,
-  table tr {
-    border-color: $grey;
+  .fc-basic-view td.fc-week-number span, 
+  .fc-basic-view td.fc-day-number {
+    padding: 8px;
+    padding-bottom: 5px;
+    font-size: 0.65rem;
   }
 
   thead tr {
-    background: fade-out($grey, 0.9);
+    background: none;
+    border: 0;
   }
+
+  .fc-day:hover {
+    background-color: fade-out($lightest-grey, 0.5);
+  }
+
+  .fc th, 
+  .fc td {
+    cursor: pointer;
+    border-color: $light-grey;
+  }
+
+  .ui-state-highlight {
+    background: fade-out($lightest-grey, 0.35);
+  }
+
+  .fc-content {
+    .fc-title {
+      font-weight: 400;
+      opacity: 0.65;
+    }
+    .fc-time {
+      font-weight: 600;
+    }
+    &:hover {
+      .fc-title { 
+        opacity: 1;
+      }
+    }
+  }
+
+/*====================================================
+    Events
+====================================================*/
+
+  .fc-event {
+    border-radius: 0;
+    border: 0;
+    background: $primary-color;
+    padding: 2px;
+  }
+
+  .meeting-room {
+    background: $blue;
+  }
+}
+
+/*====================================================
+    New Event Modal
+====================================================*/
+
+.modal {
+  opacity: 0;
+  visibility: hidden;  
+  pointer-events: none;
+
+  z-index: 200;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  background-color: fade-out($dark-grey, 0.1);
+  transition: opacity 300ms ease, visibility 300ms ease;
+  transform: translate3d(0,0,0);
+}
+
+.modal.is-open,
+.modal.submitted {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.new-event-form {
+  opacity: 0;
+  max-width: 600px;
+  min-height: 560px;
+  width: 100%;
+  background-color: $lightest-grey;
+  padding: 2rem;
+  border-radius: 3px;
+  position: relative;
+  transition: transform 200ms cubic-bezier(0, 0, 0.25, 1.25), opacity 200ms ease;
+  transform: translateY(-10rem);
+}
+
+.is-open .new-event-form {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.submitted .new-event-form {
+  display: none;
+}
+
+.follow-up {
+  display: none;
+  height: 100%;
+  z-index: 100;
+}
+
+.follow-up h1 {
+  margin-bottom: 0.5rem;
+}
+
+.follow-up-wrap {
+  height: 200px;
+  max-width: 400px;
+  text-align: center;
+}
+
+.submitted .follow-up {
+  display: flex;
+  color: white;
+  font-size: 3rem;
+  .follow-up-wrap > * {
+    animation: scale-up cubic-bezier(0, 0, 0.25, 1.5), fade-in ease;
+    &:nth-child(1) { animation-duration: 300ms; }
+    &:nth-child(2) { animation-duration: 500ms; }
+    &:nth-child(3) { animation-duration: 600ms; }
+  } 
+}
+
+.close-button {
+  padding: 1rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+
+/*====================================================
+    Pickadate Plugin
+====================================================*/
+
+.group-wrap.row {
+  justify-content: space-between;
+}
+
+.control-group.half-width {
+  flex: 1;
+  &:not(:last-child) {
+    margin-right: 1rem;
+  }
+}
+
+.picker__list-item:hover {
+  background: fade-out($primary-color, 0.75) !important;
+  border-color: $primary-color !important;
+}
+
+.picker__input.picker__input--active {
+  border-color: $primary-color !important;
+}
+
+.picker__list-item--selected, 
+.picker__list-item--selected:hover, 
+.picker--focused .picker__list-item--selected,
+.picker__list-item--highlighted,
+.picker__list-item--highlighted:hover, 
+.picker--focused .picker__list-item--highlighted {
+  color: white !important;
+  background: $primary-color !important;
+  border-color: $primary-color !important;
 }

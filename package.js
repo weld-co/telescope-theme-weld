@@ -76,7 +76,7 @@ Package.on_use(function (api) {
     'client/scss/main.scss',
 
     // Overrides 
-    'client/templates/book_page.html',
+    'client/templates/calendar.html',
     'client/templates/categories_menu_weld.html',
     'client/templates/comment_form_weld.html',
     'client/templates/comment_list_weld.html',
@@ -85,8 +85,6 @@ Package.on_use(function (api) {
     'client/templates/header_weld.html',
     'client/templates/layout_weld.html',
     'client/templates/loading_weld.html',
-    'client/templates/members_page.html',
-    'client/templates/members_item.html',
     'client/templates/menu_item_weld.html',
     'client/templates/message_item_weld.html',
     'client/templates/newsletter_banner_weld.html',
@@ -102,7 +100,6 @@ Package.on_use(function (api) {
     'client/templates/posts_list_weld.html',
     'client/templates/posts_load_more_weld.html',
     'client/templates/search_weld.html',
-    'client/templates/sidebar.html',
     'client/templates/sign_out_weld.html',
     'client/templates/submit_button_weld.html',
     'client/templates/user_account_weld.html',
@@ -114,9 +111,12 @@ Package.on_use(function (api) {
     'client/templates/views_menu_weld.html',
 
     // Additions
+    'client/templates/logo.html',
+    'client/templates/sidebar.html',
     'client/templates/loader_weld.html',
     'client/templates/members_menu_weld.html',
-    'client/templates/logo.html',
+    'client/templates/members_page.html',
+    'client/templates/members_item.html',
 
     // Plugins
     'client/js/dotdotdot_init.js',
@@ -124,13 +124,10 @@ Package.on_use(function (api) {
     'client/js/device_detection.js',
     'client/js/progress_bar.js',
 
-    // Compatibility
-
-
     // Customizations
-    'client/js/book_page.js',
     'client/js/weld.js',
     'client/js/base_weld.js',
+    'client/js/calendar.js',
     'client/js/comment_item_weld.js',
     'client/js/header_weld.js',
     'client/js/no_rights_weld.js',
