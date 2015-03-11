@@ -1,0 +1,65 @@
+.js-no-scroll {
+  overflow: hidden !important; }
+
+.js-protected {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background: white; }
+
+.centered {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: 150px;
+  max-width: 430px;
+  text-align: center;
+  animation: scale-up 500ms cubic-bezier(0.5, -0.25, 0.5, 1.25); }
+
+.welcome {
+  display: block;
+  font: 100 2rem/1 Helvetica, sans-serif;
+  margin-bottom: 2rem; }
+
+.js-password {
+  font-size: 1rem !important;
+  text-align: center;
+  display: inline-block !important;
+  width: auto !important;
+}
+
+.js-password:focus {
+  box-shadow: 0 0 0 3px #f1592a; }
+
+section {
+  min-width: 1000px; }
+
+.section-1 {
+  background: url(/packages/telescope-theme-weld/img/promo/section-0.jpg) no-repeat center top 10vh, 
+              url(/packages/telescope-theme-weld/img/promo/section-1.jpg) no-repeat center bottom, #353535;
+  height: 100vh;
+  max-height: 1000px;
+  min-height: 860px; }
+
+.section-2 {
+  background: white url(/packages/telescope-theme-weld/img/promo/section-2.jpg) no-repeat center;
+  height: 720px; }
+
+.section-3 {
+  background: #ef5929 url(/packages/telescope-theme-weld/img/promo/section-3.jpg) no-repeat center;
+  height: 740px; }
+
+.section-4 {
+  background: #f1f1f1 url(/packages/telescope-theme-weld/img/promo/section-4.jpg) no-repeat center;
+  height: 500px; }
+
+.section-5 {
+  background: white url(/packages/telescope-theme-weld/img/promo/section-5.jpg) no-repeat center;
+  height: 1131px; }
+
+.section-6 {
+  background: #f1f1f1 url(/packages/telescope-theme-weld/img/promo/section-6.jpg) no-repeat center;
+  height: 350px; }

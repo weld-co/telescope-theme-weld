@@ -71,6 +71,7 @@ Package.on_use(function (api) {
     'client/scss/modules/_member-menu.scss',
     'client/scss/modules/_thumbnails.scss',
     'client/scss/modules/_calendar.scss',
+    'client/scss/modules/_join.scss',
 
     // Final Imports
     'client/scss/main.scss',
@@ -84,6 +85,7 @@ Package.on_use(function (api) {
     'client/templates/custom_css.html',
     'client/templates/header_weld.html',
     'client/templates/layout_weld.html',
+    'client/templates/blank_layout.html',
     'client/templates/loading_weld.html',
     'client/templates/menu_item_weld.html',
     'client/templates/message_item_weld.html',
@@ -117,19 +119,20 @@ Package.on_use(function (api) {
     'client/templates/members_menu_weld.html',
     'client/templates/members_page.html',
     'client/templates/members_item.html',
+    'client/templates/join.html',
 
     // Plugins
     'client/js/dotdotdot_init.js',
     'client/js/fastclick_init.js',
     'client/js/device_detection.js',
-    'client/js/progress_bar.js',
-
+    
     // Customizations
     'client/js/weld.js',
     'client/js/base_weld.js',
     'client/js/calendar.js',
     'client/js/comment_item_weld.js',
     'client/js/header_weld.js',
+    'client/js/join.js',
     'client/js/no_rights_weld.js',
     'client/js/members_page.js',
     'client/js/notifications_menu_weld.js',
@@ -144,8 +147,10 @@ Package.on_use(function (api) {
     'client/js/user_info_weld.js',
 
     // Routes
+    'client/routes/progress_bar.js',
     'client/routes/members.js',
     'client/routes/book.js',
+    'client/routes/join_route.js',
 
     // Images
     'img/favicon.ico',
@@ -170,7 +175,17 @@ Package.on_use(function (api) {
     'img/close-icon.svg',
     'img/plus-icon.svg',
     'img/updown-icon.svg',
-    'img/mobile-navicon.svg'
+    'img/mobile-navicon.svg',
+
+    // Promo Page
+    'img/promo/section-0.jpg',
+    'img/promo/section-1.jpg',
+    'img/promo/section-2.jpg',
+    'img/promo/section-3.jpg',
+    'img/promo/section-4.jpg',
+    'img/promo/section-5.jpg',
+    'img/promo/section-6.jpg'
+
   ], ['client']);
 
   api.addFiles([
