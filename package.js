@@ -147,10 +147,10 @@ Package.on_use(function (api) {
     'client/js/user_info_weld.js',
 
     // Routes
-    'client/routes/progress_bar.js',
-    'client/routes/members.js',
-    'client/routes/book.js',
-    'client/routes/join_route.js',
+    'lib/routes/progress_bar.js',
+    'lib/routes/members.js',
+    'lib/routes/book.js',
+    'lib/routes/join_route.js',
 
     // Images
     'img/favicon.ico',
