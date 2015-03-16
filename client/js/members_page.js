@@ -48,7 +48,7 @@ Template[getTemplate('membersPage')].events({
     $('option[value="default"]').attr('selected', 'selected');
   },
   // Mixitup using selected option from select menu
-  'change .members-select': function(e) {
+  'change .skills-select': function(e) {
     var filter = $('option:selected').val();
     $('#sort-container').mixItUp('filter', filter);
   }

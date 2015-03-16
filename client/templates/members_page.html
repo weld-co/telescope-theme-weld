@@ -7,7 +7,7 @@
     <span class="control-wrap">
       <span class="toggle" data-js="reset">View All</span>
       <select class="styled-select skills-select toggle">
-        <option value="default">Select a filter…</option>
+        <option value="default" disabled selected>Select a filter…</option>
         {{#each users}}
           <!-- don't produce a filter toggle if member hasn't set one -->
           {{#if profile.skill1}}
