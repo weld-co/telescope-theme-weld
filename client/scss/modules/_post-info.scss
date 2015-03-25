@@ -53,6 +53,11 @@
   color: $primary-color;
 }
 
+.post:not(.sticky) .comments-link.commented,
+.single-post .comments-link.commented {
+  color: $primary-color;
+}
+
 .author,
 .upvote-link,
 .points,
@@ -67,15 +72,6 @@
 
 .post-time {
   margin-right: 5rem;
-}
-
-.posts.list {
-  .post:not(.sticky):hover {
-    .comments-link a,
-    .upvote-link a {
-      color: $primary-color;
-    }
-  }
 }
 
 // Post Info Icons

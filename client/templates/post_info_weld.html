@@ -7,7 +7,7 @@
       {{baseScore}}
     </a>
   </span>
-  <span class="comments-link">
+  <span class="comments-link {{#if commented}}commented{{else}}not-commented{{/if}}">
     <a href="/posts/{{_id}}">
       <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"><path d="M2 0h10c.5 0 1 .2 1.4.6.4.4.6.9.6 1.4v6c-.1 1-.4 1.5-1 1.8-.6.2-.9.2-1 .2h-1v4l-4-4h-5c-.5 0-1-.2-1.4-.6-.4-.5-.6-.9-.6-1.4v-6c0-.5.2-1 .6-1.4.4-.4.9-.6 1.4-.6z"/></svg>
       {{commentCount}}

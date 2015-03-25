@@ -14,27 +14,34 @@
   left: 0;
   right: 0;
   margin: auto;
-  height: 150px;
-  max-width: 430px;
+  height: 10rem;
+  max-width: 25rem;
   text-align: center;
   animation: scale-up 500ms cubic-bezier(0.5, -0.25, 0.5, 1.25); }
 
 .welcome {
   display: block;
-  font: 100 2rem/1 Helvetica, sans-serif;
-  margin-bottom: 2rem; }
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
 
-.js-password {
-  font-size: 1rem !important;
+#js-password {
+  font-size: 1em;
   text-align: center;
-  display: inline-block !important;
-  width: auto !important;
+  display: inline-block;
+  max-width: 15em;
 }
 
 .js-password:focus {
   box-shadow: 0 0 0 3px #f1592a; }
 
-section {
+.section-1,
+.section-2, 
+.section-3, 
+.section-4, 
+.section-5, 
+.section-6 {
+  display: none;
   min-width: 1000px; }
 
 .section-1 {

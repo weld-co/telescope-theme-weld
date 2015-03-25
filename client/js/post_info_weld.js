@@ -4,6 +4,11 @@ Template[getTemplate('postInfoWeld')].helpers({
     if(!user) return false; 
     return _.include(this.upvoters, user._id);
   },
+  commented: function(){
+    var user = Meteor.user();
+    if(!user) return false; 
+    return _.include(this.commenters, user._id);
+  },
   authorName: function(){
     return getAuthorName(this);
   },

@@ -1,4 +1,4 @@
-.row.membersPage {
+.membersPage {
   align-content: flex-start;
   padding: 0;
   width: 100%;
@@ -124,6 +124,7 @@
 .member-wrap {
   flex: 1;
   flex-basis: 250px;
+  min-width: 250px;
   justify-content: center;
   position: relative;
   padding: 2rem;

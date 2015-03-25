@@ -9,7 +9,6 @@ $padding: $gutter * 1.25;
   display: flex;
   flex-wrap: nowrap;
   width: 100%;
-  overflow: hidden;
   -webkit-backface-visibility: hidden;
 }
 
@@ -33,9 +32,7 @@ $padding: $gutter * 1.25;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
+
 }
 
 // Gutters - add .gutter to any .row element
@@ -78,16 +75,11 @@ $padding: $gutter * 1.25;
 }
 
 .optical {
-  transform: translateY(-10%);
+  transform: translateY(-5%);
 }
 
 .center.dialog + .spacer {
   display: none;
-}
-
-.spacer {
-  width: 100%;
-  height: 20vh;
 }
 
 .no-scroll {

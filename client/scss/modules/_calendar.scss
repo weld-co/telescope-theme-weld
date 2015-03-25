@@ -7,10 +7,6 @@
     font-size: 0.85rem;
     font-weight: 500;
     text-rendering: optimizeLegibility;
-
-    + .spacer {
-      display: none;
-    }
   }
 
   .new-event-button {
@@ -207,7 +203,7 @@
   z-index: 200;
   position: fixed;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   padding: 1rem;
   background-color: fade-out($dark-grey, 0.1);
   transition: opacity 300ms ease, visibility 300ms ease;
@@ -215,7 +211,8 @@
 }
 
 .modal.is-open,
-.modal.submitted {
+.modal.studio-event,
+.modal.meeting-event {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
@@ -239,35 +236,39 @@
   opacity: 1;
 }
 
-.submitted .new-event-form {
+.studio-event .new-event-form,
+.meeting-event .new-event-form {
   display: none;
 }
 
-.follow-up {
-  display: none;
-  height: 100%;
-  z-index: 100;
-}
-
-.follow-up h1 {
-  margin-bottom: 0.5rem;
-}
-
-.follow-up-wrap {
+.message-wrap {
   height: 200px;
   max-width: 400px;
   text-align: center;
 }
 
-.submitted .follow-up {
+.studio-message,
+.meeting-message {
+  display: none;
+  height: 100%;
+  z-index: 100;
+
+  h1 {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.studio-event .studio-message,
+.meeting-event .meeting-message {
   display: flex;
   color: white;
   font-size: 3rem;
-  .follow-up-wrap > * {
+  .message-wrap > * {
     animation: scale-up cubic-bezier(0, 0, 0.25, 1.5), fade-in ease;
     &:nth-child(1) { animation-duration: 300ms; }
     &:nth-child(2) { animation-duration: 500ms; }
     &:nth-child(3) { animation-duration: 600ms; }
+    &:nth-child(4) { animation-duration: 700ms; }
   } 
 }
 
@@ -277,6 +278,16 @@
   top: 0;
   right: 0;
   cursor: pointer;
+}
+
+.refresh {
+  cursor: pointer;
+  color: $grey;
+  font-size: 1rem;
+  line-height: 1.4;
+  display: inline-block;
+  max-width: 300px;
+  text-decoration: underline;
 }
 
 /*====================================================

@@ -13,6 +13,7 @@ Template[getTemplate('join')].events({
   'keyup .js-password': function(e){
     if ($('.js-password').val() === 'wecreateweld') {
       $('.js-protected').fadeOut('slow');
+      $('#js-viewport').attr('content','width=1000px, initial-scale=1');
       $('body').removeClass('js-no-scroll');
       $('section').fadeIn('slow');
     }

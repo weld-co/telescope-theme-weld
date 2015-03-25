@@ -2,7 +2,7 @@ Template[getTemplate('calendar')].helpers({
   options: function() {
     return {
       dayClick: function (date, jsEvent, view) {
-        $('.content').addClass('no-scroll');
+        $('body').addClass('no-scroll');
         $('.modal').addClass('is-open');
         $('.date').val( date.format('MMMM Do') );
       },
@@ -31,9 +31,10 @@ Template[getTemplate('calendar')].helpers({
 });
 
 Template[getTemplate('calendar')].events({
+  // Close the modal
   'click .close-button': function(e) {
     $('.content').removeClass('no-scroll');
-    $('.modal').removeClass('is-open');
+    $('.modal').removeClass('is-open submitted');
   },
   // Submit Form and Trigger Tip Reminder
   'submit .new-event-form': function(e) {
@@ -52,13 +53,19 @@ Template[getTemplate('calendar')].events({
       }
     }).done(function(data) {
       submitButton.prop('disabled', false);
+      // If Studio Booking, show tip message
       if (formEl.find('[value=studio]').is(':checked')) {
-        $('.modal').toggleClass('is-open submitted');
+        $('.modal').toggleClass('is-open studio-event');
       } else {
-        $('.content').removeClass('no-scroll');
-        $('.modal').removeClass('is-open');
+        // If Meeting Booking, show Thanks & Refresh message
+        $('.modal').toggleClass('is-open meeting-event');
       }
     });
+  },
+  // Refresh the page to see calendar event 
+  // TODO: figure out .fullcalender('rerenderEvents') method
+  'click .refresh': function(e) {
+    location.reload();
   }
 });
 

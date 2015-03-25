@@ -4,9 +4,13 @@
   margin-right: 0;
   position: relative;
   cursor: pointer;
-}
-.post-thumbnail {
-  height: 5rem;
+
+  &:after {
+    content: '';
+    display: table;
+    width: 100%;
+  }
+  
   @include small {
     height: 3rem;
   }

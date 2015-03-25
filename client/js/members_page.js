@@ -8,9 +8,8 @@ Template.membersPage.rendered = function (){
 
   $('#sort-container').mixItUp({
     animation: { 
-      duration: 200,
-      effects: 'fade stagger(30ms)',
-      easing: 'ease'
+      duration: 100,
+      effects: 'fade'
     },
     callbacks: {
       onMixStart: function(state){
