@@ -30,6 +30,12 @@
         <div class="controls"><textarea name="bio" type="text" placeholder="A description of what you do and why you do it.">{{profile.bio}}</textarea></div>
       </div>
       <div class="control-group">
+        <label>Birthday</label>
+        <div class="controls">
+          <input name="birthday" type="text" placeholder="MM/DD/YYYY" value="{{profile.birthday}}"/>
+        </div>
+      </div>
+      <div class="control-group">
         <label>{{_ "email"}}</label>
         <div class="controls">
           <input name="email" type="text" value="{{userEmail}}" />

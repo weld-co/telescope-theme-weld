@@ -29,7 +29,8 @@ Template[getTemplate('userAccountWeld')].events({
       "profile.location": $target.find('[name=location]').val(),
       "profile.skill1": $target.find('[name=skill1]').val(),
       "profile.skill2": $target.find('[name=skill2]').val(),
-      "profile.skill3": $target.find('[name=skill3]').val()
+      "profile.skill3": $target.find('[name=skill3]').val(),
+      "profile.birthday": $target.find('[name=birthday]').val()
     };
 
     update = userEditClientCallbacks.reduce(function(result, currentFunction) {
