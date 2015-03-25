@@ -88,4 +88,7 @@ $padding: $gutter * 1.25;
 
 .justified {
   justify-content: space-between;
+  @include small {
+    flex-direction: column;
+  }
 }

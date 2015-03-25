@@ -33,7 +33,7 @@ Template[getTemplate('calendar')].helpers({
 Template[getTemplate('calendar')].events({
   // Close the modal
   'click .close-button': function(e) {
-    $('.content').removeClass('no-scroll');
+    $('body').removeClass('no-scroll');
     $('.modal').removeClass('is-open submitted');
   },
   // Submit Form and Trigger Tip Reminder
@@ -52,6 +52,7 @@ Template[getTemplate('calendar')].events({
         submitButton.prop('disabled', 'disabled');
       }
     }).done(function(data) {
+      $('body').removeClass('no-scroll');
       submitButton.prop('disabled', false);
       // If Studio Booking, show tip message
       if (formEl.find('[value=studio]').is(':checked')) {

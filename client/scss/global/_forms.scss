@@ -116,6 +116,12 @@ input[type="submit"].save-button {
       justify-items: space-between;
       min-width: 100px;
       max-width: 230px;
+      @include small {
+        max-width: 100%;
+        &:not(:last-child) {
+          margin-bottom: 1rem;
+        }
+      }
     }
   }
 
@@ -139,6 +145,7 @@ input[type="submit"].save-button {
     line-height: 1.4;
     resize: vertical;
     position: relative;
+    -webkit-overflow-scrolling: touch;
     &:after {
       display: block;
       position: absolute;
