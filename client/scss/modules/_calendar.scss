@@ -199,6 +199,9 @@
   opacity: 0;
   visibility: hidden;  
   pointer-events: none;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 
   z-index: 200;
   position: fixed;
