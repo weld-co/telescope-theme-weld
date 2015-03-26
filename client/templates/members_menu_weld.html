@@ -1,8 +1,33 @@
 <template name="memberMenu">
   <ul class="member-links" role="menu">
     <li><a href="{{pathFor 'members'}}" class="important">Member Directory</a></li>
-    <li><a href="http://weld.readme.io/" target="_blank">Knowledge Base</a></li>
-    <li><a href="{{pathFor 'book'}}">Book the Studio/Room</a></li>
-    <li><a href="https://plasso.co/s/4ScTtpYf2G" target="_blank">Tip the Studio</a></li>
+    
+    <!-- Dallas Member Links -->
+    <li>
+      <div class="dropdown header-submodule dallas-menu">
+        <a class="admin dropdown-top-level" href="/">Dallas</a>      
+        <div class="dropdown-menu">
+          <ul role="menu" aria-labelledby="dLabel">
+            <li><a href="http://weld.readme.io/" target="_blank">Knowledge Base</a></li>
+            <li><a href="{{pathFor 'dallasBookings'}}">Book the Studio/Room</a></li>
+            <li><a href="https://plasso.co/s/4ScTtpYf2G" target="_blank">Tip the Studio</a></li>
+          </ul>
+        </div>
+      </div>
+    </li>
+    
+    <!-- Nashville Member Links -->
+    <li>
+      <div class="dropdown header-submodule dallas-menu">
+        <a class="admin dropdown-top-level" href="/">Nashville</a>      
+        <div class="dropdown-menu">
+          <ul role="menu" aria-labelledby="dLabel">
+            <li><a href="http://weld-nashville.readme.io/" target="_blank">Knowledge Base</a></li>
+            <li><a href="{{pathFor 'nashvilleBookings'}}">Book the Studio/Room</a></li>
+          </ul>
+        </div>
+      </div>
+    </li>
+
   </ul>
 </template>

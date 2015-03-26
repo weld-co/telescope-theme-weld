@@ -1,0 +1,57 @@
+<template name="calendarNashvilleModal">
+  <div class="modal column center">
+    <div class="studio-message row center optical">
+      <div class="message-wrap">
+        <h1>You’re all booked!</h1>
+        <h2>Don’t forget to tip for the studio.</h2>
+        <a href="https://plasso.co/s/4ScTtpYf2G" class="button tip-button" target="_blank">Tip the Studio</a>
+        <span class="refresh">It might take a minute to show up here. Wait a sec, then refresh the page.</span>
+      </div>
+    </div>
+    <div class="meeting-message row center optical">
+      <div class="message-wrap">
+        <h1>Thanks for Booking!</h1>
+        <h2>It might take a minute to show up.</h2>
+        <span class="refresh">Wait a sec, then refresh the page.</span>
+      </div>
+    </div>
+    <form class="new-event-form" accept-charset="UTF-8" action="https://formkeep.com/f/8ec425ef5a3f" method="POST">
+      <input type="hidden" name="utf8" value="✓">
+      <div class="close-button">✕</div>
+
+      <div class="control-group">
+        <label>Which space do you need?</label>
+        <select class="styled-select" name="space" required autofocus>
+          <option value="studio">Studio</option>
+          <option value="meeting-room">Meeting Room</option>
+        </select>
+      </div>
+
+      <input type="hidden" name="name" value="{{profile.name}}">
+      <input type="hidden" name="email" value="{{profile.email}}">
+
+      <div class="control-group">
+        <label>Date</label>
+        <input type="text" class="date" name="date" required>
+      </div>
+
+      <div class="group-wrap row">
+        <div class="control-group half-width">
+          <label>Start Time</label>
+          <input type="time" class="timepicker" name="startTime" required>
+        </div>
+
+        <div class="control-group half-width">
+          <label>End Time</label>
+          <input type="time" class="timepicker" name="endTime" required>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label>Anything else we should know about?</label>
+        <textarea placeholder="Kitchen, lots of people, sound sensitive, murder, electricity?" name="description"></textarea>
+      </div>
+      <input class="button" type="submit" value="Make Your Reservation">
+    </form>
+  </div>
+</template>

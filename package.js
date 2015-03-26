@@ -77,7 +77,6 @@ Package.on_use(function (api) {
     'client/scss/main.scss',
 
     // Overrides 
-    'client/templates/calendar.html',
     'client/templates/categories_menu_weld.html',
     'client/templates/comment_form_weld.html',
     'client/templates/comment_list_weld.html',
@@ -116,10 +115,17 @@ Package.on_use(function (api) {
     'client/templates/logo.html',
     'client/templates/sidebar.html',
     'client/templates/loader_weld.html',
+    'client/templates/join.html',
+
+    // Member Pages and Menus
     'client/templates/members_menu_weld.html',
     'client/templates/members_page.html',
     'client/templates/members_item.html',
-    'client/templates/join.html',
+
+    // Calendar Bookings
+    'client/templates/calendar_dallas.html',
+    'client/templates/calendar_nashville.html',
+    'client/templates/calendar_modal.html',
 
     // Plugins
     'client/js/dotdotdot_init.js',
@@ -145,12 +151,10 @@ Package.on_use(function (api) {
     'client/js/sidebar.js',
     'client/js/user_account_weld.js',
     'client/js/user_info_weld.js',
+    'client/js/progress_bar.js',
 
     // Routes
-    'lib/routes/progress_bar.js',
-    'lib/routes/members.js',
-    'lib/routes/book.js',
-    'lib/routes/join_route.js',
+    'lib/routes/weld_routes.js',
 
     // Images
     'img/favicon.ico',
