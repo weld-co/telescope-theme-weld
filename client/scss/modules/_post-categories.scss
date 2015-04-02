@@ -1,11 +1,11 @@
 a.post-category,
 a.post-domain {
-  font-size: 0.65rem;
+  font-size: 11px;
   font-weight: 500;
-  padding: 3px 5px 2px 5px;
-  color: $middle-grey;
-  border-radius: 2px;
+  color: $dark-grey;
   background: $lightest-grey;
+  padding: 4px 6px;
+  border-radius: 2px;
   text-transform: initial;
   vertical-align: middle;
   display: inline-block;
@@ -15,6 +15,10 @@ a.post-domain {
     background: $lightest-grey;
     color: $primary-color !important;
   }
+}
+
+a.post-domain {
+  color: $primary-color;
 }
 
 a.post-category[href$="category/undefined"] {

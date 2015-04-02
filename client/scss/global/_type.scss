@@ -1,5 +1,9 @@
-$base-font-family: "Avenir Next", Helvetica, Arial, sans-serif;
+$sans-font: "Avenir Next", Helvetica, Arial, sans-serif;
+$base-font-family: $sans-font;
 $base-font-size: 0.875rem;
+$base-font-weight: 300;
+$base-line-height: 1.6;
+$base-font: $base-font-weight $base-font-size $sans-font;
 
 html, body, input, button { 
   font-family: $base-font-family;

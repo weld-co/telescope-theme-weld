@@ -1,14 +1,6 @@
 $header-height: 70px;
 $mobile-header-height: $header-height - 20px;
 
-*, 
-*:before,
-*:after {
-  box-sizing: border-box;
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-}
-
-
 .mobile-only {
   @include large {
     display: none !important;
@@ -25,6 +17,66 @@ $mobile-header-height: $header-height - 20px;
   display: none;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
+.full-screen {
+  height: 100vh;
+  width: 100%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.max-width {
+  max-width: 40rem;
+}
+
+.center {
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.absolute-center {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.optical {
+  transform: translateY(-5%);
+}
+
+.justified {
+  justify-content: space-between;
+  @include small {
+    flex-direction: column;
+  }
+}
+
+.srollable {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.srollable-horizontal {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+.srollable-vertical {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
 .visible {
   display: block;
 }
@@ -35,6 +87,12 @@ $mobile-header-height: $header-height - 20px;
 
 .darker {
   color: $dark-grey;
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 .underline {
@@ -48,6 +106,10 @@ $mobile-header-height: $header-height - 20px;
 
 .block {
   display: block;
+}
+
+.text-align-center {
+  text-align: center;
 }
 
 .pull-right {
@@ -91,33 +153,4 @@ $mobile-header-height: $header-height - 20px;
 #loading, 
 .loading-page {
   height: 300px;
-}
-
-.search-date-header {
-  background: $lightest-grey;
-  th {
-      &:before,&:after {
-      content:"";
-      display:table;
-    }
-
-    &:after {
-    clear:both;
-    }
-
-    /* For IE 6/7 (trigger hasLayout) */
-    *zoom:1;
-  }
-
-  .search-date {
-    display: block;
-    float: left;
-    font-weight: bold;
-  }
-
-  .search-count{
-    font-size: 12px;
-    display: block;
-    float: right;
-  }
 }

@@ -1,13 +1,13 @@
 <template name="no_rights_weld">
 <div class="non-member">
-    {{#if isLoggedIn}}
-    <h1>Thanks for signing up!</h1>
-    <h3>We'll notify you when your account has been confirmed.</h3>
-    {{else}}
-    <h1>{{siteName}}</h1>
-    <h2>{{tagline}}</h2>
-    <a href="{{pathFor route='atSignIn'}}" class="sign-in button">{{_ "Sign In"}}</a>
-    <a href="{{pathFor route='atSignUp'}}">Request An Account</a>
-    {{/if}}
-  </div>
+  {{#if isLoggedIn}}
+  <h1>Thanks for signing up!</h1>
+  <h3>We'll notify you when your account has been confirmed.</h3>
+  {{else}}
+  <h1>{{siteName}}</h1>
+  <h2>{{tagline}}</h2>
+  <a href="{{pathFor route='atSignIn'}}" class="sign-in button">{{_ "Sign In"}}</a>
+  <a href="{{pathFor route='atSignUp'}}">Request An Account</a>
+  {{/if}}
+</div>
 </template>

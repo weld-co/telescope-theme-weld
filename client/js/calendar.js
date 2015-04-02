@@ -1,21 +1,27 @@
 Template[getTemplate('calendarDallas')].helpers({
   options: function() {
     return {
-      googleCalendarApiKey: 'AIzaSyBIlDqn_nlwT_z-_KrgJ5xSOMTcKEt5Ruo',
+      googleCalendarApiKey: Meteor.settings.public.googleCalenderApiKey,
       eventSources: [
-        { googleCalendarId: 'weldspaces@gmail.com' },
-        { googleCalendarId: 'gf3npoellf6lltok7u21gfipdg@group.calendar.google.com', className: 'meeting-room'}
+        { googleCalendarId: Meteor.settings.public.dallasCalendar.studio },
+        { googleCalendarId: Meteor.settings.public.dallasCalendar.meeting, className: 'meeting-room'}
       ],
       dayClick: function (date, jsEvent, view) {
-        $('body').addClass('no-scroll').scrollTop(0);
-        $('.modal').addClass('is-open');
-        $('.date').val( date.format('MMMM Do') );
+        $('html, body, .content').scrollTop(0).scrollLeft(0);
+        $('body').addClass('no-scroll');
+        $('.modal').addClass('is-open new-event');
+        $('[name=date]').val( date.format('MMMM Do') );
       },
-      eventClick: function(event) {
-        if (event.url) {
-          window.open(event.url);
-          return false;
-        }
+      eventClick: function(event, jsEvent, view) {
+        $('html, body, .content').scrollTop(0).scrollLeft(0);
+        $('body').addClass('no-scroll');
+        $('.modal').addClass('is-open edit-event');
+        $('[name=oldDate], [name=newDate]').val( moment(event.start).format('dddd, MMMM do') );
+        $('[name=oldStartTime], [name=newStartTime]').val( moment(event.start).format('h:mm A') );
+        $('[name=oldEndTime], [name=newEndTime]').val( moment(event.end).format('h:mm A') );
+      },
+      eventRender: function (event, element) {
+        element.attr('href', 'javascript:void(0);');
       },
       theme: true,
       header: {
@@ -33,21 +39,27 @@ Template[getTemplate('calendarDallas')].helpers({
 Template[getTemplate('calendarNashville')].helpers({
   options: function() {
     return {
-      googleCalendarApiKey: 'AIzaSyBIlDqn_nlwT_z-_KrgJ5xSOMTcKEt5Ruo',
+      googleCalendarApiKey: Meteor.settings.public.googleCalenderApiKey,
       eventSources: [
-        { googleCalendarId: 'vmmlvl1gl7v7g9h6as6akgsm5g@group.calendar.google.com' },
-        { googleCalendarId: '7qrmnrkchpj3cs9dqa8hsjumh4@group.calendar.google.com', className: 'meeting-room'}
+        { googleCalendarId: Meteor.settings.public.nashvilleCalendar.studio },
+        { googleCalendarId: Meteor.settings.public.nashvilleCalendar.meeting, className: 'meeting-room'}
       ],
       dayClick: function (date, jsEvent, view) {
-        $('body').addClass('no-scroll').scrollTop(0);
-        $('.modal').addClass('is-open');
-        $('.date').val( date.format('MMMM Do') );
+        $('html, body, .content').scrollTop(0).scrollLeft(0);
+        $('body').addClass('no-scroll');
+        $('.modal').addClass('is-open new-event');
+        $('[name=date]').val( date.format('MMMM Do') );
       },
-      eventClick: function(event) {
-        if (event.url) {
-          window.open(event.url);
-          return false;
-        }
+      eventClick: function(event, jsEvent, view) {
+        $('html, body, .content').scrollTop(0).scrollLeft(0);
+        $('body').addClass('no-scroll');
+        $('.modal').addClass('is-open edit-event');
+        $('[name=oldDate], [name=newDate]').val( moment(event.start).format('dddd, MMMM do') );
+        $('[name=oldStartTime], [name=newStartTime]').val( moment(event.start).format('h:mm A') );
+        $('[name=oldEndTime], [name=newEndTime]').val( moment(event.end).format('h:mm A') );
+      },
+      eventRender: function (event, element) {
+        element.attr('href', 'javascript:void(0);');
       },
       theme: true,
       header: {
@@ -76,23 +88,50 @@ Template.calendarModal.events({
     $.ajax({
       type: 'POST',
       url: formEl.prop('action'),
-      accept: {
-        javascript: 'application/javascript'
-      },
+      accept: { javascript: 'application/javascript' },
       data: formEl.serialize(),
-      beforeSend: function() {
-        submitButton.prop('disabled', 'disabled');
-      }
+      beforeSend: function() { submitButton.attr('disabled', 'disabled'); }
     }).done(function(data) {
-      submitButton.prop('disabled', false);
-      // If Studio Booking, show tip message
+      submitButton.attr('disabled', false);
+      // If Studio Booking, show studio message
       if (formEl.find('[value=studio]').is(':checked')) {
-        $('.modal').toggleClass('is-open studio-event');
-      } else {
-        // If Meeting Booking, show Thanks & Refresh message
-        $('.modal').toggleClass('is-open meeting-event');
+        $('.modal').toggleClass('new-event studio-event-submitted');
+      }
+      // If Meeting Booking, show meeting message
+      if (formEl.find('[value=meeting-room]').is(':checked')) {
+        $('.modal').toggleClass('new-event meeting-event-submitted');
+      }
+      // If Editing Booking, show edit message
+      if (formEl.is(this)) {
+        $('.modal').toggleClass('edit-event edit-event-submitted');
       }
     });
+  },
+
+  'submit .edit-event-form': function(e) {
+    // TODO: figure out a way to make these DRY
+    e.preventDefault();
+    var formEl = $(e.target);
+    var submitButton = $('input[type=submit]', formEl);
+    $.ajax({
+      type: 'POST',
+      url: formEl.prop('action'),
+      dataType: "json",
+      data: formEl.serialize(),
+      beforeSend: function() { submitButton.attr('disabled', 'disabled'); }
+    }).done(function(data) {
+      submitButton.attr('disabled', false);
+      // If Editing Booking, show edit message
+      $('.modal').toggleClass('edit-event edit-event-submitted');
+    });
+  },
+
+  // Toggle disabled on input fields
+  'change #change': function(e) {
+    $('[name=newDate], [name=newStartTime], [name=newEndTime]').removeAttr('disabled', 'disabled');
+  },
+  'change #cancel': function(e) {
+    $('[name=newDate], [name=newStartTime], [name=newEndTime]').attr('disabled', 'disabled');
   },
   // Refresh the page to see calendar event 
   // TODO: figure out .fullcalender('rerenderEvents') method
@@ -112,14 +151,12 @@ Template.calendarNashville.rendered = function () {
 
 function datepickerInit() {
   $('.datepicker').pickadate({
-    format: 'dddd, mmmm d',
-    formatSubmit: 'mm/dd/yyyy',
-    hiddenName: true
+    format: 'dddd, mmmm d'
   });
   $('.timepicker').pickatime();
 };
 
 function closeModal() {
   $('body').removeClass('no-scroll');
-  $('.modal').removeClass('is-open submitted');
+  $('.modal').removeClass('is-open new-event edit-event');
 };

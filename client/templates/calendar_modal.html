@@ -1,20 +1,7 @@
 <template name="calendarModal">
   <div class="modal column center">
-    <div class="studio-message row center">
-      <div class="message-wrap">
-        <h1>You’re all booked!</h1>
-        <h2>Don’t forget to tip for the studio.</h2>
-        <a href="https://plasso.co/s/4ScTtpYf2G" class="button tip-button" target="_blank">Tip the Studio</a>
-        <span class="refresh">It might take a minute to show up here. Wait a sec, then refresh the page.</span>
-      </div>
-    </div>
-    <div class="meeting-message row center">
-      <div class="message-wrap">
-        <h1>Thanks for Booking!</h1>
-        <h2>It might take a minute to show up.</h2>
-        <span class="refresh">Wait a sec, then refresh the page.</span>
-      </div>
-    </div>
+
+    <!-- New Event Form -->
     <form class="new-event-form" accept-charset="UTF-8" action="https://formkeep.com/f/bf7a23106faa" method="POST">
       <input type="hidden" name="utf8" value="✓">
       <div class="close-button">✕</div>
@@ -35,18 +22,18 @@
 
       <div class="control-group">
         <label>Date</label>
-        <input type="text" class="date" name="date" required>
+        <input type="text" class="date" name="date" required/>
       </div>
 
       <div class="group-wrap row">
         <div class="control-group half-width">
           <label>Start Time</label>
-          <input type="time" class="timepicker" name="startTime" required>
+          <input type="time" class="timepicker" name="startTime" required/>
         </div>
 
         <div class="control-group half-width">
           <label>End Time</label>
-          <input type="time" class="timepicker" name="endTime" required>
+          <input type="time" class="timepicker" name="endTime" required/>
         </div>
       </div>
 
@@ -54,7 +41,80 @@
         <label>Anything else we should know about?</label>
         <textarea placeholder="Kitchen, lots of people, sound sensitive, murder, electricity?" name="description"></textarea>
       </div>
-      <input class="button" type="submit" value="Make Your Reservation">
+      <input class="button" type="submit" value="Make Your Reservation"/>
     </form>
-  </div>
+
+    <!-- Edit Event Form -->
+    <form class="edit-event-form" action="http://formspree.io/elisa@weld.co" method="POST">
+      <div class="close-button">✕</div>
+      <input type="hidden" name="_subject" value="Calendar Change Request"/>
+
+      <fieldset class="fieldset text-align-center">
+        <span class="radio-wrap">
+          <input class="input" type="radio" id="change" name="edit-type" value="change" checked/>
+          <label class="radio-label" for="change">Change Date/Time</label>
+        </span>
+        <span class="radio-wrap">
+          <input class="input" type="radio" id="cancel" name="edit-type" value="cancel"/>
+          <label class="radio-label" for="cancel">Cancel this Event</label>
+        </span>
+      </fieldset>
+
+      <!-- OLD DATE AND TIME -->
+      {{#with currentUser}}
+      <input type="hidden" name="name" value="{{profile.name}}">
+      <input type="hidden" name="email" value="{{profile.email}}">
+      {{/with}}
+      <input type="hidden" name="city" value="{{city}}">
+      <input type="hidden" name="oldDate"/>
+      <input type="hidden" name="oldStartTime"/>
+      <input type="hidden" name="oldEndTime"/>
+
+
+      <!-- NEW DATE AND TIME -->
+      <div class="control-group">
+        <label>New Date</label>
+        <input type="text" class="date datepicker" name="newDate" required/>
+      </div>
+
+      <div class="group-wrap row">
+        <div class="control-group half-width">
+          <label>New Start Time</label>
+          <input type="time" class="timepicker" name="newStartTime" required/>
+        </div>
+
+        <div class="control-group half-width">
+          <label>New End Time</label>
+          <input type="time" class="timepicker" name="newEndTime" required/>
+        </div>
+      </div>
+      <input class="button" type="submit" value="Submit Request"/>
+    </form>
+
+    <!-- After submit messages -->
+    <div class="studio-message row center">
+      <div class="message-wrap">
+        <h1>You’re all booked!</h1>
+        <h2>Don’t forget to tip for the studio.</h2>
+        <a href="https://plasso.co/s/4ScTtpYf2G" class="button tip-button" target="_blank">Tip the Studio</a>
+        <span class="refresh">It might take a minute to show up here. Wait a sec, then refresh the page.</span>
+      </div>
+    </div>
+
+    <div class="meeting-message row center">
+      <div class="message-wrap">
+        <h1>Thanks for Booking!</h1>
+        <h2>It might take a minute to show up.</h2>
+        <span class="refresh">Wait a sec, then refresh the page.</span>
+      </div>
+    </div>
+
+    <div class="edit-message row center">
+      <div class="message-wrap">
+        <h1>Your request has been sent!</h1>
+        <h2>We'll update your booking shortly.</h2>
+      </div>
+    </div>   
+  
+  </div> <!-- modal -->
 </template>

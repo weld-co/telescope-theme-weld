@@ -1,4 +1,10 @@
+@charset "UTF-8";
+
 $input-height: 2.5rem;
+
+/*====================================================
+    Form Overrides
+====================================================*/
 
 .at-form {
   width: 100%;
@@ -25,14 +31,13 @@ form, .accounts-dialog {
   }
 
   .control-group, .form-group, .at-input {
-    @include cf;
     margin-bottom: 1.5rem;
 
     > label {
       font-weight: 600;
       display: block;
       margin-bottom: 0.5rem;
-      color: $dark-grey;
+      color: $black;
     }
 
     .controls {
@@ -134,8 +139,7 @@ input[type="submit"].save-button {
   }
 
   input[disabled='disabled']{
-    background: $lightest-grey;
-    color: $text;
+    opacity: 0.5;
     cursor: not-allowed;
   }
 
@@ -219,7 +223,7 @@ input[type="search"] {
 .twitter-signup {
   margin-bottom: 20px;
   padding-bottom: 20px;
-  border-bottom: m1px solid $lighter-grey;
+  border-bottom: m1px solid $light-grey;
 
   .twitter-button {
     background: #00aced;
@@ -349,7 +353,7 @@ label.checkbox {
   display: flex;
   align-items: center;
   padding: 1rem;
-  background: $light-grey;
+  background: $lightest-grey;
 }
 
 .checkbox input {
@@ -367,5 +371,86 @@ label.checkbox {
   &:checked {
     animation: scale-up 200ms cubic-bezier(0.5, -1, 0.25, 2);
     background-image: url(/packages/telescope-theme-weld/img/checkbox-checked.svg);
+  }
+}
+
+fieldset,
+.fieldset {
+  border: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+  user-select: none;
+}
+
+.label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+  color: $primary-color;
+}
+
+/*====================================================
+    Checkbox & Radio Styles
+====================================================*/
+
+.checkbox-wrap,
+.radio-wrap {
+  margin-right: 1.5rem;
+  white-space: nowrap;
+  height: 2rem;
+  margin-top: -2px;
+  display: inline-block;
+  @include small {
+    width: 100%;
+  }
+}
+
+.stacked .checkbox-wrap,
+.stacked .radio-wrap {
+  width: 100%;
+}
+
+.input[type="checkbox"] + .checkbox-label,
+.input[type="radio"] + .radio-label {
+  color: $grey; 
+
+  @include large {
+    vertical-align: middle;
+  }
+}
+
+.input[type="checkbox"]:checked + .checkbox-label,
+.input[type="radio"]:checked + .radio-label {
+  color: $primary-color;
+}
+
+.input[type="checkbox"],
+.input[type="radio"] {
+  -webkit-appearance: none;
+  outline: none;
+  overflow: visible;
+  border: none;
+  border-radius: 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-clip: content-box;
+  height: 22px;
+  width: 22px;
+  transform: translateY(3px);
+}
+
+.input[type="checkbox"] {
+  background: transparent url(/packages/telescope-theme-weld/img/checkbox.svg);
+  &:checked {
+    background: transparent url(/packages/telescope-theme-weld/img/checkbox-checked.svg);
+  }
+}
+
+.input[type="radio"] {
+  background: transparent url(/packages/telescope-theme-weld/img/radio.svg);
+  &:checked {
+    background: transparent url(/packages/telescope-theme-weld/img/radio-checked.svg);
   }
 }

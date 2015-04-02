@@ -1,73 +1,114 @@
 .usersWeld {
   overflow-x: scroll;
+  overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   padding: 0;
+  width: 100%;
+  max-width: 100%;
+
+  .actions a {
+    color: $primary-color !important;
+    background-color: transparent !important;
+    padding: 0 !important;
+  }
 }
 
-.user-list,
-.user-table {
+.user-table,
+.reactive-table {
   font-size: 13px;
-  min-width: 900px;
+  width: 100%;
+  max-width: 100%;
+}
 
-  tr td:last-child,
-  .user td:last-child {
-    border-left: 2px solid transparentize($grey, 0.9);
-    min-width: 300px;
-    position: relative;
+.reactive-table-options,
+.reactive-table-navigation {
+  line-height: 70px;
+  padding: 0 1rem;
+  float: none;
+}
+
+.reactive-table-input {
+  -webkit-appearance: none;
+  padding: 0.5rem;
+  margin-left: 1rem;
+  font-size: 0.875rem;
+  background: white;
+  height: $input-height;
+  line-height: $input-height;
+  border: 2px solid $light-grey;
+  border-radius: 0;
+  transition: border-color 500ms;
+
+  &:focus {
+    outline: none;
+    border-color: $primary-color;
+    box-shadow: 0px 0px 5px 0px rgba($grey,0.5);
   }
 }
 
-.display-name {
-  font-weight: 600;
-}
-
-.action-link:not(:last-child) {
-  margin-right: 1.5rem;
-  font-weight: 600;
-}
-
-.delete-user {
-  color: #FFF !important;
-  background: $primary-color;
-  border-radius: 3px;
-  position: absolute;
-  right: 1rem;
-  top: 0;
-  margin: auto;
-  bottom: 0;
-  width: 100px;
-  height: 30px;
-  line-height: 30px;
+.reactive-table-navigation input {
+  -webkit-appearance: none;
+  padding: 0.5rem;
   text-align: center;
-  padding: 0;
+  font-size: 0.875rem;
+  background: white;
+  border: 2px solid $light-grey;
+  border-radius: 0;
+  transition: border-color 500ms;
+
+  &:focus {
+    outline: none;
+    border-color: $primary-color;
+    box-shadow: 0px 0px 5px 0px rgba($grey,0.5);
+  }
 }
 
-.filter-sort {
-  @include cf;
-  padding: $padding;
-  background: $dark-grey;
-  height: $header-height;
+.user-table thead {
+  font-weight: 600;
+  background: $lightest-grey;
+  text-align: left;
+  white-space: nowrap;
+}
 
-  a, span {
-    display: inline-block;
-    margin-right: 20px;
-    color: white;
-    
-    &.active {
-      border-bottom: 2px solid $primary-color;
-    }
-
-    &:last-child {
-      margin-right: 0;
-    }
+.user-table thead th {
+  height: 50px;
+  vertical-align: middle;
+  &:not(:last-child) {
+    padding-right: 1rem;  
   }
+}
 
-  .filter {
-    float: left;
+.user-table tr {
+  border-bottom: 1px solid $light-grey;
+}
+
+.user-table td {
+  white-space: nowrap;
+  vertical-align: middle;
+  &:not(:last-child) {
+    padding-right: 1rem;  
   }
+}
 
-  .sort {
-    float: right;
+.user-table th.avatar,
+.user-table td.avatar {
+  display: initial;
+  height: initial;
+  width: initial;
+  margin: initial;
+  vertical-align: initial;
+}
+
+.user-table td.avatar {
+  .avatar {
+    height: 75px;
+    width: 75px;
+    margin: 0;
   }
-
+  .avatar-image,
+  .avatar-initials  {
+    border-radius: 0;
+    line-height: 75px;
+    font-size: 1rem;
+  }
 }

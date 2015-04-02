@@ -34,7 +34,7 @@ Package.on_use(function (api) {
     'client/scss/includes/_mixins.scss',
 
     // Global
-    'client/scss/global/_global.scss',
+    'client/scss/global/_utilities.scss',
     'client/scss/global/_animation.scss',
     'client/scss/global/_grid.scss',
     'client/scss/global/_layout.scss',
@@ -175,6 +175,8 @@ Package.on_use(function (api) {
     'img/weld_logo.png',
     'img/checkbox.svg',
     'img/checkbox-checked.svg',
+    'img/radio.svg',
+    'img/radio-checked.svg',
     'img/search.svg',
     'img/close-icon.svg',
     'img/plus-icon.svg',

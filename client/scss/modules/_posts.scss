@@ -69,7 +69,7 @@
 
 .post-title {
   pointer-events: none;
-  color: $darkest-grey;
+  color: $black;
   display: block;
   font-size: 21px;
   font-weight: 600;
@@ -113,9 +113,6 @@ a.back-link {
 
   .post-heading {
     margin-bottom: 2rem;
-    a:visited {
-      color: inherit;
-    }
 
     .post-title {
       font-size: 28px;

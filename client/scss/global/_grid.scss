@@ -3,6 +3,16 @@
 $gutter: 1.5rem;
 $padding: $gutter * 1.25;
 
+*, 
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-overflow-scrolling: touch;
+}
+
 // Grid Components
 
 .grid-wrap {
@@ -47,48 +57,4 @@ $padding: $gutter * 1.25;
 
 .gutters + .gutters {
   padding-top: 0;
-}
-
-// Utility - add to any .column element
-
-.full-width {
-  width: 100%;
-}
-
-.max-width {
-  max-width: 40rem;
-}
-
-.center {
-  align-self: center;
-  align-items: center;
-  justify-content: center;
-}
-
-.absolute-center {
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-}
-
-.optical {
-  transform: translateY(-5%);
-}
-
-.center.dialog + .spacer {
-  display: none;
-}
-
-.no-scroll {
-  overflow: hidden;
-}
-
-.justified {
-  justify-content: space-between;
-  @include small {
-    flex-direction: column;
-  }
 }

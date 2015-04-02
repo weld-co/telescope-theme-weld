@@ -2,11 +2,19 @@
 .calendarNashville {
   width: 100%;
   max-width: 100%;
+  min-height: 100vh;
   padding: 0;
+  // Relative for Modal
+  position: relative;
+  align-items: flex-start;
+  @include small {
+    overflow: auto;
+  }
 
   .fc {
     font-size: 0.85rem;
     font-weight: 500;
+    min-width: 800px;
     text-rendering: optimizeLegibility;
   }
 
@@ -26,7 +34,7 @@
 
   .fc-toolbar {
     height: $header-height;
-    background: $dark-grey;
+    background: $black;
     color: white;
     margin: 0;
     padding: 1rem;
@@ -205,25 +213,29 @@
   -webkit-overflow-scrolling: touch;
 
   z-index: 200;
-  position: fixed;
+  position: absolute;
+  left: 0;
+  right: 0;
   width: 100%;
   height: 100vh;
   padding: 1rem;
-  background-color: fade-out($dark-grey, 0.1);
+  background-color: fade-out($black, 0.1);
   transition: opacity 300ms ease, visibility 300ms ease;
   transform: translate3d(0,0,0);
+  @include small {
+    justify-content: flex-start;
+  }
 }
 
-.modal.is-open,
-.modal.studio-event,
-.modal.meeting-event {
+.modal.is-open {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
 }
 
-.new-event-form {
-  opacity: 0;
+.new-event-form,
+.edit-event-form {
+  display: none;
   max-width: 600px;
   min-height: 560px;
   width: 100%;
@@ -231,28 +243,26 @@
   padding: 2rem;
   border-radius: 3px;
   position: relative;
-  transition: transform 200ms cubic-bezier(0, 0, 0.25, 1.25), opacity 200ms ease;
-  transform: translateY(-10rem);
 }
 
-.is-open .new-event-form {
-  transform: translateY(0);
-  opacity: 1;
+.edit-event-form {
+  min-height: 300px;
 }
 
-.studio-event .new-event-form,
-.meeting-event .new-event-form {
-  display: none;
+.new-event .new-event-form,
+.edit-event .edit-event-form {
+  display: block;
+  animation: fade-in-down 200ms cubic-bezier(0, 0, 0.25, 1.25);
 }
 
 .message-wrap {
   height: 200px;
-  max-width: 400px;
   text-align: center;
 }
 
 .studio-message,
-.meeting-message {
+.meeting-message,
+.edit-message {
   display: none;
   height: 100%;
   z-index: 100;
@@ -262,8 +272,9 @@
   }
 }
 
-.studio-event .studio-message,
-.meeting-event .meeting-message {
+.studio-event-submitted .studio-message,
+.meeting-event-submitted .meeting-message,
+.edit-event-submitted .edit-message {
   display: flex;
   color: white;
   font-size: 3rem;
@@ -309,7 +320,13 @@
   }
 }
 
-.picker__list-item:hover {
+.picker__list-item:hover,
+.picker__day--infocus:hover, 
+.picker__day--outfocus:hover,
+.picker__nav--prev:hover, 
+.picker__nav--next:hover,
+.picker__day--highlighted:hover, 
+.picker--focused .picker__day--highlighted {
   background: fade-out($primary-color, 0.75) !important;
   border-color: $primary-color !important;
 }
@@ -318,12 +335,23 @@
   border-color: $primary-color !important;
 }
 
+.picker.picker--time .picker__holder {
+  max-width: 260px;
+}
+
+.picker .picker__holder {
+  max-width: 536px;
+}
+
 .picker__list-item--selected, 
 .picker__list-item--selected:hover, 
 .picker--focused .picker__list-item--selected,
 .picker__list-item--highlighted,
 .picker__list-item--highlighted:hover, 
-.picker--focused .picker__list-item--highlighted {
+.picker--focused .picker__list-item--highlighted,
+.picker__day--selected, 
+.picker__day--selected:hover, 
+.picker--focused .picker__day--selected {
   color: white !important;
   background: $primary-color !important;
   border-color: $primary-color !important;

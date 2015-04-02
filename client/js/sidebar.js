@@ -50,10 +50,8 @@ Template[getTemplate('sidebar')].events({
   },
   'click .sidebar-menu a': function (e) {
     if (e.target.className.indexOf('dropdown-top-level') == -1){
-      $('body').removeClass('mobile-nav-open');
+      $('body').removeClass('mobile-nav-open no-scroll');
       $('html,body').scrollTop();
-      var scroll_top = $('div.content').offset();
-      $('main.content-wrap').scrollTop(scroll_top.top);
     }
   }
 });

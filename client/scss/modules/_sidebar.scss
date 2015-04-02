@@ -9,8 +9,9 @@
               visibility 500ms ease, 
               transform 500ms ease, 
               -webkit-filter 500ms ease;
-  overflow-y: scroll;
   -webkit-backface-visibility: hidden;
+  overflow-x: hidden;
+  overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
 
   &::-webkit-scrollbar { 
@@ -33,6 +34,7 @@
 // Mobile off-canvas nav
 
 .mobile-nav-open {
+  overflow: hidden;
   .sidebar {
     pointer-events: auto;
     visibility: visible;

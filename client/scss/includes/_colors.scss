@@ -3,37 +3,43 @@
 $red: #DD3416;
 $green: #a3d06d;
 
+// Colors
 $weld: #f1592a;
-
-$blue: #5EA1A3;
-$dark-blue: #4e555d;
-$blue-grey: #b3c1c6;
-$blue-grey2: #a4a9ab;
-
-$yellow: #f8e121;
-$light-yellow: #fffce0;
-
-$black: #111111;
-$white: #ffffff;
-$darkest-grey: #222222;
-$dark-grey: #333333;
-$middle-grey: #666666;
+$red: #CC4327;
+$white: #fff;
+$middle-red: #A83610;
+$dark-red: #7F2311;
+$dark-blue: #46525E;
+$blue: #86A2A3;
+$yellow: #FAAA31;
+$dark-black: #222222;
+$black: #302824;
+$dark-grey: #615D5C;
 $grey: #aaaaaa;
-$light-grey: #eeeeee;
-$lighter-grey: #dfdbdb;
-$lightest-grey: #f2f2f2;
+$middle-grey: #cccccc;
+$light-grey: #dddddd;
+$lightest-grey: #EFEEEE;
+$blue-inactive: fade-out($blue, 0.7);
 
-// CCL Overrides
+// Applications
+$primary-color: $weld;
+$secondary-color: $blue;
 
-$ccl: #46bfae;
-$ccl-darkest-grey: #35393C;
-$ccl-dark-grey: #4B5358;
+// Gradients
+$bkgd-gradient: linear-gradient(to bottom left, fade-out($blue, 0.2), fade-out($primary-color, 0.2));
+$bkgd-gradient-reverse: linear-gradient(to top right, fade-out($blue, 0.2), fade-out($primary-color, 0.2));
+
+// Random Variables
+$page-padding: 8%;
+$border: 1px solid darken($lightest-grey, 2);
+$cubic: cubic-bezier(0.75,0,0.5,1);
+$color-transition: background 400ms, color 300ms;
 
 // Applied Variables
 
 $primary-color: $weld;
-$sidebar-bg: $darkest-grey;
-$search-bg: $dark-grey;
+$sidebar-bg: $black;
+$search-bg: fade-out($dark-grey, 0.7);
 $bg-color: $white;
 $header-bg: $dark-grey;
 $text: $dark-grey;
@@ -42,3 +48,4 @@ $light-text: $grey;
 $lighter-text: $light-grey;
 $border-color: $grey;
 $highlight-color: $primary-color;
+
