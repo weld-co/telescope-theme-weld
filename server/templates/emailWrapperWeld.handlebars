@@ -25,6 +25,8 @@
       color: #F1592A;
     }
 
+    .logo { float: right; }
+
     .background {
       background-color: #eee;
       font-family: "Avenir", Helvetica, sans-serif;
@@ -116,6 +118,13 @@
 <body>
   <div class="background">
     <div class="container">
+  <a href="{{siteUrl}}">
+    {{#if logoUrl}}
+      <img class="logo" src="{{logoUrl}}" height="16" width="16" alt="{{siteName}}"/>
+    {{else}}
+      {{siteName}}
+    {{/if}}
+  </a>
       {{{body}}}
     </div> <!-- .container -->
     <a class="account-link" href="{{accountLink}}">Change your notifications settings</a>
