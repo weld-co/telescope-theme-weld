@@ -25,12 +25,20 @@
 
   &.sticky {
     background: $primary-color;
+    @include small {
+      background: fade-out($primary-color, 0.15);
+    }
 
     .post-title,
     .post-meta,
     .post-body,
     .post-body a {
       color: white;
+    }
+
+    a.post-category,
+    a.post-domain {
+      background: white;
     }
 
     .avatar-initials {

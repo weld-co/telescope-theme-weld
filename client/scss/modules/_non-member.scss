@@ -1,20 +1,19 @@
 .non-member {
   text-align: center;
-  font-weight: 400;
-  color: $dark-grey;
-  padding: 0 $padding;
-  display: block;
-  width: 100%;
-  margin-top: 35%;
-
-
-  + .spacer {
-    display: none;
-  }
+  position: fixed;
+  color: white;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: $primary-color url(/packages/telescope-theme-weld/img/cover-photo.jpg) no-repeat center;
+  background-size: cover;
+  animation: fade-in 500ms;
 
   h1 {
-    font-size: 2rem;
+    font-size: 5vmax;
     text-transform: uppercase;
+    margin-top: 2rem;
     margin-bottom: 0;
     font-weight: 700;
     letter-spacing: 3px;
@@ -29,10 +28,6 @@
     @include small {
       font-size: 1rem;
     }
-  }
-
-  a {
-    color: $primary-color;
   }
 
   .sign-up {

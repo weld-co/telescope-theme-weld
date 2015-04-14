@@ -131,6 +131,7 @@ Package.on_use(function (api) {
     'client/js/dotdotdot_init.js',
     'client/js/fastclick_init.js',
     'client/js/device_detection.js',
+    'lib/intercom.js',
     
     // Customizations
     'client/js/weld.js',
@@ -182,6 +183,9 @@ Package.on_use(function (api) {
     'img/plus-icon.svg',
     'img/updown-icon.svg',
     'img/mobile-navicon.svg',
+
+    // Landing Page
+    'img/cover-photo.jpg',
 
     // Promo Page
     'img/promo/section-0.jpg',

@@ -25,10 +25,13 @@ a.post-category[href$="category/undefined"] {
   display: none;
 }
 
+
 .posts.list .post:hover {
-  a.post-category,
-  a.post-domain {
-    background: white;
+  @include large {
+    a.post-category,
+    a.post-domain {
+      background: white;
+    }
   }
 }
 

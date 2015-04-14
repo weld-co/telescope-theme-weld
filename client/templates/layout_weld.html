@@ -6,11 +6,13 @@
   {{> UI.dynamic template=getTemplate}}
 {{/each}}
   <div class="grid-wrap">
-    {{#if canView}}
+    {{#if isLoggedIn}}
       {{> sidebar}}
     {{/if}}
     <main class="content-wrap column">
-      {{> UI.dynamic template=nav}}
+      {{#if isLoggedIn}}
+        {{> UI.dynamic template=nav}}
+      {{/if}}
       <div class="content column {{pageName}}">
         {{> yield}}
       </div> <!-- page-wrap -->

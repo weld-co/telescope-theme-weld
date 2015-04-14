@@ -1,13 +1,16 @@
 <template name="no_rights_weld">
-<div class="non-member">
-  {{#if isLoggedIn}}
-  <h1>Thanks for signing up!</h1>
-  <h3>We'll notify you when your account has been confirmed.</h3>
-  {{else}}
-  <h1>{{siteName}}</h1>
-  <h2>{{tagline}}</h2>
-  <a href="{{pathFor route='atSignIn'}}" class="sign-in button">{{_ "Sign In"}}</a>
-  <a href="{{pathFor route='atSignUp'}}">Request An Account</a>
-  {{/if}}
-</div>
+  <div class="non-member column center">
+    <div class="non-member-wrap optical">
+      <svg class="logo" xmlns="http://www.w3.org/2000/svg" width="101" height="31" viewBox="0 0 101 31"><g fill="#fff"><path d="M0 31h29l4-4v-27h-33v31zm22-25h5v14l-5 5v-19zm-8 3h5v11l-5 5v-16zm-8-3h5v14l-5 5v-19zM54 26h-3v-26h-5v26h-3v-26h-5v31h8l2.5-2 2.5 2h8v-31h-5zM62 31h10v-5h-5v-9h5v-5h-5v-7h5v-5h-10zM80 0h-5v31h10v-5h-5zM98 0h-10v31h10l3-3v-25l-3-3zm-2 26h-3v-21h3v21z"/></g></svg>
+      {{#if isLoggedIn}}
+      <h1>Thanks for signing up!</h1>
+      <h3>We'll notify you when your account has been confirmed.</h3>
+      {{else}}
+      <h1>The {{siteName}}</h1>
+      <h2>{{tagline}}</h2>
+      <a href="{{pathFor route='atSignIn'}}" class="sign-in button">{{_ "Sign In"}}</a>
+      <a href="{{pathFor route='atSignUp'}}">Request An Account</a>
+      {{/if}}
+    </div>
+  </div>
 </template>
