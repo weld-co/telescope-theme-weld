@@ -1,5 +1,9 @@
 <!-- remove link to post page to let the .post click handler to the job -->
 <template name="postTitleWeld">
   <span href="/posts/{{_id}}" class="post-title">{{title}}</span>
-  <div class="post-body truncate">{{{cleanUp htmlBody}}}</div>
+  <div class="post-body truncate">
+    {{#if htmlBody}}
+      {{{cleanUp htmlBody}}}
+    {{/if}}
+  </div>
 </template>
