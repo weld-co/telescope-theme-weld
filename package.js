@@ -207,7 +207,6 @@ Package.on_use(function (api) {
     'server/js/template_overwrites.js',
     'server/js/reset_password_url_fix.js',
     'server/js/members_publication.js',
-    'server/js/instafeed_publication.js',
     'server/templates/emailWrapperWeld.handlebars',
     'server/templates/emailNewPostWeld.handlebars',
     'server/templates/emailNewCommentWeld.handlebars',

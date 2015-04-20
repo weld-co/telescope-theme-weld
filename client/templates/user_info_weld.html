@@ -140,22 +140,44 @@
       </div>
   </div> <!-- profile-bio-wrap -->
 
-  <div class="social-feed row">
+<div class="social-wrap">    
+  <div class="row">
     {{#unless profile.instagramAccessToken}}
       <div class="instafeed-placeholder">
-        <a data-js="instagramAuth" class="button instagram-button" href="https://api.instagram.com/oauth/authorize/?client_id=9326b610179f48a28f874b065201cfff&redirect_uri=http://we.ld:3000/instagram&response_type=token">+ Add Your Instagram Feed</a>
+        <a data-js="instagramAuth" class="button instagram-button" href="https://api.instagram.com/oauth/authorize/?client_id=f04ce58e475f4dc792387f41b90b3eec&redirect_uri=http://we.ld:3000/instagram&response_type=token">+ Add Your Instagram Feed</a>
       </div>
     {{else}}
       {{> instagramUserFeed}}    
     {{/unless}}
+  </div>
 
-    {{#if profile.twitter}}
-      <a class="twitter-timeline" 
-         data-screen-name="{{profile.twitter}}" 
-         data-widget-id="588809315441516544"
-         data-link-color="#f1592a">
-      </a>
+  {{#if profile.twitter}}
+    <div class="twitter-wrap row center">
+      <div class="twitter-block">
+        <span class="twitter-title">{{profile.name}}’s Latest Tweets</span>
+        <a class="twitter-timeline"
+          width="425"
+          data-chrome="nofooter noheader"
+          data-screen-name="{{profile.twitter}}" 
+          data-widget-id="588809315441516544"
+          data-link-color="#f1592a">
+          Tweets by @{{profile.twitter}}
+        </a>
+      </div>
+      <div class="twitter-block">
+        <span class="twitter-title">{{profile.name}}’s Favorites</span>
+        <a class="twitter-timeline"
+          width="425"
+          data-chrome="nofooter noheader"
+          data-favorites-screen-name="{{profile.twitter}}" 
+          data-widget-id="588809315441516544"
+          data-link-color="#f1592a">
+          Tweets by @WELD
+        </a>
+      </div>
       <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-    {{/if}}
+    </div>
+  {{/if}}
 </div>
+
 </template>

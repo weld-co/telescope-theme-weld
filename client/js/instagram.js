@@ -8,8 +8,8 @@ Template[getTemplate('instagram')].events({
     var accessToken = window.location.hash.split("=")[1];
     var userID = accessToken.split(".")[0];
     var update = { 
-      "profile.instagramAccessToken": "'" + accessToken + "'",
-      "profile.instagramUserID": userID
+      "profile.instagramAccessToken": accessToken,
+      "profile.instagramUserID": parseInt(userID)
     };
 
     update = userEditClientCallbacks.reduce(function(result, currentFunction) {

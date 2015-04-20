@@ -194,6 +194,60 @@ a.edit-avatar {
   color: white !important;
 }
 
+.social-wrap {
+  margin-bottom: 5rem;
+}
+
+.instafeed a {
+  width: 20%;
+  font-size: 0;
+  position: relative;
+
+  &:before {
+    content: '';
+    background: $bkgd-gradient-faint;
+    display: block;
+    height: 100%;
+    width: 100%;
+    z-index: 200;
+    position: absolute;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.twitter-wrap {
+  background: fade-out($lightest-grey, 0.5);
+  padding: 8% 1rem;
+  width: 100%;
+}
+
+
+.twitter-block {
+  margin: 2rem 1rem; 
+  position: relative;
+}
+
+.twitter-title {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: -2rem;
+
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+// Authentication popup
+.auth-success-message {
+  animation: scale-up 300ms $cubic;
+}
+
 .user-profile-posts,
 .user-profile-comments,
 .user-profile-votes {
@@ -233,33 +287,4 @@ a.edit-avatar {
   background: none;
   color: $primary-color;
   font-weight: 700;
-}
-
-.instafeed {
-  margin-bottom: 5rem;
-}
-
-.instafeed a {
-  width: 20%;
-  font-size: 0;
-  position: relative;
-
-  &:before {
-    content: '';
-    background: $bkgd-gradient-faint;
-    display: block;
-    height: 100%;
-    width: 100%;
-    z-index: 200;
-    position: absolute;
-  }
-
-  img {
-    width: 100%;
-    height: auto;
-  }
-}
-
-.success-message {
-  animation: scale-up 300ms $cubic;
 }
