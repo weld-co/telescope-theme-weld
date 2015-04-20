@@ -1,5 +1,6 @@
 .logo-wrap {
   width: 100%;
+  flex-grow: 0;
   min-height: $header-height;
   background-color: $primary-color;
   @include small {

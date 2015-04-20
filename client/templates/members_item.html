@@ -2,12 +2,12 @@
   <span class="member-wrap mix {{profile.skill1}} {{profile.skill2}} {{profile.skill3}}" data-name="{{profile.name}}">
     <div class="member">
       {{> avatar user=this size="large" shape="circle"}}
-      <div class="profile-name">{{profile.name}}</div>
-      <div class="profile-location">{{profile.location}}</div>          
+      <div class="member-name">{{profile.name}}</div>
+      <div class="member-location">{{profile.location}}</div>          
     </div>
     <div class="about">
-      <div class="profile-name">{{profile.name}}</div>
-      <p class="profile-blurb">{{profile.bio}}</p>
+      <div class="member-name">{{profile.name}}</div>
+      <p class="member-blurb">{{profile.bio}}</p>
       <a class="view-more" href="{{profileUrl this}}">View Profile</a>
     </div>
   </span>

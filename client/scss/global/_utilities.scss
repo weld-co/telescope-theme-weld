@@ -30,6 +30,10 @@ $mobile-header-height: $header-height - 20px;
   width: 100%;
 }
 
+.half-width {
+  width: 50%;
+}
+
 .max-width {
   max-width: 40rem;
 }
@@ -55,6 +59,13 @@ $mobile-header-height: $header-height - 20px;
 
 .justified {
   justify-content: space-between;
+  @include small {
+    flex-direction: column;
+  }
+}
+
+.space-around {
+  justify-content: space-around;
   @include small {
     flex-direction: column;
   }

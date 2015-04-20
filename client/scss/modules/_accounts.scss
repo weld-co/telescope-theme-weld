@@ -66,10 +66,13 @@
   text-align: center;
 }
 
-.at-signup-link,
 .at-signin-link {
   margin-top: 1rem;
   text-align: center;
+}
+
+.at-signup-link {
+  display: none;
 }
 
 #at-forgotPwd {

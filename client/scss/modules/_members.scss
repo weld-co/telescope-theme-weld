@@ -5,11 +5,6 @@
   max-width: 100%;
 }
 
-#sort-container {
-  display: flex;
-  flex-wrap: wrap;
-}
-
 #sort-container .mix {
   display: none;
 }
@@ -21,6 +16,7 @@
   box-sizing: border-box;
   font-size: 0.875rem;
   min-height: $header-height;
+  max-height: $header-height;
   padding: 0 1.5rem;
   position: relative;
   width: 100%;
@@ -31,6 +27,7 @@
 
   @include small {
     padding: 0.75rem;
+    max-height: none;
   }
 }
 
@@ -123,9 +120,9 @@
 
 .member-wrap {
   flex: 1;
-  flex-basis: 250px;
   min-width: 250px;
-  justify-content: center;
+  max-width: 250px;
+  height: 15rem;
   position: relative;
   padding: 2rem;
   text-align: center;
@@ -178,7 +175,7 @@
   visibility: hidden;
   transform: scale(0.95);
 
-  .profile-name {
+  .member-name {
     color: $black;
     font-weight: 600;
     text-transform: uppercase;
@@ -187,8 +184,8 @@
   }
 }
 
-.profile-skills,
-.profile-location {
+.member-skills,
+.member-location {
   font-size: 80%;
   color: $grey;
   max-width: 20rem;
@@ -199,7 +196,8 @@
   text-transform: capitalize;
 }
 
-.profile-blurb {
+.member-blurb {
+  color: $grey;
   max-height: 3rem;
   max-width: 20rem;
   margin: 0 auto 2rem auto;

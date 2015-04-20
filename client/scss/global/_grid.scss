@@ -31,18 +31,22 @@ $padding: $gutter * 1.25;
   margin-bottom: 1rem;
 }
 
-.row {
+.column,
+.row,
+.cell {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  flex-grow: 1;
 }
 
 .column {
-  display: flex;
+  flex: 1;
   flex-direction: column;
   flex-wrap: nowrap;
+}
 
+.row {
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 // Gutters - add .gutter to any .row element

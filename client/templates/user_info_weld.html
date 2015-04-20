@@ -1,65 +1,161 @@
 <template name="userInfoWeld">
   <div class="full-width">
-    <div class="user-profile">
-      <div class="profile-header">
-        <a href="{{#if profile.site}}{{profileSiteOut}}{{else}}http://en.gravatar.com{{/if}}" target="_blank">
-          {{> avatar user=this size="large" shape="circle"}}
-        </a>
-        {{#if canEditProfile}}
-        <a class="edit-avatar" href="http://en.gravatar.com/" target="_blank">Edit on Gravatar</a>
+    <div class="profile-header column center">
+      
+      <div class="user-data">
+        {{#if isAdmin}}
+        <div class="user-id">{{_ "ID"}}: {{_id}}</div>
+        <span class="date-joined">Signed Up: {{formatDate createdAt 'LL'}}</span>
+        {{#if profile.birthday}}
+        <span class="profile-birthday">Born: {{formatDate profile.birthday 'LL'}}</span>
+        {{/if}}
         {{/if}}
       </div>
-      <ul class="profile-links">
-        <li class="username">{{profile.name}}</li>
-        {{#if profile.instagram}}
-        <li class="instagram-link has-icon"><a href="http://instagram.com/{{profile.instagram}}" target="_blank">
+
+      {{#if canEditProfile}}
+      <a class="profile-edit" href="/users/{{slug}}/edit">{{_ "Edit Profile"}}</a>
+      {{/if}}
+      
+      <a href="{{#if profile.site}}{{profileSiteOut}}{{else}}http://en.gravatar.com{{/if}}" target="_blank">{{> avatar user=this size="large" shape="circle"}}</a>
+      {{#if canEditProfile}}
+      <a class="edit-avatar" href="http://en.gravatar.com/" target="_blank">Add/Edit Image on Gravatar</a>
+      {{/if}}
+      <span class="profile-name">
+        {{#if hasDisplayName}}
+          {{profile.name}}
+        {{else}}
+          {{profile.name}}
+            {{#if canEditProfile}}
+              <a class="button" href="/users/{{slug}}/edit">+ Add Your Full Name</a>
+            {{/if}}
+        {{/if}}
+        <span class="profile-location">
+          {{#if profile.location}}
+            {{profile.location}}
+          {{else}}
+            {{#if canEditProfile}}
+              <a href="/users/{{slug}}/edit">+ Add Location</a>
+            {{/if}}
+          {{/if}}
+        </span>
+      </span>
+      <span class="profile-background" style="background-image: url(http://www.gravatar.com/avatar/{{email_hash}}?d=http://welderwire.co/packages/telescope-theme-weld/img/profile-default-background.jpg)"></span>
+    </div>
+    <div class="profile-links row center">
+      
+      {{#if profile.instagram}}
+        <a class="cell social-link has-icon" href="http://instagram.com/{{profile.instagram}}" target="_blank">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="-91 0 16 16" enable-background="new -91 0 16 16"><path d="M-87.8 8c0 2.6 2.1 4.8 4.8 4.8 2.6 0 4.8-2.1 4.8-4.8v-1.2h1.2v6c0 .8-.4 1.2-1.2 1.2h-10c-.8 0-1.2-.4-1.2-1.2v-6h1.6v1.2zm-3.2-5.9v11.9c0 1.3.7 2.1 2.1 2.1h11.9c1.3 0 2.1-.7 2.1-2.1v-11.9c0-1.3-.7-2.1-2.1-2.1h-11.9c-1.4 0-2.1.7-2.1 2.1zm4.8 5.9c0-1.8 1.4-3.2 3.2-3.2 1.8 0 3.2 1.4 3.2 3.2 0 1.8-1.4 3.2-3.2 3.2s-3.2-1.4-3.2-3.2zm6.8-5.4c0-.3.3-.6.6-.6h1.2c.3 0 .6.3.6.6v1.2c0 .3-.3.6-.6.6h-1.2c-.3 0-.6-.3-.6-.6v-1.2z"/></svg>
           {{profile.instagram}}
-        </a></li>
+        </a>
+      {{else}}
+        {{#if canEditProfile}}
+          <a class="cell social-link important" href="/users/{{slug}}/edit">+ Add Instagram</a>
         {{/if}}
-        {{#if getTwitterName}}
-        <li class="twitter-link has-icon"><a href="http://twitter.com/{{profile.twitter}}" target="_blank">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="13" viewBox="-84 0.7 16 13" enable-background="new -84 0.7 16 13"><path d="M-69.9 2.8c.7-.4 1.2-1 1.4-1.8-.7.4-1.4.6-2.1.8-.6-.7-1.4-1-2.4-1-.9 0-1.7.3-2.3 1-.6.6-1 1.4-1 2.3 0 .3 0 .5.1.7-2.7-.1-5-1.2-6.8-3.4-.3.5-.5 1.1-.5 1.6 0 1.2.5 2.1 1.5 2.7-.6 0-1-.2-1.5-.4 0 .8.2 1.5.7 2.1.5.6 1.1 1 1.9 1.1-.3.1-.6.1-.9.1-.3 0-.5 0-.6-.1.2.7.6 1.2 1.1 1.6.6.4 1.2.6 1.9.7-1.2.9-2.5 1.4-4.1 1.4h-.8c1.5 1 3.2 1.5 5 1.5 1.9 0 3.6-.5 5-1.4 1.5-1 2.5-2.1 3.2-3.5.7-1.4 1-2.8 1-4.3v-.6c.7-.5 1.2-1.1 1.6-1.7-.1.3-.7.5-1.4.6z"/></svg>
-        {{getTwitterName}}
-        </a></li>
+      {{/if}}
+
+      {{#if profile.twitter}}
+        <a class="cell social-link has-icon" href="http://twitter.com/{{profile.twitter}}" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="13" viewBox="-84 0.7 16 13" enable-background="new -84 0.7 16 13"><path d="M-69.9 2.8c.7-.4 1.2-1 1.4-1.8-.7.4-1.4.6-2.1.8-.6-.7-1.4-1-2.4-1-.9 0-1.7.3-2.3 1-.6.6-1 1.4-1 2.3 0 .3 0 .5.1.7-2.7-.1-5-1.2-6.8-3.4-.3.5-.5 1.1-.5 1.6 0 1.2.5 2.1 1.5 2.7-.6 0-1-.2-1.5-.4 0 .8.2 1.5.7 2.1.5.6 1.1 1 1.9 1.1-.3.1-.6.1-.9.1-.3 0-.5 0-.6-.1.2.7.6 1.2 1.1 1.6.6.4 1.2.6 1.9.7-1.2.9-2.5 1.4-4.1 1.4h-.8c1.5 1 3.2 1.5 5 1.5 1.9 0 3.6-.5 5-1.4 1.5-1 2.5-2.1 3.2-3.5.7-1.4 1-2.8 1-4.3v-.6c.7-.5 1.2-1.1 1.6-1.7-.1.3-.7.5-1.4.6z"/></svg>
+          {{profile.twitter}}
+        </a>
+      {{else}}
+        {{#if canEditProfile}}
+          <a class="cell social-link important" href="/users/{{slug}}/edit">+ Add Twitter</a>
         {{/if}}
-        {{#if profile.site}}
-        <li class="site-link has-icon"><a href="{{profileSiteOut}}" target="_blank">
+      {{/if}}
+
+      {{#if profile.site}}
+        <a class="cell social-link has-icon" href="{{profileSiteOut}}" target="_blank">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path d="M12 0h-2l-4 4h3l2-2 3 3-4 4h-3l-2 2h6l5-5v-2zM5 14l-3-3 4-4h3l2-2h-6l-5 5v2l4 4h2l4-4h-3z"/></svg>
           {{profile.site}}
-        </a></li>
+        </a>
+      {{else}}
+        {{#if canEditProfile}}
+          <a class="cell social-link important" href="/users/{{slug}}/edit">+ Add Website</a>
         {{/if}}
-        {{#if profile.email}}
-        <li class="email-link has-icon"><a href="mailto:{{profile.email}}">
+      {{/if}}
+
+      {{#if profile.email}}
+        <a class="cell social-link has-icon" href="mailto:{{profile.email}}">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path d="M0 8l5 2 8-7-6 8 6 2 3-13zM7 16l3-3-3-1z"/></svg>
           {{profile.email}}
-        </a></li>
-        {{/if}}
-        {{#if profile.phone}}
-          <li class="phone-link has-icon onum"><a href="tel:{{profile.phone}}">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="-91 0 16 16" enable-background="new -91 0 16 16"><path d="M-76.8.4c.6.2.9.9 1.2 1.4.4.7.6 1.4.6 2.1 0 1.1-.4 2-.8 3-.2.7-.6 1.4-.9 2-1.2 1.9-3.5 4.3-5.5 5.5-.6.4-1.3.7-2 .9-1 .4-1.9.8-3 .8-.8 0-1.4-.2-2.1-.6-.5-.3-1.1-.6-1.4-1.2-.2-.4-.4-1.2-.4-1.6v-.2c.1-.2.6-.5.9-.6l1.9-1.1c.3-.2.7-.5 1-.5.7 0 1.7 2.1 2.3 2.1.3 0 .7-.3 1-.4 2.1-1.1 3.5-2.6 4.6-4.6.2-.3.4-.7.4-1 0-.6-2.1-1.6-2.1-2.3 0-.4.3-.7.5-1l1.1-1.9c.1-.2.4-.8.6-.9h.2c.7-.3 1.5-.1 1.9.1z"/></svg>
-            {{profile.phone}}
-          </a></li>
-        {{/if}}
-      </ul>
-      <p class="profile-bio">{{profile.bio}}</p>
-      <div class="user-actions">
+        </a>
+      {{else}}
         {{#if canEditProfile}}
-        <a href="/users/{{slug}}/edit">{{_ "Edit Profile"}}</a>
+          <a class="cell social-link important" href="/users/{{slug}}/edit">+ Add Email</a>
+        {{/if}}
+      {{/if}}
+
+      {{#if profile.phone}}
+        <a class="cell social-link has-icon onum" href="tel:{{profile.phone}}">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="-91 0 16 16" enable-background="new -91 0 16 16"><path d="M-76.8.4c.6.2.9.9 1.2 1.4.4.7.6 1.4.6 2.1 0 1.1-.4 2-.8 3-.2.7-.6 1.4-.9 2-1.2 1.9-3.5 4.3-5.5 5.5-.6.4-1.3.7-2 .9-1 .4-1.9.8-3 .8-.8 0-1.4-.2-2.1-.6-.5-.3-1.1-.6-1.4-1.2-.2-.4-.4-1.2-.4-1.6v-.2c.1-.2.6-.5.9-.6l1.9-1.1c.3-.2.7-.5 1-.5.7 0 1.7 2.1 2.3 2.1.3 0 .7-.3 1-.4 2.1-1.1 3.5-2.6 4.6-4.6.2-.3.4-.7.4-1 0-.6-2.1-1.6-2.1-2.3 0-.4.3-.7.5-1l1.1-1.9c.1-.2.4-.8.6-.9h.2c.7-.3 1.5-.1 1.9.1z"/></svg>
+          {{profile.phone}}
+        </a>
+      {{else}}
+        {{#if canEditProfile}}
+          <a class="cell social-link important" href="/users/{{slug}}/edit">+ Add Phone</a>
+        {{/if}}
+      {{/if}}
+
+    </div>
+  </div> <!-- full-width -->
+
+    <div class="profile-bio-wrap column center">
+      <p class="profile-bio">
+        {{#if profile.bio}}
+          {{profile.bio}}
+        {{else}}
+        {{#if canEditProfile}}
+          You haven’t added your bio yet!
+          <a class="button" href="/users/{{slug}}/edit">+ Add It Now</a>
+        {{/if}}
+      {{/if}}
+    </p>
+      <div class="profile-skills">
+        {{#if profile.skill1}}
+        <p class="profile-skills-title">Top Professional Skills</p>
+        <span class="profile-skill">{{profile.skill1}}</span>
+        {{else}}
+          {{#if canEditProfile}}
+            <a class="profile-skill no-skill" href="/users/{{slug}}/edit">+ Add a skill</a>
+          {{/if}}
+        {{/if}}
+
+        {{#if profile.skill2}}
+        <span class="profile-skill">{{profile.skill2}}</span>
+        {{else}}
+          {{#if canEditProfile}}
+            <a class="profile-skill no-skill" href="/users/{{slug}}/edit">+ Add a skill</a>
+          {{/if}}
+        {{/if}}
+
+        {{#if profile.skill3}}
+        <span class="profile-skill">{{profile.skill3}}</span>
+        {{else}}
+          {{#if canEditProfile}}
+            <a class="profile-skill no-skill" href="/users/{{slug}}/edit">+ Add a skill</a>
+          {{/if}}
         {{/if}}
       </div>
-    </div> <!-- .user-profile -->
+  </div> <!-- profile-bio-wrap -->
 
-    {{#if isAdmin}}
-    <div class="user-data">
-      <div class="user-id">
-        {{_ "ID"}}: {{_id}}
+  <div class="social-feed row">
+    {{#unless profile.instagramAccessToken}}
+      <div class="instafeed-placeholder">
+        <a data-js="instagramAuth" class="button instagram-button" href="https://api.instagram.com/oauth/authorize/?client_id=9326b610179f48a28f874b065201cfff&redirect_uri=http://we.ld:3000/instagram&response_type=token">+ Add Your Instagram Feed</a>
       </div>
-      <div class="date-joined">
-        {{_ "Joined"}}:
-        {{createdAtFormatted}}
-      </div>
-    </div> <!-- .user-data -->
+    {{else}}
+      {{> instagramUserFeed}}    
+    {{/unless}}
+
+    {{#if profile.twitter}}
+      <a class="twitter-timeline" 
+         data-screen-name="{{profile.twitter}}" 
+         data-widget-id="588809315441516544"
+         data-link-color="#f1592a">
+      </a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
     {{/if}}
-  </div>
+</div>
 </template>

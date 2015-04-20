@@ -110,6 +110,8 @@ Package.on_use(function (api) {
     'client/templates/user_item_weld.html',
     'client/templates/users_weld.html',
     'client/templates/views_menu_weld.html',
+    'client/templates/instagram.html',
+    'client/templates/instagram_feed.html',
 
     // Additions
     'client/templates/logo.html',
@@ -131,6 +133,7 @@ Package.on_use(function (api) {
     'client/js/dotdotdot_init.js',
     'client/js/fastclick_init.js',
     'client/js/device_detection.js',
+    'lib/instafeed.min.js',
     'lib/intercom.js',
     
     // Customizations
@@ -153,6 +156,7 @@ Package.on_use(function (api) {
     'client/js/user_account_weld.js',
     'client/js/user_info_weld.js',
     'client/js/progress_bar.js',
+    'client/js/instagram.js',
 
     // Routes
     'lib/routes/weld_routes.js',
@@ -183,6 +187,7 @@ Package.on_use(function (api) {
     'img/plus-icon.svg',
     'img/updown-icon.svg',
     'img/mobile-navicon.svg',
+    'img/profile-default-background.jpg',
 
     // Landing Page
     'img/cover-photo.jpg',
@@ -202,11 +207,13 @@ Package.on_use(function (api) {
     'server/js/template_overwrites.js',
     'server/js/reset_password_url_fix.js',
     'server/js/members_publication.js',
+    'server/js/instafeed_publication.js',
     'server/templates/emailWrapperWeld.handlebars',
     'server/templates/emailNewPostWeld.handlebars',
     'server/templates/emailNewCommentWeld.handlebars',
     'server/templates/emailPostItemWeld.handlebars',
-    'server/templates/emailDigestWeld.handlebars'
+    'server/templates/emailDigestWeld.handlebars',
+    'server/templates/emailNewUserWeld.handlebars'
   ], ['server']);
 
   // Used for /purchases redirect

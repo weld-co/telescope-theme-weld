@@ -1,4 +1,10 @@
 <div class="notification-type">New Post by <a href="{{profileUrl}}">{{postAuthorName}}</a></div>
 <a class="title" href="{{postUrl}}">{{postTitle}}</a>
-<div class="post-body" style="margin-top: 40px !important">{{{htmlBody}}}</div>
-<a class="button" href="{{postUrl}}" target="_blank">Comment on this post</a>
+
+{{#if htmlBody}}
+<div class="post-body">
+  {{{htmlBody}}}
+  </div>
+{{/if}}
+
+<a class="button" href="{{postUrl}}">Comment on this post</a>

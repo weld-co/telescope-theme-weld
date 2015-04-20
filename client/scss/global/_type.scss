@@ -5,6 +5,11 @@ $base-font-weight: 300;
 $base-line-height: 1.6;
 $base-font: $base-font-weight $base-font-size $sans-font;
 
+::selection {
+  background: $primary-color;
+  color: white;
+}
+
 html, body, input, button { 
   font-family: $base-font-family;
   -webkit-font-smoothing: subpixel-antialiased;

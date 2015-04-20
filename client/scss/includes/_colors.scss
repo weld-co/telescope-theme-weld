@@ -27,6 +27,7 @@ $secondary-color: $blue;
 
 // Gradients
 $bkgd-gradient: linear-gradient(to bottom left, fade-out($blue, 0.2), fade-out($primary-color, 0.2));
+$bkgd-gradient-faint: linear-gradient(to bottom left, fade-out($blue, 0.7), fade-out($primary-color, 0.7));
 $bkgd-gradient-reverse: linear-gradient(to top right, fade-out($blue, 0.2), fade-out($primary-color, 0.2));
 
 // Random Variables

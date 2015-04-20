@@ -1,104 +1,265 @@
-.user-profile {
-  text-align: center;
-  min-height: 60vh;
+$profile-header-height: 25vw;
 
-  .avatar {
-    height: 100px;
-    width: 100px;
-    margin: 0;
+.profile-header {
+  height: $profile-header-height;
+  min-height: 275px;
+  position: relative;
+  padding: 1rem;
+  overflow: hidden;
+  background: fade-out($black, 0.8);
+}
 
-    .avatar-initials {
-      font-size: 1.5rem;
-      line-height: 4.5;
-    }
+.user-data {
+  padding: 2rem;
+  font-size: 12px;
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+
+  &:hover {
+    opacity: 1;
   }
-  
-  .edit-avatar {
+
+  > * {
     display: block;
-    font-size: 14px;
-    color: $grey;
-    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  a {
+    color: rgba(255,255,255,0.5);
     &:hover {
-      color: $primary-color;
+      color: rgba(255,255,255,1);
     }
   }
 
-  .profile-links {
-    margin: 2rem 0;
-    font-size: 16px;
-    line-height: 2;
-    color: $grey;
-   
-    .username {
-      font-size: 32px;
-      font-weight: 400;
-      color: $dark-grey;
-      margin-bottom: 2rem;
-      text-rendering: optimizeLegibility;
+  &:empty {
+    display: none;
+  }
+}
+
+a.profile-edit {
+  font-size: 12px;
+  color: white;
+  padding: 0.5rem 1rem;
+  margin: 2rem;
+  border-radius: 50px;
+  border: 2px solid white;
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0.5;
+  transition: opacity 250ms;
+  &:hover {
+    background: white;
+    color: $primary-color;
+    opacity: 1;
+  }
+}
+
+// Edit & View Links on Profile Edit page
+.user-edit {
+  position: relative;
+}
+
+.profile-header .avatar {
+  height: 125px;
+  width: 125px;
+  margin: 0;
+  filter: drop-shadow(0px 0px 15px fade-out($black, 0.5));
+
+  .avatar-image,
+  .avatar-initials {
+    font-size: 1.5rem;
+    line-height: 5.5;
+    border: 3px solid white;
+  }
+}
+
+a.edit-avatar {
+  display: block;
+  font-size: 14px;
+  color: white;
+  opacity: 0.5;
+  margin-top: 10px;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.profile-name {
+  color: white;
+  display: block;
+  font-size: 2rem;
+  font-weight: 400;
+  margin-top: 1rem;
+  text-rendering: optimizeLegibility;
+  text-align: center;
+}
+
+.profile-location {
+  display: block;
+  font-size: 0.875rem;
+  margin-top: .5rem;
+  opacity: 0.5;
+}
+
+.profile-background {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: scale(1.2);
+  height: $profile-header-height;
+  display: block;
+  z-index: -1;
+  filter: blur(50px);
+}
+
+.profile-links {
+  padding: 2rem;
+  font-size: 16px;
+  text-align: center;
+  line-height: 4;
+  color: $grey;
+  background: $lightest-grey;
+  
+  @include small {
+    flex-direction: column;
+  }
+
+  .social-link {
+    display: inline-block;
+    margin-right: 1rem;
+    white-space: nowrap;
+
+    &:last-child {
+      margin-right: 0;
     }
 
-    .has-icon svg {
+    &.has-icon svg {
       fill: currentColor;
       vertical-align: middle;
       margin-right: 0.2rem;
       margin-top: -2px;
     }
-
-    li:not(.username) {
-      display: inline-block;
-      margin-right: 1rem;
-
-      &:last-child {
-        margin-right: 0;
-      }
-
-    }
   }
+}
 
-  .profile-bio {
-    font-size: 21px;
-    line-height: 1.5;
-  }
+.profile-bio-wrap {
+  padding: 3rem;
+  min-height: 350px;
+  text-align: center;
+}
 
-} // .user-profile
+.profile-bio {
+  max-width: 900px;
+  font-size: 21px;
+  line-height: 1.5;
+  margin-bottom: 3rem;
+}
 
-.user-data {
-  background: $lightest-grey;
-  padding: 1rem 2rem;
+.profile-skills-title {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 3px;
   margin-bottom: 2rem;
+}
 
-  &:empty {
-    display: none;
-  }
+.profile-skill {
+  text-transform: capitalize;
+  display: inline-block;
+  padding: 8px 15px;
+  margin-bottom: 1rem;
+  background: #EFEEEE;
+  border-radius: 50px;
+  min-width: 150px;
 
-  > div {
-    display: inline-block;
-
-    &:first-child {
-      margin-right: 2rem;
-    }
-  }
-} // .user-data
-
-.user-actions {
-  margin: 3rem 0;
-
-  a {
-    color: $primary-color;
+  &:not(:last-child) {
     margin-right: 1rem;
-
-    &:last-child,
-    &:only-child {
-      margin-right: 0;
-    }
   }
+
+  @include small {
+    margin-right: 0 !important;
+  }
+}
+
+.no-skill {
+  background: $primary-color !important;
+  color: white !important;
 }
 
 .user-profile-posts,
-.user-profile-comments {
-  margin-bottom: 2rem;
+.user-profile-comments,
+.user-profile-votes {
+  margin-bottom: 6rem;
+  padding: 0 5%;
+  
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-left: 1rem;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  thead {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+
+  tr:nth-child(2n+1) {
+    background: fade-out($lightest-grey, 0.5);
+  }
+
+  td {
+    padding: 1rem;
+  }
 }
 
-.user-edit {
+.posts-more {
+  display: inline;
+  background: none;
+  color: $primary-color;
+  font-weight: 700;
+}
+
+.instafeed {
+  margin-bottom: 5rem;
+}
+
+.instafeed a {
+  width: 20%;
+  font-size: 0;
   position: relative;
+
+  &:before {
+    content: '';
+    background: $bkgd-gradient-faint;
+    display: block;
+    height: 100%;
+    width: 100%;
+    z-index: 200;
+    position: absolute;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.success-message {
+  animation: scale-up 300ms $cubic;
 }
