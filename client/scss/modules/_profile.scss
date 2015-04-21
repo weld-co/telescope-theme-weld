@@ -2,7 +2,7 @@ $profile-header-height: 25vw;
 
 .profile-header {
   height: $profile-header-height;
-  min-height: 275px;
+  min-height: 325px;
   position: relative;
   padding: 1rem;
   overflow: hidden;
@@ -99,10 +99,13 @@ a.edit-avatar {
 }
 
 .profile-location {
+  color: rgba(255,255,255,0.5);
   display: block;
   font-size: 0.875rem;
   margin-top: .5rem;
-  opacity: 0.5;
+  &:hover {
+    color: $primary-color;
+  }
 }
 
 .profile-background {
@@ -196,6 +199,17 @@ a.edit-avatar {
 
 .social-wrap {
   margin-bottom: 5rem;
+  width: 100%;
+}
+
+.instagram-placeholder {
+  height: 50vw;
+  background: url(/packages/telescope-theme-weld/img/instagram-placeholder.svg) no-repeat center;
+  background-size: cover;
+}
+
+.instagram-button {
+  max-width: 280px;
 }
 
 .instafeed a {
@@ -271,6 +285,10 @@ a.edit-avatar {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 3px;
+    @include small {
+      text-transform: none;
+      letter-spacing: 0;
+    }
   }
 
   tr:nth-child(2n+1) {
@@ -279,6 +297,7 @@ a.edit-avatar {
 
   td {
     padding: 1rem;
+    width: 70%;
   }
 }
 

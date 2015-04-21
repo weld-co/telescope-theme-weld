@@ -1,0 +1,27 @@
+<template name="twitterFeed">
+  <div class="twitter-wrap row center">
+    <div class="twitter-block">
+      <span class="twitter-title">Timeline</span>
+      <a class="twitter-timeline"
+        width="425"
+        height="500"
+        data-chrome="noheader"
+        data-screen-name="{{profile.twitter}}" 
+        data-widget-id="588809315441516544"
+        data-link-color="#f1592a">
+        Tweets by @{{profile.twitter}}
+      </a>
+    </div>
+    <div class="twitter-block">
+      <span class="twitter-title">#wecreateweld</span>
+      <a class="twitter-timeline"
+        href="https://twitter.com/hashtag/wecreateweld"
+        width="425"
+        height="500"
+        data-chrome="noheader"
+        data-widget-id="590545546881978370"
+        data-link-color="#f1592a">
+      </a>
+    </div>
+  </div>
+</template>

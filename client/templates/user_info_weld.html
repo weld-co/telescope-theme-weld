@@ -20,27 +20,31 @@
       {{#if canEditProfile}}
       <a class="edit-avatar" href="http://en.gravatar.com/" target="_blank">Add/Edit Image on Gravatar</a>
       {{/if}}
+
       <span class="profile-name">
-        {{#if hasDisplayName}}
-          {{profile.name}}
+        {{#if needsDisplayName}}
+          {{username}}
+          {{#if canEditProfile}}
+            <a class="button" href="/users/{{slug}}/edit">+ Add Your Full Name</a>
+          {{/if}}
         {{else}}
           {{profile.name}}
-            {{#if canEditProfile}}
-              <a class="button" href="/users/{{slug}}/edit">+ Add Your Full Name</a>
-            {{/if}}
         {{/if}}
-        <span class="profile-location">
-          {{#if profile.location}}
-            {{profile.location}}
-          {{else}}
-            {{#if canEditProfile}}
-              <a href="/users/{{slug}}/edit">+ Add Location</a>
-            {{/if}}
-          {{/if}}
-        </span>
       </span>
+
+      <span class="profile-location">
+        {{#if profile.location}}
+          {{profile.location}}
+        {{else}}
+          {{#if canEditProfile}}
+            <a class="button" href="/users/{{slug}}/edit">+ Add Location</a>
+          {{/if}}
+        {{/if}}
+      </span>
+      
       <span class="profile-background" style="background-image: url(http://www.gravatar.com/avatar/{{email_hash}}?d=http://welderwire.co/packages/telescope-theme-weld/img/profile-default-background.jpg)"></span>
     </div>
+
     <div class="profile-links row center">
       
       {{#if profile.instagram}}
@@ -141,9 +145,9 @@
   </div> <!-- profile-bio-wrap -->
 
 <div class="social-wrap">    
-  <div class="row">
+  <div class="instagram-wrap">
     {{#unless profile.instagramAccessToken}}
-      <div class="instafeed-placeholder">
+      <div class="instagram-placeholder row center">
         <a data-js="instagramAuth" class="button instagram-button" href="https://api.instagram.com/oauth/authorize/?client_id=f04ce58e475f4dc792387f41b90b3eec&redirect_uri=http://we.ld:3000/instagram&response_type=token">+ Add Your Instagram Feed</a>
       </div>
     {{else}}
@@ -152,31 +156,7 @@
   </div>
 
   {{#if profile.twitter}}
-    <div class="twitter-wrap row center">
-      <div class="twitter-block">
-        <span class="twitter-title">{{profile.name}}’s Latest Tweets</span>
-        <a class="twitter-timeline"
-          width="425"
-          data-chrome="nofooter noheader"
-          data-screen-name="{{profile.twitter}}" 
-          data-widget-id="588809315441516544"
-          data-link-color="#f1592a">
-          Tweets by @{{profile.twitter}}
-        </a>
-      </div>
-      <div class="twitter-block">
-        <span class="twitter-title">{{profile.name}}’s Favorites</span>
-        <a class="twitter-timeline"
-          width="425"
-          data-chrome="nofooter noheader"
-          data-favorites-screen-name="{{profile.twitter}}" 
-          data-widget-id="588809315441516544"
-          data-link-color="#f1592a">
-          Tweets by @WELD
-        </a>
-      </div>
-      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-    </div>
+    {{> twitterFeed}}
   {{/if}}
 </div>
 

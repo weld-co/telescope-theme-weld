@@ -5,9 +5,9 @@ Template[getTemplate('userInfoWeld')].helpers({
     if(!!url)
       return (url.substring(0, 7) == "http://" || url.substring(0, 8) == "https://") ? url : "http://"+url;
   },
-  hasDisplayName: function () {
-  if(this.username != this.profile.name)
-    return true
+  needsDisplayName: function () {
+    if(this.username === this.profile.name)
+      return true
   }
 });
 

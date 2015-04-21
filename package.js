@@ -108,16 +108,21 @@ Package.on_use(function (api) {
     'client/templates/user_invites_weld.html',
     'client/templates/user_menu_weld.html',
     'client/templates/user_item_weld.html',
+    'client/templates/user_posts_weld.html',
+    'client/templates/user_upvoted_posts_weld.html',
+    'client/templates/user_comments_weld.html',
     'client/templates/users_weld.html',
     'client/templates/views_menu_weld.html',
-    'client/templates/instagram.html',
-    'client/templates/instagram_feed.html',
+
 
     // Additions
     'client/templates/logo.html',
     'client/templates/sidebar.html',
     'client/templates/loader_weld.html',
     'client/templates/join.html',
+    'client/templates/instagram.html',
+    'client/templates/instagram_feed.html',
+    'client/templates/twitter_feed.html',
 
     // Member Pages and Menus
     'client/templates/members_menu_weld.html',
@@ -135,6 +140,7 @@ Package.on_use(function (api) {
     'client/js/device_detection.js',
     'lib/instafeed.min.js',
     'lib/intercom.js',
+    'lib/twitter_feed.js',
     
     // Customizations
     'client/js/weld.js',
@@ -188,6 +194,7 @@ Package.on_use(function (api) {
     'img/updown-icon.svg',
     'img/mobile-navicon.svg',
     'img/profile-default-background.jpg',
+    'img/instagram-placeholder.svg',
 
     // Landing Page
     'img/cover-photo.jpg',
