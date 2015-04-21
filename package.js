@@ -183,7 +183,7 @@ Package.on_use(function (api) {
     'img/apple-touch-icon-144x144.png',
     'img/apple-touch-icon-152x152.png',
     'img/apple-touch-icon-180x180.png',
-    'img/weld_logo.png',
+    'img/weld-logo.png',
     'img/checkbox.svg',
     'img/checkbox-checked.svg',
     'img/radio.svg',

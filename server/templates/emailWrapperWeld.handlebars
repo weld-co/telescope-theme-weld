@@ -1,137 +1,183 @@
 <html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta name="viewport" content="initial-scale=1.0">    <!-- So that mobile webkit will display zoomed in -->
-  <meta name="format-detection" content="telephone=no"> <!-- disable auto telephone linking in iOS -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="initial-scale=1.0">    <!-- So that mobile webkit will display zoomed in -->
+    <meta name="format-detection" content="telephone=no"> <!-- disable auto telephone linking in iOS -->
 
-  <title>{{siteName}}</title>
-  <style type="text/css">
+    <title>{{siteName}}</title>
+    <style type="text/css">
 
-    html,
-    body {
-      -ms-text-size-adjust: none;
-      -webkit-text-size-adjust: none;
-      height: 100%;
-      margin:0; 
-      padding:0;
-      background-color: #eee;
-    }
+        /* Resets: see reset.css for details */
+        .ReadMsgBody { width: 100%; background-color: #ebebeb;}
+        .ExternalClass {width: 100%; background-color: #ebebeb;}
+        .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {line-height:100%;}
+        body {-webkit-text-size-adjust:none; -ms-text-size-adjust:none;}
+        body {margin:0; padding:0;}
+        table {border-spacing:0;}
+        table td {border-collapse:collapse;}
+        .yshortcuts a {border-bottom: none !important;}
 
-    div {
-      display: block;
-    }
 
-    a {
-      color: #F1592A;
-    }
+        /* Constrain email width for small screens */
+        @media screen and (max-width: 600px) {
+            table[class="container"] {
+                width: 95% !important;
+            }
+            .main-container{
+              font-size: 14px !important;
+            }
+        }
 
-    .logo { float: right; }
+        /* Give content more room on mobile */
+        @media screen and (max-width: 480px) {
+            td[class="container-padding"] {
+                padding-left: 12px !important;
+                padding-right: 12px !important;
+            }
+        }
+        a{
+          color: {{buttonColor}};
+          font-weight: bold;
+          text-decoration: none;
+        }
+        .wrapper{
+          padding: 20px 0;
+        }
+        .container{
+          border-radius: 3px;
+        }
+        .heading-container{
+          background: {{headerColor}};
+          padding: 40px 0 10px 0;
+          text-align: center;
+          border-radius: 3px 3px 0px 0px;
+        }
+        .heading-container, .logo{
+          text-align: center;
+          color: white;
+          font-family: "Avenir Next", "Avenir", Helvetica, sans-serif;
+          font-weight: bold;
+          font-size: 20px;
+        }
+        .main-container{
+          line-height: 1.5;
+          background: white;
+          padding: 0 30px;
+          font-size: 15px;
+          font-family: "Avenir Next", "Avenir", Helvetica, sans-serif;
+          color: #555;
+          border-radius: 0px 0px 3px 3px;
+        }
+        .heading{
+          font-weight: bold;
+          font-size: 18px;
+          line-height: 1.5;
+          margin: 0;
+          text-align: center;
+          display: block;
+        }
+        .footer-container{
+          background-color: #ebebeb;
+          text-decoration: underline;
+          font-family: "Avenir Next", "Avenir", Helvetica, sans-serif;
+          padding: 30px;
+          color: {{buttonColor}};
+          font-size: 13px;
+          text-align: center;
+        }
+        .post-thumbnail{
+          width: 100px;
+          border-radius: 3px;
+          margin-bottom: 20px;
+        }
+        .post-body, .comment-body{
+          border-top: 1px solid #ddd;
+          border-bottom: 1px solid #ddd;
+          padding: 10px 0;
+        }
 
-    .background {
-      background-color: #eee;
-      font-family: "Avenir", Helvetica, sans-serif;
-      height: 100%;
-      padding: 40px 20px;
-      text-align: center;
-      margin-bottom: 80px;
-    }
-
-    .container {
-      background: #ffffff;
-      margin-bottom: 40px;
-      margin-left: auto;
-      margin-right: auto;
-      max-width: 600px;
-      padding: 30px;
-      text-align: left;
-    }
-
-    .notification-type {
-      color: #777;
-      display: block;
-      font-family: "Avenir", Helvetica, sans-serif;
-      padding-bottom: 30px;
-      margin-bottom: 30px;
-      border-bottom: 1px solid #eee;
-    }
-
-    .title {
-      font-family: "Avenir", Helvetica, sans-serif;
-      font-size: 24px;
-      font-weight: bold;
-      display: block;
-      line-height: 1.2;
-      margin-bottom: 20px;
-    }
-
-    .post-thumbnail {
-      border-radius: 3px;
-      float: left;
-      height: auto;
-      margin-bottom: 20px;
-      margin-right: 20px;
-      max-width: 70px;
-    }
-
-    .post-body {
-      font-family: "Avenir", Helvetica, sans-serif;
-      font-size: 16px;
-      line-height: 1.6;
-      margin-top: 20px;
-    }
-
-    p img {
-      max-width: 600px;
-    }
-
-    .button {
-      background: #F1592A;
-      border-radius: 3px;
-      color: white;
-      display: block;
-      font-family: "Avenir", Helvetica, sans-serif;
-      font-weight: bold;
-      margin-bottom: 10px;
-      margin-top: 50px;
-      padding: 20px 0;
-      text-align: center;
-      text-decoration: none;
-      width: 100%;
-    }
-
-    .account-link {
-      margin-bottom: 80px;
-      display: block;
-    }
-    
-    @media screen and (max-width: 600px) {
-      .post-thumbnail {
-        display: block !important;
-        float: none !important;
-      }
-    }
-    @media screen and (max-width: 480px) {
-      .title {
-        font-size: 18px !important;
-      }
-    }
-
-</style>
+        .post-body img,
+        .post-body-excerpt img {
+          max-width: 600px;
+        }
+        .post-cta {
+          font-size: 18px;
+          margin-bottom: 10px;
+          display: block;
+        }
+        .title {
+          font-family: "Avenir", Helvetica, sans-serif;
+          font-size: 24px;
+          font-weight: bold;
+          display: block;
+          line-height: 1.2;
+          text-align: center;
+        }
+        .button {
+          background: #F1592A;
+          border-radius: 3px;
+          color: white;
+          display: block;
+          font-family: "Avenir", Helvetica, sans-serif;
+          font-weight: bold;
+          margin-bottom: 50px;
+          padding: 20px 0;
+          text-align: center;
+          text-decoration: none;
+          width: 100%;
+        }
+        .notification-type {
+          color: #777;
+          display: block;
+          font-family: "Avenir", Helvetica, sans-serif;
+          margin-bottom: 30px;
+          text-align: center;
+        }
+    </style>
 </head>
+<body style="margin:0; padding:10px 0;" bgcolor="#ebebeb" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
 
-<body>
-  <div class="background">
-    <div class="container">
-  <a href="{{siteUrl}}">
-    {{#if logoUrl}}
-      <img class="logo" src="{{logoUrl}}" height="16" width="16" alt="{{siteName}}"/>
-    {{else}}
-      {{siteName}}
-    {{/if}}
-  </a>
-      {{{body}}}
-    </div> <!-- .container -->
-    <a class="account-link" href="{{accountLink}}">Change your notifications settings</a>
-  </div> <!-- .background -->
+<br>
+
+<!-- 100% wrapper (grey background) -->
+<table border="0" width="100%" height="100%" cellpadding="0" cellspacing="0" bgcolor="#ebebeb">
+  <tr>
+    <td class="wrapper" align="center" valign="top" bgcolor="#ebebeb" style="background-color: #ebebeb;">
+
+      <!-- 600px container (white background) -->
+      <table border="0" width="600" cellpadding="0" cellspacing="0" class="container" bgcolor="#ffffff">
+        <tr>
+          <td class="heading-container">
+            <a href="{{siteUrl}}">
+              {{#if logoUrl}}
+                <img class="logo" src="{{logoUrl}}" height="16px" width="16px" alt="{{siteName}}"/>
+              {{else}}
+                {{siteName}}
+              {{/if}}
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="main-container container-padding" bgcolor="#ffffff">
+
+            {{{body}}}
+
+          </td>
+        </tr>
+        <tr>
+          <td class="footer-container">
+            <a href="{{accountLink}}">Change your notifications settings</a><br/><br/>
+            {{{footer}}}
+          </td>
+        </tr>
+      </table>
+      <!--/600px container -->
+
+    </td>
+  </tr>
+</table>
+<!--/100% wrapper-->
+<br>
+<br>
 </body>
 </html>

@@ -1,55 +1,52 @@
 <style type="text/css">
-
-  .heading {
+  .email-digest{
+  }
+  .digest-date{
     color: #999;
-    display: block;
-    font-size: 16px;
     font-weight: normal;
+    font-size: 16px;
+    display: block;
+    text-align: center;
+  }
+  .post-item{
+    border-top: 1px solid #ddd;
+  }
+  .post-date{
+    font-size: 13px;
+    color: #999;
+  }
+  .post-title{
+    font-size: 24px;
+    line-height: 1.2;
+  }
+  .post-thumbnail{
+    float: right;
+  }
+  .post-meta{
+    font-size: 13px;
+    color: #999;
+    margin-top: 5px;
+    margin-bottom: 15px;
+  }
+  .post-meta a{
+    color: #333;
+  }  
+  .post-domain{
+    font-weight: bold;
+  }
+  .post-body-excerpt{
+    font-size: 14px;
+  }
+  .post-body-excerpt p{
+    margin: 0;
     margin-bottom: 20px;
   }
-
-  .post-item {
-    border-top: 1px solid #ddd;
-    padding: 30px 0;
-  }
-
-  .header {
-    display: block;
-    margin-bottom: 30px;
-    min-height: 80px;
-  }
-
-  .title {
-    margin-bottom: 10px;
-  }
-
-  .post-domain {
-    font-size: 12px;
-    color: #333;
-  }
-
-  .post-meta {
-    font-size: 12px;
-    color: #999;
-  }
-
-  .post-meta a {
-    color: #333;
-    font-weight: bold
-  }
-
-  .post-thumbnail {
-    max-width: 130px;
-  }
-
-  img {
-    max-width: 600px;
-  }
-
 </style>
 
-<span class="heading">Last Week On The Wire</span>
-
+<span class="heading">Last week on THE {{siteName}}</span>
+<span class="digest-date">{{date}}</span>
+<br>
 <div class="email-digest">
   {{{content}}}
 </div>
+<br>
