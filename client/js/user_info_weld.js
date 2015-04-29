@@ -3,10 +3,11 @@ Template[getTemplate('userInfoWeld')].helpers({
   profileSiteOut: function () {
     var url = this.profile.site;
     if(!!url)
-      return (url.substring(0, 7) == "http://" || url.substring(0, 8) == "https://") ? url : "http://"+url;
+      return (url.substring(0, 7) == "http://" || url.substring(0, 8) == "https://") ? url : "http://" + url;
   },
   needsDisplayName: function () {
-    if(this.username === this.profile.name)
+    // If no Display Name OR if it matches username
+    if(!this.profile.name || this.username === this.profile.name)
       return true
   },
   isDigitalMember: function () {

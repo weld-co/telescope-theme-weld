@@ -56,11 +56,11 @@ userProfileDisplay = [
     order: 2
   },
   {
-    template: 'userUpvotedPosts',
-    order: 3
-  },  
-  {
     template: 'userComments', 
-    order: 5
+    order: 3
+  },
+  {
+    template: 'userUpvotedPosts',
+    order: 4
   }
 ];
