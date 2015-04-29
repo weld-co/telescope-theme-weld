@@ -376,10 +376,8 @@ label.checkbox {
 
 fieldset,
 .fieldset {
-  border: none;
-  padding: 0;
-  margin: 0 0 2rem 0;
-  user-select: none;
+  border: 2px solid $light-grey;
+  padding: 1.5rem;
 }
 
 .label {
@@ -394,6 +392,12 @@ fieldset,
 /*====================================================
     Checkbox & Radio Styles
 ====================================================*/
+
+.radio-group {
+  border: 2px solid #dddddd;
+  padding: 1.5rem 0;
+  margin-bottom: 1rem;
+}
 
 .checkbox-wrap,
 .radio-wrap {

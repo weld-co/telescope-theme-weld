@@ -16,7 +16,9 @@ $profile-header-height: 25vw;
   position: absolute;
   top: 0;
   left: 0;
-
+  @include small {
+    display: none;
+  }
 
   &:hover {
     opacity: 1;
@@ -39,8 +41,17 @@ $profile-header-height: 25vw;
   }
 }
 
+.badge {
+  padding: 2px 6px;
+  display: inline;
+  border-radius: 3px;
+  background: white;
+  color: $primary-color;
+}
+
 a.profile-edit {
   font-size: 12px;
+  text-align: center;
   color: white;
   padding: 0.5rem 1rem;
   margin: 2rem;
@@ -55,6 +66,11 @@ a.profile-edit {
     background: white;
     color: $primary-color;
     opacity: 1;
+  }
+  @include small {
+    position: static;
+    width: 100%;
+    margin-top: 0;
   }
 }
 
@@ -73,7 +89,6 @@ a.profile-edit {
   .avatar-initials {
     font-size: 1.5rem;
     line-height: 5.5;
-    border: 3px solid white;
   }
 }
 
@@ -90,7 +105,6 @@ a.edit-avatar {
 
 .profile-name {
   color: white;
-  display: block;
   font-size: 2rem;
   font-weight: 400;
   margin-top: 1rem;
@@ -100,11 +114,12 @@ a.edit-avatar {
 
 .profile-location {
   color: rgba(255,255,255,0.5);
-  display: block;
+  text-align: center;
   font-size: 0.875rem;
   margin-top: .5rem;
-  &:hover {
-    color: $primary-color;
+  a.important {
+    display: block;
+    margin: 0.5rem 0;
   }
 }
 
@@ -113,11 +128,11 @@ a.edit-avatar {
   background-size: cover;
   background-position: bottom center;
   position: absolute;
-  left: 0;
+  top: 0;
   right: 0;
   bottom: 0;
-  transform: scale(1.2);
-  height: $profile-header-height;
+  left: 0;
+  transform: scale(1.5);
   display: block;
   z-index: -1;
   filter: blur(50px);
@@ -157,6 +172,9 @@ a.edit-avatar {
   padding: 3rem;
   min-height: 350px;
   text-align: center;
+  @include small {
+    padding: 1.5rem;
+  }
 }
 
 .profile-bio {
@@ -267,6 +285,8 @@ a.edit-avatar {
 .user-profile-votes {
   margin-bottom: 6rem;
   padding: 0 5%;
+  font-size: 14px;
+  line-height: 1.4;
   
   h3 {
     font-size: 1.25rem;
@@ -297,13 +317,6 @@ a.edit-avatar {
 
   td {
     padding: 1rem;
-    width: 70%;
+    width: 60%;
   }
-}
-
-.posts-more {
-  display: inline;
-  background: none;
-  color: $primary-color;
-  font-weight: 700;
 }

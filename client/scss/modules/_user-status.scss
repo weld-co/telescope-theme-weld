@@ -1,0 +1,40 @@
+.avatar-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.status-label {
+  display: block;
+  transform: scale(0);
+  height: 16px;
+  width: 16px;
+  position: absolute;
+  bottom: 5px;
+  left: 16px;
+  border-radius: 50%;
+  border: 2px solid white;
+  transition: background 1s, transform 500ms cubic-bezier(0.75,-0.5, 0.25, 1.4);
+}
+
+.isIdle {
+  transform: scale(1);
+  background: $yellow;
+}
+
+.isOnline {
+  transform: scale(1);
+  background: $green;
+}
+
+.hide-status {
+  transform: scale(0);
+  background: $grey;
+}
+
+// Members Page
+
+.member .status-label {
+  height: 16px;
+  width: 16px;
+  bottom: 14px;
+}

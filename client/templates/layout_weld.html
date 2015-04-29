@@ -6,7 +6,7 @@
   {{> UI.dynamic template=getTemplate}}
 {{/each}}
   <div class="grid-wrap">
-    {{#if isLoggedIn}}
+    {{#if canView}}
       {{> sidebar}}
     {{/if}}
     <main class="content-wrap column">

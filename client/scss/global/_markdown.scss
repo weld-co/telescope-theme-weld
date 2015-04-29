@@ -29,6 +29,11 @@
 
   ol {
     list-style-type: decimal;
+    
+    li {
+        margin-bottom: 1rem;
+        font-feature-settings: initial;
+    }
   }
 
   a {
@@ -62,7 +67,7 @@
   }
 
   h3 {
-    font-size: 18px;
+    font-size: 21px;
     line-height: 1.4
   }
 

@@ -1,5 +1,4 @@
 Template[getTemplate('userAccountWeld')].events({
-
   // Prevent Enter from submiting Skills input so it can be hyphenated
   'keypress .hyphenated': function(e){
     if ( e.which == 13 ) return false;
@@ -30,7 +29,8 @@ Template[getTemplate('userAccountWeld')].events({
       "profile.skill1": $target.find('[name=skill1]').val(),
       "profile.skill2": $target.find('[name=skill2]').val(),
       "profile.skill3": $target.find('[name=skill3]').val(),
-      "profile.birthday": $target.find('[name=birthday]').val()
+      "profile.birthday": $target.find('[name=birthday]').val(),
+      "profile.membership": $target.find('[name=membership]:checked').val(),
     };
 
     update = userEditClientCallbacks.reduce(function(result, currentFunction) {

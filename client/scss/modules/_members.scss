@@ -118,11 +118,14 @@
   }
 }
 
+.members-page-wrap {
+  align-items: flex-start;
+  align-content: flex-start;
+}
+
 .member-wrap {
-  flex: 1;
   min-width: 250px;
-  max-width: 250px;
-  height: 15rem;
+  min-height: 230px;
   position: relative;
   padding: 2rem;
   text-align: center;
@@ -224,7 +227,7 @@ a.view-more {
   height: 100%;
   font-weight: 600;
   font-size: 1rem;
-  position: fixed;
+  position: absolute;
   align-self: center;
   align-items: center;
   justify-content: center;

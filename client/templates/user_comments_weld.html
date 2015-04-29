@@ -10,14 +10,14 @@
     </thead>
     {{#each comments}}
       <tr>
-        <td>{{{htmlBody}}}</td>
+        <td>{{{cleanUp htmlBody}}}</td>
         <td><a href="{{pathFor route='post_page' _id=postId}}/">{{postTitle}}</a></td>
       </tr>
     {{/each}}
     {{#if hasMoreComments}}
       <tr>
         <td colspan="10">
-          <a class="comments-more more-button grid-module" href="#"><span>{{_ "load_more"}}</span></a>
+          <a class="important" href="#">{{_ "load_more"}}</a>
         </td>
       </tr>
     {{/if}}

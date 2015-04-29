@@ -1,0 +1,27 @@
+<template name="postPageWeld">
+  <div class="single-post grid">
+    {{#if thumbnailUrl}}
+      <div class="post-thumbnail">
+        <a class="post-thumbnail-link {{playVideoClass}}" href="{{postLink}}" target="_blank">
+          <img class="post-thumbnail-image" src="{{thumbnailUrl}}" onerror="this.style.display='none';"/>
+        </a>
+      </div>
+    {{/if}}
+    <div class="post-title">
+      <a href="{{postLink}}" target="{{postTarget}}">{{title}}</a>
+      <a class="author" href="{{profileUrl}}">by {{authorName}}</a>
+    </div>
+    <div class="post-categories-container">{{> postDomainWeld}}{{> postCategories}}</div>
+    {{#if body}}
+      {{> UI.dynamic template=post_body}}
+    {{/if}}
+    <div class="post-meta">
+      <div class="post-upvoters">
+        {{> postAvatarsWeld}}
+      </div>
+      {{> postInfoWeld}}
+    </div>
+    {{> UI.dynamic template=comment_list}}
+    {{> UI.dynamic template=comment_form}}
+  </div>
+</template>

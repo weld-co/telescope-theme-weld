@@ -6,22 +6,26 @@
         {{#if isAdmin}}
         <div class="user-id">{{_ "ID"}}: {{_id}}</div>
         <span class="date-joined">Signed Up: {{formatDate createdAt 'LL'}}</span>
-        {{#if profile.birthday}}
-        <span class="profile-birthday">Born: {{formatDate profile.birthday 'LL'}}</span>
-        {{/if}}
+          {{#if profile.birthday}}
+          <span class="profile-birthday">Born: {{formatDate profile.birthday 'LL'}}</span>
+          {{/if}}
         {{/if}}
       </div>
 
       {{#if canEditProfile}}
       <a class="profile-edit" href="/users/{{slug}}/edit">{{_ "Edit Profile"}}</a>
       {{/if}}
-      
-      <a href="{{#if profile.site}}{{profileSiteOut}}{{else}}http://en.gravatar.com{{/if}}" target="_blank">{{> avatar user=this size="large" shape="circle"}}</a>
+
+      <span class="avatar-wrap">
+        <a href="{{#if profile.site}}{{profileSiteOut}}{{else}}http://en.gravatar.com{{/if}}" target="_blank">{{> avatar user=this size="large" shape="circle"}}</a>
+        {{> userStatus}}
+      </span>
+
       {{#if canEditProfile}}
-      <a class="edit-avatar" href="http://en.gravatar.com/" target="_blank">Add/Edit Image on Gravatar</a>
+      <a class="edit-avatar" href="http://en.gravatar.com/" target="_blank">Edit on Gravatar</a>
       {{/if}}
 
-      <span class="profile-name">
+      <div class="profile-name">
         {{#if needsDisplayName}}
           {{username}}
           {{#if canEditProfile}}
@@ -30,17 +34,28 @@
         {{else}}
           {{profile.name}}
         {{/if}}
-      </span>
+      </div>
 
-      <span class="profile-location">
-        {{#if profile.location}}
-          {{profile.location}}
+      <div class="profile-location">
+        {{#if profile.membership}}
+          {{#if isDigitalMember}}
+            {{profile.membership}} Member in {{profile.location}}
+          {{else}}
+            Member in {{profile.membership}}
+          {{/if}}
         {{else}}
+          {{#if profile.location}}
+            {{profile.location}}
+          {{else}}     
+            {{#if canEditProfile}}
+              <a class="important" href="/users/{{slug}}/edit">+ Add Location</a>
+            {{/if}}
+          {{/if}}
           {{#if canEditProfile}}
-            <a class="button" href="/users/{{slug}}/edit">+ Add Location</a>
+            <a class="important" href="/users/{{slug}}/edit">+ Add Membership Type</a>
           {{/if}}
         {{/if}}
-      </span>
+      </div>
       
       <span class="profile-background" style="background-image: url(http://www.gravatar.com/avatar/{{email_hash}}?d=http://welderwire.co/packages/telescope-theme-weld/img/profile-default-background.jpg)"></span>
     </div>

@@ -49,7 +49,7 @@
       <div class="close-button">✕</div>
       <input type="hidden" name="_subject" value="Calendar Change Request"/>
 
-      <fieldset class="fieldset text-align-center">
+      <div class="radio-group text-align-center">
         <span class="radio-wrap">
           <input class="input" type="radio" id="change" name="edit-type" value="change" checked/>
           <label class="radio-label" for="change">Change Date/Time</label>
@@ -58,7 +58,7 @@
           <input class="input" type="radio" id="cancel" name="edit-type" value="cancel"/>
           <label class="radio-label" for="cancel">Cancel this Event</label>
         </span>
-      </fieldset>
+      </div>
 
       <!-- OLD DATE AND TIME -->
       {{#with currentUser}}
@@ -114,7 +114,8 @@
         <h1>Your request has been sent!</h1>
         <h2>We'll update your booking shortly.</h2>
       </div>
-    </div>   
+    </div>
   
   </div> <!-- modal -->
+  <div class="button mobile-new-event">Create New Event</div>
 </template>

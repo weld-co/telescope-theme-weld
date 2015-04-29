@@ -14,16 +14,21 @@
   .fc {
     font-size: 0.85rem;
     font-weight: 500;
-    min-width: 800px;
-    text-rendering: optimizeLegibility;
+    min-width: 1000px;
   }
 
-  .new-event-button {
-    max-width: 280px;
+  // Mobile New Event Button 
+  .mobile-new-event {
     position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    z-index: 100;
+    bottom: 0;
+    border-radius: 0;
+    z-index: 1000;
+    margin-bottom: 0;
+    font-weight: 600;
+    box-shadow: 0px 0px 50px fade-out($black, 0.5);
+    @include large {
+      display: none;
+    }
   }
 
 /*====================================================
@@ -48,6 +53,37 @@
       text-transform: uppercase;
       letter-spacing: 3px;
     }
+  }
+
+  .calendar-legend {
+    font-size: 15px;
+    color: white;
+    position: absolute;
+    top: 28px;
+    left: 180px;
+    white-space: nowrap;
+    > *:first-child {
+      margin-right: 20px;
+    }
+  }
+
+
+  .studio-color:before,
+  .meeting-room-color:before {
+    content: '';
+    display: inline-block;
+    height: 12px;
+    width: 12px;
+    border-radius: 2px;
+    margin-right: 10px;
+  }
+
+  .studio-color:before {
+    background: $primary-color;
+  }
+
+  .meeting-room-color:before {
+    background: $blue;
   }
 
   .fc-center,
@@ -243,10 +279,13 @@
   padding: 2rem;
   border-radius: 3px;
   position: relative;
+  @include small {
+    margin-bottom: 50vh;
+  }
 }
 
 .edit-event-form {
-  min-height: 300px;
+  min-height: 450px;
 }
 
 .new-event .new-event-form,

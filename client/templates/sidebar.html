@@ -1,8 +1,8 @@
 <template name="sidebar">
-  <nav class="sidebar column">
+  <nav class="sidebar">
     <div class="close-icon mobile-only">×</div>
     {{#if isDesktop}}{{> UI.dynamic template=logo}}{{/if}}
-    <ul class="sidebar-menu">
+    <ul class="sidebar-menu srollable-vertical">
       <li>{{> searchWeld}}</li>
       <li><a href="#">{{> notificationsMenuWeld}}</a></li>
       {{#each primaryNav}}
@@ -11,7 +11,7 @@
         </li>
       {{/each}}
       {{#if isLoggedIn}}
-        <li><a href="{{profileUrl}}">{{_ "Profile"}}</a></li>
+        <li><a href="{{profileUrl}}">{{displayName}}</a></li>
         <li><a href="/sign-out">{{_ "Sign Out"}}</a></li>
       {{else}}
         <li><a href="/sign-in">{{_ "Sign In"}}</a></li>

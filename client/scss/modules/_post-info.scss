@@ -13,7 +13,8 @@
 .post-meta {
   white-space: nowrap;
   overflow-x: scroll;
-  -webkit-overflow-scrolling: touch;
+  overflow-y: hidden; 
+  overflow-scrolling: touch;
   position: relative;
   padding: 0.75rem 0;
   &::-webkit-scrollbar { 
@@ -30,8 +31,8 @@
   background: $lightest-grey;
   opacity: 1;
   font-size: 12px;
-  padding: 0.75rem;
-  max-height: 2.75rem;
+  padding: 1rem;
+  margin-bottom: 0;
 }
 
 .comment-meta {

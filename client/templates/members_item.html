@@ -1,7 +1,10 @@
 <template name="membersItem">
   <span class="member-wrap mix {{profile.skill1}} {{profile.skill2}} {{profile.skill3}}" data-name="{{profile.name}}">
     <div class="member">
-      {{> avatar user=this size="large" shape="circle"}}
+      <span class="avatar-wrap">
+        {{> avatar user=this size="large" shape="circle"}}
+        {{> userStatus}}
+      </span>
       <div class="member-name">{{profile.name}}</div>
       <div class="member-location">{{profile.location}}</div>          
     </div>

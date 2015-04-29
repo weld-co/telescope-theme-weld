@@ -8,7 +8,11 @@ Template[getTemplate('userInfoWeld')].helpers({
   needsDisplayName: function () {
     if(this.username === this.profile.name)
       return true
-  }
+  },
+  isDigitalMember: function () {
+    if(this.profile.membership === "Digital")
+      return true
+  }, 
 });
 
 // Get the instagram credentials from user profile.property and pass them into the instafeed function

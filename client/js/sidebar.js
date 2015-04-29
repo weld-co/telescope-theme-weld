@@ -37,6 +37,9 @@ Template[getTemplate('sidebar')].helpers({
   },
   logo: function () {
     return getTemplate('logo');
+  },
+  displayName: function () {
+    return getDisplayName(Meteor.user());
   }
 });
 
@@ -50,7 +53,7 @@ Template[getTemplate('sidebar')].events({
   },
   'click .sidebar-menu a': function (e) {
     if (e.target.className.indexOf('dropdown-top-level') == -1){
-      $('body').removeClass('mobile-nav-open no-scroll');
+      $('body').removeClass('mobile-nav-open');
       $('html,body').scrollTop();
     }
   }

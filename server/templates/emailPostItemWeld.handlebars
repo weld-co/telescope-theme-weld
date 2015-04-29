@@ -2,19 +2,12 @@
 <br>
 
 <span class="post-title">
-  {{#if thumbnailUrl}}
-    <img class="post-thumbnail" src="{{thumbnailUrl}}"/>
-  {{/if}}
   <a href="{{postLink}}" target="_blank">{{title}}</a>
 </span>
 
 <div class="post-meta">
-  <span class="post-submitted">By <a href="{{profileUrl}}" class="comment-link" target="_blank">{{authorName}}</a></span>
-  <span class="post-date">on {{date}}</span>
-  |
-  <a href="{{postPageLink}}" class="comment-link" target="_blank">{{commentCount}} Comments</a>
+  By <a href="{{profileUrl}}" target="_blank">{{authorName}}</a> | <a href="{{postPageLink}}" target="_blank">{{commentCount}} Comments</a>
 </div>
-
 
 {{#if body}}
   <div class="post-body-excerpt">

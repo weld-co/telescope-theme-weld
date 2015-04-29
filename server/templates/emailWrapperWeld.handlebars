@@ -11,64 +11,68 @@
         .ReadMsgBody { width: 100%; background-color: #ebebeb;}
         .ExternalClass {width: 100%; background-color: #ebebeb;}
         .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {line-height:100%;}
-        body {-webkit-text-size-adjust:none; -ms-text-size-adjust:none;}
-        body {margin:0; padding:0;}
-        table {border-spacing:0;}
-        table td {border-collapse:collapse;}
-        .yshortcuts a {border-bottom: none !important;}
-
-
-        /* Constrain email width for small screens */
-        @media screen and (max-width: 600px) {
-            table[class="container"] {
-                width: 95% !important;
-            }
-            .main-container{
-              font-size: 14px !important;
-            }
+        
+        body {
+          -webkit-text-size-adjust: none;
+          -ms-text-size-adjust: none;
+          margin: 0; 
+          padding: 0;
         }
 
-        /* Give content more room on mobile */
-        @media screen and (max-width: 480px) {
-            td[class="container-padding"] {
-                padding-left: 12px !important;
-                padding-right: 12px !important;
-            }
+        table {
+          border-spacing: 0;
         }
-        a{
-          color: {{buttonColor}};
-          font-weight: bold;
+        
+        table td {
+          border-collapse: collapse;
+        }
+        
+        .yshortcuts a {
+          border-bottom: none !important;
+        }
+
+        a {
           text-decoration: none;
+          color: {{buttonColor}};
         }
-        .wrapper{
+
+        .wrapper {
           padding: 20px 0;
         }
-        .container{
+
+        .container {
           border-radius: 3px;
+          max-width: 600px;
         }
-        .heading-container{
-          background: {{headerColor}};
+
+        .heading-container {
           padding: 40px 0 10px 0;
           text-align: center;
           border-radius: 3px 3px 0px 0px;
+          background: {{headerColor}};
         }
-        .heading-container, .logo{
+
+        .heading-container, 
+        .logo {
           text-align: center;
           color: white;
           font-family: "Avenir Next", "Avenir", Helvetica, sans-serif;
           font-weight: bold;
           font-size: 20px;
         }
-        .main-container{
+
+        .main-container {
           line-height: 1.5;
           background: white;
           padding: 0 30px;
           font-size: 15px;
           font-family: "Avenir Next", "Avenir", Helvetica, sans-serif;
+          font-weight: 500;
           color: #555;
           border-radius: 0px 0px 3px 3px;
         }
-        .heading{
+
+        .heading {
           font-weight: bold;
           font-size: 18px;
           line-height: 1.5;
@@ -76,21 +80,25 @@
           text-align: center;
           display: block;
         }
-        .footer-container{
+
+        .footer-container {
           background-color: #ebebeb;
           text-decoration: underline;
           font-family: "Avenir Next", "Avenir", Helvetica, sans-serif;
           padding: 30px;
-          color: {{buttonColor}};
           font-size: 13px;
           text-align: center;
+          color: {{buttonColor}};
         }
-        .post-thumbnail{
+
+        .post-thumbnail {
           width: 100px;
           border-radius: 3px;
           margin-bottom: 20px;
         }
-        .post-body, .comment-body{
+
+        .post-body,
+        .comment-body {
           border-top: 1px solid #ddd;
           border-bottom: 1px solid #ddd;
           padding: 10px 0;
@@ -99,12 +107,15 @@
         .post-body img,
         .post-body-excerpt img {
           max-width: 600px;
+          width: 100%;
         }
+
         .post-cta {
           font-size: 18px;
           margin-bottom: 10px;
           display: block;
         }
+
         .title {
           font-family: "Avenir", Helvetica, sans-serif;
           font-size: 24px;
@@ -113,6 +124,7 @@
           line-height: 1.2;
           text-align: center;
         }
+
         .button {
           background: #F1592A;
           border-radius: 3px;
@@ -126,6 +138,7 @@
           text-decoration: none;
           width: 100%;
         }
+
         .notification-type {
           color: #777;
           display: block;
@@ -134,6 +147,7 @@
           text-align: center;
         }
     </style>
+
 </head>
 <body style="margin:0; padding:10px 0;" bgcolor="#ebebeb" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
 
@@ -145,7 +159,7 @@
     <td class="wrapper" align="center" valign="top" bgcolor="#ebebeb" style="background-color: #ebebeb;">
 
       <!-- 600px container (white background) -->
-      <table border="0" width="600" cellpadding="0" cellspacing="0" class="container" bgcolor="#ffffff">
+      <table border="0" cellpadding="0" cellspacing="0" class="container" bgcolor="#ffffff">
         <tr>
           <td class="heading-container">
             <a href="{{siteUrl}}">

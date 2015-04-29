@@ -66,7 +66,6 @@
       border-top: none;
     }
   }
-
 }
 
 .post {
@@ -86,7 +85,6 @@
 }
 
 .post-title {
-  pointer-events: none;
   color: $black;
   display: block;
   font-size: 21px;
@@ -126,30 +124,44 @@ a.back-link {
   }
 }
 
-.single-post .post {
+.single-post .post,
+.single-post .sticky {
+  padding: 0;
+}
+
+.single-post .post-heading {
+  margin-bottom: 3rem;
+}
+
+.single-post .post-title {
   padding: 0 0 2rem;
+  overflow: visible;
+  white-space: normal;
+  line-height: 1;
+  font-size: 28px;
+  margin-bottom: 2rem;
+  border-bottom: $border;
 
-  .post-heading {
-    margin-bottom: 2rem;
-
-    .post-title {
-      font-size: 28px;
-      line-height: 1;
-      margin-bottom: 1rem;
-      white-space: normal;
-      white-space: normal;
-      overflow: visible;
-      @include small {
-        font-size: 21px;
-      }
-    }
+  .author {
+    font-size: 16px;
+    display: block;
+    font-weight: 500;
+    color: $grey;
+    margin-top: 10px;
+  }
+  @include small {
+    font-size: 21px;
   }
 }
 
 .post-body {
-  margin-bottom: 2rem;
+  margin-bottom: 15%;
   font-size: 16px;
   @include small {
     font-size: 14px;
   }
+}
+
+.post-categories-container {
+  margin-bottom: 1.5rem;
 }

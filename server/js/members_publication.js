@@ -9,7 +9,9 @@ Meteor.publish('members', function () {
         'profile.location': true, 
         'profile.skill1': true, 
         'profile.skill2': true, 
-        'profile.skill3': true, 
+        'profile.skill3': true,
+        'status.online': true,
+        'status.idle': true,
       }
     }
   );

@@ -7,17 +7,22 @@ body {
 // moved sidebar to sidebar.scss
 
 .content-wrap {
+  position: relative;
   z-index: 100;
   width: 100%;
   min-height: 100vh;
-  will-change: opacity, visibility, transform, filter;
-  transition: opacity 500ms ease, 
-              visibility 500ms ease, 
-              transform 500ms ease, 
-              -webkit-filter 500ms ease;
+  transition: opacity 500ms, 
+              visibility 500ms, 
+              transform 500ms, 
+              -webkit-filter 500ms;
+}
 
+// if sidebar, add margin to content-wrap
+
+.sidebar + .content-wrap {
+  margin-left: 300px;
   @include small {
-    box-shadow: 0 0 0 99999px black;
+    margin-left: 0;
   }
 }
 

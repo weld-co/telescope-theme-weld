@@ -75,6 +75,11 @@ Template[getTemplate('calendarNashville')].helpers({
 });
 
 Template.calendarModal.events({
+  // Open new event modal from mobile button
+  'click .mobile-new-event': function(e) {
+    openNewEventModal();
+  },
+
   // Close the modal
   'click .close-button': function(e) {
     closeModal();
@@ -148,6 +153,12 @@ Template.calendarDallas.rendered = function () {
 Template.calendarNashville.rendered = function () {
   datepickerInit();
 }
+
+function openNewEventModal() {
+  $('html, body, .content').scrollTop(0).scrollLeft(0);
+  $('body').addClass('no-scroll');
+  $('.modal').addClass('is-open new-event');
+};
 
 function datepickerInit() {
   $('.datepicker').pickadate({

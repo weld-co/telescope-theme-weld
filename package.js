@@ -72,6 +72,7 @@ Package.on_use(function (api) {
     'client/scss/modules/_thumbnails.scss',
     'client/scss/modules/_calendar.scss',
     'client/scss/modules/_join.scss',
+    'client/scss/modules/_user-status.scss',
 
     // Final Imports
     'client/scss/main.scss',
@@ -99,6 +100,7 @@ Package.on_use(function (api) {
     'client/templates/post_item_weld.html',
     'client/templates/post_thumbnail_weld.html',
     'client/templates/posts_list_weld.html',
+    'client/templates/post_page_weld.html',
     'client/templates/posts_load_more_weld.html',
     'client/templates/search_weld.html',
     'client/templates/sign_out_weld.html',
@@ -123,6 +125,7 @@ Package.on_use(function (api) {
     'client/templates/instagram.html',
     'client/templates/instagram_feed.html',
     'client/templates/twitter_feed.html',
+    'client/templates/user_status.html',
 
     // Member Pages and Menus
     'client/templates/members_menu_weld.html',
@@ -155,14 +158,18 @@ Package.on_use(function (api) {
     'client/js/post_avatars_weld.js',
     'client/js/post_domain_weld.js',
     'client/js/post_info_weld.js',
+    'client/js/post_page_weld.js',
     'client/js/post_item_weld.js',
     'client/js/post_title_weld.js',
     'client/js/post_thumbnail_weld.js', 
     'client/js/sidebar.js',
     'client/js/user_account_weld.js',
     'client/js/user_info_weld.js',
+    'client/js/user_comments_weld.js',
     'client/js/progress_bar.js',
     'client/js/instagram.js',
+    'client/js/user_status_subscription.js',
+    'client/js/user_status.js',
 
     // Routes
     'lib/routes/weld_routes.js',
@@ -214,6 +221,7 @@ Package.on_use(function (api) {
     'server/js/template_overwrites.js',
     'server/js/reset_password_url_fix.js',
     'server/js/members_publication.js',
+    'server/js/user_status_publication.js',
     'server/templates/emailWrapperWeld.handlebars',
     'server/templates/emailNewPostWeld.handlebars',
     'server/templates/emailNewCommentWeld.handlebars',

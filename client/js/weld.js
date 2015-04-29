@@ -10,6 +10,7 @@ templates["nav"]               = "headerWeld";
 templates["newsletterBanner"]  = "newsletterBannerWeld";
 templates["no_rights"]         = "no_rights_weld";
 templates["notFound"]          = "notFoundWeld";
+templates["post_page"]         = "postPageWeld";
 templates["post_item"]         = "post_item_weld";
 templates["postAvatars"]       = "postAvatarsWeld";
 templates["postDomain"]        = "postDomainWeld";

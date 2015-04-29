@@ -11,11 +11,17 @@
   vertical-align: middle;
   outline: none;
 
-  .avatar-image,
-  .avatar-initials {
-    background: $lightest-grey;
+  .avatar-image {
     color: $primary-color;
     border-radius: 100%;
+  }
+}
+
+.avatar .avatar-initials {
+    background: $lightest-grey;
+    border-radius: 100%;
+    color: $primary-color;
+    font-weight: 700;
     font-family: inherit;
     font-size: 0.55rem;
     font-weight: 600;
@@ -23,8 +29,7 @@
     transition: background 50ms ease;
 
     @include small {
-      font-weight: 700;
-    }
+    font-weight: 700;
   }
 }
 

@@ -38,12 +38,6 @@ $mobile-header-height: $header-height - 20px;
   max-width: 40rem;
 }
 
-.center {
-  align-self: center;
-  align-items: center;
-  justify-content: center;
-}
-
 .absolute-center {
   position: absolute;
   left: 0;
@@ -51,6 +45,20 @@ $mobile-header-height: $header-height - 20px;
   right: 0;
   bottom: 0;
   margin: auto;
+}
+
+.center {
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.horizontal-center {
+  justify-content: center;
+}
+
+.vertical-center {
+  align-items: center;
 }
 
 .optical {
