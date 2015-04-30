@@ -1,25 +1,28 @@
 <template name="membersItem">
   <span class="member mix {{profile.skill1}} {{profile.skill2}} {{profile.skill3}}" data-name="{{profile.name}}">
+    
     <span class="avatar-wrap">
       {{> avatar user=this size="large" shape="circle"}}
       {{> userStatus}}
     </span>
+
     <div class="member-name">
       {{#if profile.name}}
         {{profile.name}}
       {{else}}
         {{username}}
       {{/if}}
-      </div>
+    </div>
+    
     <div class="member-location">{{profile.location}}</div>
-      {{#if profile.bio}}
-      <p class="member-blurb">{{profile.bio}}</p>
-      {{/if}}
 
+    {{#if profile.bio}}
+    <p class="member-blurb">{{profile.bio}}</p>
+    {{/if}}
+
+    {{#if profile.skill1}}
     <div class="member-skills-wrap">
-      {{#if profile.skill1}}
       <span class="member-skill">{{profile.skill1}}</span>
-      {{/if}}
 
       {{#if profile.skill2}}
       <span class="member-skill">{{profile.skill2}}</span>
@@ -29,8 +32,11 @@
       <span class="member-skill">{{profile.skill3}}</span>
       {{/if}}
     </div>
+    {{/if}}
+
     <a class="member-rollover cell absolute-center center" href="{{profileUrl this}}">
       <span class="view-profile">View Profile</span>
     </a>
+
   </span>
 </template>
