@@ -4,6 +4,7 @@ Meteor.publish('members', function () {
         email_hash: true,
         isInvited: true,
         slug: true,
+        username: true,
         'profile.name': true,
         'profile.bio': true,
         'profile.location': true, 

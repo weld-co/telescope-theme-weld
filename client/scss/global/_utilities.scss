@@ -79,6 +79,13 @@ $mobile-header-height: $header-height - 20px;
   }
 }
 
+.space-between {
+  justify-content: space-between;
+  @include small {
+    flex-direction: column;
+  }
+}
+
 .srollable {
   overflow: auto;
   -webkit-overflow-scrolling: touch;

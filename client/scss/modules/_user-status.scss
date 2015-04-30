@@ -10,7 +10,7 @@
   width: 16px;
   position: absolute;
   bottom: 5px;
-  left: 16px;
+  left: 15%;
   border-radius: 50%;
   border: 2px solid white;
   transition: background 1s, transform 500ms cubic-bezier(0.75,-0.5, 0.25, 1.4);
@@ -36,5 +36,5 @@
 .member .status-label {
   height: 16px;
   width: 16px;
-  bottom: 14px;
+  bottom: 15%;
 }

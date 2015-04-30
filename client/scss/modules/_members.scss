@@ -85,7 +85,6 @@
   color: $primary-color;
 }
 
-
 .total,
 .total:after {
   border-radius: 50%;
@@ -94,9 +93,6 @@
 }
 
 .total {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: absolute;
   right: 0;
   top: 0;
@@ -121,73 +117,78 @@
 .members-page-wrap {
   align-items: flex-start;
   align-content: flex-start;
+  padding: 1rem;
 }
 
-.member-wrap {
-  min-width: 250px;
-  min-height: 230px;
-  position: relative;
-  padding: 2rem;
+$member-radius: 5px;
+
+.member {
+  flex: 1;
+  min-width: 280px;
+  padding: 1rem;
+  margin: 1rem;
   text-align: center;
-  cursor: default;
-  
-  .member,
-  .about {
-    transition: opacity 400ms ease, visibility 400ms ease, filter 800ms ease, transform 200ms ease-in-out;
+  box-shadow: 0 0 0 1px rgba(239,238,238,1);
+  border-radius: $member-radius;
+  position: relative;
+  overflow: hidden;
+
+  @include small {
+    width: 100%;
   }
-  
+
   &:hover {
-    .member {
-      opacity: 0.5;
-      transform: scale(0.9);
-      filter: blur(2px);
-    }
-    .about {
+    box-shadow: none;
+  }
+}
+
+.member-rollover {
+  opacity: 0;
+  background: fade-out($primary-color, 0.1);  
+  transition: opacity 300ms;
+  border-radius: $member-radius;
+  &:hover {
+    opacity: 1;
+    .view-profile {
       opacity: 1;
-      visibility: visible;
-      transform: scale(1);
+      transform: translateY(0);
     }
   }
+}
+
+.view-profile {
+  color: white;
+  opacity: 0;
+  transform: translateY(200px);
+  transition: opacity 500ms, transform 300ms cubic-bezier(0.5, -0.75, 0.25, 1.25);
 }
 
 .member .avatar {
-  height: 100px;
-  width: 100px;
+  height: 75px;
+  width: 75px;
   margin: 0;
   margin-bottom: 1rem;
+  @include small {
+    height: 50px;
+    width: 50px;
+  }
 
   .avatar-initials {
     font-size: 1.5rem;
-    line-height: 4.5;
+    line-height: 105px;
+    @include small {
+      font-size: 1rem;
+      font-weight: 500;
+      line-height: 55px;
+    }
   }
 }
 
-.about {
-  background: fade-out($lightest-grey, 0.3);
-  bottom: 0;
-  color: $middle-grey;
-  left: 0;
-  opacity: 0;
-  padding: 2.75rem 2rem;
-  font-size: 14px;
-  line-height: 1.4;
-  position: absolute;
-  right: 0;
-  text-align: center;
-  top: 0;
-  visibility: hidden;
-  transform: scale(0.95);
-
-  .member-name {
-    color: $black;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 0.5rem;
-  }
+.member-name {
+  font-weight: 600;
+  margin-bottom: 5px;
 }
 
-.member-skills,
 .member-location {
   font-size: 80%;
   color: $grey;
@@ -200,24 +201,32 @@
 }
 
 .member-blurb {
-  color: $grey;
-  max-height: 3rem;
-  max-width: 20rem;
-  margin: 0 auto 2rem auto;
+  color: $dark-grey;
+  font-size: 14px;
+  line-height: 1.4;
+  text-align: center;
+  margin-top: 15px;
+  max-height: 60px;
   overflow-y: hidden;
   position: relative;
-  -webkit-mask-image: linear-gradient(to bottom, rgba(255,255,255,1) 50%, rgba(255,255,255,0));
+  -webkit-mask-image: linear-gradient(to bottom, rgba(255,255,255,1), rgba(255,255,255,0));
 }
 
-a.view-more {
-  padding: 0.5rem 1rem;
-  background: $primary-color;
-  color: white;
-  border-radius: 3px;
+.member-skills-wrap {
+  margin-top: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.member-skill {
+  text-transform: capitalize;
+  white-space: nowrap;
   display: inline-block;
-  &:hover {
-    color: white;
-  }
+  padding: 4px 10px;
+  margin-top: 1rem;
+  background: #EFEEEE;
+  border-radius: 50px;
+  font-size: 11px;
+  margin: 3px;
 }
 
 .no-results {

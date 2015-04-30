@@ -1,17 +1,36 @@
 <template name="membersItem">
-  <span class="member-wrap mix {{profile.skill1}} {{profile.skill2}} {{profile.skill3}}" data-name="{{profile.name}}">
-    <div class="member">
-      <span class="avatar-wrap">
-        {{> avatar user=this size="large" shape="circle"}}
-        {{> userStatus}}
-      </span>
-      <div class="member-name">{{profile.name}}</div>
-      <div class="member-location">{{profile.location}}</div>          
-    </div>
-    <div class="about">
-      <div class="member-name">{{profile.name}}</div>
+  <span class="member mix {{profile.skill1}} {{profile.skill2}} {{profile.skill3}}" data-name="{{profile.name}}">
+    <span class="avatar-wrap">
+      {{> avatar user=this size="large" shape="circle"}}
+      {{> userStatus}}
+    </span>
+    <div class="member-name">
+      {{#if profile.name}}
+        {{profile.name}}
+      {{else}}
+        {{username}}
+      {{/if}}
+      </div>
+    <div class="member-location">{{profile.location}}</div>
+      {{#if profile.bio}}
       <p class="member-blurb">{{profile.bio}}</p>
-      <a class="view-more" href="{{profileUrl this}}">View Profile</a>
+      {{/if}}
+
+    <div class="member-skills-wrap">
+      {{#if profile.skill1}}
+      <span class="member-skill">{{profile.skill1}}</span>
+      {{/if}}
+
+      {{#if profile.skill2}}
+      <span class="member-skill">{{profile.skill2}}</span>
+      {{/if}}
+
+      {{#if profile.skill3}}
+      <span class="member-skill">{{profile.skill3}}</span>
+      {{/if}}
     </div>
+    <a class="member-rollover cell absolute-center center" href="{{profileUrl this}}">
+      <span class="view-profile">View Profile</span>
+    </a>
   </span>
 </template>

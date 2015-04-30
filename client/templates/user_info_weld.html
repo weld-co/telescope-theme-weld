@@ -159,17 +159,19 @@
       </div>
   </div> <!-- profile-bio-wrap -->
 
-<div class="social-wrap">    
-  <div class="instagram-wrap">
-    {{#unless profile.instagramAccessToken}}
+<div class="social-wrap">
+  {{#unless profile.instagramAccessToken}}
+    {{#if canEditProfile}}
+    <div class="instagram-wrap">      
       <div class="instagram-placeholder row center">
         <a data-js="instagramAuth" class="button instagram-button" href="https://api.instagram.com/oauth/authorize/?client_id=f04ce58e475f4dc792387f41b90b3eec&redirect_uri=http://welderwire.co/instagram&response_type=token">+ Add Your Instagram Feed</a>
       </div>
-    {{else}}
-      {{> instagramUserFeed}}    
-    {{/unless}}
-  </div>
-
+    </div>
+    {{/if}}
+  {{else}}
+    {{> instagramUserFeed}}    
+  {{/unless}}
+    
   {{#if profile.twitter}}
     {{> twitterFeed}}
   {{/if}}
