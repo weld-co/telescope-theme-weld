@@ -86,6 +86,10 @@ $mobile-header-height: $header-height - 20px;
   }
 }
 
+.nowrap {
+  white-space: nowrap;
+}
+
 .srollable {
   overflow: auto;
   -webkit-overflow-scrolling: touch;

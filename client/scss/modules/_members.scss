@@ -3,9 +3,11 @@
   padding: 0;
   width: 100%;
   max-width: 100%;
+  // for tesults Total widget placement
+  position: relative;
 }
 
-#sort-container .mix {
+[data-js="mixitup"] .mix {
   display: none;
 }
 
@@ -24,24 +26,19 @@
   &.row {
     justify-content: initial;
   }
+}
 
-  @include small {
-    padding: 0.75rem;
-    max-height: none;
-  }
+.control-wrap {
+
+    padding-right: 800px;
+
 }
 
 .toggle,
-.members-select,
 .sort-label,
 .sort {
   margin-right: 1rem;
   cursor: pointer;
-}
-
-.sort-label {
-  margin-left: 1rem;
-  color: $grey;
 }
 
 .toggle {
@@ -50,40 +47,35 @@
   align-items: center;
   justify-content: center;
   font-size: 0.875rem;
-  border-radius: 3px;
   cursor: pointer;
-  height: 2rem;
+  height: $input-height;
   padding: 0 1rem;
   background-color: white;
   box-shadow: 0 2px 0 0 darken(white, 10);
 
-  @include small {
-    margin: 0.5rem;
-  }
   &:focus {
     outline: none;
   }
 }
 
-.skills-select {
-  width: auto;
-  max-height: 2rem;
-  max-width: 200px;
-}
-
-.toggle:active {
-  transform: translateY(1px);
-  box-shadow: none;
-}
-
 .toggle.active {
-  background: $primary-color;
-  box-shadow: 0 2px 0 0 darken($primary-color, 10);;
-  color: white;
+  color: $primary-color;
 }
 
-.sort.active {
+.skills-select {
+  max-height: $input-height;
+  width: 200px;
+  padding-right: 30px;
+}
+
+.sort-label {
+  margin-left: 1rem;
+  color: $grey;
+}
+
+.sort:hover {
   color: $primary-color;
+  transform: scale(0.75);
 }
 
 .total,
@@ -97,8 +89,7 @@
   position: absolute;
   right: 0;
   top: 0;
-  bottom: 0;
-  margin: auto 1.5rem;
+  margin: 1rem;
 
   color: white;
   font-size: 80%;
@@ -150,7 +141,7 @@ $member-radius: 5px;
 .member-rollover {
   opacity: 0;
   background: fade-out($primary-color, 0.1);  
-  transition: opacity 300ms;
+  transition: opacity 200ms;
   border-radius: $member-radius;
 
   &:hover {
@@ -207,6 +198,10 @@ $member-radius: 5px;
   text-overflow: ellipsis;
   overflow: hidden;
   text-transform: capitalize;
+
+  &.active {
+    color: $primary-color;
+  }
 }
 
 .member-blurb {

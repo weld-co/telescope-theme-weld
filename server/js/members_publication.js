@@ -11,6 +11,7 @@ Meteor.publish('members', function () {
         'profile.skill1': true, 
         'profile.skill2': true, 
         'profile.skill3': true,
+        'profile.membership': true,
         'status.online': true,
         'status.idle': true,
       }

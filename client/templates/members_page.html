@@ -3,33 +3,48 @@
     <div class="no-results-headline">Dang it.</div> 
     No matches were found.
   </div>
-  <section class="control-bar row">
-    <span class="control-wrap">
-      <span class="toggle" data-js="reset">View All</span>
-      <select class="styled-select skills-select toggle">
-        <option value="default" disabled selected>Select a filter…</option>
-        {{#each users}}
-          <!-- don't produce a filter toggle if member hasn't set one -->
-          {{#if profile.skill1}}
-          <option class="option" value=".{{profile.skill1}}">{{profile.skill1}}</option>
-          {{/if}}
-          {{#if profile.skill2}}
-          <option class="option" value=".{{profile.skill2}}">{{profile.skill2}}</option>
-          {{/if}}
-          {{#if profile.skill3}}
-          <option class="option" value=".{{profile.skill3}}">{{profile.skill3}}</option>
-          {{/if}}
-        {{/each}}
-      </select>
-    </span>
-    <span class="control-wrap">
+  <section class="control-bar row srollable-horizontal">
+    <span data-js="filters" class="control-wrap nowrap">
+
+      <span data-js="reset" class="toggle">View All</span>
+
+      <span data-js="select-wrap">
+        <select data-js="select-dropdown" class="styled-select skills-select toggle">
+          <option value="">All locations</option>
+          {{#each users}}
+            {{#if profile.membership}}
+            <option class="option" value=".{{profile.membership}}">{{profile.membership}}</option>
+            {{/if}}
+          {{/each}}
+        </select>
+      </span>
+
+      <span data-js="select-wrap">
+        <select data-js="select-dropdown" class="styled-select skills-select toggle">
+          <option value="">All skills and services</option>
+          {{#each users}}
+            {{#if profile.skill1}}
+            <option class="option" value=".{{profile.skill1}}">{{profile.skill1}}</option>
+            {{/if}}
+            {{#if profile.skill2}}
+            <option class="option" value=".{{profile.skill2}}">{{profile.skill2}}</option>
+            {{/if}}
+            {{#if profile.skill3}}
+            <option class="option" value=".{{profile.skill3}}">{{profile.skill3}}</option>
+            {{/if}}
+          {{/each}}
+        </select>
+      </span>
+
       <span class="sort-label">Sort:</span>
       <span class="sort" data-sort="name:asc">A–Z</span> 
       <span class="sort" data-sort="random">Random</span>
+
     </span>
-    <span class="total cell center"><span class="total-number"></span></span>
   </section>
-  <div id="sort-container" class="members-page-wrap row space-around">
+  <span class="total cell center"><span class="total-number"></span></span>
+  
+  <div data-js="mixitup" class="members-page-wrap row space-around">
     {{#each users}}
       {{> membersItem}}
     {{/each}}
