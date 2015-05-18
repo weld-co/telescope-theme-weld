@@ -75,6 +75,7 @@ Template[getTemplate('calendarNashville')].helpers({
 });
 
 Template.calendarModal.events({
+
   // Open new event modal from mobile button
   'click .mobile-new-event': function(e) {
     openNewEventModal();
@@ -84,9 +85,9 @@ Template.calendarModal.events({
   'click .close-button': function(e) {
     closeModal();
   },
+
   // Submit Form and Trigger Tip Reminder
   'submit .new-event-form': function(e) {
-    // TODO: figure out a way to make these DRY
     e.preventDefault();
     var formEl = $(e.target);
     var submitButton = $('input[type=submit]', formEl);
@@ -131,15 +132,22 @@ Template.calendarModal.events({
     });
   },
 
-  // Toggle disabled on input fields
+  // Enable submit button after selecting space to reserve
+  'change [value=meeting-room], change [value=studio]': function(e) {
+    $('input[type=submit]').attr('disabled', false);
+  },
+
+  //  Enable fields when selecting change
   'change #change': function(e) {
     $('[name=newDate], [name=newStartTime], [name=newEndTime]').removeAttr('disabled', 'disabled');
   },
+
+  // Disable field when selecing cancel
   'change #cancel': function(e) {
     $('[name=newDate], [name=newStartTime], [name=newEndTime]').attr('disabled', 'disabled');
   },
-  // Refresh the page to see calendar event 
-  // TODO: figure out .fullcalender('rerenderEvents') method
+
+  // Refresh the page to see calendar event
   'click .refresh': function(e) {
     location.reload();
   }
@@ -148,11 +156,10 @@ Template.calendarModal.events({
 // Initiate Datepicker Plugin
 Template.calendarDallas.rendered = function () {
   datepickerInit();
-}
-
+};
 Template.calendarNashville.rendered = function () {
   datepickerInit();
-}
+};
 
 function openNewEventModal() {
   $('html, body, .content').scrollTop(0).scrollLeft(0);
@@ -164,7 +171,10 @@ function datepickerInit() {
   $('.datepicker').pickadate({
     format: 'dddd, mmmm d'
   });
-  $('.timepicker').pickatime();
+  $('.timepicker').pickatime({
+    min: [5,0],
+    max: [24,0]
+  });
 };
 
 function closeModal() {

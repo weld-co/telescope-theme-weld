@@ -2,7 +2,6 @@
 .comment-meta {
   color: $grey;
   font-size: 10px;
-  opacity: 0.5;
   transition: opacity 50ms ease;
   @include small {
     font-size: 12px;
@@ -12,19 +11,8 @@
 
 .post-meta {
   white-space: nowrap;
-  overflow-x: scroll;
-  overflow-y: hidden; 
-  overflow-scrolling: touch;
   position: relative;
   padding: 0.75rem 0;
-  &::-webkit-scrollbar { 
-    width: 0px;
-    height: 0px;
-    background: transparent;
-  }
-  @include small {
-    -webkit-mask-image: linear-gradient(to right, rgba(255,255,255,1) 75%, rgba(255,255,255,0));
-  }
 }
 
 .single-post .post-meta {
@@ -32,17 +20,12 @@
   opacity: 1;
   font-size: 12px;
   padding: 1rem;
+  max-height: 50px;
   margin-bottom: 0;
 }
 
 .comment-meta {
   font-size: 12px;
-}
-
-.posts.list .post:hover {
-  .post-meta {
-    opacity: 1;
-  }
 }
 
 .posts.list .sticky .post-meta a:hover {
@@ -62,7 +45,7 @@
 .author,
 .upvote-link,
 .points,
-.comments-link, 
+.comments-link,
 .edit-post,
 .comment-reply,
 .comment-permalink {

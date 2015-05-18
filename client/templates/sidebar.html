@@ -2,9 +2,10 @@
   <nav class="sidebar">
     <div class="close-icon mobile-only">×</div>
     {{#if isDesktop}}{{> UI.dynamic template=logo}}{{/if}}
-    <ul class="sidebar-menu srollable-vertical">
+    <ul class="sidebar-menu srollable-vertical no-scrollbar">
       <li>{{> searchWeld}}</li>
       <li><a href="#">{{> notificationsMenuWeld}}</a></li>
+      <li><a class="btn-outlined sidebar-btn" href="/submit">Post</a></li>
       {{#each primaryNav}}
         <li>
           {{> UI.dynamic template=getTemplate}}

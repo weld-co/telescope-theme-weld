@@ -7,11 +7,16 @@
       <div class="close-button">✕</div>
 
       <div class="control-group">
-        <label>Which space do you need?</label>
-        <select class="styled-select" name="space" required autofocus>
-          <option value="studio">Studio</option>
-          <option value="meeting-room">Meeting Room</option>
-        </select>
+        <fieldset class="radio-group" required>
+          <span class="radio-wrap">
+            <input class="input" type="radio" id="studio" name="space" value="studio"/>
+            <label class="radio-label" for="studio">Studio</label>
+          </span>
+          <span class="radio-wrap">
+            <input class="input" type="radio" id="meeting" name="space" value="meeting-room"/>
+            <label class="radio-label" for="meeting">Meeting Room</label>
+          </span>
+        </fieldset>
       </div>
 
       {{#with currentUser}}
@@ -41,11 +46,11 @@
         <label>Anything else we should know about?</label>
         <textarea placeholder="Kitchen, lots of people, sound sensitive, murder, electricity?" name="description"></textarea>
       </div>
-      <input class="button" type="submit" value="Make Your Reservation"/>
+      <input class="button" type="submit" value="Make Your Reservation" disabled="disabled" />
     </form>
 
     <!-- Edit Event Form -->
-    <form class="edit-event-form" action="http://formspree.io/elisa@weld.co" method="POST">
+    <form class="edit-event-form" action="http://formspree.io/{{city}}@weld.co" method="POST">
       <div class="close-button">✕</div>
       <input type="hidden" name="_subject" value="Calendar Change Request"/>
 
@@ -115,7 +120,7 @@
         <h2>We'll update your booking shortly.</h2>
       </div>
     </div>
-  
+
   </div> <!-- modal -->
   <div class="button mobile-new-event">Create New Event</div>
 </template>

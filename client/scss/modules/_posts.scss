@@ -15,18 +15,11 @@
   &:nth-child(8) { animation-duration: 1000ms; }
   &:nth-child(9) { animation-duration: 1100ms; }
   &:nth-child(10) { animation-duration: 1200ms; }
+
   &:hover {
     @include large {
       background: $lightest-grey;
-      .post-title {
-        color: $primary-color;
-      }
-    }
-  }
 
-  @include small {
-    &:active {
-      background: $lightest-grey;
       .post-title {
         color: $primary-color;
       }
@@ -49,6 +42,7 @@
     a.post-category,
     a.post-domain {
       background: white;
+      color: $dark-grey
     }
 
     .avatar-initials {
@@ -94,7 +88,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   text-rendering: optimizeLegibility;
-  
+
   &:visited {
     color: $grey;
   }

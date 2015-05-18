@@ -1,3 +1,4 @@
+
 @charset "UTF-8";
 
 $input-height: 2.5rem;
@@ -48,9 +49,8 @@ form, .accounts-dialog {
   .form-actions,
   .form-group {
     @include cf;
-    
+
     a {
-      float:left;
       display:block;
     }
     .button, .btn{
@@ -167,11 +167,11 @@ input[type="submit"].save-button {
 }
 
 button,
-.button, 
+.button,
 .btn {
   -webkit-appearance: none;
   background: $primary-color;
-  color: white;
+  color: white !important;
   text-align: center;
   display: block;
   width: 100%;
@@ -196,6 +196,13 @@ button,
   &.inline {
     display: inline-block;
   }
+}
+
+.btn-outlined {
+  @extend .btn;
+  background: transparent;
+  border: 1px solid white;
+  border-radius: 3px;
 }
 
 .styled-select {
@@ -245,25 +252,25 @@ input[type="search"] {
   box-shadow: 0 1px 1px black(0.15);
 }
 
-textarea + .instructions-block {
-  opacity: 0
-}
-
-textarea:focus + .instructions-block {
-  opacity: 1;
-}
 
 .help-block,
 .instructions-block {
+  font-family: Menlo, Monaco, Helvetica, Arial, sans-serif;
   color: $grey;
-  font-size: 0.75rem;
+  font-size: 12px;
   margin-top: .5rem;
   display: block;
-  white-space: pre-wrap;
+  @include small {
+    float: none;
+  }
+}
 
-  &:active,
-  &:hover {
-    opacity: 1;
+.instruction-text,
+.help-link {
+  @include small {
+    margin: 1rem 0;
+    display: block;
+    float: none;
   }
 }
 
@@ -285,7 +292,7 @@ textarea:focus + .instructions-block {
   padding: 3px 6px !important;
   white-space: nowrap;
   width: 190px !important;
-  
+
   &:focus {
     outline: none !important;
     box-shadow: none !important;
@@ -395,7 +402,7 @@ fieldset,
 
 .radio-group {
   border: 2px solid #dddddd;
-  padding: 1.5rem 0;
+  padding: 1.5rem 1.5rem;
   margin-bottom: 1rem;
 }
 
@@ -418,7 +425,7 @@ fieldset,
 
 .input[type="checkbox"] + .checkbox-label,
 .input[type="radio"] + .radio-label {
-  color: $grey; 
+  color: $grey;
 
   @include large {
     vertical-align: middle;

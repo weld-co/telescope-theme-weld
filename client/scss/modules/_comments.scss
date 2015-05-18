@@ -14,7 +14,7 @@
 }
 
 .comment-body {
-  padding-top: 1rem;
+  padding-top: 2rem;
   border-top: 1px solid $light-grey;
   font-size: 14px;
 }
@@ -40,7 +40,7 @@
 .comment-meta { //also in post_info.scss
   margin: 1rem 0;
   text-align: right;
-  opacity: 0;
+  opacity: 0.3;
   transition: opacity 200ms ease-in-out;
   @include small {
     opacity: 1;
@@ -72,30 +72,74 @@
 }
 
 .post-subscribe {
+  position: relative;
+  top: -50px;
+  right: 0;
+  margin: auto;
   text-align: right;
-  margin-top: 1rem;
+  font-size: 21px;
+  z-index: 0;
 }
+
 
 a.subscribe-link,
 a.unsubscribe-link {
-  font-size: 0.875rem;
-  padding: 0.25rem 0.75rem 0.25rem 0;
-  border-radius: 3px;
-  background: $lightest-grey;
-  &:before {
-    background: fade-out($primary-color, 0.8);
-    border-radius: 3px 0 0 3px;
-    padding: 0.25rem 0.5rem;
-    margin-right: 0.75rem;
-    color: white;
+  height: 50px;
+  width: 50px;
+  float: right;
+  background: $primary-color;
+  color: white;
+  z-index: 10;
+}
+
+.subscribe-icon {
+  fill: white;
+  opacity: 1;
+  transition: transform 200ms cubic-bezier(0.5, -0.75, 0.25, 1.5), opacity 200ms;
+}
+
+a.subscribe-link .subscribe-icon {
+  opacity: 0.5;
+}
+
+a.unsubscribe-link .subscribe-icon {
+  transform: scale(1.5);
+}
+
+a.subscribe-link:before,
+a.unsubscribe-link:before {
+  content: 'Subscribe to this thread';
+  position: absolute;
+  right: 50px;
+  font-size: 12px;
+  color: $lightest-grey;
+  background: $black;
+  line-height: 50px;
+  height: 50px;
+  padding: 0 1rem;
+  opacity: 0;
+  transition: opacity 300ms;
+  pointer-events: none;
+  z-index: 5;
+  @include small {
+    display: none;
   }
 }
 
-a.subscribe-link:before {
-  content: "★";
+a.unsubscribe-link:before {
+  background: lighten($primary-color, 10%);
+  color: white;
+  content: 'Subscribed!';
+  animation: fade-in 500ms;
 }
 
-a.unsubscribe-link:before {
-  background: $primary-color;
-  content: "✕";
+.post-subscribe:hover  {
+  a.subscribe-link:before,
+  a.unsubscribe-link:before {
+    opacity: 1;
+  }
+}
+
+.comment-submit-button {
+  margin-top: 50px;
 }

@@ -5,15 +5,10 @@
   z-index: 200;
   background: $sidebar-bg;
   overflow: hidden;
-  transition: opacity 500ms, 
-              visibility 500ms, 
-              transform 500ms, 
+  transition: opacity 500ms,
+              visibility 500ms,
+              transform 500ms,
               -webkit-filter 500ms;
-  &::-webkit-scrollbar { 
-    width: 0px;
-    height: 0px;
-    background: transparent;
-  }
 
   @include small {
     width: 100%;
@@ -23,6 +18,12 @@
     width: 100%;
     transform: translateX(-100%);
   }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+  background: transparent;
 }
 
 // Mobile off-canvas nav
@@ -63,7 +64,7 @@
 .sidebar-menu {
   padding: $padding;
   max-height: 100vh;
-  padding-bottom: 20rem;
+  padding-bottom: 10rem;
   @include small {
     min-height: 100vh;
     margin-bottom: 20rem;
@@ -77,11 +78,12 @@
     font-weight: 400;
     height: auto;
     margin-bottom: $gutter;
-    
+
     a {
       display: block;
       &, &:link, &:visited {
         color: $grey;
+        position: relative;
       }
     }
 
@@ -91,7 +93,7 @@
   }
 
   .dropdown {
-    
+
     > a {
       &:after {
         display: inline-block;
@@ -106,7 +108,7 @@
 
   .dropdown-menu {
     display: none;
-    
+
     li:first-child {
       margin-top: 1rem;
     }
@@ -119,6 +121,14 @@
   }
 }
 
+.sidebar-btn {
+  opacity: 0.5;
+  transition: opacity 300ms;
+  &:hover {
+    opacity: 1;
+  }
+}
+
 .menu-description {
   display: none;
   position: absolute;
@@ -126,7 +136,7 @@
   color: white;
   animation: fade-in 200ms ease-in-out;
   font-size: small;
-  left: $padding;
+  left: 0;
   height: 1.5rem;
   line-height: 1.25;
   white-space: nowrap;

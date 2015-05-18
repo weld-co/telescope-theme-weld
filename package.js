@@ -1,4 +1,4 @@
-Package.describe({ 
+Package.describe({
     summary: "Telescope WELD Theme Package",
     version: '0.3.0',
     name: "telescope-theme-weld"
@@ -22,7 +22,7 @@ Package.on_use(function (api) {
   ], ['client', 'server']);
 
   api.use('cmather:handlebars-server');
-  api.use('webapp', 'server') 
+  api.use('webapp', 'server')
 
   api.addFiles([
 
@@ -77,7 +77,7 @@ Package.on_use(function (api) {
     // Final Imports
     'client/scss/main.scss',
 
-    // Overrides 
+    // Overrides
     'client/templates/categories_menu_weld.html',
     'client/templates/comment_form_weld.html',
     'client/templates/comment_list_weld.html',
@@ -96,11 +96,13 @@ Package.on_use(function (api) {
     'client/templates/post_avatars_weld.html',
     'client/templates/post_domain_weld.html',
     'client/templates/post_info_weld.html',
+    'client/templates/post_content_weld.html',
     'client/templates/post_title_weld.html',
     'client/templates/post_item_weld.html',
     'client/templates/post_thumbnail_weld.html',
     'client/templates/posts_list_weld.html',
     'client/templates/post_page_weld.html',
+    'client/templates/post_subscribe_weld.html',
     'client/templates/posts_load_more_weld.html',
     'client/templates/search_weld.html',
     'client/templates/sign_out_weld.html',
@@ -115,7 +117,6 @@ Package.on_use(function (api) {
     'client/templates/user_comments_weld.html',
     'client/templates/users_weld.html',
     'client/templates/views_menu_weld.html',
-
 
     // Additions
     'client/templates/logo.html',
@@ -144,7 +145,7 @@ Package.on_use(function (api) {
     'lib/instafeed.min.js',
     'lib/intercom.js',
     'lib/twitter_feed.js',
-    
+
     // Customizations
     'client/js/weld.js',
     'client/js/base_weld.js',
@@ -161,7 +162,8 @@ Package.on_use(function (api) {
     'client/js/post_page_weld.js',
     'client/js/post_item_weld.js',
     'client/js/post_title_weld.js',
-    'client/js/post_thumbnail_weld.js', 
+    'client/js/post_subscribe_weld.js',
+    'client/js/post_thumbnail_weld.js',
     'client/js/sidebar.js',
     'client/js/user_account_weld.js',
     'client/js/user_info_weld.js',

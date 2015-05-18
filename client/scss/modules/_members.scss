@@ -1,5 +1,4 @@
 .membersPage {
-  align-content: flex-start;
   padding: 0;
   width: 100%;
   max-width: 100%;
@@ -12,6 +11,7 @@
 }
 
 .control-bar {
+  // Vertically center items
   align-items: center;
   background-color: $lightest-grey;
   border-bottom: 2px solid $light-grey;
@@ -29,29 +29,26 @@
 }
 
 .control-wrap {
-
-    padding-right: 800px;
-
+  padding-right: 800px;
 }
 
 .toggle,
-.sort-label,
 .sort {
-  margin-right: 1rem;
   cursor: pointer;
 }
 
 .toggle {
-  display: inline-flex;
-  border: none;
   align-items: center;
   justify-content: center;
+  display: inline-flex;
+  border: none;
   font-size: 0.875rem;
   cursor: pointer;
   height: $input-height;
   padding: 0 1rem;
   background-color: white;
   box-shadow: 0 2px 0 0 darken(white, 10);
+  margin-right: 1rem;
 
   &:focus {
     outline: none;
@@ -68,14 +65,19 @@
   padding-right: 30px;
 }
 
+.sort,
 .sort-label {
+  font-size: 12px;
   margin-left: 1rem;
+}
+
+.sort-label {
   color: $grey;
 }
 
+.sort.active,
 .sort:hover {
   color: $primary-color;
-  transform: scale(0.75);
 }
 
 .total,
@@ -107,12 +109,19 @@
 }
 
 .members-page-wrap {
+  flex-flow: row wrap;
+  // align items to top of row
   align-items: flex-start;
+  // align content to top of page
   align-content: flex-start;
+  // center content left and righ
+  justify-content: center;
+
   padding: 1rem;
   @include small {
     flex-direction: column;
     align-items: stretch;
+    align-content: center;
     padding: 0;
   }
 }
@@ -120,8 +129,10 @@
 $member-radius: 5px;
 
 .member {
-  flex: 1;
-  min-width: 260px;
+  // Make all items equally fill space
+  flex-grow: 1;
+  // flex-basis is basically max-width 
+  flex-basis: 260px;
   max-width: 500px;
   padding: 1rem;
   margin: 1rem;
@@ -130,6 +141,10 @@ $member-radius: 5px;
   border-radius: $member-radius;
   position: relative;
   overflow: hidden;
+
+  @include small {
+    flex-basis: auto;
+  }
 
   &:hover {
     @include large {

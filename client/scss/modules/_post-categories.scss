@@ -18,7 +18,7 @@ a.post-domain {
 }
 
 a.post-domain {
-  color: $primary-color;
+  color: $primary-color !important;
 }
 
 a.post-category[href$="category/undefined"] {
@@ -26,12 +26,29 @@ a.post-category[href$="category/undefined"] {
 }
 
 
+a.category-nashville,
+a.category-dallas {
+  background: $primary-color;
+  color: white;
+}
+
 .posts.list .post:hover {
   a.post-category,
-  a.post-domain {
+  a.post-domain,
+  a.category-nashville,
+  a.category-dallas {
     @include large {
       background: white;
+      color: $dark-grey;
     }
+  }
+}
+
+.posts.list > .post.sticky {
+  a.post-category,
+  a.post-domain {
+    background: white;
+    color: $dark-grey;
   }
 }
 

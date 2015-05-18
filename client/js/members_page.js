@@ -3,12 +3,12 @@ Template.membersPage.rendered = function (){
   dropdownFilter.init();
 
   $('[data-js="mixitup"]').mixItUp({
-    animation: { 
+    animation: {
       duration: 100,
       effects: 'fade'
     },
     load: {
-      sort: 'random'
+      sort: 'name:asc'
     },
     callbacks: {
       onMixStart: function(state){
@@ -39,14 +39,6 @@ Template.membersPage.rendered = function (){
   });
 };
 
-Template[getTemplate('membersPage')].events({
-  // Mixitup using selected option from select menu
-  'click .sort': function(e) {
-    var sort = $(this).data('sort');
-    $('[data-js="mixitup"]').mixItUp('sort', sort);
-  }
-});
-
 Template.membersPage.destroyed = function() {
   $('[data-js="mixitup"]').mixItUp('destroy', true);
 };
@@ -59,7 +51,7 @@ var dropdownFilter = {
   groups: [],
   outputArray: [],
   outputString: '',
-  
+
   // The "init" method will run on document ready and cache any jQuery objects we will need.
   init: function(){
     var self = this; // As a best practice, in each method we will asign "this" to the variable "self" so that it remains scope-agnostic. We will use it to refer to the parent "dropdownFilter" object so that we can share methods and properties between all parts of the object.
@@ -74,8 +66,8 @@ var dropdownFilter = {
     });
     self.bindHandlers();
   },
-  
-  // The "bindHandlers" method will listen for whenever a select is changed. 
+
+  // The "bindHandlers" method will listen for whenever a select is changed.
   bindHandlers: function(){
     var self = this;
     // Handle select change
@@ -83,25 +75,17 @@ var dropdownFilter = {
       e.preventDefault();
       self.parseFilters();
       $(this).addClass('active');
-      // // Get sort text, remove first character
-      // var sortText = self.outputString.substring(1);
-      // // Reset tags active state
-      // $('.member-skill').removeClass('active');
-      // // Highlight tag that's being filtered
-      // $('.member-skill:contains("' + sortText + '")').addClass('active');
     });
 
     // Handle reset click
     self.$reset.on('click', function(e){
       e.preventDefault();
       self.$filters.find('[data-js="select-dropdown"]').val('');
-      // // Get sort text, remove first character
-      // $('.member-skill').removeClass('active');
       self.parseFilters();
       $('.toggle').removeClass('active');
     });
   },
-  
+
   // The parseFilters method pulls the value of each active select option
   parseFilters: function(){
     var self = this;
@@ -111,19 +95,20 @@ var dropdownFilter = {
     }
     self.concatenate();
   },
-  
+
   // The "concatenate" method will crawl through each group, concatenating filters as desired:
   concatenate: function(){
     var self = this;
-    self.outputString = ''; // Reset output string
+    // Reset output string
+    self.outputString = '';
     for(var i = 0, group; group = self.groups[i]; i++){
       self.outputString += group.active;
     }
     // If the output string is empty, show all rather than none
-    !self.outputString.length && (self.outputString = 'all'); 
-    // console.log(self.outputString); 
+    !self.outputString.length && (self.outputString = 'all');
+    // console.log(self.outputString);
     // ^ we can check the console here to take a look at the filter string that is produced
-    // Send the output string to MixItUp via the 'filter' method:
+    // Send the output string to MixItUp via the 'filter' method
     if(self.$container.mixItUp('isLoaded')){
       self.$container.mixItUp('filter', self.outputString);
     }
