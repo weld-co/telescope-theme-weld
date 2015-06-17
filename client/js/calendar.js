@@ -54,7 +54,7 @@ Template[getTemplate('calendarNashville')].helpers({
         $('html, body, .content').scrollTop(0).scrollLeft(0);
         $('body').addClass('no-scroll');
         $('.modal').addClass('is-open edit-event');
-        $('[name=oldDate], [name=newDate]').val( moment(event.start).format('dddd, MMMM do') );
+        $('[name=oldDate], [name=newDate]').val( moment(event.start).format('dddd, MMMM Do') );
         $('[name=oldStartTime], [name=newStartTime]').val( moment(event.start).format('h:mm A') );
         $('[name=oldEndTime], [name=newEndTime]').val( moment(event.end).format('h:mm A') );
       },
