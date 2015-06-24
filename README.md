@@ -1,6 +1,3 @@
-In order to run this theme, you'll first need to clone the customized fork of Telescope:
-[weld-co/Telescope](https://github.com/weld-co/Telescope).
+## Important Notice
 
-Then clone this repo into you packages folder and run `meteor add telescope-theme-weld`
-
-(C) WELD 2014. All rights reserved. 
+This repo has been deprecated. The new repo for the WELDER WIRE theme is here: https://github.com/weld-co/welderwire-theme
